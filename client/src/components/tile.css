@@ -1,0 +1,81 @@
+.tile {
+    width: 900px;
+    margin: 0 1px;
+  }
+  
+  .tile-title {
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 3em;
+    text-align: left;
+    color: #082708;
+  }
+  
+  .tile-title-underline {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, rgb(134, 185, 134), transparent);
+  }
+  
+  .tile-value {
+    text-align: center;
+    font-size: 4em;
+  }
+  
+  .tile-value.warning {
+    color: red;
+  }
+  
+  .tile-value.normal {
+    color: rgb(4, 59, 4);
+  }
+
+  .responsive-image {
+    width: 150px;
+    height: 95px;
+    margin-bottom: 10px;
+}
+    
+  @media (max-width: 768px) {
+    .tile {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  
+    .tile-title {
+      font-size: 1.5em;
+    }
+  
+    .tile-value {
+      font-size: 2em;
+    }
+    .responsive-image {
+      width: 60px; /* Zmenšení šířky obrázků na mobilu */
+      height: 50px; /* Zmenšení výšky obrázků na mobilu */
+    }
+  
+     }
+
+     @media (max-width: 600px) {
+      .tile {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    
+      .tile-title {
+        font-size: 1.5em;
+      }
+    
+      .tile-value {
+        font-size: 2em;
+      }
+      .responsive-image {
+        width: 60px; /* Zmenšení šířky obrázků na mobilu */
+        height: 50px; /* Zmenšení výšky obrázků na mobilu */
+      }
+    
+       }

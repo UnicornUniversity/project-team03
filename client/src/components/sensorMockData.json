@@ -1,0 +1,25 @@
+{
+    "temperatureSensor": {
+      "id": "tempSensor01",
+      "value": 21.0,
+      "unit": "°C",
+      "timestamp": "2025-03-20T14:00:00Z"
+    },
+    "soilMoistureSensor": {
+      "id": "AA110000050",
+      "value": 53,
+      "unit": "%",
+      "timestamp": "2025-03-20T14:00:00Z"
+    },
+    "airHumiditySensor": {
+      "id": "humiditySensor01",
+      "value": 60,
+      "unit": "%",
+      "timestamp": "2025-03-20T14:00:00Z"
+    },
+    "lightIntensitySensor": {
+      "id": "GY-302",
+      "value": "DENNÍ",
+      "timestamp": "2025-03-20T14:00:00Z"
+    }
+  } 
