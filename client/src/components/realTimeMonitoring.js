@@ -93,14 +93,14 @@ const RealTimeMonitoring = () => {
             value={isAuthenticated ? data.temperatureSensor.value : "?"}
             unit={isAuthenticated ? data.temperatureSensor.unit : ""}
             status={isAuthenticated && data.temperatureSensor.value < 10 ? 'warning' : 'normal'}
-            imageSrc="images/thermometer.jpg"
+            imageSrc="/images/thermometer.jpg"
           />
           <Tile
             title="Vlhkost půdy"
             value={isAuthenticated ? data.soilMoistureSensor.value : "?"}
             unit={isAuthenticated ? data.soilMoistureSensor.unit : ""}
             status={isAuthenticated && data.soilMoistureSensor.value < 10 ? 'warning' : 'normal'}
-            imageSrc="images/thermometer.jpg"
+            imageSrc="/images/thermometer.jpg"
             minThreshold={airHumidityThresholds.min}
             maxThreshold={airHumidityThresholds.max}
           />
@@ -109,14 +109,14 @@ const RealTimeMonitoring = () => {
             value={isAuthenticated ? data.airHumiditySensor.value : "?"}
             unit={isAuthenticated ? data.airHumiditySensor.unit : ""}
             status={isAuthenticated && data.airHumiditySensor.value < 30 ? 'warning' : 'normal'}
-            imageSrc="images/leaf.jpg"
+            imageSrc="/images/leaf.jpg"
           />
           <Tile
            title="Světlo"
            value={isAuthenticated ? "DENNÍ" : "?"}
            unit=""
            status="normal"
-           imageSrc="images/sun.jpg"
+           imageSrc="/images/sun.jpg"
            />
         </section>
         {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
