@@ -1,11 +1,10 @@
 body {
     font-family: 'Century Gothic', sans-serif;
-    color: darkgreen; /* Nastavení zelené barvy písma */
-}
-
+    color: darkgreen; 
+  }
 .dashboard {
     font-family: Arial, sans-serif;
-    background-color: #e8f5e9; /* Jemná zelená barva pozadí */
+    background-color: #e8f5e9; 
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -34,8 +33,8 @@ body {
   .nav-links a {
     text-decoration: none;
     color: #f8f2f2;
-    font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
-    font-weight: bold; /* Nastavení tučného písma */
+    font-family: 'Century Gothic', sans-serif; 
+    font-weight: bold; 
     font-size: 16px;
     transition: color 0.3s ease;
   }
@@ -77,7 +76,7 @@ body {
     }
 
     .hamburger {
-        display: flex; /* Zobrazení hamburger menu */
+        display: flex; 
     }
 }
 
@@ -94,10 +93,10 @@ body {
 }
     
   .login-button {
-    background-color: #f5f8f5; /* Google modrá */
-    font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
-    color: rgb(14, 46, 14); /* Nastavení zelené barvy písma */
-    font-weight: bold; /* Nastavení tučného písma */
+    background-color: #f5f8f5; 
+    font-family: 'Century Gothic', sans-serif; 
+    color: rgb(14, 46, 14); 
+    font-weight: bold; 
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -107,9 +106,9 @@ body {
   }
   
   .login-button:hover {
-    background-color: #606662; /* Zelená barva při najetí myši */
-    color: white; /* Bílá barva písma při najetí myši */
-    font-weight: bold; /* Tučné písmo při najetí myši */
+    background-color: #606662; 
+    color: white; 
+    font-weight: bold; 
   }
   
   .logo-container {
@@ -120,8 +119,8 @@ body {
   }
   
   .logo {
-    width: 200px; /* Velikost loga podle potřeby */
-    margin-bottom: 10px; /* Přidání mezery mezi logem a obrázkem rostliny */
+    width: 200px; 
+    margin-bottom: 10px; 
      }
   
   .plant-image {
@@ -130,7 +129,7 @@ body {
   }
   
   .greenHouse {
-    width: 300px; /* Velikost obrázku rostliny */
+    width: 300px; /* Velikost obrázku skleníku */
     height: 300px; /* Zachování poměru stran */   
     object-fit: cover; /* Zajištění, že obrázek pokryje celou oblast */
     margin: 0; /* Odstranění okrajů */
@@ -161,6 +160,7 @@ body {
     .current-status-container {
         font-size: 16px; /* Zmenšení velikosti písma */
         padding: 2px; /* Snížení paddingu */
+        color: rgb(246, 183, 183); /* Bílé písmo uvnitř dlaždice */
     }
     .measurement-container {
         font-size: 16px; /* Zmenšení velikosti písma */
@@ -173,18 +173,18 @@ body {
     }
 }
   .status-item {
-    background-color: #2e4a34; /* Tmavě zelená barva pozadí dlaždice */
+    background-color: #2e4a34; 
     border: 1px solid #ddd; /* Světle šedý okraj */
     border-radius: 20px; /* Zakulacení rohů */
     padding: 10px;
     width: 100%; /* Šířka dlaždice */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Stín dlaždice */
     text-align: center;
-    color: white; /* Bílé písmo uvnitř dlaždice */
+    color: rgb(245, 207, 207); 
     margin: 0; /* Odstranění všech okrajů */
-    font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
-    font-size: 30px; /* Nastavení větší velikosti písma */
-    font-weight: bold; /* Nastavení tučného písma */
+    font-family: 'Century Gothic', sans-serif; 
+    font-size: 30px; 
+    font-weight: bold; 
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -202,16 +202,16 @@ body {
   .tiles {
     display: flex;
     justify-content: space-around;
-    width: 90%;
+    width: 95%;
     flex-wrap: wrap;
   }
 
   .tiles > .ant-card {
     margin: 0 2px; /* Přidání mezery mezi dlaždicemi */
-    color: darkgreen; /* Nastavení zelené barvy písma */
-    background-color: #e8f5e9; /* Jemná zelená barva pozadí */
+    color: darkgreen; 
+    background-color: #e8f5e9; 
     position: relative; /* Pro pseudo-element */
-    flex: 1 1 calc(25% - 10px); /* Každá dlaždice zabere 25% šířky mínus mezera */
+    flex: 1 1 calc(25% - 10px); 
     min-width: 80px; /* Přidáno pro zajištění minimální šířky dlaždic */
      }
 

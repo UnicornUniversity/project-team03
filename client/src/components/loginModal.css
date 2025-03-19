@@ -51,14 +51,14 @@ input {
 button {
   padding: 10px;
   font-size: 16px;
-  background-color: #4CAF50;
+  background-color: #467d48;
   color: white;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #0f3611;
 }
 
 .error {

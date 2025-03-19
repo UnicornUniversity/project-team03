@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import mockData from './sensorMockData';
 import './realTimeMonitoring.css'; 
-import Tile from './tile'; // Import komponenty Tile
+import Tile from './tile'; 
 import { Link } from 'react-router-dom';
 import { getThresholds } from '../utils/thresholds';
-import LoginModal from './loginModal'; // Import LoginModal komponenty
+import LoginModal from './loginModal'; 
 
 const RealTimeMonitoring = () => {
   const [data, setData] = useState({
@@ -21,7 +21,7 @@ const RealTimeMonitoring = () => {
     const fetchData = async () => {
       if (isAuthenticated) {
         console.log('Fetching data...');
-        // Zde by bylo API volání, zatím používáme mockData
+        // Zde API volání, zatím používáme mockData
         setData(mockData);
         console.log('Data fetched:', mockData);
       }
@@ -90,34 +90,34 @@ const RealTimeMonitoring = () => {
         <section className="tiles">
           <Tile
             title="Teplota"
-            value={isAuthenticated ? data.temperatureSensor.value : '?'}
-            unit={isAuthenticated ? data.temperatureSensor.unit : ''}
+            value={isAuthenticated ? data.temperatureSensor.value : "?"}
+            unit={isAuthenticated ? data.temperatureSensor.unit : ""}
             status={isAuthenticated && data.temperatureSensor.value < 10 ? 'warning' : 'normal'}
             imageSrc="images/thermometer.jpg"
           />
           <Tile
             title="Vlhkost půdy"
-            value={isAuthenticated ? data.soilMoistureSensor.value : '?'}
-            unit={isAuthenticated ? data.soilMoistureSensor.unit : ''}
+            value={isAuthenticated ? data.soilMoistureSensor.value : "?"}
+            unit={isAuthenticated ? data.soilMoistureSensor.unit : ""}
             status={isAuthenticated && data.soilMoistureSensor.value < 10 ? 'warning' : 'normal'}
             imageSrc="images/thermometer.jpg"
             minThreshold={airHumidityThresholds.min}
             maxThreshold={airHumidityThresholds.max}
           />
           <Tile
-            title="Vlhkost vzduchu"
-            value={isAuthenticated ? data.airHumiditySensor.value : '?'}
-            unit={isAuthenticated ? data.airHumiditySensor.unit : ''}
+            title="Vlhkost"
+            value={isAuthenticated ? data.airHumiditySensor.value : "?"}
+            unit={isAuthenticated ? data.airHumiditySensor.unit : ""}
             status={isAuthenticated && data.airHumiditySensor.value < 30 ? 'warning' : 'normal'}
             imageSrc="images/leaf.jpg"
           />
           <Tile
-            title="Světlo"
-            value="DENNÍ"
-            unit=""
-            status="normal"
-            imageSrc="images/sun.jpg"
-          />
+           title="Světlo"
+           value={isAuthenticated ? "DENNÍ" : "?"}
+           unit=""
+           status="normal"
+           imageSrc="images/sun.jpg"
+           />
         </section>
         {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
     </div>
