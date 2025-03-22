@@ -1,13 +1,21 @@
-const express = require('express');
+express = require('express');
 const config = require('./config');
 const mongoose = require('mongoose');
+const path = require('path');
+const cors = require('cors');  // Přidání CORS middleware
 require('dotenv').config();
 const { getMockTemperatureData } = require('./mockData');
-
+const Sensor = require('./models/Sensor')
 mongoose.set('debug', true);
+
+//Načtení routes
+const sensorRoutes = require('./routes/sensors');
 
 const app = express();
 const port = config.port;
+
+// Použití CORS middleware
+app.use(cors());
 
 // Middleware pro zpracování JSON
 app.use(express.json());
@@ -23,34 +31,15 @@ mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
     console.error('MongoDB connection error:', err);
   });
 
-// Definice schématu a modelu
-const temperatureSchema = new mongoose.Schema({
-  timestamp: String,
-  temperature: Number
-});
-const Temperature = mongoose.model('Temperature', temperatureSchema);
+// Použití routes
+// Teplotní data už nejsou oddělená, ale jsou součástí obecného Sensor modelu.
+// API endpoint /api/temperature se změnil na /api/sensors, protože řeší více senzorů než jen teplotu.
+app.use('/api/sensors', sensorRoutes);
 
-// Základní route pro testování
 app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-// Endpoint pro získání dat teploty
-app.get('/api/temperature', async (req, res) => {
-  if (mongoose.connection.readyState !== 1) {
-    // Pokud není připojení k MongoDB, použijí se mockovaná data
-    const data = getMockTemperatureData();
-    res.json(data);
-  } else {
-    try {
-      const data = await Temperature.find({});
-      res.json(data);
-    } catch (err) {
-      res.status(500).send(err);
-    }
-  }
+    res.send('Hello from IoT Backend!');
 });
 
 app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+    console.log(`Server running on port ${port}`);
 });
