@@ -1,0 +1,49 @@
+body {
+    background-color: #dddbc7; /* Light yellow background */
+  }
+  
+  .statistics-container {
+    background-color: #dddbc7; 
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+  }
+  .header > *:not(:last-child) {
+    margin-right: 10px; /* Přidá mezery mezi prvky */
+  }
+  
+  .back-button {
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    background-color: #edf5ed; 
+    font-family: 'Century Gothic', sans-serif; 
+    color: rgb(14, 46, 14); 
+    font-weight: bold; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, font-weight 0.3s ease;
+    margin-left: 200px;
+  }
+  
+  .chart-container {
+    background-color: rgb(238, 245, 248); /* White background for the chart */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 96%;
+    height: 400px; /* Ensure the container has a fixed height */
+    margin: 30px 10px 30px 20px; /* Top, right, bottom, left */
+    font-family: 'Century Gothic', sans-serif; 
+    color: rgb(18, 49, 18); 
+    font-weight: bold; 
+    font-size: 20px;
+  }

@@ -1,260 +1,265 @@
 body {
-    font-family: 'Century Gothic', sans-serif;
-    color: darkgreen; 
-  }
-.dashboard {
-    font-family: Arial, sans-serif;
-    background-color: #e8f5e9; 
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .dashboard-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to top, #203324, #3f5a42, #2e4a34); /* Zelená barva pro hlavičku */
-    padding: 10px;
-    color: white;
-    border-top-left-radius: 15px; /* Zakulacení levého horního okraje */
-    border-top-right-radius: 15px; /* Zakulacení pravého horního okraje */
-    height: 60px; /* Nastavení pevné výšky */
-  }
-  .nav-links {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #f8f2f2;
-    font-family: 'Century Gothic', sans-serif; 
-    font-weight: bold; 
-    font-size: 16px;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    color: #afb1b3;
-  }
+  font-family: 'Century Gothic', sans-serif;
+  color: darkgreen; /* Nastavení zelené barvy písma */
+}
 
-  /* Styl pro hamburger menu */
+.dashboard {
+  font-family: Arial, sans-serif;
+  background-color: #e8f5e9; /* Jemná zelená barva pozadí */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  
+}
+
+.dashboard-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to top, #d2eed8, #3f5a42, #2e4a34); /* Zelená barva pro hlavičku */
+  padding: 10px;
+  color: white;
+  border-top-left-radius: 15px; /* Zakulacení levého horního okraje */
+  border-top-right-radius: 15px; /* Zakulacení pravého horního okraje */
+  height: 60px; /* Nastavení pevné výšky */
+}
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #f8f2f2;
+  font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
+  font-weight: bold; /* Nastavení tučného písma */
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #afb1b3;
+}
+
+/* Styl pro hamburger menu */
 .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: #f8f2f2;
-    margin: 4px 0;
-    transition: 0.4s;
+  width: 25px;
+  height: 3px;
+  background-color: #f8f2f2;
+  margin: 4px 0;
+  transition: 0.4s;
 }
 /* Media query pro mobilní zařízení */
 @media (max-width: 600px) {
-    .dashboard {
-        padding: 10px; /* Snížení paddingu na menších obrazovkách */
-    }
+  .dashboard {
+      padding: 10px; /* Snížení paddingu na menších obrazovkách */
+  }
 
-    .dashboard-header {
-        flex-direction: column; /* Vertikální uspořádání na menších obrazovkách */
-        height: auto; /* Automatická výška */
-        padding: 20px 10px; /* Zvýšení paddingu pro lepší vzhled */
-    }
+  .dashboard-header {
+      flex-direction: column; /* Vertikální uspořádání na menších obrazovkách */
+      height: auto; /* Automatická výška */
+      padding: 20px 10px; /* Zvýšení paddingu pro lepší vzhled */
+  }
 
-    .nav-links {
-        display: none; /* Skrytí navigačních odkazů */
-        flex-direction: column; /* Vertikální uspořádání navigačních odkazů */
-        align-items: center;
-    }
+  .nav-links {
+      display: none; /* Skrytí navigačních odkazů */
+      flex-direction: column; /* Vertikální uspořádání navigačních odkazů */
+      align-items: center;
+  }
 
-    .hamburger {
-        display: flex; 
-    }
+  .hamburger {
+      display: flex; /* Zobrazení hamburger menu */
+  }
 }
 
 /* Zobrazení navigačních odkazů při kliknutí na hamburger menu */
 .nav-links.active {
-    display: flex;
+  display: flex;
 }
 
-  .login-button-container {
-    flex: 0.5;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 20px; /* Přidání odsazení od pravého okraje */
+.login-button-container {
+  flex: 0.5;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px; /* Přidání odsazení od pravého okraje */
 }
-    
-  .login-button {
-    background-color: #f5f8f5; 
-    font-family: 'Century Gothic', sans-serif; 
-    color: rgb(14, 46, 14); 
-    font-weight: bold; 
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, font-weight 0.3s ease;
-  }
   
-  .login-button:hover {
-    background-color: #606662; 
-    color: white; 
-    font-weight: bold; 
-  }
+.login-button {
+  background-color: #f5f8f5; /* Google modrá */
+  font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
+  color: rgb(14, 46, 14); /* Nastavení zelené barvy písma */
+  font-weight: bold; /* Nastavení tučného písma */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, font-weight 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #606662; /* Zelená barva při najetí myši */
+  color: white; /* Bílá barva písma při najetí myši */
+  font-weight: bold; /* Tučné písmo při najetí myši */
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column; /* Vertikální uspořádání loga a obrázku */
+  align-items: center;
   
-  .logo-container {
-    display: flex;
-    flex-direction: column; /* Vertikální uspořádání loga a obrázku */
-    align-items: center;
-    
-  }
-  
-  .logo {
-    width: 200px; 
-    margin-bottom: 10px; 
-     }
-  
-  .plant-image {
-    width: 150px; /* Velikost obrázku rostliny */
-    height: auto; /* Zachování poměru stran */     
-  }
-  
-  .greenHouse {
-    width: 300px; /* Velikost obrázku skleníku */
-    height: 300px; /* Zachování poměru stran */   
-    object-fit: cover; /* Zajištění, že obrázek pokryje celou oblast */
-    margin: 0; /* Odstranění okrajů */
-    padding: 0; /* Odstranění vnitřních okrajů */
-     
-  }
-  
-  .status {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    gap: 0; /* Přidání mezery mezi dlaždicemi */
-    padding: 0; /* Odstranění vnitřních okrajů */
-  }
-  /* Media queries pro malé obrazovky */
+}
+
+.logo {
+  width: 200px; /* Velikost loga podle potřeby */
+  margin-bottom: 10px; /* Přidání mezery mezi logem a obrázkem rostliny */
+   }
+
+.plant-image {
+  width: 150px; /* Velikost obrázku rostliny */
+  height: auto; /* Zachování poměru stran */  
+  padding: 0; /* Odstranění vnitřních okrajů */   
+}
+
+.greenHouse {
+  width: 200px; /* Velikost obrázku rostliny */
+  height: 200px; /* Zachování poměru stran */   
+  object-fit: cover; /* Zajištění, že obrázek pokryje celou oblast */
+  margin: 0; /* Odstranění okrajů */
+  padding: 0; /* Odstranění vnitřních okrajů */
+   
+}
+
+.status {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 0; /* Přidání mezery mezi dlaždicemi */
+  padding: 0; /* Odstranění vnitřních okrajů */
+}
+/* Media queries pro malé obrazovky */
 @media (max-width: 600px) {
-    .status {
-        flex-direction: row; /* Vertikální uspořádání dlaždic */
-        width: 80%; /* Šířka dlaždice pro malé obrazovky */
-    }
-    .status-item {
-        flex-direction: row; /* Vertikální uspořádání dlaždic */
-        width: 60%; /* Šířka dlaždice pro malé obrazovky */
-    }
-
-    .current-status-container {
-        font-size: 16px; /* Zmenšení velikosti písma */
-        padding: 2px; /* Snížení paddingu */
-        color: rgb(246, 183, 183); /* Bílé písmo uvnitř dlaždice */
-    }
-    .measurement-container {
-        font-size: 16px; /* Zmenšení velikosti písma */
-        padding: 2px; /* Snížení paddingu */
-    }
-
-    .status-item img {
-        width: 50px; /* Zmenšení šířky obrázků */
-        height: auto; /* Automatická výška obrázků */
-    }
-}
+  .status {
+      flex-direction: row; /* Vertikální uspořádání dlaždic */
+      width: 80%; /* Šířka dlaždice pro malé obrazovky */
+  }
   .status-item {
-    background-color: #2e4a34; 
-    border: 1px solid #ddd; /* Světle šedý okraj */
-    border-radius: 20px; /* Zakulacení rohů */
-    padding: 10px;
-    width: 100%; /* Šířka dlaždice */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Stín dlaždice */
-    text-align: center;
-    color: rgb(245, 207, 207); 
-    margin: 0; /* Odstranění všech okrajů */
-    font-family: 'Century Gothic', sans-serif; 
-    font-size: 30px; 
-    font-weight: bold; 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+      flex-direction: row; /* Vertikální uspořádání dlaždic */
+      width: 60%; /* Šířka dlaždice pro malé obrazovky */
+  }
+
+  .current-status-container {
+      font-size: 16px; /* Zmenšení velikosti písma */
+      padding: 2px; /* Snížení paddingu */
+  }
+  .measurement-container {
+      font-size: 16px; /* Zmenšení velikosti písma */
+      padding: 2px; /* Snížení paddingu */
+  }
+
+  .status-item img {
+      width: 50px; /* Zmenšení šířky obrázků */
+      height: 40px; /* Automatická výška obrázků */
+  }
+}
+.status-item {
+  background-color: #2e4a34; /* Tmavě zelená barva pozadí dlaždice */
+  border: 1px solid #ddd; /* Světle šedý okraj */
+  border-radius: 20px; /* Zakulacení rohů */
+  padding: 10px;
+  width: 100%; /* Šířka dlaždice */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Stín dlaždice */
+  text-align: center;
+  color: white; /* Bílé písmo uvnitř dlaždice */
+  margin: 0; /* Odstranění všech okrajů */
+  font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
+  font-size: 30px; /* Nastavení větší velikosti písma */
+  font-weight: bold; /* Nastavení tučného písma */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .status-item > div {
-    flex: 1;
-    padding: 10px;
+  flex: 1;
+  padding: 10px;
 }
 
 .status-item > div:not(:last-child) {
-    border-right: 1px solid white; /* Čára mezi sloupci */
+  border-right: 1px solid white; /* Čára mezi sloupci */
 }
-  
+
+.tiles {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  height: auto; /* Automatická výška */
+  flex-wrap: wrap;
+}
+
+.tiles > .ant-card {
+  margin: 0 2px; /* Přidání mezery mezi dlaždicemi */
+  color: darkgreen; /* Nastavení zelené barvy písma */
+  background-color: #e8f5e9; /* Jemná zelená barva pozadí */
+  position: relative; /* Pro pseudo-element */
+  flex: 1 1 calc(25% - 10px); /* Každá dlaždice zabere 25% šířky mínus mezera */
+  min-width: 80px; /* Přidáno pro zajištění minimální šířky dlaždic */
+   }
+
+.tiles > .ant-card:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1px; /* Umístění čáry na pravý okraj */
+  width: 2px;
+  height: 100%;
+  background-color: rgb(197, 197, 197); /* Barva čáry */
+}
+
+@media (max-width: 768px) {
   .tiles {
-    display: flex;
-    justify-content: space-around;
-    width: 95%;
-    flex-wrap: wrap;
+    flex-direction: row; /* Dlaždice se budou skládat vedle sebe */
+    align-items: center; /* Zarovnání dlaždic na střed */
   }
 
   .tiles > .ant-card {
-    margin: 0 2px; /* Přidání mezery mezi dlaždicemi */
-    color: darkgreen; 
-    background-color: #e8f5e9; 
-    position: relative; /* Pro pseudo-element */
-    flex: 1 1 calc(25% - 10px); 
-    min-width: 80px; /* Přidáno pro zajištění minimální šířky dlaždic */
-     }
-
-  .tiles > .ant-card:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: -1px; /* Umístění čáry na pravý okraj */
-    width: 2px;
-    height: 100%;
-    background-color: rgb(197, 197, 197); /* Barva čáry */
+    width: 90%; /* Zajištění, že dlaždice budou mít šířku 90% obrazovky */
+    height: 70%;
+    margin-bottom: 5px; /* Přidání mezery mezi dlaždicemi na mobilu */
   }
- 
-  @media (max-width: 768px) {
-    .tiles {
-      flex-direction: row; /* Dlaždice se budou skládat vedle sebe */
-      align-items: center; /* Zarovnání dlaždic na střed */
+
+  .tiles {
+      width: 80%; /* Šířka dlaždice pro malé obrazovky */
+      margin-bottom: 5px; /* Přidání mezery mezi dlaždicemi */
+  }
+
+  .tile-title {
+    font-size: 1.5em; /* Zmenšení písma pro název dlaždice */
+  }
+  .tile-value {
+      font-size: 2em; /* Zmenšení písma pro hodnotu dlaždice */
     }
   
-    .tiles > .ant-card {
-      width: 90%; /* Zajištění, že dlaždice budou mít šířku 90% obrazovky */
-      height: 70%;
-      margin-bottom: 5px; /* Přidání mezery mezi dlaždicemi na mobilu */
+    .tile-icon {
+      font-size: 1.5em; /* Zmenšení velikosti ikony */
     }
-
-    .tiles {
-        width: 80%; /* Šířka dlaždice pro malé obrazovky */
-        margin-bottom: 5px; /* Přidání mezery mezi dlaždicemi */
+  
+    .tile-imageSrc {
+      width: 50px; /* Zmenšení šířky obrázku */
+      height: 40px; /* Zmenšení výšky obrázku */
     }
-
-    .tile-title {
-      font-size: 1.5em; /* Zmenšení písma pro název dlaždice */
-    }
-    .tile-value {
-        font-size: 2em; /* Zmenšení písma pro hodnotu dlaždice */
-      }
-    
-      .tile-icon {
-        font-size: 1.5em; /* Zmenšení velikosti ikony */
-      }
-    
-      .tile-imageSrc {
-        width: 50px; /* Zmenšení šířky obrázku */
-        height: 40px; /* Zmenšení výšky obrázku */
-      }
-    }
+  }
+  
