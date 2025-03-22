@@ -52,7 +52,7 @@ const RealTimeMonitoring = () => {
     <div className="dashboard">
       <header className="dashboard-header">
         <div className="logo-container">
-          <img src="/images/logo-iBotaniQ.jpg" alt="Logo" className="logo" />
+          <img src="/images/logo-iBotaniQ.JPG" alt="Logo" className="logo" />
         </div>
          <div className={`hamburger ${menuActive ? 'active' : ''}`} onClick={toggleMenu}>
          <div></div>
@@ -75,13 +75,13 @@ const RealTimeMonitoring = () => {
         <section className="status">
         <div className="status-item">
         
-        <img src="/images/greenHouse.jpg" alt="Plant" className="greenHouse-image" />
+        <img src="/images/GreenHouse.JPG" alt="Plant" className="greenHouse-image" />
         <div className="current-status-container">
       <div>Aktuálně :</div>
       <p>{isAuthenticated ? 'Vše v normě' : 'Aktuální údaje získáte po přihlášení'}</p>
     </div>
         <div className="measurement-container">
-        <img src="/images/plant-image.jpg" alt="Plant" className="plant-image" />
+        <img src="/images/plant-image.JPG" alt="Plant" className="plant-image" />
       <div>Poslední měření :</div>
       <p>{isAuthenticated ? new Date(data.temperatureSensor.timestamp).toLocaleDateString() : '?'}</p>
     </div>
@@ -93,14 +93,14 @@ const RealTimeMonitoring = () => {
             value={isAuthenticated ? data.temperatureSensor.value : "?"}
             unit={isAuthenticated ? data.temperatureSensor.unit : ""}
             status={isAuthenticated && data.temperatureSensor.value < 10 ? 'warning' : 'normal'}
-            imageSrc="/images/thermometer.jpg"
+            imageSrc="/images/thermometer.JPG"
           />
           <Tile
             title="Vlhkost půdy"
             value={isAuthenticated ? data.soilMoistureSensor.value : "?"}
             unit={isAuthenticated ? data.soilMoistureSensor.unit : ""}
             status={isAuthenticated && data.soilMoistureSensor.value < 10 ? 'warning' : 'normal'}
-            imageSrc="/images/thermometer.jpg"
+            imageSrc="/images/thermometer.JPG"
             minThreshold={airHumidityThresholds.min}
             maxThreshold={airHumidityThresholds.max}
           />
@@ -109,14 +109,14 @@ const RealTimeMonitoring = () => {
             value={isAuthenticated ? data.airHumiditySensor.value : "?"}
             unit={isAuthenticated ? data.airHumiditySensor.unit : ""}
             status={isAuthenticated && data.airHumiditySensor.value < 30 ? 'warning' : 'normal'}
-            imageSrc="/images/leaf.jpg"
+            imageSrc="/images/leaf.JPG"
           />
           <Tile
            title="Světlo"
            value={isAuthenticated ? "DENNÍ" : "?"}
            unit=""
            status="normal"
-           imageSrc="/images/sun.jpg"
+           imageSrc="/images/sun.JPG"
            />
         </section>
         {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
