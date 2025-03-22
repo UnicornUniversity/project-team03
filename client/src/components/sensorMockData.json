@@ -1,4 +1,5 @@
-{
+[
+  {
     "temperatureSensor": {
       "id": "tempSensor01",
       "value": 21.0,
@@ -22,4 +23,55 @@
       "value": "DENNÍ",
       "timestamp": "2025-03-20T14:00:00Z"
     }
-  } 
+  },
+  {
+    "temperatureSensor": {
+      "id": "tempSensor01",
+      "value": 22.0,
+      "unit": "°C",
+      "timestamp": "2025-03-20T15:00:00Z"
+    },
+    "soilMoistureSensor": {
+      "id": "AA110000050",
+      "value": 52,
+      "unit": "%",
+      "timestamp": "2025-03-20T15:00:00Z"
+    },
+    "airHumiditySensor": {
+      "id": "humiditySensor01",
+      "value": 59,
+      "unit": "%",
+      "timestamp": "2025-03-20T15:00:00Z"
+    },
+    "lightIntensitySensor": {
+      "id": "GY-302",
+      "value": "DENNÍ",
+      "timestamp": "2025-03-20T15:00:00Z"
+    }
+  },
+  {
+    "temperatureSensor": {
+      "id": "tempSensor01",
+      "value": 23.0,
+      "unit": "°C",
+      "timestamp": "2025-03-20T16:00:00Z"
+    },
+    "soilMoistureSensor": {
+      "id": "AA110000050",
+      "value": 51,
+      "unit": "%",
+      "timestamp": "2025-03-20T16:00:00Z"
+    },
+    "airHumiditySensor": {
+      "id": "humiditySensor01",
+      "value": 58,
+      "unit": "%",
+      "timestamp": "2025-03-20T16:00:00Z"
+    },
+    "lightIntensitySensor": {
+      "id": "GY-302",
+      "value": "DENNÍ",
+      "timestamp": "2025-03-20T16:00:00Z"
+    }
+  }
+]

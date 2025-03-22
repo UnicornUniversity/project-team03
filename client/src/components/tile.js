@@ -11,7 +11,7 @@ const Tile = ({ title, value, unit, status, imageSrc,minThreshold, maxThreshold 
     </h1>
     <h1 className={`tile-value ${status === 'warning' ? 'warning' : 'normal'}`}>
     {imageSrc && <img src={`/${imageSrc}`} alt={title} className="responsive-image" 
-            style={{ width: '150px', height: '95px', marginBottom: '10px' }} />}
+            style={{ width: '100px', height: '70px', marginBottom: '3px' }} />}
     {value} {unit}
     </h1>
     <p>{status === 'warning' ? 'Příliš zima' : 'V normálu'}</p>
