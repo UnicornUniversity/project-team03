@@ -186,7 +186,7 @@ body {
   color: white; /* Bílé písmo uvnitř dlaždice */
   margin: 0; /* Odstranění všech okrajů */
   font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
-  font-size: 30px; /* Nastavení větší velikosti písma */
+  font-size: 25px; /* Nastavení větší velikosti písma */
   font-weight: bold; /* Nastavení tučného písma */
   display: flex;
   justify-content: space-around;

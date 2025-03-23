@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import mockData from './sensorMockData';
 import './realTimeMonitoring.css'; 
 import Tile from './tile'; 
 import { Link } from 'react-router-dom';
@@ -10,39 +9,56 @@ import Thermomether from './thermometer';
 import IBotaniQLogo from './iBotaniQLogo';
 import SoilMoistureIcon from './soilMoistureIcon';
 import { AuthContext } from '../authContext';
+import { fetchData } from '../services/api'; // Import funkce fetchData
 
 
 const RealTimeMonitoring = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const [data, setData] = useState({
-    temperatureSensor: { timestamp: '', value: '', unit: '' },
-    soilMoistureSensor: { value: '', unit: '' },
-    airHumiditySensor: { value: '', unit: '' }
+    temperature: '',
+    humidity: '',
+    soilMoisture: '',
+    lightIntensity: '',
+    accelerometer: { x: '', y: '', z: '' },
+    timestamp: ''
   });
-  const [menuActive, setMenuActive] = useState(false);  
-  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [menuActive, setMenuActive] = useState(false);
+ const [showLoginModal, setShowLoginModal] = useState(false);
   const soilMoistureThresholds = getThresholds('soilMoisture');
   const temperatureThresholds = getThresholds('temperature');
   const airHumidityThresholds = getThresholds('airHumidity');
   const lightThresholds = getThresholds('light');
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchDataFromApi = async () => {
       if (isAuthenticated) {
-        console.log('Fetching data...');
-        // Zde by bylo API volání, zatím používáme mockData
-        const fetchedData = mockData[mockData.length - 1] || {};
-        setData({
-          temperatureSensor: fetchedData.temperatureSensor || { timestamp: '', value: '', unit: '' },
-          soilMoistureSensor: fetchedData.soilMoistureSensor || { value: '', unit: '' },
-          airHumiditySensor: fetchedData.airHumiditySensor || { value: '', unit: '' }
-        });
+        try {
+          console.log('Fetching data...');
+          const fetchedData = await fetchData();
+          console.log('Fetched data:', fetchedData);
+          if (fetchedData && fetchedData.length > 0) {
+            const latestData = fetchedData[0];
+            setData({
+              temperature: latestData.temperature || '',
+              humidity: latestData.humidity || '',
+              soilMoisture: latestData.soilMoisture || '60',
+              lightIntensity: latestData.lightIntensity || 'Denní',
+              accelerometer: {
+                x: latestData.accelerometer?.x || '',
+                y: latestData.accelerometer?.y || '',
+                z: latestData.accelerometer?.z || ''
+              },
+              timestamp: latestData.timestamp || ''
+            });
+          }
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
       }
     };
-
-
-    fetchData();
+    fetchDataFromApi();
   }, [isAuthenticated]);
+
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -96,41 +112,40 @@ const RealTimeMonitoring = () => {
     </div>
         <div className="measurement-container">
         <div>Poslední měření :</div>
-      <p>{isAuthenticated ? new Date(data.temperatureSensor.timestamp).toLocaleDateString() : '?'}</p>
+        <p>{isAuthenticated ? new Date(data.timestamp).toLocaleDateString() : '?'}</p>
     </div>
   </div>
         </section>
         <section className="tiles">
         <Tile
-            title="Teplota"
-            value={
-              isAuthenticated 
-                ? <><Thermomether /> {data.temperatureSensor.value}</> 
-                : <><Thermomether /> ?</>
-
-            }
-            unit={isAuthenticated ? data.temperatureSensor.unit : ""}
-            status={isAuthenticated && data.temperatureSensor.value < 10 ? 'warning' : 'normal'}
-            minThreshold={temperatureThresholds.min}
-            maxThreshold={temperatureThresholds.max}
-          />
+    title="Teplota"
+    value={
+      isAuthenticated 
+        ? <><Thermomether /> {data.temperature !== undefined ? data.temperature : 'N/A'}</> 
+        : <><Thermomether /> ?</>
+    }
+    unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
+    status={isAuthenticated && data.temperature !== undefined && data.temperature < 10 ? 'warning' : 'normal'}
+    minThreshold={temperatureThresholds.min}
+    maxThreshold={temperatureThresholds.max}
+  />
           <Tile
             title="Vlhkost půdy"
             value={
               isAuthenticated 
-                ? <><SoilMoistureIcon /> {data.soilMoistureSensor.value}</> 
+                ? <><SoilMoistureIcon /> {data.soilMoisture !== undefined ? data.soilMoisture : 60}</> 
                 : <><SoilMoistureIcon /> ?</>
             }
-            unit={isAuthenticated ? data.soilMoistureSensor.unit : ""}
-            status={isAuthenticated && data.soilMoistureSensor.value < 10 ? 'warning' : 'normal'}
+            unit={isAuthenticated ? '%' : ""}
+            status={isAuthenticated && (data.soilMoisture !== undefined ? data.soilMoisture : 60) < 10 ? 'warning' : 'normal'}
             minThreshold={soilMoistureThresholds.min}
             maxThreshold={soilMoistureThresholds.max}
           />
           <Tile
             title="Vlhkost"
-            value={isAuthenticated ? data.airHumiditySensor.value : "?"}
-            unit={isAuthenticated ? data.airHumiditySensor.unit : ""}
-            status={isAuthenticated && data.airHumiditySensor.value < 30 ? 'warning' : 'normal'}
+            value={isAuthenticated ? data.humidity : "?"}
+            unit={isAuthenticated ? '%' : ""}
+            status={isAuthenticated && data.humidity < 30 ? 'warning' : 'normal'}
             imageSrc="./images/leaf.JPG"
             minThreshold={airHumidityThresholds.min}
             maxThreshold={airHumidityThresholds.max}
@@ -139,13 +154,13 @@ const RealTimeMonitoring = () => {
            title="Světlo"
            value={
             isAuthenticated 
-              ? <><SunIcon /> DENNÍ</> 
+              ? <><SunIcon /> {data.lightIntensity !== undefined ? data.lightIntensity : 30}</> 
               : <><SunIcon /> ?</>
           }
-           unit=""
-           status="normal"      
-           minThreshold={lightThresholds.min}
-           maxThreshold={lightThresholds.max}     
+          unit=""
+          status="normal"      
+          minThreshold={lightThresholds.min}
+          maxThreshold={lightThresholds.max}       
            />
         </section>
         {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}

@@ -1,4 +1,4 @@
-//Mongoose model pro data ze senzorů (nahrazuje sensorSchema.js), obsahuje více senzorových údajů
+//Mongoose model pro data ze senzorů 
 
 const mongoose = require('mongoose');
 
@@ -15,4 +15,7 @@ const sensorSchema = new mongoose.Schema({
     timestamp: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Sensor', sensorSchema);
+// Připojení modelu k existující kolekci 'sensor1'
+const Sensor = mongoose.model('Sensor1', sensorSchema, 'sensor1');
+
+module.exports = Sensor;

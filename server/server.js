@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname,"public")));
 
 // Připojení k MongoDB
-const dbUri = process.env.DB_URI || 'mongodb://localhost:27017/iot';
+const dbUri = process.env.DB_URI || 'mongodb://localhost:27017/malina';
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('MongoDB connected');

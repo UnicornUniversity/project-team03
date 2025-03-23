@@ -10,7 +10,7 @@
     text-align: left;
     color: #082708;
   }
-  
+    
   .tile-title-underline {
     content: "";
     position: absolute;
@@ -23,7 +23,8 @@
   
   .tile-value {
     text-align: center;
-    font-size: 4em;
+    font-size: 3em;
+    font-weight: bold;
   }
   
   .tile-value.warning {
