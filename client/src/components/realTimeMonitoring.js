@@ -28,6 +28,17 @@ const RealTimeMonitoring = () => {
   const temperatureThresholds = getThresholds('temperature');
   const airHumidityThresholds = getThresholds('airHumidity');
   const lightThresholds = getThresholds('light');
+  const isTemperatureNormal = data.temperature >= temperatureThresholds.min && data.temperature <= temperatureThresholds.max;
+  const isSoilMoistureNormal = data.soilMoisture >= soilMoistureThresholds.min && data.soilMoisture <= soilMoistureThresholds.max;
+  const isAirHumidityNormal = data.humidity >= airHumidityThresholds.min && data.humidity <= airHumidityThresholds.max;
+  const isLightNormal = data.lightIntensity >= lightThresholds.min && data.lightIntensity <= lightThresholds.max;
+
+  const currentStatus = isTemperatureNormal && isSoilMoistureNormal && isAirHumidityNormal && isLightNormal
+  ? 'Vše v normě' : 'Některé hodnoty jsou mimo normu !';
+
+  const getStatusStyle = (isNormal) => ({
+    color: isNormal ? 'black' : 'red'
+  });
 
   useEffect(() => {
     const fetchDataFromApi = async () => {
@@ -42,7 +53,7 @@ const RealTimeMonitoring = () => {
               temperature: latestData.temperature || '',
               humidity: latestData.humidity || '',
               soilMoisture: latestData.soilMoisture || '60',
-              lightIntensity: latestData.lightIntensity || 'Denní',
+              lightIntensity: latestData.lightIntensity || '200',
               accelerometer: {
                 x: latestData.accelerometer?.x || '',
                 y: latestData.accelerometer?.y || '',
@@ -108,11 +119,13 @@ const RealTimeMonitoring = () => {
         <img src="/images/plant-image.JPG" alt="Plant" className="plant-image" />
         <div className="current-status-container">
       <div>Aktuálně :</div>
-      <p>{isAuthenticated ? 'Vše v normě' : 'Aktuální údaje získáte po přihlášení'}</p>
-    </div>
+      <p className={ currentStatus === 'Některé hodnoty jsou mimo normu !' ? 'warning-text' : '' }>
+      {isAuthenticated ? currentStatus : 'Aktuální údaje získáte po přihlášení'}
+      </p>
+      </div>
         <div className="measurement-container">
         <div>Poslední měření :</div>
-        <p>{isAuthenticated ? new Date(data.timestamp).toLocaleDateString() : '?'}</p>
+        <p>{isAuthenticated ? new Date(data.timestamp).toLocaleString() : '?'}</p>
     </div>
   </div>
         </section>
@@ -121,31 +134,55 @@ const RealTimeMonitoring = () => {
     title="Teplota"
     value={
       isAuthenticated 
-        ? <><Thermomether /> {data.temperature !== undefined ? data.temperature : 'N/A'}</> 
+        ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 'N/A'}</span></> 
         : <><Thermomether /> ?</>
     }
     unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
-    status={isAuthenticated && data.temperature !== undefined && data.temperature < 10 ? 'warning' : 'normal'}
-    minThreshold={temperatureThresholds.min}
+    status={
+      isAuthenticated && data.temperature !== undefined 
+        ? data.temperature < temperatureThresholds.min 
+          ? 'low' 
+          : data.temperature > temperatureThresholds.max 
+            ? 'high' 
+            : 'normal'
+        : 'normal'
+    }minThreshold={temperatureThresholds.min}
     maxThreshold={temperatureThresholds.max}
   />
           <Tile
             title="Vlhkost půdy"
             value={
               isAuthenticated 
-                ? <><SoilMoistureIcon /> {data.soilMoisture !== undefined ? data.soilMoisture : 60}</> 
+                ? <><SoilMoistureIcon /> <span style={getStatusStyle(isSoilMoistureNormal)}>{data.soilMoisture !== undefined ? data.soilMoisture : 60}</span></> 
                 : <><SoilMoistureIcon /> ?</>
             }
             unit={isAuthenticated ? '%' : ""}
-            status={isAuthenticated && (data.soilMoisture !== undefined ? data.soilMoisture : 60) < 10 ? 'warning' : 'normal'}
+            status={
+              isAuthenticated && data.soilMoisture !== undefined 
+                ? data.soilMoisture < soilMoistureThresholds.min 
+                  ? 'low' 
+                  : data.soilMoisture > soilMoistureThresholds.max 
+                    ? 'high' 
+                    : 'normal'
+                : 'normal'
+            }
             minThreshold={soilMoistureThresholds.min}
             maxThreshold={soilMoistureThresholds.max}
           />
           <Tile
             title="Vlhkost"
-            value={isAuthenticated ? data.humidity : "?"}
+            value={isAuthenticated ? <span style={getStatusStyle(isAirHumidityNormal)}>{data.humidity !== undefined ? data.humidity : 'N/A'}</span> 
+             : "?"}
             unit={isAuthenticated ? '%' : ""}
-            status={isAuthenticated && data.humidity < 30 ? 'warning' : 'normal'}
+            status={
+              isAuthenticated && data.humidity !== undefined 
+                ? data.humidity < airHumidityThresholds.min 
+                  ? 'low' 
+                  : data.humidity > airHumidityThresholds.max 
+                    ? 'high' 
+                    : 'normal'
+                : 'normal'
+            }
             imageSrc="./images/leaf.JPG"
             minThreshold={airHumidityThresholds.min}
             maxThreshold={airHumidityThresholds.max}
@@ -154,11 +191,19 @@ const RealTimeMonitoring = () => {
            title="Světlo"
            value={
             isAuthenticated 
-              ? <><SunIcon /> {data.lightIntensity !== undefined ? data.lightIntensity : 30}</> 
+              ? <><SunIcon /> <span style={getStatusStyle(isLightNormal)}>{data.lightIntensity !== undefined ? data.lightIntensity : 'N/A'}</span> </>
               : <><SunIcon /> ?</>
           }
-          unit=""
-          status="normal"      
+          unit={isAuthenticated && data.lightIntensity !== undefined ? 'lx' : ""}
+          status={
+            isAuthenticated && data.lightIntensity !== undefined 
+              ? data.lightIntensity < lightThresholds.min 
+                ? 'low' 
+                : data.lightIntensity > lightThresholds.max 
+                  ? 'high' 
+                  : 'normal'
+              : 'normal'
+          }    
           minThreshold={lightThresholds.min}
           maxThreshold={lightThresholds.max}       
            />
@@ -167,5 +212,4 @@ const RealTimeMonitoring = () => {
     </div>
     );
 };
-
 export default RealTimeMonitoring;

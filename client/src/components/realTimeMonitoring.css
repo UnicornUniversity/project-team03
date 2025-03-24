@@ -150,6 +150,8 @@ body {
   gap: 0; /* Přidání mezery mezi dlaždicemi */
   padding: 0; /* Odstranění vnitřních okrajů */
 }
+
+
 /* Media queries pro malé obrazovky */
 @media (max-width: 600px) {
   .status {
@@ -191,6 +193,9 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.status-item .current-status-container .warning-text {
+  color: rgb(235, 10, 10) !important;
 }
 
 .status-item > div {
