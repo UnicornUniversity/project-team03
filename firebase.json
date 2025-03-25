@@ -12,5 +12,8 @@
           "destination": "/images/"
         }
       ]
+    },
+    "functions": {
+      "source": "functions"
     }
   }
