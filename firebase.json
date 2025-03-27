@@ -12,5 +12,8 @@
           "destination": "/images/"
         }
       ]
-    }
+    },
+  "functions":{
+    "runtime":"nodejs18"
+  }
   }
