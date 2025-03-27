@@ -13,7 +13,7 @@
         }
       ]
     },
-  "functions":{
-    "runtime":"nodejs18"
-  }
+    "functions":{
+      "runtime":"nodejs18"
+    }
   }
