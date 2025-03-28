@@ -2,17 +2,17 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyChyOa9gO9LPIBvsQbvyuhyGLxN_5H6seA",
-    authDomain: "ibotaniq.firebaseapp.com",
-    projectId: "ibotaniq",
-    storageBucket: "ibotaniq.firebasestorage.app",
-    messagingSenderId: "349395673351",
-    appId: "1:349395673351:web:2881fb768334d56bc8a5a2",
-    measurementId: "G-9JPT5PS82E"
-  };
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+};
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
-  
-  export { auth, provider, signInWithPopup };
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+export { auth, provider, signInWithPopup };
