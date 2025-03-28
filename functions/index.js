@@ -1,28 +1,29 @@
-express = require('express');
-const config = require('./config');
+const functions = require('firebase-functions');
+const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
-const cors = require('cors');  // Přidání CORS middleware
+const cors = require('cors'); // Přidání CORS middleware
 require('dotenv').config();
 const { getMockTemperatureData } = require('./mockData');
-const Sensor = require('./models/Sensor')
+const Sensor = require('./models/Sensor');
 mongoose.set('debug', true);
 
-//Načtení routes
+// Načtení routes
 const sensorRoutes = require('./routes/sensors');
 
 const app = express();
-const port = config.port;
 
 // Použití CORS middleware
 app.use(cors());
 
 // Middleware pro zpracování JSON
 app.use(express.json());
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname, "public")));
+
+// Načtení MongoDB URI z Firebase environmentálních proměnných
+const dbUri = functions.config().mongodb.uri || 'mongodb://localhost:27017/malina';
 
 // Připojení k MongoDB
-const dbUri = process.env.DB_URI || 'mongodb://localhost:27017/malina';
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('MongoDB connected');
@@ -32,14 +33,11 @@ mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   });
 
 // Použití routes
-// Teplotní data už nejsou oddělená, ale jsou součástí obecného Sensor modelu.
-// API endpoint /api/temperature se změnil na /api/sensors, protože řeší více senzorů než jen teplotu.
 app.use('/api/sensors', sensorRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Hello from IoT Backend!');
+  res.send('Hello from IoT Backend!');
 });
 
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+// Export Express aplikace jako Firebase Function
+exports.api = functions.https.onRequest(app);
