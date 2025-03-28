@@ -21,6 +21,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Načtení MongoDB URI z Firebase environmentálních proměnných
+
 const dbUri = functions.config().mongodb.uri || 'mongodb://localhost:27017/malina';
 
 // Připojení k MongoDB
