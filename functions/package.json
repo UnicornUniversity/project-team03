@@ -4,16 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD:server/package.json
-  "start": "node server.js",
-  "build": "echo 'No build step required for server'"
-},
-"engines":{
-  "node": "18"
-=======
   "start": "node index.js",
   "build": "tsc"
->>>>>>> 3cd8f6686c2ace7831fcfffbb36c93f68fa6da8a:functions/package.json
+},
+"engines":{
+"node":"18"
 },
   "keywords": [],
   "author": "",
