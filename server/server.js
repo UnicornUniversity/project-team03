@@ -25,10 +25,10 @@ app.use(express.static(path.join(__dirname,"public")));
 const dbUri = process.env.DB_URI || 'mongodb://localhost:27017/iot';
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log('MongoDB connected');
+    console.log('✅ MongoDB připojeno');
   })
   .catch(err => {
-    console.error('MongoDB connection error:', err);
+    console.error('❌ MongoDB chyba:', err);
   });
 
 // Použití routes
@@ -37,9 +37,9 @@ mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use('/api/sensors', sensorRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Hello from IoT Backend!');
+    res.send('🌿 iBotaniQ backend běží!');
 });
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`🚀 Server běží na http://localhost:${port}`);
 });
