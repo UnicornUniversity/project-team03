@@ -1,4 +1,3 @@
-const { onRequest } = require("firebase-functions/v2/https");
 const { setGlobalOptions } = require("firebase-functions/v2");
 const functions = require('firebase-functions');
 const express = require('express');
@@ -50,5 +49,7 @@ app.get('/', (req, res) => {
   res.send('Hello from IoT Backend!');
 });
 
-// Export Express aplikace jako Firebase Function (GCF gen 2)
-exports.api = onRequest(app);
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
