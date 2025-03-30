@@ -43,7 +43,7 @@ mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   });
 
 // Použití routes
-app.use('/api/sensors', sensorRoutes);
+app.use('/', sensorRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello from IoT Backend!');
