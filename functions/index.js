@@ -49,7 +49,8 @@ app.get('/', (req, res) => {
   res.send('Hello from IoT Backend!');
 });
 
-const port = process.env.PORT || 8080;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+exports.api = onRequest(app);
+// const port = process.env.PORT || 8080;
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
+// });
