@@ -1,4 +1,5 @@
-const functions = require('firebase-functions');
+const { onRequest } = require("firebase-functions/v2/https");
+const { setGlobalOptions } = require("firebase-functions/v2");
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -11,6 +12,14 @@ mongoose.set('debug', true);
 // Načtení routes
 const sensorRoutes = require('./routes/sensors');
 
+// Nastavení globálních možností pro všechny funkce
+setGlobalOptions({
+  region: "us-central1", // Nastavte region globálně
+  memory: "256MB", // Nastavte paměť
+  timeoutSeconds: 60, // Nastavte timeout
+  concurrency: 80 // Povinné pro GCF gen 2
+});
+
 const app = express();
 
 // Použití CORS middleware
@@ -22,7 +31,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Načtení MongoDB URI z Firebase environmentálních proměnných
 
-const dbUri = functions.config().mongodb.uri || 'mongodb://localhost:27017/malina';
+const dbUri = process.env.DB_URI || 'mongodb://localhost:27017/malina';
 
 // Připojení k MongoDB
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -40,5 +49,5 @@ app.get('/', (req, res) => {
   res.send('Hello from IoT Backend!');
 });
 
-// Export Express aplikace jako Firebase Function
-exports.api = functions.https.onRequest(app);
+// Export Express aplikace jako Firebase Function (GCF gen 2)
+exports.api = onRequest(app);

@@ -1,19 +1,26 @@
 {
-    "hosting": {
-      "public": "client/build",
-      "ignore": [
-        "firebase.json",
-        "**/.*",
-        "**/node_modules/**"
-      ],
-      "rewrites": [
-        {
-          "source": "/images/**",
-          "destination": "/images/"
-        }
-      ]
-    },
-    "functions":{
-      "runtime":"nodejs18"
+  "hosting": {
+    "public": "client/build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs18",
+    "codebase": "default",
+    "deploy": {
+      "api": {
+        "concurrency": 80
+      }
     }
   }
+}
