@@ -1,22 +1,33 @@
 const mongoose = require('mongoose');
 const config = require('./config');
-const Sensor = require('./models/Sensor');
+const Sensor = require('./models/Sensor'); // zapisuje do sensorLog
 
+// Připojení k MongoDB Atlas
 mongoose.connect(config.dbUri)
   .then(() => console.log('✅ Připojeno k MongoDB Atlas'))
   .catch(err => console.error('❌ Chyba při připojení k MongoDB:', err));
 
+// Model pro čtení z kolekce 'sensor1'
+const sensor1Schema = new mongoose.Schema({
+  temperature: Number,
+  humidity: Number,
+  soil_moisture: Number,
+  light_level: Number,
+  timestamp: String
+});
+const Sensor1 = mongoose.model('Sensor1', sensor1Schema, 'sensor1');
+
 const INTERVAL_MINUTES = 5;
 const STORAGE_DURATION_HOURS = 24;
 
-// Funkce pro získání posledního záznamu z 'sensor1'
+// Získání posledního záznamu ze sensor1
 async function fetchSensorData() {
-  const count = await Sensor.countDocuments();
+  const count = await Sensor1.countDocuments(); 
   console.log('📦 Počet dokumentů v sensor1:', count);
-  const documents = await Sensor.find();
-  console.log(documents);
 
-  const last = await Sensor.findOne().sort({ _id: -1 });
+  const last = await Sensor1.findOne().sort({ _id: -1 });
+  console.log('📄 Poslední dokument:', last);
+
   if (!last) throw new Error('⚠️ Žádná data v kolekci sensor1');
 
   const data = last.toObject();
@@ -30,7 +41,7 @@ async function fetchSensorData() {
   };
 }
 
-// Funkce pro uložení záznamu do 'sensorLog'
+// Uložení dat do sensorLog
 async function storeData() {
   const data = await fetchSensorData();
   const entry = new Sensor(data);
@@ -38,7 +49,7 @@ async function storeData() {
   console.log(`💾 Uloženo do sensorLog: ${data.timestamp.toISOString()}`);
 }
 
-// Čištění starých záznamů
+// Smazání starých záznamů v sensorLog
 async function cleanupData() {
   const cutoff = new Date(Date.now() - STORAGE_DURATION_HOURS * 60 * 60 * 1000);
   const oldRecords = await Sensor.find({ timestamp: { $lt: cutoff } }).sort({ timestamp: 1 });
@@ -51,7 +62,7 @@ async function cleanupData() {
   console.log(`🧹 Vymazáno ${ids.length} záznamů ze sensorLog`);
 }
 
-// Hlavní cyklus
+// Spuštění hlavního cyklu
 async function runGatewayCycle() {
   try {
     await storeData();
