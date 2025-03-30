@@ -46,6 +46,6 @@ jobs:
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
       run: |
-        npm install 
+        npm install
         firebase deploy --only functions --project ibotaniq
       working-directory: ./functions
