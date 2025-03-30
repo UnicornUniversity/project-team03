@@ -1,32 +1,22 @@
 const mongoose = require('mongoose');
 const config = require('./config');
-const Sensor = require('./models/Sensor'); // Ukládá do 'sensorLog'
+const Sensor = require('./models/Sensor');
 
-// Lokální model pro čtení ze 'sensor1'
-const sensor1Schema = new mongoose.Schema({
-  temperature: Number,
-  humidity: Number,
-  soil_moisture: Number,
-  light_level: Number,
-  timestamp: String
-});
-
-const Sensor1 = mongoose.model('Sensor1', sensor1Schema, 'sensor1');
+mongoose.connect(config.dbUri)
+  .then(() => console.log('✅ Připojeno k MongoDB Atlas'))
+  .catch(err => console.error('❌ Chyba při připojení k MongoDB:', err));
 
 const INTERVAL_MINUTES = 5;
 const STORAGE_DURATION_HOURS = 24;
 
-// Připojení k MongoDB
-mongoose.connect(config.dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('✅ Připojeno k MongoDB Atlas'))
-  .catch(err => console.error('❌ Chyba při připojení k MongoDB:', err));
-
-// Načtení posledního záznamu z 'sensor1'
+// Funkce pro získání posledního záznamu z 'sensor1'
 async function fetchSensorData() {
-  const count = await Sensor1.countDocuments(); // debug
+  const count = await Sensor.countDocuments();
   console.log('📦 Počet dokumentů v sensor1:', count);
+  const documents = await Sensor.find();
+  console.log(documents);
 
-  const last = await Sensor1.findOne().sort({ _id: -1 });
+  const last = await Sensor.findOne().sort({ _id: -1 });
   if (!last) throw new Error('⚠️ Žádná data v kolekci sensor1');
 
   const data = last.toObject();
@@ -40,15 +30,15 @@ async function fetchSensorData() {
   };
 }
 
-// Uložení do 'sensorLog'
+// Funkce pro uložení záznamu do 'sensorLog'
 async function storeData() {
   const data = await fetchSensorData();
   const entry = new Sensor(data);
   await entry.save();
-  console.log(`💾 Uloženo do sensorLog: ${new Date().toISOString()}`);
+  console.log(`💾 Uloženo do sensorLog: ${data.timestamp.toISOString()}`);
 }
 
-// Čištění starších záznamů v 'sensorLog' (ponech první a poslední)
+// Čištění starých záznamů
 async function cleanupData() {
   const cutoff = new Date(Date.now() - STORAGE_DURATION_HOURS * 60 * 60 * 1000);
   const oldRecords = await Sensor.find({ timestamp: { $lt: cutoff } }).sort({ timestamp: 1 });
@@ -71,6 +61,5 @@ async function runGatewayCycle() {
   }
 }
 
-// Spuštění ihned + interval
 runGatewayCycle();
 setInterval(runGatewayCycle, INTERVAL_MINUTES * 60 * 1000);
