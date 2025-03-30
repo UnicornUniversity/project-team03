@@ -1,3 +1,4 @@
+const { onRequest } = require("firebase-functions/v2/https");
 const { setGlobalOptions } = require("firebase-functions/v2");
 const functions = require('firebase-functions');
 const express = require('express');
