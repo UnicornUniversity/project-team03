@@ -31,12 +31,12 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Načtení MongoDB URI z Firebase environmentálních proměnných
 
-const dbUri = process.env.DB_URI || 'mongodb://localhost:27017/malina';
+const dbUri = process.env.DB_URI || functions.config().mongodb.uri || 'mongodb://localhost:27017/malina';
 
 // Připojení k MongoDB
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log('MongoDB connected');
+    console.log('MongoDB connected'); 
   })
   .catch(err => {
     console.error('MongoDB connection error:', err);

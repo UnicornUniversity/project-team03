@@ -31,4 +31,4 @@ const getMockTemperatureData = () => {
   ];
 };
 
-module.exports = getMockTemperatureData;
+module.exports = {getMockTemperatureData};
