@@ -3,7 +3,7 @@ const API_URL = process.env.REACT_APP_API_URL || 'https://us-central1-ibotaniq.c
 
 export const fetchData = async () => {
   try {
-    const response = await fetch(`${API_URL}/sensors`); // Pokud chcete volat endpoint /sensors
+    const response = await fetch(`${API_URL}/`); // Pokud chcete volat endpoint /sensors
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
