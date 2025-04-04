@@ -1,10 +1,11 @@
 const { onRequest } = require("firebase-functions/v2/https");
 const { setGlobalOptions } = require("firebase-functions/v2");
+const functions = require('firebase-functions');
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors'); // Přidání CORS middleware
-require('dotenv').config();
+require('dotenv').config(); 
 const { getMockTemperatureData } = require('./mockData');
 const Sensor = require('./models/Sensor');
 mongoose.set('debug', true);
@@ -14,10 +15,10 @@ const sensorRoutes = require('./routes/sensors');
 
 // Nastavení globálních možností pro všechny funkce
 setGlobalOptions({
-  region: "us-central1", // Nastavte region globálně
-  memory: "256MB", // Nastavte paměť
-  timeoutSeconds: 60, // Nastavte timeout
-  concurrency: 80 // Povinné pro GCF gen 2
+  region: "us-central1",  // Nastavte region globálně
+  memory: "256MB",  // Nastavte paměť
+  timeoutSeconds: 60,  // Nastavte timeout
+  concurrency: 80  // Povinné pro GCF gen 2
 });
 
 const app = express();
@@ -30,8 +31,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Načtení MongoDB URI z Firebase environmentálních proměnných
-
 const dbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/malina';
+
 
 // Připojení k MongoDB
 mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -49,5 +50,8 @@ app.get('/', (req, res) => {
   res.send('Hello from IoT Backend!');
 });
 
-// Export Express aplikace jako Firebase Function (GCF gen 2)
 exports.api = onRequest(app);
+// const port = process.env.PORT || 8080;
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
+// });
