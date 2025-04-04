@@ -14,12 +14,12 @@ import { fetchData } from '../services/api'; // Import funkce fetchData
 
 const RealTimeMonitoring = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const [selectedGreenhouse, setSelectedGreenhouse] = useState('Skleník 1'); // Výchozí skleník
   const [data, setData] = useState({
     temperature: '',
     humidity: '',
     soilMoisture: '',
     lightIntensity: '',
-    accelerometer: { x: '', y: '', z: '' },
     timestamp: ''
   });
   const [menuActive, setMenuActive] = useState(false);
@@ -44,8 +44,8 @@ const RealTimeMonitoring = () => {
     const fetchDataFromApi = async () => {
       if (isAuthenticated) {
         try {
-          console.log('Fetching data...');
-          const fetchedData = await fetchData();
+          console.log(`Fetching data for ${selectedGreenhouse}...`);
+          const fetchedData = await fetchData(selectedGreenhouse); // Předám vybraný skleník
           console.log('Fetched data:', fetchedData);
           if (fetchedData && fetchedData.length > 0) {
             const latestData = fetchedData[0];
@@ -54,11 +54,6 @@ const RealTimeMonitoring = () => {
               humidity: latestData.humidity || '',
               soilMoisture: latestData.soilMoisture || '60',
               lightIntensity: latestData.lightIntensity || '200',
-              accelerometer: {
-                x: latestData.accelerometer?.x || '',
-                y: latestData.accelerometer?.y || '',
-                z: latestData.accelerometer?.z || ''
-              },
               timestamp: latestData.timestamp || ''
             });
           }
@@ -68,7 +63,7 @@ const RealTimeMonitoring = () => {
       }
     };
     fetchDataFromApi();
-  }, [isAuthenticated]);
+  }, [isAuthenticated, selectedGreenhouse]);
 
 
   const toggleMenu = () => {
@@ -100,8 +95,25 @@ const RealTimeMonitoring = () => {
           <div></div>
           <div></div>
         </div> 
-        <nav className={`nav-links ${menuActive ? 'active' : ''}`}>
-          <Link to="/current-situation">Aktuální situace</Link>
+        <nav className={`nav-links ${menuActive ? 'active' : ''}`}><div className="dropdown">
+          <button className="dropdown-link">
+            Situace {selectedGreenhouse}
+          </button>
+          <div className="dropdown-content">
+            <button
+              className={`dropdown-item ${selectedGreenhouse === 'Skleník 1' ? 'active' : ''}`}
+              onClick={() => setSelectedGreenhouse('Skleník 1')}
+            >
+              Situace Skleník 1
+            </button>
+            <button
+              className={`dropdown-item ${selectedGreenhouse === 'Skleník 2' ? 'active' : ''}`}
+              onClick={() => setSelectedGreenhouse('Skleník 2')}
+            >
+              Situace Skleník 2
+            </button>
+          </div>
+        </div>
           <Link to="/statistics">Statistiky</Link>
           <Link to="/settings">Nastavení</Link>
         </nav>
