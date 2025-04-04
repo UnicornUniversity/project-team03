@@ -29,6 +29,7 @@ body {
 .nav-links {
   flex: 1;
   display: flex;
+  align-items: center; /* Vertikální zarovnání všech odkazů */
   justify-content: center;
   gap: 60px;
 }
@@ -96,7 +97,7 @@ body {
 }
   
 .login-button {
-  background-color: #f5f8f5; /* Google modrá */
+  background-color: #f5f8f5; 
   font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
   color: rgb(14, 46, 14); /* Nastavení zelené barvy písma */
   font-weight: bold; /* Nastavení tučného písma */
@@ -128,8 +129,7 @@ body {
 
 .plant-image {
   width: 150px; /* Velikost obrázku rostliny */
-  height: auto; /* Zachování poměru stran */  
-  padding: 0; /* Odstranění vnitřních okrajů */   
+  height: auto; /* Zachování poměru stran */     
 }
 
 .greenHouse {
@@ -146,12 +146,10 @@ body {
   justify-content: space-between;
   width: 90%;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   gap: 0; /* Přidání mezery mezi dlaždicemi */
   padding: 0; /* Odstranění vnitřních okrajů */
 }
-
-
 /* Media queries pro malé obrazovky */
 @media (max-width: 600px) {
   .status {
@@ -174,7 +172,7 @@ body {
 
   .status-item img {
       width: 50px; /* Zmenšení šířky obrázků */
-      height: 40px; /* Automatická výška obrázků */
+      height: auto; /* Automatická výška obrázků */
   }
 }
 .status-item {
@@ -188,14 +186,11 @@ body {
   color: white; /* Bílé písmo uvnitř dlaždice */
   margin: 0; /* Odstranění všech okrajů */
   font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
-  font-size: 25px; /* Nastavení větší velikosti písma */
+  font-size: 30px; /* Nastavení větší velikosti písma */
   font-weight: bold; /* Nastavení tučného písma */
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-.status-item .current-status-container .warning-text {
-  color: rgb(235, 10, 10) !important;
 }
 
 .status-item > div {
@@ -267,4 +262,61 @@ body {
       height: 40px; /* Zmenšení výšky obrázku */
     }
   }
-  
+
+/* Dropdown menu */
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-link {
+background: none;
+border: none;
+color: #f8f2f2;
+font-family: 'Century Gothic', sans-serif;
+font-weight: bold;
+font-size: 16px;
+cursor: pointer;
+padding: 0.5rem 1rem;
+text-align: left;
+transition: color 0.3s ease;
+}
+
+.dropdown-link:hover {
+color: #afb1b3;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+top: 100%; /* Dropdown se zobrazí přímo pod textem */
+left: 0;
+background-color: #f9f9f9;
+min-width: 170px;
+box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+z-index: 1;
+border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.dropdown-item {
+background: none;
+border: none;
+color: #333;
+padding: 0.5rem 1rem;
+text-align: left;
+width: 100%;
+cursor: pointer;
+}
+
+.dropdown-item:hover {
+background-color: #ddd;
+}
+
+.dropdown-item.active {
+font-weight: bold;
+background-color: #e6e6e6;
+}
