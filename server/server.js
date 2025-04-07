@@ -1,45 +1,34 @@
-express = require('express');
-const config = require('./config');
+const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const path = require('path');
-const cors = require('cors');  // Přidání CORS middleware
 require('dotenv').config();
-const { getMockTemperatureData } = require('./mockData');
-const Sensor = require('./models/Sensor')
-mongoose.set('debug', true);
-
-//Načtení routes
+const config = require('./config');
 const sensorRoutes = require('./routes/sensors');
+const { getMockTemperatureData } = require('./mockData');
+const Sensor = require('./models/Sensor');
 
 const app = express();
-const port = config.port;
 
-// Použití CORS middleware
+// Middleware
 app.use(cors());
-
-// Middleware pro zpracování JSON
 app.use(express.json());
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Připojení k MongoDB
-const dbUri = process.env.DB_URI || 'mongodb://localhost:27017/iot';
-mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('✅ MongoDB připojeno');
-  })
-  .catch(err => {
-    console.error('❌ MongoDB chyba:', err);
-  });
+mongoose.connect(config.dbUri)
+  .then(() => console.log('✅ MongoDB připojeno'))
+  .catch(err => console.error('❌ MongoDB chyba:', err));
 
-// Použití routes
-// Teplotní data už nejsou oddělená, ale jsou součástí obecného Sensor modelu.
-// API endpoint /api/temperature se změnil na /api/sensors, protože řeší více senzorů než jen teplotu.
-app.use('/api/sensors', sensorRoutes);
+// Endpointy
+app.use('/api/data', sensorRoutes); // POST i GET na /api/data
 
 app.get('/', (req, res) => {
-    res.send('🌿 iBotaniQ backend běží!');
+  res.send('🌿 Backend iBotaniQ běží.');
 });
 
+// Server start
+const port = config.port || 5000;
 app.listen(port, () => {
-    console.log(`🚀 Server běží na http://localhost:${port}`);
+  console.log(`🚀 Server běží na http://localhost:${port}`);
 });
