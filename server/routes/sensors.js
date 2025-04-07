@@ -8,8 +8,8 @@ const sensorSchema = Joi.object({
   greenhouseId: Joi.number().valid(1, 2).required(),
   temperature: Joi.number().required(),
   humidity: Joi.number().required(),
-  soilMoisture: Joi.number().required(),
-  lightIntensity: Joi.number().required(),
+  soil_moisture: Joi.number().required(),
+  light_level: Joi.number().required(),
   timestamp: Joi.date().iso().required()
 });
 
@@ -19,8 +19,8 @@ const simulatedData = [
     greenhouseId: 2,
     temperature: 18.5,
     humidity: 60,
-    soilMoisture: 40,
-    lightIntensity: 25,
+    soil_moisture: 40,
+    light_level: 25,
     timestamp: new Date()
   }
 ];
