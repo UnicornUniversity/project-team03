@@ -1,0 +1,393 @@
+[debug] [2025-04-10T18:39:04.730Z] ----------------------------------------------------------------------
+[debug] [2025-04-10T18:39:04.732Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\splic\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions --project ibotaniq
+[debug] [2025-04-10T18:39:04.732Z] CLI Version:   14.0.1
+[debug] [2025-04-10T18:39:04.733Z] Platform:      win32
+[debug] [2025-04-10T18:39:04.733Z] Node Version:  v20.11.1
+[debug] [2025-04-10T18:39:04.733Z] Time:          Thu Apr 10 2025 20:39:04 GMT+0200 (středoevropský letní čas)
+[debug] [2025-04-10T18:39:04.733Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-04-10T18:39:04.880Z] Object "/functions" in "firebase.json" has unknown property: {"additionalProperty":"deploy"}
+[debug] [2025-04-10T18:39:04.881Z] Field "/functions" in "firebase.json" is possibly invalid: must be array
+[debug] [2025-04-10T18:39:04.881Z] Field "/functions" in "firebase.json" is possibly invalid: must match a schema in anyOf
+[debug] [2025-04-10T18:39:04.884Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-10T18:39:04.885Z] > authorizing via signed-in user (pavlasplichal@gmail.com)
+[debug] [2025-04-10T18:39:04.885Z] [iam] checking project ibotaniq for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-04-10T18:39:04.886Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:04.886Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:04.887Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq:testIamPermissions [none]
+[debug] [2025-04-10T18:39:04.887Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq:testIamPermissions x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:04.887Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-04-10T18:39:05.844Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq:testIamPermissions 200
+[debug] [2025-04-10T18:39:05.845Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-04-10T18:39:05.845Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:05.845Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:05.845Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/ibotaniq/serviceAccounts/ibotaniq@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-04-10T18:39:05.845Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/ibotaniq/serviceAccounts/ibotaniq@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-04-10T18:39:06.759Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/ibotaniq/serviceAccounts/ibotaniq@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-04-10T18:39:06.759Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/ibotaniq/serviceAccounts/ibotaniq@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'ibotaniq'...
+[info] 
+[info] i  deploying functions 
+[debug] [2025-04-10T18:39:06.761Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:06.761Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:06.762Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq [none]
+[debug] [2025-04-10T18:39:07.008Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq 200
+[debug] [2025-04-10T18:39:07.008Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq {"projectNumber":"349395673351","projectId":"ibotaniq","lifecycleState":"ACTIVE","name":"iBotaniQ","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-03-15T19:55:18.615791Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[debug] [2025-04-10T18:39:07.010Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:07.010Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:07.010Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:07.010Z] Checked if tokens are valid: true, expires at: 1744311974579
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[debug] [2025-04-10T18:39:07.010Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:07.010Z] Checked if tokens are valid: true, expires at: 1744311974579
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2025-04-10T18:39:07.011Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:07.011Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:07.011Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/cloudfunctions.googleapis.com [none]
+[debug] [2025-04-10T18:39:07.011Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:07.012Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/runtimeconfig.googleapis.com [none]
+[debug] [2025-04-10T18:39:07.012Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:07.013Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/cloudbuild.googleapis.com [none]
+[debug] [2025-04-10T18:39:07.013Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/cloudbuild.googleapis.com x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:07.013Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/artifactregistry.googleapis.com [none]
+[debug] [2025-04-10T18:39:07.013Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/artifactregistry.googleapis.com x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:08.330Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/cloudbuild.googleapis.com 200
+[debug] [2025-04-10T18:39:08.330Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2025-04-10T18:39:08.331Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/cloudfunctions.googleapis.com 200
+[debug] [2025-04-10T18:39:08.331Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2025-04-10T18:39:08.333Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/artifactregistry.googleapis.com 200
+[debug] [2025-04-10T18:39:08.333Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2025-04-10T18:39:08.334Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/runtimeconfig.googleapis.com 200
+[debug] [2025-04-10T18:39:08.334Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2025-04-10T18:39:08.334Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:08.334Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:08.334Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ibotaniq/adminSdkConfig [none]
+[debug] [2025-04-10T18:39:08.832Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ibotaniq/adminSdkConfig 200
+[debug] [2025-04-10T18:39:08.833Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ibotaniq/adminSdkConfig {"projectId":"ibotaniq","storageBucket":"ibotaniq.firebasestorage.app"}
+[debug] [2025-04-10T18:39:08.833Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:08.833Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:08.833Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs [none]
+[debug] [2025-04-10T18:39:09.224Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs 200
+[debug] [2025-04-10T18:39:09.224Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs {"configs":[{"name":"projects/ibotaniq/configs/db"},{"name":"projects/ibotaniq/configs/mongodb"},{"name":"projects/ibotaniq/configs/app"}]}
+[debug] [2025-04-10T18:39:09.225Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:09.225Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:09.225Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:09.225Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:09.226Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:09.226Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:09.226Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/db/variables [none]
+[debug] [2025-04-10T18:39:09.227Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/mongodb/variables [none]
+[debug] [2025-04-10T18:39:09.229Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/app/variables [none]
+[debug] [2025-04-10T18:39:09.487Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/db/variables 200
+[debug] [2025-04-10T18:39:09.487Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/db/variables {"variables":[{"name":"projects/ibotaniq/configs/db/variables/uri","updateTime":"2025-04-10T18:06:19.909767756Z"}]}
+[debug] [2025-04-10T18:39:09.487Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:09.487Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:09.487Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/db/variables/uri [none]
+[debug] [2025-04-10T18:39:09.667Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/app/variables 200
+[debug] [2025-04-10T18:39:09.667Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/app/variables {}
+[debug] [2025-04-10T18:39:09.667Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/mongodb/variables 200
+[debug] [2025-04-10T18:39:09.667Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/mongodb/variables {"variables":[{"name":"projects/ibotaniq/configs/mongodb/variables/uri","updateTime":"2025-03-28T10:42:12.966146213Z"}]}
+[debug] [2025-04-10T18:39:09.668Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:09.668Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:09.668Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/mongodb/variables/uri [none]
+[debug] [2025-04-10T18:39:09.773Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/db/variables/uri 200
+[debug] [2025-04-10T18:39:09.773Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/db/variables/uri {"name":"projects/ibotaniq/configs/db/variables/uri","updateTime":"2025-04-10T18:06:19.909767756Z","text":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority"}
+[debug] [2025-04-10T18:39:09.908Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/mongodb/variables/uri 200
+[debug] [2025-04-10T18:39:09.909Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/ibotaniq/configs/mongodb/variables/uri {"name":"projects/ibotaniq/configs/mongodb/variables/uri","updateTime":"2025-03-28T10:42:12.966146213Z","text":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority"}
+[debug] [2025-04-10T18:39:09.912Z] Validating nodejs source
+[warn] !  functions: Runtime Node.js 18 will be deprecated on 2025-04-30 and will be decommissioned on 2025-10-31, after which you will not be able to deploy without upgrading. Consider upgrading now to avoid disruption. See https://cloud.google.com/functions/docs/runtime-support for full details on the lifecycle policy 
+[debug] [2025-04-10T18:39:11.328Z] > [functions] package.json contents: {
+  "name": "functions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "firebase emulators:start",
+    "deploy": "firebase deploy --only functions"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "firebase-admin": "^11.0.1",
+    "firebase-functions": "^4.3.0",
+    "joi": "^17.13.3",
+    "mongoose": "^8.13.0"
+  }
+}
+[debug] [2025-04-10T18:39:11.328Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2025-04-10T18:39:11.329Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-04-10T18:39:11.335Z] Found firebase-functions binary at 'C:\Users\splic\ukol-iot\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8118
+
+[error] (node:14488) [MONGODB DRIVER] Warning: useNewUrlParser is a deprecated option: useNewUrlParser has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+[error] (node:14488) [MONGODB DRIVER] Warning: useUnifiedTopology is a deprecated option: useUnifiedTopology has no effect since Node.js Driver version 4.0.0 and will be removed in the next major version
+
+[debug] [2025-04-10T18:39:12.119Z] Got response from /__/functions.yaml {"endpoints":{"api":{"timeoutSeconds":60,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":80,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","cpu":1,"region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] MongoDB connected
+
+[info] i  extensions: ensuring required API firebaseextensions.googleapis.com is enabled... 
+[debug] [2025-04-10T18:39:22.139Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:22.139Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:22.140Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/firebaseextensions.googleapis.com [none]
+[debug] [2025-04-10T18:39:22.140Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/firebaseextensions.googleapis.com x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:23.151Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/firebaseextensions.googleapis.com 200
+[debug] [2025-04-10T18:39:23.151Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/firebaseextensions.googleapis.com [omitted]
+[info] +  extensions: required API firebaseextensions.googleapis.com is enabled 
+[debug] [2025-04-10T18:39:23.152Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-04-10T18:39:23.152Z] > authorizing via signed-in user (pavlasplichal@gmail.com)
+[debug] [2025-04-10T18:39:23.152Z] [iam] checking project ibotaniq for permissions ["firebase.projects.get","firebaseextensions.instances.list"]
+[debug] [2025-04-10T18:39:23.152Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:23.152Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:23.152Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq:testIamPermissions [none]
+[debug] [2025-04-10T18:39:23.152Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq:testIamPermissions x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:23.152Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2025-04-10T18:39:24.098Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq:testIamPermissions 200
+[debug] [2025-04-10T18:39:24.098Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq:testIamPermissions {"permissions":["firebase.projects.get","firebaseextensions.instances.list"]}
+[debug] [2025-04-10T18:39:24.098Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:24.098Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:24.099Z] >>> [apiv2][query] GET https://firebaseextensions.googleapis.com/v1beta/projects/ibotaniq/instances pageSize=100&pageToken=
+[debug] [2025-04-10T18:39:25.551Z] <<< [apiv2][status] GET https://firebaseextensions.googleapis.com/v1beta/projects/ibotaniq/instances 200
+[debug] [2025-04-10T18:39:25.551Z] <<< [apiv2][body] GET https://firebaseextensions.googleapis.com/v1beta/projects/ibotaniq/instances {}
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged C:\Users\splic\ukol-iot\functions (42.83 KB) for uploading 
+[debug] [2025-04-10T18:39:25.595Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:25.595Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:25.595Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/ibotaniq/locations/-/functions [none]
+[debug] [2025-04-10T18:39:26.593Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/ibotaniq/locations/-/functions 200
+[debug] [2025-04-10T18:39:26.593Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/ibotaniq/locations/-/functions {}
+[debug] [2025-04-10T18:39:26.593Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:26.593Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:26.593Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2025-04-10T18:39:27.714Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/-/functions 200
+[debug] [2025-04-10T18:39:27.714Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/-/functions {"functions":[{"name":"projects/ibotaniq/locations/us-central1/functions/api","buildConfig":{"build":"projects/349395673351/locations/us-central1/builds/4add42cc-fac3-43e0-905f-d0528ddbd3f3","runtime":"nodejs18","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1743761205195414"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1743761205195414"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/ibotaniq/serviceAccounts/349395673351-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/ibotaniq/locations/us-central1/services/api","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}","GCLOUD_PROJECT":"ibotaniq","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ibotaniq/locations/us-central1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://api-lbnc42etuq-uc.a.run.app","serviceAccountEmail":"349395673351-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"api-00008-yog","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2025-04-04T11:39:19.203412642Z","labels":{"firebase-functions-hash":"049f318e3edb12196cd67cf0ca5653dd05a9fe26","deployment-tool":"cli-firebase"},"environment":"GEN_2","url":"https://us-central1-ibotaniq.cloudfunctions.net/api","createTime":"2025-03-28T10:18:37.827524970Z","satisfiesPzi":true}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[debug] [2025-04-10T18:39:27.717Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:27.717Z] Checked if tokens are valid: true, expires at: 1744311974579
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[debug] [2025-04-10T18:39:27.717Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:27.717Z] Checked if tokens are valid: true, expires at: 1744311974579
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[debug] [2025-04-10T18:39:27.717Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:27.717Z] Checked if tokens are valid: true, expires at: 1744311974579
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2025-04-10T18:39:27.718Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:27.718Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:27.718Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/run.googleapis.com [none]
+[debug] [2025-04-10T18:39:27.718Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/run.googleapis.com x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:27.718Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/eventarc.googleapis.com [none]
+[debug] [2025-04-10T18:39:27.718Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/eventarc.googleapis.com x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:27.719Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/pubsub.googleapis.com [none]
+[debug] [2025-04-10T18:39:27.719Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/pubsub.googleapis.com x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:27.720Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/storage.googleapis.com [none]
+[debug] [2025-04-10T18:39:27.720Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/storage.googleapis.com x-goog-quota-user=projects/ibotaniq
+[debug] [2025-04-10T18:39:28.678Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/run.googleapis.com 200
+[debug] [2025-04-10T18:39:28.678Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2025-04-10T18:39:28.798Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/pubsub.googleapis.com 200
+[debug] [2025-04-10T18:39:28.798Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2025-04-10T18:39:28.799Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/storage.googleapis.com 200
+[debug] [2025-04-10T18:39:28.799Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[debug] [2025-04-10T18:39:28.800Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/eventarc.googleapis.com 200
+[debug] [2025-04-10T18:39:28.800Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ibotaniq/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[debug] [2025-04-10T18:39:28.800Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:28.800Z] Checked if tokens are valid: true, expires at: 1744311974579
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2025-04-10T18:39:28.800Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:28.801Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:28.801Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/349395673351/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2025-04-10T18:39:28.801Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/349395673351/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2025-04-10T18:39:29.741Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/349395673351/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2025-04-10T18:39:29.741Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/349395673351/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-349395673351@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"118401887025608679041"}}
+[debug] [2025-04-10T18:39:29.764Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/349395673351/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2025-04-10T18:39:29.764Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/349395673351/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-349395673351@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"107806887384018536333"}}
+[debug] [2025-04-10T18:39:29.765Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:29.765Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:29.766Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq [none]
+[debug] [2025-04-10T18:39:30.637Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq 200
+[debug] [2025-04-10T18:39:30.637Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/ibotaniq {"projectNumber":"349395673351","projectId":"ibotaniq","lifecycleState":"ACTIVE","name":"iBotaniQ","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-03-15T19:55:18.615791Z"}
+[debug] [2025-04-10T18:39:30.640Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:30.640Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:30.640Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/ibotaniq/billingInfo [none]
+[debug] [2025-04-10T18:39:31.677Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/ibotaniq/billingInfo 200
+[debug] [2025-04-10T18:39:31.677Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/ibotaniq/billingInfo {"name":"projects/ibotaniq/billingInfo","projectId":"ibotaniq","billingAccountName":"billingAccounts/01F2AB-41BBCC-E41816","billingEnabled":true}
+[debug] [2025-04-10T18:39:31.678Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:31.678Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:31.678Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2025-04-10T18:39:32.527Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2025-04-10T18:39:32.527Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-349395673351.us-central1.cloudfunctions.appspot.com/111ca9a1-c311-4926-b3a0-67a0faa3d41d.zip?GoogleAccessId=service-349395673351@gcf-admin-robot.iam.gserviceaccount.com&Expires=1744312171&Signature=Fjq%2BFKONbgu5%2BAnEjKW95wcG6KTl7UcHqDxEConMPovP8xOpCuIGzIThw%2BJOyTCGAJss%2F5q32fwnEiofNQGSorlo2sYP%2FBvwv6bhYclGnHVXeXgQyO0Eea13Kc613al8PvgkozTbOWHFdcNv2GIiffM5MN%2BoDnfRuPluSJKihzQ3XcaVwH1gDR3%2B%2BfURGPFw%2FRBpwnvV1YtWoXHYLm6GVpHXBs7Cjr0lsuUC%2FyiEC9OudMiZ3gLU1EhKZ%2FtVqLn9G54V0oQg2YJ0odDsliqv8pbmZrtGfHW2UP%2B4QN9QK0Z9XEtnCRPAceJatU5LTdEaUqbXVQuNBOzBxrijgkrEaA%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-349395673351.us-central1.cloudfunctions.appspot.com","object":"111ca9a1-c311-4926-b3a0-67a0faa3d41d.zip"}}
+[debug] [2025-04-10T18:39:32.528Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-349395673351.us-central1.cloudfunctions.appspot.com/111ca9a1-c311-4926-b3a0-67a0faa3d41d.zip GoogleAccessId=service-349395673351%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1744312171&Signature=Fjq%2BFKONbgu5%2BAnEjKW95wcG6KTl7UcHqDxEConMPovP8xOpCuIGzIThw%2BJOyTCGAJss%2F5q32fwnEiofNQGSorlo2sYP%2FBvwv6bhYclGnHVXeXgQyO0Eea13Kc613al8PvgkozTbOWHFdcNv2GIiffM5MN%2BoDnfRuPluSJKihzQ3XcaVwH1gDR3%2B%2BfURGPFw%2FRBpwnvV1YtWoXHYLm6GVpHXBs7Cjr0lsuUC%2FyiEC9OudMiZ3gLU1EhKZ%2FtVqLn9G54V0oQg2YJ0odDsliqv8pbmZrtGfHW2UP%2B4QN9QK0Z9XEtnCRPAceJatU5LTdEaUqbXVQuNBOzBxrijgkrEaA%3D%3D
+[debug] [2025-04-10T18:39:32.528Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-349395673351.us-central1.cloudfunctions.appspot.com/111ca9a1-c311-4926-b3a0-67a0faa3d41d.zip [stream]
+[debug] [2025-04-10T18:39:33.898Z] <<< [apiv2][status] PUT https://storage.googleapis.com/gcf-v2-uploads-349395673351.us-central1.cloudfunctions.appspot.com/111ca9a1-c311-4926-b3a0-67a0faa3d41d.zip 200
+[debug] [2025-04-10T18:39:33.899Z] <<< [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-349395673351.us-central1.cloudfunctions.appspot.com/111ca9a1-c311-4926-b3a0-67a0faa3d41d.zip [omitted]
+[info] +  functions: functions folder uploaded successfully 
+[info] i  functions: updating Node.js 18 (2nd Gen) function api(us-central1)... 
+[debug] [2025-04-10T18:39:33.905Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:33.905Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:33.905Z] >>> [apiv2][query] PATCH https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/functions/api updateMask=name%2CbuildConfig.runtime%2CbuildConfig.entryPoint%2CbuildConfig.source.storageSource.bucket%2CbuildConfig.source.storageSource.object%2CbuildConfig.environmentVariables%2CbuildConfig.sourceToken%2CserviceConfig.environmentVariables%2CserviceConfig.ingressSettings%2CserviceConfig.timeoutSeconds%2CserviceConfig.serviceAccountEmail%2CserviceConfig.availableMemory%2CserviceConfig.minInstanceCount%2CserviceConfig.maxInstanceCount%2CserviceConfig.maxInstanceRequestConcurrency%2CserviceConfig.availableCpu%2CserviceConfig.vpcConnector%2CserviceConfig.vpcConnectorEgressSettings%2Clabels%2CbuildConfig.buildEnvironmentVariables
+[debug] [2025-04-10T18:39:33.905Z] >>> [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/functions/api {"name":"projects/ibotaniq/locations/us-central1/functions/api","buildConfig":{"runtime":"nodejs18","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-uploads-349395673351.us-central1.cloudfunctions.appspot.com","object":"111ca9a1-c311-4926-b3a0-67a0faa3d41d.zip"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}},"serviceConfig":{"environmentVariables":{"APP_PORT":"5000","DB_URI":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}","GCLOUD_PROJECT":"ibotaniq","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ibotaniq/locations/us-central1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":null,"timeoutSeconds":60,"serviceAccountEmail":null,"availableMemory":"256Mi","minInstanceCount":null,"maxInstanceCount":null,"maxInstanceRequestConcurrency":80,"availableCpu":"1","vpcConnector":null,"vpcConnectorEgressSettings":null},"labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"2bcf5943e3630c72cdf20c8134ba4f87d629e56b"}}
+[debug] [2025-04-10T18:39:35.545Z] <<< [apiv2][status] PATCH https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/functions/api 200
+[debug] [2025-04-10T18:39:35.545Z] <<< [apiv2][body] PATCH https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/functions/api {"name":"projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-04-10T18:39:34.990388061Z","target":"projects/ibotaniq/locations/us-central1/functions/api","verb":"update","cancelRequested":false,"apiVersion":"v2"},"done":false}
+[debug] [2025-04-10T18:39:35.545Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:35.545Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:35.545Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b [none]
+[debug] [2025-04-10T18:39:36.306Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b 200
+[debug] [2025-04-10T18:39:36.307Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b {"name":"projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-04-10T18:39:34.990388061Z","target":"projects/ibotaniq/locations/us-central1/functions/api","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/ibotaniq/locations/us-central1/functions/api","buildConfig":{"runtime":"nodejs18","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1744310374933857"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1743761205195414"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/ibotaniq/serviceAccounts/349395673351-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/ibotaniq/locations/us-central1/services/api","timeoutSeconds":60,"environmentVariables":{"APP_PORT":"5000","DB_URI":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}","GCLOUD_PROJECT":"ibotaniq","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ibotaniq/locations/us-central1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","uri":"https://api-lbnc42etuq-uc.a.run.app","serviceAccountEmail":"349395673351-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"api-00008-yog","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cloudfunctions","firebase-functions-hash":"2bcf5943e3630c72cdf20c8134ba4f87d629e56b"},"environment":"GEN_2","url":"https://us-central1-ibotaniq.cloudfunctions.net/api","satisfiesPzi":true},"stages":[{"name":"BUILD","state":"NOT_STARTED","stateMessages":[{"severity":"WARNING","type":"BuildAnalysisWarning","message":"Node.js 18 is no longer supported by the Node.js community as of 30 April, 2025. Node.js 18 will be deprecated on 2025-04-30. We recommend you to upgrade to the latest version of Node.js as soon as possible."}]},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":false}
+[debug] [2025-04-10T18:39:36.811Z] [update-default-us-central1-api] Retrying task index 0
+[debug] [2025-04-10T18:39:36.812Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:36.812Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:36.812Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b [none]
+[debug] [2025-04-10T18:39:38.016Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b 200
+[debug] [2025-04-10T18:39:38.017Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b {"name":"projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-04-10T18:39:34.990388061Z","target":"projects/ibotaniq/locations/us-central1/functions/api","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/ibotaniq/locations/us-central1/functions/api","buildConfig":{"runtime":"nodejs18","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1744310374933857"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1743761205195414"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/ibotaniq/serviceAccounts/349395673351-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/ibotaniq/locations/us-central1/services/api","timeoutSeconds":60,"environmentVariables":{"APP_PORT":"5000","DB_URI":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}","GCLOUD_PROJECT":"ibotaniq","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ibotaniq/locations/us-central1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","uri":"https://api-lbnc42etuq-uc.a.run.app","serviceAccountEmail":"349395673351-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"api-00008-yog","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cloudfunctions","firebase-functions-hash":"2bcf5943e3630c72cdf20c8134ba4f87d629e56b"},"environment":"GEN_2","url":"https://us-central1-ibotaniq.cloudfunctions.net/api","satisfiesPzi":true},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/50085e40-b62d-4476-9ee8-d42a3d359d42?project=349395673351"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42"},"done":false}
+[debug] [2025-04-10T18:39:39.018Z] [update-default-us-central1-api] Retrying task index 0
+[debug] [2025-04-10T18:39:39.019Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:39.019Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:39.019Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b [none]
+[debug] [2025-04-10T18:39:40.024Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b 200
+[debug] [2025-04-10T18:39:40.024Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b {"name":"projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-04-10T18:39:34.990388061Z","target":"projects/ibotaniq/locations/us-central1/functions/api","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/ibotaniq/locations/us-central1/functions/api","buildConfig":{"runtime":"nodejs18","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1744310374933857"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1743761205195414"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/ibotaniq/serviceAccounts/349395673351-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/ibotaniq/locations/us-central1/services/api","timeoutSeconds":60,"environmentVariables":{"APP_PORT":"5000","DB_URI":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}","GCLOUD_PROJECT":"ibotaniq","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ibotaniq/locations/us-central1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","uri":"https://api-lbnc42etuq-uc.a.run.app","serviceAccountEmail":"349395673351-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"api-00008-yog","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cloudfunctions","firebase-functions-hash":"2bcf5943e3630c72cdf20c8134ba4f87d629e56b"},"environment":"GEN_2","url":"https://us-central1-ibotaniq.cloudfunctions.net/api","satisfiesPzi":true},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/50085e40-b62d-4476-9ee8-d42a3d359d42?project=349395673351"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42"},"done":false}
+[debug] [2025-04-10T18:39:42.031Z] [update-default-us-central1-api] Retrying task index 0
+[debug] [2025-04-10T18:39:42.032Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:42.032Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:42.032Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b [none]
+[debug] [2025-04-10T18:39:42.783Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b 200
+[debug] [2025-04-10T18:39:42.783Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b {"name":"projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-04-10T18:39:34.990388061Z","target":"projects/ibotaniq/locations/us-central1/functions/api","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/ibotaniq/locations/us-central1/functions/api","buildConfig":{"runtime":"nodejs18","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1744310374933857"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1743761205195414"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/ibotaniq/serviceAccounts/349395673351-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/ibotaniq/locations/us-central1/services/api","timeoutSeconds":60,"environmentVariables":{"APP_PORT":"5000","DB_URI":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}","GCLOUD_PROJECT":"ibotaniq","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ibotaniq/locations/us-central1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","uri":"https://api-lbnc42etuq-uc.a.run.app","serviceAccountEmail":"349395673351-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"api-00008-yog","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cloudfunctions","firebase-functions-hash":"2bcf5943e3630c72cdf20c8134ba4f87d629e56b"},"environment":"GEN_2","url":"https://us-central1-ibotaniq.cloudfunctions.net/api","satisfiesPzi":true},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/50085e40-b62d-4476-9ee8-d42a3d359d42?project=349395673351"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42"},"done":false}
+[debug] [2025-04-10T18:39:46.791Z] [update-default-us-central1-api] Retrying task index 0
+[debug] [2025-04-10T18:39:46.791Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:46.792Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:46.792Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b [none]
+[debug] [2025-04-10T18:39:47.550Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b 200
+[debug] [2025-04-10T18:39:47.551Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b {"name":"projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-04-10T18:39:34.990388061Z","target":"projects/ibotaniq/locations/us-central1/functions/api","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/ibotaniq/locations/us-central1/functions/api","buildConfig":{"runtime":"nodejs18","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1744310374933857"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1743761205195414"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/ibotaniq/serviceAccounts/349395673351-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/ibotaniq/locations/us-central1/services/api","timeoutSeconds":60,"environmentVariables":{"APP_PORT":"5000","DB_URI":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}","GCLOUD_PROJECT":"ibotaniq","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ibotaniq/locations/us-central1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","uri":"https://api-lbnc42etuq-uc.a.run.app","serviceAccountEmail":"349395673351-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"api-00008-yog","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cloudfunctions","firebase-functions-hash":"2bcf5943e3630c72cdf20c8134ba4f87d629e56b"},"environment":"GEN_2","url":"https://us-central1-ibotaniq.cloudfunctions.net/api","satisfiesPzi":true},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/50085e40-b62d-4476-9ee8-d42a3d359d42?project=349395673351"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42"},"done":false}
+[debug] [2025-04-10T18:39:55.566Z] [update-default-us-central1-api] Retrying task index 0
+[debug] [2025-04-10T18:39:55.567Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:55.567Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:39:55.567Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b [none]
+[debug] [2025-04-10T18:39:56.466Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b 200
+[debug] [2025-04-10T18:39:56.466Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b {"name":"projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-04-10T18:39:34.990388061Z","target":"projects/ibotaniq/locations/us-central1/functions/api","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/ibotaniq/locations/us-central1/functions/api","buildConfig":{"runtime":"nodejs18","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1744310374933857"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1743761205195414"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/ibotaniq/serviceAccounts/349395673351-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/ibotaniq/locations/us-central1/services/api","timeoutSeconds":60,"environmentVariables":{"APP_PORT":"5000","DB_URI":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}","GCLOUD_PROJECT":"ibotaniq","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ibotaniq/locations/us-central1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","uri":"https://api-lbnc42etuq-uc.a.run.app","serviceAccountEmail":"349395673351-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"api-00008-yog","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cloudfunctions","firebase-functions-hash":"2bcf5943e3630c72cdf20c8134ba4f87d629e56b"},"environment":"GEN_2","url":"https://us-central1-ibotaniq.cloudfunctions.net/api","satisfiesPzi":true},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/50085e40-b62d-4476-9ee8-d42a3d359d42?project=349395673351"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42"},"done":false}
+[debug] [2025-04-10T18:40:06.473Z] [update-default-us-central1-api] Retrying task index 0
+[debug] [2025-04-10T18:40:06.473Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:40:06.473Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:40:06.474Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b [none]
+[debug] [2025-04-10T18:40:07.341Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b 200
+[debug] [2025-04-10T18:40:07.341Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b {"name":"projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-04-10T18:39:34.990388061Z","target":"projects/ibotaniq/locations/us-central1/functions/api","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/ibotaniq/locations/us-central1/functions/api","buildConfig":{"runtime":"nodejs18","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1744310374933857"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1743761205195414"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/ibotaniq/serviceAccounts/349395673351-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/ibotaniq/locations/us-central1/services/api","timeoutSeconds":60,"environmentVariables":{"APP_PORT":"5000","DB_URI":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}","GCLOUD_PROJECT":"ibotaniq","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ibotaniq/locations/us-central1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","uri":"https://api-lbnc42etuq-uc.a.run.app","serviceAccountEmail":"349395673351-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"api-00008-yog","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cloudfunctions","firebase-functions-hash":"2bcf5943e3630c72cdf20c8134ba4f87d629e56b"},"environment":"GEN_2","url":"https://us-central1-ibotaniq.cloudfunctions.net/api","satisfiesPzi":true},"stages":[{"name":"BUILD","message":"Build in progress","state":"IN_PROGRESS","resource":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42","resourceUri":"https://console.cloud.google.com/cloud-build/builds;region=us-central1/50085e40-b62d-4476-9ee8-d42a3d359d42?project=349395673351"},{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION","buildName":"projects/349395673351/locations/us-central1/builds/50085e40-b62d-4476-9ee8-d42a3d359d42"},"done":false}
+[debug] [2025-04-10T18:40:17.347Z] [update-default-us-central1-api] Retrying task index 0
+[debug] [2025-04-10T18:40:17.348Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:40:17.348Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:40:17.348Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b [none]
+[debug] [2025-04-10T18:40:18.206Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b 200
+[debug] [2025-04-10T18:40:18.207Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b {"name":"projects/ibotaniq/locations/us-central1/operations/operation-1744310374138-63270e83a815e-8cfe540d-3d12386b","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v2.OperationMetadata","createTime":"2025-04-10T18:39:34.990388061Z","endTime":"2025-04-10T18:40:06.852018833Z","target":"projects/ibotaniq/locations/us-central1/functions/api","verb":"update","cancelRequested":false,"apiVersion":"v2","requestResource":{"@type":"type.googleapis.com/google.cloud.functions.v2.Function","name":"projects/ibotaniq/locations/us-central1/functions/api","buildConfig":{"runtime":"nodejs18","entryPoint":"api","source":{"storageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1744310374933857"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-349395673351-us-central1","object":"api/function-source.zip","generation":"1743761205195414"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/ibotaniq/serviceAccounts/349395673351-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/ibotaniq/locations/us-central1/services/api","timeoutSeconds":60,"environmentVariables":{"APP_PORT":"5000","DB_URI":"mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority","FIREBASE_CONFIG":"{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}","GCLOUD_PROJECT":"ibotaniq","EVENTARC_CLOUD_EVENT_SOURCE":"projects/ibotaniq/locations/us-central1/services/api","FUNCTION_TARGET":"api","LOG_EXECUTION_ID":"true"},"ingressSettings":"ALLOW_ALL","uri":"https://api-lbnc42etuq-uc.a.run.app","serviceAccountEmail":"349395673351-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"api-00008-yog","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","labels":{"deployment-tool":"cloudfunctions","firebase-functions-hash":"2bcf5943e3630c72cdf20c8134ba4f87d629e56b"},"environment":"GEN_2","url":"https://us-central1-ibotaniq.cloudfunctions.net/api","satisfiesPzi":true},"stages":[{"name":"SERVICE","state":"NOT_STARTED"}],"operationType":"UPDATE_FUNCTION"},"done":true,"error":{"code":3,"message":"Build failed with status: FAILURE and message: npm error code EUSAGE\nnpm error\nnpm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.\nnpm error\nnpm error Invalid: lock file's firebase-functions@6.3.2 does not satisfy firebase-functions@4.9.0\nnpm error Missing: @types/express@4.17.3 from lock file\nnpm error\nnpm error Clean install a project\nnpm error\nnpm error Usage:\nnpm error npm ci\nnpm error\nnpm error Options:\nnpm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]\nnpm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]\nnpm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]\nnpm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]\nnpm error [--no-bin-links] [--no-fund] [--dry-run]\nnpm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm error [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm error\nnpm error aliases: clean-install, ic, install-clean, isntall-clean\nnpm error\nnpm error Run \"npm help ci\" for more info\nnpm error A complete log of this run can be found in: /www-data-home/.npm/_logs/2025-04-10T18_39_53_186Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/50085e40-b62d-4476-9ee8-d42a3d359d42?project=349395673351."}}
+[debug] [2025-04-10T18:40:18.207Z] Got source token undefined for region us-central1
+[error] Build failed with status: FAILURE and message: npm error code EUSAGE
+npm error
+npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+npm error
+npm error Invalid: lock file's firebase-functions@6.3.2 does not satisfy firebase-functions@4.9.0
+npm error Missing: @types/express@4.17.3 from lock file
+npm error
+npm error Clean install a project
+npm error
+npm error Usage:
+npm error npm ci
+npm error
+npm error Options:
+npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error
+npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error
+npm error Run "npm help ci" for more info
+npm error A complete log of this run can be found in: /www-data-home/.npm/_logs/2025-04-10T18_39_53_186Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/50085e40-b62d-4476-9ee8-d42a3d359d42?project=349395673351.
+[debug] [2025-04-10T18:40:18.211Z] Total Function Deployment time: 44304
+[debug] [2025-04-10T18:40:18.211Z] 1 Functions Deployed
+[debug] [2025-04-10T18:40:18.211Z] 1 Functions Errored
+[debug] [2025-04-10T18:40:18.211Z] 0 Function Deployments Aborted
+[debug] [2025-04-10T18:40:18.211Z] Average Function Deployment time: 44303
+[info] 
+[info] Functions deploy had errors with the following functions:
+	api(us-central1)
+[debug] [2025-04-10T18:40:18.549Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[debug] [2025-04-10T18:40:18.551Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:40:18.551Z] Checked if tokens are valid: true, expires at: 1744311974579
+[debug] [2025-04-10T18:40:18.551Z] >>> [apiv2][query] GET https://artifactregistry.googleapis.com/v1/projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts [none]
+[debug] [2025-04-10T18:40:19.685Z] <<< [apiv2][status] GET https://artifactregistry.googleapis.com/v1/projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts 200
+[debug] [2025-04-10T18:40:19.686Z] <<< [apiv2][body] GET https://artifactregistry.googleapis.com/v1/projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts {"name":"projects/ibotaniq/locations/us-central1/repositories/gcf-artifacts","format":"DOCKER","description":"This repository is created and used by Cloud Functions for storing function docker images.","labels":{"goog-managed-by":"cloudfunctions"},"createTime":"2025-03-28T10:18:46.501773Z","updateTime":"2025-04-05T13:51:00.053287Z","mode":"STANDARD_REPOSITORY","cleanupPolicies":{"firebase-functions-cleanup":{"id":"firebase-functions-cleanup","action":"DELETE","condition":{"tagState":"ANY","olderThan":"86400s"}}},"vulnerabilityScanningConfig":{"lastEnableTime":"2025-03-28T10:18:38.025759054Z","enablementState":"SCANNING_DISABLED","enablementStateReason":"API containerscanning.googleapis.com is not enabled."},"satisfiesPzi":true,"registryUri":"us-central1-docker.pkg.dev/ibotaniq/gcf-artifacts"}
+[debug] [2025-04-10T18:40:19.686Z] Functions deploy failed.
+[debug] [2025-04-10T18:40:19.686Z] {
+  "endpoint": {
+    "id": "api",
+    "project": "ibotaniq",
+    "region": "us-central1",
+    "entryPoint": "api",
+    "platform": "gcfv2",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    },
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "timeoutSeconds": 60,
+    "maxInstances": null,
+    "minInstances": null,
+    "concurrency": 80,
+    "cpu": 1,
+    "vpc": null,
+    "environmentVariables": {
+      "APP_PORT": "5000",
+      "DB_URI": "mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority",
+      "FIREBASE_CONFIG": "{\"projectId\":\"ibotaniq\",\"storageBucket\":\"ibotaniq.firebasestorage.app\"}",
+      "GCLOUD_PROJECT": "ibotaniq",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/ibotaniq/locations/us-central1/services/api"
+    },
+    "codebase": "default",
+    "runServiceId": "api",
+    "availableMemoryMb": 256,
+    "securityLevel": "SECURE_ALWAYS",
+    "targetedByOnly": false,
+    "hash": "2bcf5943e3630c72cdf20c8134ba4f87d629e56b"
+  },
+  "op": "update",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Build failed with status: FAILURE and message: npm error code EUSAGE\nnpm error\nnpm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.\nnpm error\nnpm error Invalid: lock file's firebase-functions@6.3.2 does not satisfy firebase-functions@4.9.0\nnpm error Missing: @types/express@4.17.3 from lock file\nnpm error\nnpm error Clean install a project\nnpm error\nnpm error Usage:\nnpm error npm ci\nnpm error\nnpm error Options:\nnpm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]\nnpm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]\nnpm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]\nnpm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]\nnpm error [--no-bin-links] [--no-fund] [--dry-run]\nnpm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm error [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm error\nnpm error aliases: clean-install, ic, install-clean, isntall-clean\nnpm error\nnpm error Run \"npm help ci\" for more info\nnpm error A complete log of this run can be found in: /www-data-home/.npm/_logs/2025-04-10T18_39_53_186Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/50085e40-b62d-4476-9ee8-d42a3d359d42?project=349395673351.",
+    "original": {
+      "code": 3,
+      "message": "Build failed with status: FAILURE and message: npm error code EUSAGE\nnpm error\nnpm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.\nnpm error\nnpm error Invalid: lock file's firebase-functions@6.3.2 does not satisfy firebase-functions@4.9.0\nnpm error Missing: @types/express@4.17.3 from lock file\nnpm error\nnpm error Clean install a project\nnpm error\nnpm error Usage:\nnpm error npm ci\nnpm error\nnpm error Options:\nnpm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]\nnpm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]\nnpm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]\nnpm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]\nnpm error [--no-bin-links] [--no-fund] [--dry-run]\nnpm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]\nnpm error [-ws|--workspaces] [--include-workspace-root] [--install-links]\nnpm error\nnpm error aliases: clean-install, ic, install-clean, isntall-clean\nnpm error\nnpm error Run \"npm help ci\" for more info\nnpm error A complete log of this run can be found in: /www-data-home/.npm/_logs/2025-04-10T18_39_53_186Z-debug-0.log. For more details see the logs at https://console.cloud.google.com/cloud-build/builds;region=us-central1/50085e40-b62d-4476-9ee8-d42a3d359d42?project=349395673351."
+    },
+    "status": 3,
+    "code": 3
+  }
+}
+[debug] [2025-04-10T18:40:19.753Z] Error: Failed to update function api in region us-central1
+    at C:\Users\splic\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:399:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Fabricator.updateV2Function (C:\Users\splic\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:388:32)
+    at async Fabricator.updateEndpoint (C:\Users\splic\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:155:13)
+    at async handle (C:\Users\splic\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\functions\release\fabricator.js:89:17)
+[error] 
+[error] Error: There was an error deploying functions

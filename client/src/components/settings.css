@@ -1,0 +1,50 @@
+
+/* Kontejner pro nadpis a dropdown */
+.settings-title-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Mezera mezi nadpisem a dropdownem */
+  }
+
+  /* Hlavička */
+.header {
+    display: flex;
+    align-items: center; /* Vertikální zarovnání na střed */
+    justify-content: space-between; /* Mezera mezi prvky */
+    background: linear-gradient(to top, #d2eed8, #3f5a42, #2e4a34); /* Zelená barva pro hlavičku */
+    padding: 0.5rem 1rem; /* Vnitřní odsazení */
+    height: 70px; /* Nastavení pevné výšky */
+    border-top-left-radius: 15px; /* Zakulacení levého horního okraje */
+    border-top-right-radius: 15px; /* Zakulacení pravého horního okraje */
+    gap: 1rem; /* Mezera mezi logem a kontejnerem */
+  }
+  
+  /* Nadpis */
+  .settings-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(243, 248, 243); 
+    margin: 0;
+  }
+  
+ 
+  /* Kontejner pro tlačítko a nadpis */
+.title-and-back {
+    display: flex;
+    align-items: center; /* Vertikální zarovnání na střed */
+    gap: 8rem; /* Mezera mezi tlačítkem a nadpisem */
+    flex-grow: 1; /* Zajistí, že kontejner zabere dostupný prostor */
+  }
+  
+  /* Tlačítko zpět */
+  .back-button {
+    background-color: #8a8d8a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    
+    
+  }

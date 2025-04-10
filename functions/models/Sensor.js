@@ -3,15 +3,11 @@
 const mongoose = require('mongoose');
 
 const sensorSchema = new mongoose.Schema({
+    greenhouseId: { type: Number, required: true }, // 1 = real, 2 = simulace
     temperature: { type: Number, required: true },
-    humidity: { type: Number, required: false },
-    soilMoisture: { type: Number, required: false },
-    lightIntensity: { type: Number, required: false },
-    accelerometer: {
-        x: { type: Number, required: false },
-        y: { type: Number, required: false },
-        z: { type: Number, required: false }
-    },
+    humidity: { type: Number, required: true },
+    soil_moisture: { type: Number, required: true },
+    light_level: { type: Number, required: true },
     timestamp: { type: Date, default: Date.now }
 });
 

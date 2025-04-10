@@ -1,30 +1,51 @@
 const express = require('express');
 const router = express.Router();
 const Joi = require('joi');
-const Sensor = require('../models/Sensor'); // Ujistěte se, že cesta k modelu je správná
-const { getMockTemperatureData } = require('../mockData'); // Ujistěte se, že cesta k mock datům je správná
+const Sensor = require('../models/Sensor'); 
+const { getMockTemperatureData } = require('../mockData'); 
 
+// Validace dat pro POST
 const sensorSchema = Joi.object({
+  greenhouseId: Joi.number().valid(1, 2).required(),
   temperature: Joi.number().required(),
-  humidity: Joi.number().optional(),
-  soilMoisture: Joi.number().optional(),
-  lightIntensity: Joi.number().optional(),
-  accelerometer: Joi.object({
-    x: Joi.number().optional(),
-    y: Joi.number().optional(),
-    z: Joi.number().optional()
-  }).optional(),
-  timestamp: Joi.date().optional()
+  humidity: Joi.number().required(),
+  soil_moisture: Joi.number().required(),
+  light_level: Joi.number().required(),
+  timestamp: Joi.date().iso().required()
 });
 
-// Získání posledních měření
+// Simulovaná data pro skleník 2
+const simulatedData = [
+  {
+    greenhouseId: 2,
+    temperature: 18.5,
+    humidity: 60,
+    soil_moisture: 40,
+    light_level: 25,
+    timestamp: new Date()
+  }
+];
+
+// GET endpoint pro získání posledních 10 záznamů
 router.get('/', async (req, res) => {
+  const greenhouseId = parseInt(req.query.greenhouseId) || 1; // Výchozí skleník 1
   try {
+    // Pokud je vybrán skleník 2, vrátí simulovaná data
+    if (greenhouseId === 2) {
+      console.log("Simulovaná data pro skleník 2:", simulatedData);
+      return res.json(simulatedData);
+    }
+
+    // Pokud MongoDB není připojena, vrátí mockovaná data
     if (Sensor.db.readyState !== 1) { // 1 znamená připojeno k MongoDB
       console.warn("⚠️ Použití mockovaných dat, protože MongoDB není dostupná.");
       return res.json(getMockTemperatureData());
     }
-    const data = await Sensor.find().sort({ timestamp: -1 }).limit(10);
+
+    // Dotaz na MongoDB pro vybraný skleník
+    const data = await Sensor.find({ greenhouseId })
+    .sort({ timestamp: -1 })
+    .limit(10);
     console.log('Data fetched from MongoDB:', data); // Přidání logování
     res.json(data);
   } catch (err) {
@@ -33,7 +54,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Přidání nového senzoru
+// POST endpoint pro ukládání dat z maliny (skleník 1)
 router.post('/', async (req, res) => {
   const { error, value } = sensorSchema.validate(req.body);
   if (error) {

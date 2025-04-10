@@ -8,17 +8,19 @@ require('dotenv').config();
 const { getMockTemperatureData } = require('./mockData');
 const Sensor = require('./models/Sensor');
 mongoose.set('debug', true);
+const config = require('./config');
+
+// Nastavení globálních možností pro Firebase Functions v2
+setGlobalOptions({
+  region: 'us-central1', 
+  memory: '256MB', 
+  timeoutSeconds: 60, 
+  cpu: 1, 
+  concurrency: 80 
+});
 
 // Načtení routes
 const sensorRoutes = require('./routes/sensors');
-
-// Nastavení globálních možností pro všechny funkce
-setGlobalOptions({
-  region: "us-central1", // Nastavte region globálně
-  memory: "256MB", // Nastavte paměť
-  timeoutSeconds: 60, // Nastavte timeout
-  concurrency: 80 // Povinné pro GCF gen 2
-});
 
 const app = express();
 
@@ -29,14 +31,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Načtení MongoDB URI z Firebase environmentálních proměnných
-
-const dbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/malina';
-
 // Připojení k MongoDB
-mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(config.dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log('MongoDB connected'); 
+    console.log('MongoDB connected');
   })
   .catch(err => {
     console.error('MongoDB connection error:', err);

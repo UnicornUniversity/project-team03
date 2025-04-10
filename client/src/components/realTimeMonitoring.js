@@ -2,14 +2,13 @@ import React, { useState, useEffect, useContext } from 'react';
 import './realTimeMonitoring.css'; 
 import Tile from './tile'; 
 import { Link } from 'react-router-dom';
-import { getThresholds } from '../utils/thresholds';
 import LoginModal from './loginModal'; 
 import SunIcon from './sunIcon';
 import Thermomether from './thermometer';
 import IBotaniQLogo from './iBotaniQLogo';
 import SoilMoistureIcon from './soilMoistureIcon';
 import { AuthContext } from '../authContext';
-import { fetchData } from '../services/api'; // Import funkce fetchData
+import { fetchData } from '../services/api'; 
 
 
 const RealTimeMonitoring = () => {
@@ -18,54 +17,85 @@ const RealTimeMonitoring = () => {
   const [data, setData] = useState({
     temperature: '',
     humidity: '',
-    soilMoisture: '',
-    lightIntensity: '',
+    soil_moisture: '',
+    light_level: '',
     timestamp: ''
   });
-  const [menuActive, setMenuActive] = useState(false);
- const [showLoginModal, setShowLoginModal] = useState(false);
-  const soilMoistureThresholds = getThresholds('soilMoisture');
-  const temperatureThresholds = getThresholds('temperature');
-  const airHumidityThresholds = getThresholds('airHumidity');
-  const lightThresholds = getThresholds('light');
-  const isTemperatureNormal = data.temperature >= temperatureThresholds.min && data.temperature <= temperatureThresholds.max;
-  const isSoilMoistureNormal = data.soilMoisture >= soilMoistureThresholds.min && data.soilMoisture <= soilMoistureThresholds.max;
-  const isAirHumidityNormal = data.humidity >= airHumidityThresholds.min && data.humidity <= airHumidityThresholds.max;
-  const isLightNormal = data.lightIntensity >= lightThresholds.min && data.lightIntensity <= lightThresholds.max;
 
-  const currentStatus = isTemperatureNormal && isSoilMoistureNormal && isAirHumidityNormal && isLightNormal
+  const [thresholds, setThresholds] = useState({
+    temperature: { min: 0, max: 0 },
+    soilMoisture: { min: 0, max: 0 },
+    airHumidity: { min: 0, max: 0 },
+    light: { min: 0, max: 0 },
+  });
+
+  const [menuActive, setMenuActive] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  // Načtení limitů z backendu
+ useEffect(() => {
+  const fetchThresholds = async () => {
+    try {
+      const response = await fetch(`/routes/thresholds/${selectedGreenhouse}`);
+      if (!response.ok) {
+        throw new Error(`Chyba při načítání limitů: ${response.statusText}`);
+      }
+      const data = await response.json();
+      setThresholds(data);
+    } catch (error) {
+      console.error('Chyba při načítání limitů:', error);
+   // Nastavení výchozích hodnot při chybě
+   setThresholds({
+    temperature: { min: 18, max: 26 },
+    soilMoisture: { min: 10, max: 50 },
+    airHumidity: { min: 30, max: 70 },
+    light: { min: 200, max: 500 },
+  });
+}
+};
+  fetchThresholds();
+}, [selectedGreenhouse]);
+
+// Načtení dat ze skleníku
+useEffect(() => {
+  const fetchDataFromApi = async () => {
+    if (isAuthenticated) {
+      try {
+        console.log(`Fetching data for ${selectedGreenhouse}...`);
+        // selectedGreenhouse na odpovídající greenhouseId
+        const greenhouseId = selectedGreenhouse === 'Skleník 1' ? 1 : 2;
+        const fetchedData = await fetchData(greenhouseId); //  číselný greenhouseId
+        console.log('Fetched data:', fetchedData);
+        if (fetchedData && fetchedData.length > 0) {
+          const latestData = fetchedData[0];
+          setData({
+            temperature: latestData.temperature || '',
+            humidity: latestData.humidity || '',
+            soil_moisture: latestData.soil_moisture || '60',
+            light_level: latestData.light_level || 'Denní',
+            timestamp: latestData.timestamp || ''
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+  };
+  fetchDataFromApi();
+}, [isAuthenticated, selectedGreenhouse]);
+  
+const isTemperatureNormal = data.temperature >= thresholds.temperature.min && data.temperature <= thresholds.temperature.max;
+const isSoilMoistureNormal = data.soil_moisture >= thresholds.soilMoisture.min && data.soil_moisture <= thresholds.soilMoisture.max;
+const isAirHumidityNormal = data.humidity >= thresholds.airHumidity.min && data.humidity <= thresholds.airHumidity.max;
+const isLightNormal = data.light_level >= thresholds.light.min && data.light_level <= thresholds.light.max;
+  
+const currentStatus = isTemperatureNormal && isSoilMoistureNormal && isAirHumidityNormal && isLightNormal
   ? 'Vše v normě' : 'Některé hodnoty jsou mimo normu !';
 
   const getStatusStyle = (isNormal) => ({
     color: isNormal ? 'black' : 'red'
   });
 
-  useEffect(() => {
-    const fetchDataFromApi = async () => {
-      if (isAuthenticated) {
-        try {
-          console.log(`Fetching data for ${selectedGreenhouse}...`);
-          const fetchedData = await fetchData(selectedGreenhouse); // Předám vybraný skleník
-          console.log('Fetched data:', fetchedData);
-          if (fetchedData && fetchedData.length > 0) {
-            const latestData = fetchedData[0];
-            setData({
-              temperature: latestData.temperature || '',
-              humidity: latestData.humidity || '',
-              soilMoisture: latestData.soilMoisture || '60',
-              lightIntensity: latestData.lightIntensity || '200',
-              timestamp: latestData.timestamp || ''
-            });
-          }
-        } catch (error) {
-          console.error('Error fetching data:', error);
-        }
-      }
-    };
-    fetchDataFromApi();
-  }, [isAuthenticated, selectedGreenhouse]);
-
-
+ 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
   };
@@ -146,40 +176,41 @@ const RealTimeMonitoring = () => {
     title="Teplota"
     value={
       isAuthenticated 
-        ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 'N/A'}</span></> 
-        : <><Thermomether /> ?</>
+      ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 'N/A'}</span></> 
+      : <><Thermomether /> ?</>
     }
     unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
     status={
       isAuthenticated && data.temperature !== undefined 
-        ? data.temperature < temperatureThresholds.min 
-          ? 'low' 
-          : data.temperature > temperatureThresholds.max 
-            ? 'high' 
-            : 'normal'
+      ? data.temperature < thresholds.temperature.min
+      ? 'low' 
+      : data.temperature > thresholds.temperature.max
+        ? 'high' 
         : 'normal'
-    }minThreshold={temperatureThresholds.min}
-    maxThreshold={temperatureThresholds.max}
+    : 'normal'
+    }
+    minThreshold={thresholds.temperature.min}
+    maxThreshold={thresholds.temperature.max}
   />
           <Tile
             title="Vlhkost půdy"
             value={
               isAuthenticated 
-                ? <><SoilMoistureIcon /> <span style={getStatusStyle(isSoilMoistureNormal)}>{data.soilMoisture !== undefined ? data.soilMoisture : 60}</span></> 
+                ? <><SoilMoistureIcon /> <span style={getStatusStyle(isSoilMoistureNormal)}>{data.soil_moisture !== undefined ? data.soil_moisture : 60}</span></> 
                 : <><SoilMoistureIcon /> ?</>
             }
             unit={isAuthenticated ? '%' : ""}
             status={
-              isAuthenticated && data.soilMoisture !== undefined 
-                ? data.soilMoisture < soilMoistureThresholds.min 
+              isAuthenticated && data.soil_moisture !== undefined 
+                ? data.soil_moisture < thresholds.soilMoisture.min 
                   ? 'low' 
-                  : data.soilMoisture > soilMoistureThresholds.max 
+                  : data.soil_moisture > thresholds.soilMoisture.max 
                     ? 'high' 
                     : 'normal'
                 : 'normal'
             }
-            minThreshold={soilMoistureThresholds.min}
-            maxThreshold={soilMoistureThresholds.max}
+            minThreshold={thresholds.soilMoisture.min}
+            maxThreshold={thresholds.soilMoisture.max }
           />
           <Tile
             title="Vlhkost"
@@ -188,36 +219,36 @@ const RealTimeMonitoring = () => {
             unit={isAuthenticated ? '%' : ""}
             status={
               isAuthenticated && data.humidity !== undefined 
-                ? data.humidity < airHumidityThresholds.min 
+                ? data.humidity < thresholds.airHumidity.min 
                   ? 'low' 
-                  : data.humidity > airHumidityThresholds.max 
+                  : data.humidity > thresholds.airHumidity.max 
                     ? 'high' 
                     : 'normal'
                 : 'normal'
             }
             imageSrc="./images/leaf.JPG"
-            minThreshold={airHumidityThresholds.min}
-            maxThreshold={airHumidityThresholds.max}
+            minThreshold={thresholds.airHumidity.min}
+            maxThreshold={thresholds.airHumidity.max}
           />
           <Tile
            title="Světlo"
            value={
             isAuthenticated 
-              ? <><SunIcon /> <span style={getStatusStyle(isLightNormal)}>{data.lightIntensity !== undefined ? data.lightIntensity : 'N/A'}</span> </>
+              ? <><SunIcon /> <span style={getStatusStyle(isLightNormal)}>{data.light_level !== undefined ? data.light_level : 'N/A'}</span> </>
               : <><SunIcon /> ?</>
           }
-          unit={isAuthenticated && data.lightIntensity !== undefined ? 'lx' : ""}
+          unit={isAuthenticated && data.light_level !== undefined ? 'lx' : ""}
           status={
-            isAuthenticated && data.lightIntensity !== undefined 
-              ? data.lightIntensity < lightThresholds.min 
+            isAuthenticated && data.light_level !== undefined 
+              ? data.light_level < thresholds.light.min 
                 ? 'low' 
-                : data.lightIntensity > lightThresholds.max 
+                : data.light_level > thresholds.light.max 
                   ? 'high' 
                   : 'normal'
               : 'normal'
           }    
-          minThreshold={lightThresholds.min}
-          maxThreshold={lightThresholds.max}       
+          minThreshold={thresholds.light.min}
+          maxThreshold={thresholds.light.max}       
            />
         </section>
         {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
