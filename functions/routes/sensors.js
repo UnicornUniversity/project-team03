@@ -25,7 +25,16 @@ const simulatedData = [
     timestamp: new Date()
   }
 ];
-
+//ověření připojení k mongodb
+router.get('/test-mongo', async (req, res) => {
+  try {
+    const testConnection = await mongoose.connection.db.admin().ping();
+    res.json({ message: 'MongoDB is connected', ping: testConnection });
+  } catch (err) {
+    console.error('MongoDB connection test failed:', err);
+    res.status(500).json({ error: 'MongoDB connection failed', details: err.message });
+  }
+});
 // GET endpoint pro získání posledních 10 záznamů
 router.get('/', async (req, res) => {
   const greenhouseId = parseInt(req.query.greenhouseId) || 1; // Výchozí skleník 1
