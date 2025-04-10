@@ -1,9 +1,10 @@
 // api.js
-
+const API_URL = process.env.REACT_APP_API_URL || 'https://us-central1-ibotaniq.cloudfunctions.net/api'; // URL pro produkční prostředí
 
 export const fetchData = async (greenhouseId) => {
   try {
-    const endpoint = `http://localhost:5000/routes/sensors?greenhouseId=${greenhouseId}`;
+    // Dynamický endpoint podle prostředí
+    const endpoint = `${API_URL}/routes/sensors?greenhouseId=${greenhouseId}`;
     console.log(`Fetching data from: ${endpoint}`);
     const response = await fetch(endpoint);
     console.log(`Response status: ${response.status}`);
