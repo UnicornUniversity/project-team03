@@ -1,6 +1,5 @@
 // api.js
-const API_URL = process.env.REACT_APP_API_URL || 'https://us-central1-ibotaniq.cloudfunctions.net/api';
-const USE_DATABASE = process.env.REACT_APP_USE_DATABASE === 'true'; // Přepínač pro použití databáze
+
 
 export const fetchData = async (greenhouseId) => {
   try {
