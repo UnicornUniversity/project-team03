@@ -6,6 +6,7 @@ const router = express.Router();
 // Validace dat pro POST
 const sensorSchema = Joi.object({
   greenhouseId: Joi.number().valid(1, 2).required(),
+  sensor: Joi.number().valid(0, 1).required(), 
   temperature: Joi.number().required(),
   humidity: Joi.number().required(),
   soil_moisture: Joi.number().required(),
@@ -16,6 +17,7 @@ const sensorSchema = Joi.object({
 // Simulovaná data pro skleník 2
 const simulatedData = [
   {
+    sensor: 1,
     greenhouseId: 2,
     temperature: 18.5,
     humidity: 60,
