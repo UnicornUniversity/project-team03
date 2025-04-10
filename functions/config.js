@@ -6,5 +6,5 @@ const firebaseConfig = functions.config().mongodb ? functions.config().mongodb.u
 
 module.exports = {
     port: process.env.APP_PORT || 5000, // Port pro lokální vývoj
-    dbUri: process.env.DB_URI || firebaseConfig || 'mongodb://localhost:27017/malina', // Připojovací řetězec MongoDB
+    dbUri: process.env.MONGODB_URI || 'mongodb://localhost:27017/malina', // Připojovací řetězec MongoDB
 };
