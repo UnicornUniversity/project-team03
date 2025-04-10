@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import RealTimeMonitoring from '../src/components/realTimeMonitoring';
 import Statistics from '../src/components/statistics';
 import LoginPage from '../src/components/loginPage'; // Import LoginPage
+import SettingsPage from '../src/components/settings'; // Import SettingsPage
 import { AuthProvider, AuthContext } from './authContext';
 
 const ProtectedRoute = ({ children }) => {
@@ -37,7 +38,14 @@ const App = () => {
               </ProtectedRoute>
             }
           />
-          {/* Další chráněné cesty */}
+          <Route
+            path="/settings"
+            element={
+              <ProtectedRoute>
+                <SettingsPage />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </Router>
     </AuthProvider>
