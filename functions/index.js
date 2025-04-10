@@ -42,7 +42,7 @@ mongoose.connect(config.dbUri)
   });
 
 // Použití routes
-app.use('/', sensorRoutes);
+app.use('/routes/sensors', sensorRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello from IoT Backend!');
