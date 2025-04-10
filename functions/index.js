@@ -32,8 +32,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+const dbUri = process.env.MONGODB_URI; // Načtení proměnné prostředí
 // Připojení k MongoDB
-mongoose.connect(config.dbUri)
+mongoose.connect(dbUri)
   .then(() => {
     console.log('MongoDB connected');
   })
@@ -49,7 +50,7 @@ app.get('/', (req, res) => {
 });
 
 exports.api = onRequest(app);
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8090;
 app.listen(port, () => {
 console.log(`Server running on port ${port}`);
 });
