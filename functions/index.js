@@ -33,7 +33,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Připojení k MongoDB
-mongoose.connect(config.dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(config.dbUri)
   .then(() => {
     console.log('MongoDB connected');
   })
