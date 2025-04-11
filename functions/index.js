@@ -32,7 +32,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-const dbUri = process.env.MONGODB_URI; // Načtení proměnné prostředí
+const dbUri = process.env.MONGODB_URI || functions.config().mongodb.uri;
+console.log('MongoDB URI:', dbUri);
 // Připojení k MongoDB
 mongoose.connect(dbUri)
   .then(() => {
@@ -43,14 +44,10 @@ mongoose.connect(dbUri)
   });
 
 // Použití routes
-app.use('/routes/sensors', sensorRoutes);
+app.use('/sensors', sensorRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello from IoT Backend!');
 });
 
 exports.api = onRequest(app);
-const port = process.env.PORT || 8090;
-app.listen(port, () => {
-console.log(`Server running on port ${port}`);
-});
