@@ -16,6 +16,7 @@ const SettingsPage = () => {
 
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext); // Přístup k autentizaci
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [menuActive] = useState(false);
 
   // Mockovaná data pro různé skleníky
   const mockThresholds = {
@@ -82,9 +83,9 @@ const SettingsPage = () => {
         <div className="header-content">
           <div className="title-and-back">
             <IBotaniQLogo />
-            <Link to="/">
-              <button className="back-button">Zpět na hlavní stránku</button>
-            </Link>
+            <nav className={`nav-links ${menuActive ? 'active' : ''}`}>
+              <Link to="/">Zpět na hlavní stránku</Link> {/* Tlačítko zpět */}
+            </nav>
             <div className="settings-title-dropdown">
               <h1 className="settings-title">Nastavení limitů pro:</h1>
               <div className="dropdown">

@@ -89,11 +89,17 @@ body {
   display: flex;
 }
 
+.nav-links .active-link {
+  color: #d1fcd2; /* Barva aktivního odkazu */
+  border-bottom: 2px solid #4caf50; /* Podtržení aktivního odkazu */
+}
+
 .login-button-container {
   flex: 0.5;
   display: flex;
   justify-content: flex-end;
   margin-right: 20px; /* Přidání odsazení od pravého okraje */
+  margin-top: -20px; /* Posunutí tlačítka nahoru */
 }
   
 .login-button {
@@ -128,13 +134,13 @@ body {
    }
 
 .plant-image {
-  width: 150px; /* Velikost obrázku rostliny */
+  width: 100px; /* Velikost obrázku rostliny */
   height: auto; /* Zachování poměru stran */     
 }
 
 .greenHouse {
   width: 200px; /* Velikost obrázku rostliny */
-  height: 200px; /* Zachování poměru stran */   
+  height: 150px; /* Zachování poměru stran */   
   object-fit: cover; /* Zajištění, že obrázek pokryje celou oblast */
   margin: 0; /* Odstranění okrajů */
   padding: 0; /* Odstranění vnitřních okrajů */
@@ -143,26 +149,35 @@ body {
 
 .status {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: 90%;
+  width: 160%;
   margin-top: 20px;
   margin-bottom: 40px;
-  gap: 0; /* Přidání mezery mezi dlaždicemi */
+  gap: 20px; /* Přidání mezery mezi dlaždicemi */
   padding: 0; /* Odstranění vnitřních okrajů */
 }
 /* Media queries pro malé obrazovky */
 @media (max-width: 600px) {
   .status {
-      flex-direction: row; /* Vertikální uspořádání dlaždic */
+      flex-direction: column; /* Vertikální uspořádání dlaždic */
       width: 80%; /* Šířka dlaždice pro malé obrazovky */
   }
   .status-item {
-      flex-direction: row; /* Vertikální uspořádání dlaždic */
-      width: 60%; /* Šířka dlaždice pro malé obrazovky */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+
+  .status-item h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
   }
 
   .current-status-container {
-      font-size: 16px; /* Zmenšení velikosti písma */
+      font-size: 15px; /* Zmenšení velikosti písma */
       padding: 2px; /* Snížení paddingu */
   }
   .measurement-container {
