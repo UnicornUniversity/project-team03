@@ -31,7 +31,7 @@ const App = () => {
             }
           />
           <Route
-            path="/statistics"
+            path="/statistics/:greenhouse"
             element={
               <ProtectedRoute>
                 <Statistics />

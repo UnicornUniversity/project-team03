@@ -1,6 +1,6 @@
 import React from 'react';
 
-const iBotaniQLogo = () => (
+const IBotaniQLogo = () => (
     <svg width="150" height="100" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
         {/* Text iBotaniQ */}
         <text x="20" y="120" fontFamily="Century Gothic" fontSize="90" fontWeight="bold" fill="#fff">
@@ -11,4 +11,4 @@ const iBotaniQLogo = () => (
     </svg>
 );
 
-export default iBotaniQLogo;
+export default IBotaniQLogo;

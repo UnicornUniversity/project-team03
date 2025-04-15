@@ -1,101 +1,37 @@
-import React, { useState, useEffect, useContext } from 'react';
-import './realTimeMonitoring.css'; 
-import Tile from './tile'; 
+import React, { useState, useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './realTimeMonitoring.css';
 import { Link } from 'react-router-dom';
-import LoginModal from './loginModal'; 
-import SunIcon from './sunIcon';
-import Thermomether from './thermometer';
 import IBotaniQLogo from './iBotaniQLogo';
-import SoilMoistureIcon from './soilMoistureIcon';
+import LoginModal from './loginModal'; 
 import { AuthContext } from '../authContext';
-import { fetchData } from '../services/api'; 
-
+import { fetchData } from '../services/api';
 
 const RealTimeMonitoring = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
-  const [selectedGreenhouse, setSelectedGreenhouse] = useState('Skleník 1'); // Výchozí skleník
-  const [data, setData] = useState({
-    temperature: '',
-    humidity: '',
-    soil_moisture: '',
-    light_level: '',
-    timestamp: ''
-  });
-
-  const [thresholds, setThresholds] = useState({
-    temperature: { min: 0, max: 0 },
-    soilMoisture: { min: 0, max: 0 },
-    airHumidity: { min: 0, max: 0 },
-    light: { min: 0, max: 0 },
-  });
-
   const [menuActive, setMenuActive] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
-  // Načtení limitů z backendu
- useEffect(() => {
-  const fetchThresholds = async () => {
-    try {
-      const response = await fetch(`/routes/thresholds/${selectedGreenhouse}`);
-      if (!response.ok) {
-        throw new Error(`Chyba při načítání limitů: ${response.statusText}`);
-      }
-      const data = await response.json();
-      setThresholds(data);
-    } catch (error) {
-      console.error('Chyba při načítání limitů:', error);
-   // Nastavení výchozích hodnot při chybě
-   setThresholds({
-    temperature: { min: 18, max: 26 },
-    soilMoisture: { min: 10, max: 50 },
-    airHumidity: { min: 30, max: 70 },
-    light: { min: 200, max: 500 },
-  });
-}
-};
-  fetchThresholds();
-}, [selectedGreenhouse]);
+  const [dataSklenik1, setDataSklenik1] = useState(null);
+  const [dataSklenik2, setDataSklenik2] = useState(null);
+  const navigate = useNavigate();
 
-// Načtení dat ze skleníku
-useEffect(() => {
-  const fetchDataFromApi = async () => {
-    if (isAuthenticated) {
-      try {
-        console.log(`Fetching data for ${selectedGreenhouse}...`);
-        // selectedGreenhouse na odpovídající greenhouseId
-        const greenhouseId = selectedGreenhouse === 'Skleník 1' ? 1 : 2;
-        const fetchedData = await fetchData(greenhouseId); //  číselný greenhouseId
-        console.log('Fetched data:', fetchedData);
-        if (fetchedData && fetchedData.length > 0) {
-          const latestData = fetchedData[0];
-          setData({
-            temperature: latestData.temperature || '',
-            humidity: latestData.humidity || '',
-            soil_moisture: latestData.soil_moisture || '60',
-            light_level: latestData.light_level || 'Denní',
-            timestamp: latestData.timestamp || ''
-          });
+  useEffect(() => {
+    const fetchDataForGreenhouses = async () => {
+      if (isAuthenticated) {
+        try {
+          const sklenik1Data = await fetchData(1); // Data pro skleník 1
+          const sklenik2Data = await fetchData(2); // Data pro skleník 2
+          setDataSklenik1(sklenik1Data[0]); // Poslední měření pro skleník 1
+          setDataSklenik2(sklenik2Data[0]); // Poslední měření pro skleník 2
+        } catch (error) {
+          console.error('Error fetching data:', error);
         }
-      } catch (error) {
-        console.error('Error fetching data:', error);
       }
-    }
-  };
-  fetchDataFromApi();
-}, [isAuthenticated, selectedGreenhouse]);
-  
-const isTemperatureNormal = data.temperature >= thresholds.temperature.min && data.temperature <= thresholds.temperature.max;
-const isSoilMoistureNormal = data.soil_moisture >= thresholds.soilMoisture.min && data.soil_moisture <= thresholds.soilMoisture.max;
-const isAirHumidityNormal = data.humidity >= thresholds.airHumidity.min && data.humidity <= thresholds.airHumidity.max;
-const isLightNormal = data.light_level >= thresholds.light.min && data.light_level <= thresholds.light.max;
-  
-const currentStatus = isTemperatureNormal && isSoilMoistureNormal && isAirHumidityNormal && isLightNormal
-  ? 'Vše v normě' : 'Některé hodnoty jsou mimo normu !';
+    };
 
-  const getStatusStyle = (isNormal) => ({
-    color: isNormal ? 'black' : 'red'
-  });
+    fetchDataForGreenhouses();
+  }, [isAuthenticated]);
 
- 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
   };
@@ -114,37 +50,36 @@ const currentStatus = isTemperatureNormal && isSoilMoistureNormal && isAirHumidi
     setShowLoginModal(false);
   };
 
+  const handleGreenhouseClick = (greenhouse) => {
+    navigate(`/statistics/${greenhouse}`);
+  };
+
+  const calculateCurrentStatus = (data) => {
+    if (!data) return 'Data nejsou dostupná';
+
+    const isTemperatureNormal = data.temperature >= 18 && data.temperature <= 26;
+    const isSoilMoistureNormal = data.soil_moisture >= 10 && data.soil_moisture <= 50;
+    const isAirHumidityNormal = data.humidity >= 30 && data.humidity <= 70;
+    const isLightNormal = data.light_level >= 200 && data.light_level <= 500;
+
+    return isTemperatureNormal && isSoilMoistureNormal && isAirHumidityNormal && isLightNormal
+      ? 'Vše v normě'
+      : 'Některé hodnoty jsou mimo normu';
+  };
+
   return (
     <div className="dashboard">
       <header className="dashboard-header">
-      <div className="logo-container">
-      <IBotaniQLogo />
+        <div className="logo-container">
+          <IBotaniQLogo />
         </div>
-         <div className={`hamburger ${menuActive ? 'active' : ''}`} onClick={toggleMenu}>
-         <div></div>
+        <div className={`hamburger ${menuActive ? 'active' : ''}`} onClick={toggleMenu}>
           <div></div>
           <div></div>
-        </div> 
-        <nav className={`nav-links ${menuActive ? 'active' : ''}`}><div className="dropdown">
-          <button className="dropdown-link">
-            Situace {selectedGreenhouse}
-          </button>
-          <div className="dropdown-content">
-            <button
-              className={`dropdown-item ${selectedGreenhouse === 'Skleník 1' ? 'active' : ''}`}
-              onClick={() => setSelectedGreenhouse('Skleník 1')}
-            >
-              Situace Skleník 1
-            </button>
-            <button
-              className={`dropdown-item ${selectedGreenhouse === 'Skleník 2' ? 'active' : ''}`}
-              onClick={() => setSelectedGreenhouse('Skleník 2')}
-            >
-              Situace Skleník 2
-            </button>
-          </div>
+          <div></div>
         </div>
-          <Link to="/statistics">Statistiky</Link>
+        <nav className={`nav-links ${menuActive ? 'active' : ''}`}>
+          <a href="/" className="active-link">Aktuální situace</a>
           <Link to="/settings">Nastavení</Link>
         </nav>
         <div className="login-button-container">
@@ -155,104 +90,42 @@ const currentStatus = isTemperatureNormal && isSoilMoistureNormal && isAirHumidi
           )}
         </div>
       </header>
+      <main>
+        <h1>Vyberte skleník</h1>
         <section className="status">
-        <div className="status-item">
-        
-        <img src="/images/plant-image.JPG" alt="Plant" className="plant-image" />
-        <div className="current-status-container">
-      <div>Aktuálně :</div>
-      <p className={ currentStatus === 'Některé hodnoty jsou mimo normu !' ? 'warning-text' : '' }>
-      {isAuthenticated ? currentStatus : 'Aktuální údaje získáte po přihlášení'}
-      </p>
-      </div>
-        <div className="measurement-container">
-        <div>Poslední měření :</div>
-        <p>{isAuthenticated ? new Date(data.timestamp).toLocaleString() : '?'}</p>
-    </div>
-  </div>
+          {/* Skleník 1 */}
+          <div className="status-item" onClick={() => handleGreenhouseClick('sklenik1')}>            
+            
+            <div className="current-status-container">
+             <div>Skleník 1 aktuálně:</div>
+             <img src="/images/plant-image.JPG" alt="Plant" className="plant-image" />
+              <p>{isAuthenticated ? calculateCurrentStatus(dataSklenik1) : 'Aktuální údaje získáte po přihlášení'}</p>
+            </div>
+            <div className="measurement-container">
+              <div>Poslední měření:</div>
+              <p>{isAuthenticated && dataSklenik1 ? new Date(dataSklenik1.timestamp).toLocaleString() : '?'}</p>
+            </div>
+          </div>
+  
+          {/* Skleník 2 */}
+          <div className="status-item" onClick={() => handleGreenhouseClick('sklenik2')}>
+            
+            <div className="current-status-container">
+            
+              <div>Skleník 2 Aktuálně:</div>
+              <img src="/images/greenHouse.JPG" alt="Plant" className="plant-image" />
+              <p>{isAuthenticated ? calculateCurrentStatus(dataSklenik2) : 'Aktuální údaje získáte po přihlášení'}</p>
+            </div>
+            <div className="measurement-container">
+              <div>Poslední měření:</div>
+              <p>{isAuthenticated && dataSklenik2 ? new Date(dataSklenik2.timestamp).toLocaleString() : '?'}</p>
+            </div>
+          </div>
         </section>
-        <section className="tiles">
-        <Tile
-    title="Teplota"
-    value={
-      isAuthenticated 
-      ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 'N/A'}</span></> 
-      : <><Thermomether /> ?</>
-    }
-    unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
-    status={
-      isAuthenticated && data.temperature !== undefined 
-      ? data.temperature < thresholds.temperature.min
-      ? 'low' 
-      : data.temperature > thresholds.temperature.max
-        ? 'high' 
-        : 'normal'
-    : 'normal'
-    }
-    minThreshold={thresholds.temperature.min}
-    maxThreshold={thresholds.temperature.max}
-  />
-          <Tile
-            title="Vlhkost půdy"
-            value={
-              isAuthenticated 
-                ? <><SoilMoistureIcon /> <span style={getStatusStyle(isSoilMoistureNormal)}>{data.soil_moisture !== undefined ? data.soil_moisture : 60}</span></> 
-                : <><SoilMoistureIcon /> ?</>
-            }
-            unit={isAuthenticated ? '%' : ""}
-            status={
-              isAuthenticated && data.soil_moisture !== undefined 
-                ? data.soil_moisture < thresholds.soilMoisture.min 
-                  ? 'low' 
-                  : data.soil_moisture > thresholds.soilMoisture.max 
-                    ? 'high' 
-                    : 'normal'
-                : 'normal'
-            }
-            minThreshold={thresholds.soilMoisture.min}
-            maxThreshold={thresholds.soilMoisture.max }
-          />
-          <Tile
-            title="Vlhkost"
-            value={isAuthenticated ? <span style={getStatusStyle(isAirHumidityNormal)}>{data.humidity !== undefined ? data.humidity : 'N/A'}</span> 
-             : "?"}
-            unit={isAuthenticated ? '%' : ""}
-            status={
-              isAuthenticated && data.humidity !== undefined 
-                ? data.humidity < thresholds.airHumidity.min 
-                  ? 'low' 
-                  : data.humidity > thresholds.airHumidity.max 
-                    ? 'high' 
-                    : 'normal'
-                : 'normal'
-            }
-            imageSrc="./images/leaf.JPG"
-            minThreshold={thresholds.airHumidity.min}
-            maxThreshold={thresholds.airHumidity.max}
-          />
-          <Tile
-           title="Světlo"
-           value={
-            isAuthenticated 
-              ? <><SunIcon /> <span style={getStatusStyle(isLightNormal)}>{data.light_level !== undefined ? data.light_level : 'N/A'}</span> </>
-              : <><SunIcon /> ?</>
-          }
-          unit={isAuthenticated && data.light_level !== undefined ? 'lx' : ""}
-          status={
-            isAuthenticated && data.light_level !== undefined 
-              ? data.light_level < thresholds.light.min 
-                ? 'low' 
-                : data.light_level > thresholds.light.max 
-                  ? 'high' 
-                  : 'normal'
-              : 'normal'
-          }    
-          minThreshold={thresholds.light.min}
-          maxThreshold={thresholds.light.max}       
-           />
-        </section>
-        {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
+      </main>
+      {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
     </div>
-    );
+  );
 };
+
 export default RealTimeMonitoring;
