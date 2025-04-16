@@ -1,5 +1,5 @@
 // api.js
-const API_URL = process.env.REACT_APP_API_URL || 'https://api-lbnc42etuq-uc.a.run.app'; // URL pro produkční prostředí
+const API_URL = process.env.REACT_APP_API_URL || 'https://us-central1-ibotaniq.cloudfunctions.net'; // URL pro produkční prostředí
 
 export const fetchData = async (greenhouseId) => {
   try {
