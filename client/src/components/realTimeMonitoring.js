@@ -113,7 +113,7 @@ const RealTimeMonitoring = () => {
             <div className="current-status-container">
             
               <div>Skleník 2 Aktuálně:</div>
-              <img src="/images/greenHouse.JPG" alt="Plant" className="plant-image" />
+              <img src="/images/GreenHouse.JPG" alt="Plant" className="plant-image" />
               <p>{isAuthenticated ? calculateCurrentStatus(dataSklenik2) : 'Aktuální údaje získáte po přihlášení'}</p>
             </div>
             <div className="measurement-container">
