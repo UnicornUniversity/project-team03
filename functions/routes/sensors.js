@@ -26,7 +26,7 @@ const simulatedData = [
   }
 ];
 //ověření připojení k mongodb
-router.get('/test-mongo', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const testConnection = await mongoose.connection.db.admin().ping();
     res.json({ message: 'MongoDB is connected', ping: testConnection });
@@ -36,7 +36,7 @@ router.get('/test-mongo', async (req, res) => {
   }
 });
 // GET endpoint pro získání posledních 10 záznamů
-router.get('/last-data', async (req, res) => {
+router.get('/', async (req, res) => {
   const greenhouseId = parseInt(req.query.greenhouseId) || 1; // Výchozí skleník 1
   try {
     // Pokud je vybrán skleník 2, vrátí simulovaná data
@@ -64,7 +64,7 @@ router.get('/last-data', async (req, res) => {
 });
 
 // POST endpoint pro ukládání dat z maliny (skleník 1)
-router.post('/save-data', async (req, res) => {
+router.post('/', async (req, res) => {
   const { error, value } = sensorSchema.validate(req.body);
   if (error) {
     return res.status(400).json({ error: error.details[0].message });
