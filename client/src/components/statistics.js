@@ -20,6 +20,7 @@ const Statistics = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const { greenhouse } = useParams();
   const [showLoginModal, setShowLoginModal] = useState(false);
+  
   const [data, setData] = useState({
       temperature: '',
       humidity: '',
@@ -82,7 +83,7 @@ const Statistics = () => {
       if (isAuthenticated) {
         try {
           console.log(`Fetching data for ${greenhouseId}...`);
-          
+          const greenhouseId = greenhouse === 'sklenik1' ? 1 : 2;
           const fetchedData = await fetchData(greenhouseId); // Číselný greenhouseId
           console.log('Fetched data:', fetchedData);
           if (fetchedData && fetchedData.length > 0) {
