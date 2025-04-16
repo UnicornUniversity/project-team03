@@ -20,7 +20,6 @@ const Statistics = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const { greenhouse } = useParams();
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const greenhouseId = greenhouse === 'sklenik1' ? 1 : 2;
   const [data, setData] = useState({
       temperature: '',
       humidity: '',
@@ -102,7 +101,7 @@ const Statistics = () => {
       }
     };
     fetchDataFromApi();
-  }, [isAuthenticated, greenhouseId]);
+  }, [isAuthenticated, greenhouse]);
   
   const isTemperatureNormal = data.temperature >= thresholds.temperature.min && data.temperature <= thresholds.temperature.max;
   const isSoilMoistureNormal = data.soil_moisture >= thresholds.soilMoisture.min && data.soil_moisture <= thresholds.soilMoisture.max;
@@ -235,7 +234,7 @@ const Statistics = () => {
                     : 'normal'
                 : 'normal'
             }
-            imageSrc="./images/leaf.JPG"
+            imageSrc="/images/leaf.JPG"
             minThreshold={thresholds.airHumidity.min}
             maxThreshold={thresholds.airHumidity.max}
           />
