@@ -37,6 +37,7 @@ const Statistics = () => {
   });
     
   const [menuActive, setMenuActive] = useState(false);
+  const greenhouseId = greenhouse === 'sklenik1' ? 1 : 2;
 
   // Načtení limitů z backendu
   useEffect(() => {
@@ -83,7 +84,7 @@ const Statistics = () => {
       if (isAuthenticated) {
         try {
           console.log(`Fetching data for ${greenhouseId}...`);
-          const greenhouseId = greenhouse === 'sklenik1' ? 1 : 2;
+          
           const fetchedData = await fetchData(greenhouseId); // Číselný greenhouseId
           console.log('Fetched data:', fetchedData);
           if (fetchedData && fetchedData.length > 0) {
@@ -102,7 +103,7 @@ const Statistics = () => {
       }
     };
     fetchDataFromApi();
-  }, [isAuthenticated, greenhouse]);
+  }, [isAuthenticated, greenhouseId]);
   
   const isTemperatureNormal = data.temperature >= thresholds.temperature.min && data.temperature <= thresholds.temperature.max;
   const isSoilMoistureNormal = data.soil_moisture >= thresholds.soilMoisture.min && data.soil_moisture <= thresholds.soilMoisture.max;
