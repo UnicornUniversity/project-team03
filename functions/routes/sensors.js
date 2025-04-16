@@ -26,7 +26,7 @@ const simulatedData = [
   }
 ];
 //ověření připojení k mongodb
-router.get('/', async (req, res) => {
+router.get('/test-mongo', async (req, res) => {
   try {
     const testConnection = await mongoose.connection.db.admin().ping();
     res.json({ message: 'MongoDB is connected', ping: testConnection });
