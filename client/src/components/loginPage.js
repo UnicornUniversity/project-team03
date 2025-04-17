@@ -45,7 +45,6 @@ const LoginPage = () => {
         </div>
         <nav className="nav-links">
           <a href="/">Aktuální situace</a>
-          <a href="/statistics">Statistiky</a>
           <a href="/settings">Nastavení</a>
         </nav>
         <div className="login-button-container">

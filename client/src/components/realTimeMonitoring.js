@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import IBotaniQLogo from './iBotaniQLogo';
 import LoginModal from './loginModal'; 
 import { AuthContext } from '../authContext';
-import { fetchData } from '../services/api';
+import { fetchLatestData } from '../services/api';
 import Notifications from './notifications';
 
 const RealTimeMonitoring = () => {
@@ -28,17 +28,16 @@ const RealTimeMonitoring = () => {
     const fetchDataForGreenhouses = async () => {
       if (isAuthenticated) {
         try {
-          console.log('Fetching data for greenhouses...');
-          const sklenik1Data = await fetchData(1); // Data pro skleník 1
-          const sklenik2Data = await fetchData(2); // Data pro skleník 2
-          setDataSklenik1(sklenik1Data[0]); // Poslední měření pro skleník 1
-          setDataSklenik2(sklenik2Data[0]); // Poslední měření pro skleník 2
+          const sklenik1Data = await fetchLatestData(1); // Poslední záznam pro skleník 1
+          const sklenik2Data = await fetchLatestData(2); // Poslední záznam pro skleník 2
+          setDataSklenik1(sklenik1Data);
+          setDataSklenik2(sklenik2Data);
         } catch (error) {
-          console.error('Error fetching data:', error);
+          console.error('Error fetching latest data:', error);
         }
       }
     };
-
+  
     fetchDataForGreenhouses();
   }, [isAuthenticated]);
 

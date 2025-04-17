@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Link } from 'react-router-dom';
-import sensorMockData from './sensorMockData.json'; 
 import LoginModal from './loginModal'; 
 import './statistics.css'; 
 import IBotaniQLogo from './iBotaniQLogo';
@@ -11,7 +10,7 @@ import Tile from './tile';
 import SunIcon from './sunIcon';
 import Thermomether from './thermometer';
 import SoilMoistureIcon from './soilMoistureIcon';
-import { fetchData } from '../services/api';
+import { fetchHistoricalData, fetchLatestData } from '../services/api';
 import { useParams } from 'react-router-dom';
 
 
@@ -39,7 +38,7 @@ const Statistics = () => {
   const [menuActive, setMenuActive] = useState(false);
   const greenhouseId = greenhouse === 'sklenik1' ? 1 : 2;
 
-  // Načtení limitů z backendu
+  // Načtení limitů z databáze
   useEffect(() => {
     const fetchThresholds = async () => {
       try {
@@ -78,31 +77,29 @@ const Statistics = () => {
     fetchThresholds();
   }, [greenhouseId]);
 
-  // Načtení dat ze skleníku
+  // Načtení aktuálních dat 
   useEffect(() => {
-    const fetchDataFromApi = async () => {
+    const fetchLatestDataFromApi = async () => {
       if (isAuthenticated) {
         try {
-          console.log(`Fetching data for ${greenhouseId}...`);
-          
-          const fetchedData = await fetchData(greenhouseId); // Číselný greenhouseId
-          console.log('Fetched data:', fetchedData);
-          if (fetchedData && fetchedData.length > 0) {
-            const latestData = fetchedData[0];
-            setData({
-              temperature: latestData.temperature || '',
-              humidity: latestData.humidity || '',
-              soil_moisture: latestData.soil_moisture || '60',
-              light_level: latestData.light_level || 'Denní',
-              timestamp: latestData.timestamp || ''
-            });
-          }
+          console.log(`Fetching latest data for greenhouse ${greenhouseId}...`);
+          const latestData = await fetchLatestData(greenhouseId); // Použití funkce z api.js
+          console.log('Fetched latest data:', latestData);
+  
+          setData({
+            temperature: latestData.temperature || '',
+            humidity: latestData.humidity || '',
+            soil_moisture: latestData.soil_moisture || '60',
+            light_level: latestData.light_level || 'Denní',
+            timestamp: latestData.timestamp || ''
+          });
         } catch (error) {
-          console.error('Error fetching data:', error);
+          console.error('Error fetching latest data:', error);
         }
       }
     };
-    fetchDataFromApi();
+  
+    fetchLatestDataFromApi();
   }, [isAuthenticated, greenhouseId]);
   
   const isTemperatureNormal = data.temperature >= thresholds.temperature.min && data.temperature <= thresholds.temperature.max;
@@ -115,24 +112,31 @@ const Statistics = () => {
       color: isNormal ? 'black' : 'red'
     });
      
-
-  useEffect(() => {
-    const fetchData = async () => {
-      if (isAuthenticated) {
-        // Simulate fetching data
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        // Transform data to a format suitable for the chart
-        const transformedData = sensorMockData.map(entry => ({
-          timestamp: entry.temperatureSensor.timestamp,
-          temperature: entry.temperatureSensor.value,
-          soilMoisture: entry.soilMoistureSensor.value,
-          airHumidity: entry.airHumiditySensor.value
-        }));
-        setData(transformedData);
-      }
-    };
-    fetchData();
-  }, [isAuthenticated]);
+ // Načtení historických dat pro graf
+    useEffect(() => {
+      const fetchHistoricalDataFromApi = async () => {
+        if (isAuthenticated) {
+          try {
+            console.log(`Fetching historical data for greenhouse ${greenhouseId}...`);
+            const historicalData = await fetchHistoricalData(greenhouseId, '2023-01-01', '2023-12-31'); // Příklad období
+            console.log('Fetched historical data:', historicalData);
+    
+            // Data pro graf
+            setData(historicalData.map(entry => ({
+              timestamp: entry.timestamp,
+              temperature: entry.temperature,
+              soilMoisture: entry.soil_moisture,
+              airHumidity: entry.humidity,
+              lightLevel: entry.light_level
+            })));
+          } catch (error) {
+            console.error('Error fetching historical data:', error);
+          }
+        }
+      };
+    
+      fetchHistoricalDataFromApi();
+    }, [isAuthenticated, greenhouseId]);
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
