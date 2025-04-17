@@ -6,6 +6,7 @@ import IBotaniQLogo from './iBotaniQLogo';
 import LoginModal from './loginModal'; 
 import { AuthContext } from '../authContext';
 import { fetchData } from '../services/api';
+import Notifications from './notifications';
 
 const RealTimeMonitoring = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
@@ -14,11 +15,20 @@ const RealTimeMonitoring = () => {
   const [dataSklenik1, setDataSklenik1] = useState(null);
   const [dataSklenik2, setDataSklenik2] = useState(null);
   const navigate = useNavigate();
-
+  const [showAddGreenhouseModal, setShowAddGreenhouseModal] = useState(false);
+  const [newGreenhouseName, setNewGreenhouseName] = useState('');
+  const [showRemoveModal, setShowRemoveModal] = useState(false);
+  const [showRenameModal, setShowRenameModal] = useState(false);
+  const [selectedGreenhouse, setSelectedGreenhouse] = useState(null);
+  const [hiddenGreenhouses, setHiddenGreenhouses] = useState([]);
+  const [exceededValue, setExceededValue] = useState(null);
+ 
+  
   useEffect(() => {
     const fetchDataForGreenhouses = async () => {
       if (isAuthenticated) {
         try {
+          console.log('Fetching data for greenhouses...');
           const sklenik1Data = await fetchData(1); // Data pro skleník 1
           const sklenik2Data = await fetchData(2); // Data pro skleník 2
           setDataSklenik1(sklenik1Data[0]); // Poslední měření pro skleník 1
@@ -31,6 +41,26 @@ const RealTimeMonitoring = () => {
 
     fetchDataForGreenhouses();
   }, [isAuthenticated]);
+
+  const checkValues = (data) => {
+    if (!data) return;
+
+    if (data.temperature > 26 || data.temperature < 18) {
+      setExceededValue('teplotu');
+    } else if (data.soil_moisture > 50 || data.soil_moisture < 10) {
+      setExceededValue('vlhkost půdy');
+    } else if (data.humidity > 70 || data.humidity < 30) {
+      setExceededValue('vlhkost vzduchu');
+    } else if (data.light_level > 500 || data.light_level < 200) {
+      setExceededValue('světlo');
+    } else {
+      setExceededValue(null);
+    }
+  };
+
+  useEffect(() => {
+    checkValues(dataSklenik1); // Kontrola hodnot pro skleník 1
+  }, [dataSklenik1]);
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -54,6 +84,74 @@ const RealTimeMonitoring = () => {
     navigate(`/statistics/${greenhouse}`);
   };
 
+  const handleAddGreenhouseClick = () => {
+    setShowAddGreenhouseModal(true);
+  };
+
+  const handleAddGreenhouseClose = () => {
+    setShowAddGreenhouseModal(false);
+    setNewGreenhouseName('');
+  };
+
+  const handleAddGreenhouseSave = () => {
+    if (newGreenhouseName.trim() === '') {
+      alert('Zadejte název skleníku.');
+      return;
+    }
+
+    console.log('Nový skleník uložen:', newGreenhouseName);
+    
+    handleAddGreenhouseClose();
+  };
+
+  const handleRemoveClick = (greenhouseId) => {
+    setSelectedGreenhouse(greenhouseId);
+    setShowRemoveModal(true);
+  };
+  
+  const handleRemoveCancel = () => {
+    setShowRemoveModal(false);
+  };
+  
+  
+  const handleRemoveConfirm = () => {
+    setHiddenGreenhouses((prevHidden) => [...prevHidden, selectedGreenhouse]);
+    setShowRemoveModal(false);
+    setSelectedGreenhouse(null);
+  };
+  const handleRenameClick = (greenhouseId) => {
+    setSelectedGreenhouse(greenhouseId);
+    setShowRenameModal(true);
+  };
+  
+  const handleRenameCancel = () => {
+    setShowRenameModal(false);
+    setNewGreenhouseName('');
+  };
+  
+  const handleRenameSave = () => {
+    if (newGreenhouseName.trim() === '') {
+      alert('Zadejte nový název skleníku.');
+      return;
+    }
+  
+    if (selectedGreenhouse === 'sklenik1') {
+      setDataSklenik1((prevData) => ({
+        ...prevData,
+        name: newGreenhouseName,
+      }));
+    } else if (selectedGreenhouse === 'sklenik2') {
+      setDataSklenik2((prevData) => ({
+        ...prevData,
+        name: newGreenhouseName,
+      }));
+    }
+  
+    console.log(`Skleník ${selectedGreenhouse} přejmenován na: ${newGreenhouseName}`);
+    setShowRenameModal(false);
+    setNewGreenhouseName('');
+  };
+
   const calculateCurrentStatus = (data) => {
     if (!data) return 'Data nejsou dostupná';
 
@@ -66,6 +164,8 @@ const RealTimeMonitoring = () => {
       ? 'Vše v normě'
       : 'Některé hodnoty jsou mimo normu';
   };
+
+    
 
   return (
     <div className="dashboard">
@@ -91,37 +191,261 @@ const RealTimeMonitoring = () => {
         </div>
       </header>
       <main>
-        <h1>Vyberte skleník</h1>
-        <section className="status">
-          {/* Skleník 1 */}
-          <div className="status-item" onClick={() => handleGreenhouseClick('sklenik1')}>            
-            
-            <div className="current-status-container">
-             <div>Skleník 1 aktuálně:</div>
-             <img src="/images/plant-image.JPG" alt="Plant" className="plant-image" />
-              <p>{isAuthenticated ? calculateCurrentStatus(dataSklenik1) : 'Aktuální údaje získáte po přihlášení'}</p>
-            </div>
-            <div className="measurement-container">
-              <div>Poslední měření:</div>
-              <p>{isAuthenticated && dataSklenik1 ? new Date(dataSklenik1.timestamp).toLocaleString() : '?'}</p>
-            </div>
+        <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Aktuální situace skleníků</h1>
+        
+<section className="status" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>
+  {!hiddenGreenhouses.includes('sklenik1') && (
+    <div className="status-item-container">
+      <div className="status-item" onClick={() => handleGreenhouseClick('sklenik1')}>
+        <img src="/images/plant1.JPG" alt="Plant" className="plant-image" />
+        <div className="current-status-container">
+        <h2>{dataSklenik1?.name || 'Skleník 1'}</h2>
+        <p
+    style={{
+      color: calculateCurrentStatus(dataSklenik1) === 'Některé hodnoty jsou mimo normu' ? 'red' : 'black',
+    }}
+  >
+    {isAuthenticated ? calculateCurrentStatus(dataSklenik1) : 'Aktuální údaje získáte po přihlášení'}
+  </p>
+</div>
+        <div className="measurement-container">
+          <div>Poslední měření:</div>
+          <p>{isAuthenticated && dataSklenik1 ? new Date(dataSklenik1.timestamp).toLocaleString() : '?'}</p>
+        </div>
+      </div>
+      <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
+    <button
+      className="remove-greenhouse-button"
+      onClick={() => handleRemoveClick('sklenik1')}
+      style={{
+        marginTop: '0,1px',
+        marginLeft: '35px',
+        padding: '5px 10px',
+        backgroundColor: '#b9cfbe',
+        color: 'darkgreen',
+        border: 'none',
+        cursor: 'pointer',
+        borderRadius: '5px',
+      }}
+    >
+      Odebrat
+    </button>
+    <button
+      className="rename-greenhouse-button"
+      onClick={() => handleRenameClick('sklenik1')}
+      style={{
+        marginTop: '0,1px',
+        marginLeft: '3px',
+        padding: '5px 10px',
+        backgroundColor: '#b9cfbe',
+        color: 'darkgreen',
+        border: 'none',
+        cursor: 'pointer',
+        borderRadius: '5px',
+      }}
+    >
+      Změnit jméno
+    </button>
+  </div>
+</div>
+ )}
+
+{!hiddenGreenhouses.includes('sklenik2') && (
+    <div className="status-item-container">
+      <div className="status-item" onClick={() => handleGreenhouseClick('sklenik2')}>
+        <img src="/images/plant2.JPG" alt="Plant" className="plant-image" />
+        <div className="current-status-container">
+        <h2>{dataSklenik2?.name || 'Skleník 2'}</h2>
+        <p
+    style={{
+      color: calculateCurrentStatus(dataSklenik2) === 'Některé hodnoty jsou mimo normu' ? 'red' : 'black',
+    }}
+    >
+    {isAuthenticated ? calculateCurrentStatus(dataSklenik2) : 'Aktuální údaje získáte po přihlášení'}
+     </p>
+   </div>
+        <div className="measurement-container">
+          <div>Poslední měření:</div>
+          <p>{isAuthenticated && dataSklenik2 ? new Date(dataSklenik2.timestamp).toLocaleString() : '?'}</p>
+        </div>
+      </div>
+      <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
+    <button
+      className="remove-greenhouse-button"
+      onClick={() => handleRemoveClick('sklenik2')}
+      style={{
+        marginTop: '0,1px',
+        marginLeft: '35px',
+        padding: '5px 10px',
+        backgroundColor: '#b9cfbe',
+        color: 'darkgreen',
+        border: 'none',
+        cursor: 'pointer',
+        borderRadius: '5px',
+      }}
+    >
+      Odebrat
+    </button>
+    <button
+      className="rename-greenhouse-button"
+      onClick={() => handleRenameClick('sklenik2')}
+      style={{
+        marginTop: '0,1px',
+        marginLeft: '3px',
+        padding: '5px 10px',
+        backgroundColor: '#b9cfbe',
+        color: 'darkgreen',
+        border: 'none',
+        cursor: 'pointer',
+        borderRadius: '5px',
+      }}
+    >
+      Změnit jméno
+    </button>
+  </div>
+</div>
+ )}
+</section>
+   {/* Přidat další skleník */}
+   <div
+            className="status-item add-greenhouse"
+            onClick={handleAddGreenhouseClick}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              cursor: 'pointer',
+              border: '2px dashed #ccc',
+              padding: '20px',
+              textAlign: 'center',
+              color: '#666'
+            }}
+          >
+           
+            <p>Přidat další skleník</p>
           </div>
+
   
-          {/* Skleník 2 */}
-          <div className="status-item" onClick={() => handleGreenhouseClick('sklenik2')}>
-            
-            <div className="current-status-container">
-            
-              <div>Skleník 2 Aktuálně:</div>
-              <img src="/images/GreenHouse.JPG" alt="Plant" className="plant-image" />
-              <p>{isAuthenticated ? calculateCurrentStatus(dataSklenik2) : 'Aktuální údaje získáte po přihlášení'}</p>
-            </div>
-            <div className="measurement-container">
-              <div>Poslední měření:</div>
-              <p>{isAuthenticated && dataSklenik2 ? new Date(dataSklenik2.timestamp).toLocaleString() : '?'}</p>
+        {/* Modální okno pro přidání skleníku */}
+        {showAddGreenhouseModal && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <h2>Přidat nový skleník</h2>
+              <input
+                type="text"
+                placeholder="Zadejte název skleníku"
+                value={newGreenhouseName}
+                onChange={(e) => setNewGreenhouseName(e.target.value)}
+                style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
+              />
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <button
+                  onClick={handleAddGreenhouseSave}
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: 'green',
+                    color: 'white',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Uložit
+                </button>
+                <button
+                  onClick={handleAddGreenhouseClose}
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: 'red',
+                    color: 'white',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Storno
+                </button>
+              </div>
             </div>
           </div>
-        </section>
+        )}
+  
+        {/* Modální okno pro odebrání skleníku */}
+        {showRemoveModal && (
+          <div className="modal-overlay">
+            <div className="modal">
+              <h2>Skutečně chcete odebrat skleník?</h2>
+              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+                <button
+                  onClick={handleRemoveConfirm}
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: 'red',
+                    color: 'white',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  ANO
+                </button>
+                <button
+                  onClick={handleRemoveCancel}
+                  style={{
+                    padding: '10px 20px',
+                    backgroundColor: 'gray',
+                    color: 'white',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  NE
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+           {/* Modální okno pro změnu jména skleníku */}
+        {showRenameModal && (
+  <div className="modal-overlay">
+    <div className="modal">
+      <h2>Změnit jméno skleníku</h2>
+      <input
+        type="text"
+        placeholder="Zadejte nový název"
+        value={newGreenhouseName}
+        onChange={(e) => setNewGreenhouseName(e.target.value)}
+        style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
+      />
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <button
+          onClick={handleRenameSave}
+          style={{
+            padding: '10px 20px',
+            backgroundColor: 'green',
+            color: 'white',
+            border: 'none',
+            cursor: 'pointer',
+          }}
+        >
+          Uložit
+        </button>
+        <button
+          onClick={handleRenameCancel}
+          style={{
+            padding: '10px 20px',
+            backgroundColor: 'red',
+            color: 'white',
+            border: 'none',
+            cursor: 'pointer',
+          }}
+        >
+          Storno
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+ {/* Notifikace */}
+ <Notifications exceededValue={exceededValue} />
       </main>
       {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
     </div>
