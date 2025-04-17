@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import IBotaniQLogo from './iBotaniQLogo'; 
 import LoginModal from './loginModal'; 
@@ -8,48 +8,60 @@ import './settings.css';
 const SettingsPage = () => {
   const [plantId, setPlantId] = useState('1'); // Výchozí skleník
   const [thresholds, setThresholds] = useState({
-    temperature: { min: 18, max: 26 },
-    soilMoisture: { min: 10, max: 50 },
-    airHumidity: { min: 30, max: 70 },
-    light: { min: 200, max: 500 },
+    temperature: { min: '', max: '' },
+    soilMoisture: { min: '', max: '' },
+    airHumidity: { min: '', max: '' },
+    light: { min: '', max: '' },
   });
 
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext); // Přístup k autentizaci
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const [menuActive] = useState(false);
+ 
 
-  // Mockovaná data pro různé skleníky
-  const mockThresholds = {
-    '1': {
-      temperature: { min: 18, max: 26 },
-      soilMoisture: { min: 10, max: 50 },
-      airHumidity: { min: 30, max: 70 },
-      light: { min: 200, max: 500 },
-    },
-    '2': {
-      temperature: { min: 15, max: 25 },
-      soilMoisture: { min: 20, max: 60 },
-      airHumidity: { min: 40, max: 80 },
-      light: { min: 150, max: 400 },
-    },
-    '3': {
-      temperature: { min: 20, max: 30 },
-      soilMoisture: { min: 15, max: 45 },
-      airHumidity: { min: 35, max: 75 },
-      light: { min: 180, max: 450 },
-    },
-  };
+  // Načtení limitů při změně skleníku
+  useEffect(() => {
+    const fetchThresholds = async () => {
+      try {
+        const response = await fetch(`/api/thresholds/${plantId}`);
+        if (!response.ok) {
+          throw new Error(`Chyba při načítání limitů: ${response.statusText}`);
+        }
+        const data = await response.json();
+        setThresholds(data);
+      } catch (error) {
+        console.error('Chyba při načítání limitů:', error);
+        // Nastavení výchozích hodnot při chybě
+        setThresholds({
+          temperature: { min: 18, max: 26 },
+          soilMoisture: { min: 10, max: 50 },
+          airHumidity: { min: 30, max: 70 },
+          light: { min: 200, max: 500 },
+        });
+      }
+    };
 
-  // Načtení mockovaných limitů při změně skleníku
-  const handlePlantChange = (id) => {
-    setPlantId(id);
-    setThresholds(mockThresholds[id]);
-  };
+    fetchThresholds();
+  }, [plantId]);
 
-  // Uložení limitů (mock funkce)
-  const saveThresholds = () => {
-    console.log('Uložené limity:', thresholds);
-    alert('Mock: Limity byly úspěšně uloženy.');
+  // Uložení limitů
+  const saveThresholds = async () => {
+    try {
+      const response = await fetch(`/api/thresholds/${plantId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(thresholds),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Chyba při ukládání limitů: ${response.statusText}`);
+      }
+
+      alert('Limity byly úspěšně uloženy.');
+    } catch (error) {
+      console.error('Chyba při ukládání limitů:', error);
+    }
   };
 
   // Aktualizace hodnot v limitech
@@ -83,31 +95,31 @@ const SettingsPage = () => {
         <div className="header-content">
           <div className="title-and-back">
             <IBotaniQLogo />
-            <nav className={`nav-links ${menuActive ? 'active' : ''}`}>
+            <nav className="nav-links">
               <Link to="/">Zpět na hlavní stránku</Link> {/* Tlačítko zpět */}
             </nav>
             <div className="settings-title-dropdown">
               <h1 className="settings-title">Nastavení limitů pro:</h1>
               <div className="dropdown">
                 <button className="dropdown-link">
-                  Skleník {plantId}
+                  Skleník {plantId} <span style={{ marginLeft: '5px' }}>▼</span>
                 </button>
                 <div className="dropdown-content">
                   <button
                     className={`dropdown-item ${plantId === '1' ? 'active' : ''}`}
-                    onClick={() => handlePlantChange('1')}
+                    onClick={() => setPlantId('1')}
                   >
                     Skleník 1
                   </button>
                   <button
                     className={`dropdown-item ${plantId === '2' ? 'active' : ''}`}
-                    onClick={() => handlePlantChange('2')}
+                    onClick={() => setPlantId('2')}
                   >
                     Skleník 2
                   </button>
                   <button
                     className={`dropdown-item ${plantId === '3' ? 'active' : ''}`}
-                    onClick={() => handlePlantChange('3')}
+                    onClick={() => setPlantId('3')}
                   >
                     Skleník 3
                   </button>
