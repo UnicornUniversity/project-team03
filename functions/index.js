@@ -27,17 +27,15 @@ const thresholdRoutes = require('./routes/thresholds');
 
 const app = express();
 
-app.use('/api/sensors', sensorRoutes); 
-app.use('/api/thresholds', thresholdRoutes);
-
-
-
 // Použití CORS middleware
 app.use(cors({
   origin: 'https://ibotaniq.web.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.use('/api/sensors', sensorRoutes); 
+app.use('/api/thresholds', thresholdRoutes);
 
 // Middleware pro zpracování JSON
 app.use(express.json());
@@ -53,8 +51,6 @@ mongoose.connect(dbUri)
   .catch(err => {
     console.error('MongoDB connection error:', err);
   });
-
-
 
 app.get('/', (req, res) => {
   res.send('Hello from IoT Backend!');
