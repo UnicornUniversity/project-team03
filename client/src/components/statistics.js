@@ -83,13 +83,13 @@ const Statistics = () => {
           console.log(`Fetching latest data for greenhouse ${greenhouseId}...`);
           const latestData = await fetchLatestData(greenhouseId); // Použití funkce z api.js
           console.log('Fetched latest data:', latestData);
-  
+          const latest = latestData[0]; // <-- fix here!
           setData({
-            temperature: latestData.temperature || '20',
-            humidity: latestData.humidity || '60',
-            soil_moisture: latestData.soil_moisture || '60',
-            light_level: latestData.light_level || '4,1', 
-            timestamp: latestData.timestamp || ''
+            temperature: latest.latestData.temperature ?? '20',
+            humidity: latest.latestData.humidity ?? '60',
+            soil_moisture: latest.latestData.soil_moisture ?? '60',
+            light_level: latest.latestData.light_level ?? '4,1', 
+            timestamp: latest.latestData.timestamp ?? ''
           });
         } catch (error) {
           console.error('Error fetching latest data:', error);
@@ -190,15 +190,15 @@ const Statistics = () => {
     title="Teplota"
     value={
       isAuthenticated 
-      ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{latestData.temperature !== undefined ? latestData.temperature : 20}</span></> 
+      ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 20}</span></> 
       : <><Thermomether /> ?</>
     }
-    unit={isAuthenticated && latestData.temperature !== undefined ? '°C' : ""}
+    unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
     status={
-      isAuthenticated && latestData.temperature !== undefined 
-      ? latestData.temperature < thresholds.temperature.min
+      isAuthenticated && data.temperature !== undefined 
+      ? data.temperature < thresholds.temperature.min
       ? 'low' 
-      : latestData.temperature > thresholds.temperature.max
+      : data.temperature > thresholds.temperature.max
         ? 'high' 
         : 'normal'
     : 'normal'
