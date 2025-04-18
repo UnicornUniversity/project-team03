@@ -1,10 +1,10 @@
 // api.js
-const API_URL = process.env.REACT_APP_API_URL || 'https://api-lbnc42etuq-uc.a.run.app/api'; // URL pro produkční prostředí
+const API_URL = process.env.REACT_APP_API_URL || 'https://api-lbnc42etuq-uc.a.run.app'; // URL pro produkční prostředí
 
 //Data pro RealTimeMonitoring a Statistics - aktuální data
 export const fetchLatestData = async (greenhouseId) => {
   try {
-    const endpoint = `${API_URL}/routes/sensors/latest?greenhouseId=${greenhouseId}`;
+    const endpoint = `${API_URL}/sensors/latest?greenhouseId=${greenhouseId}`;
     console.log(`Fetching latest data from: ${endpoint}`);
     const response = await fetch(endpoint);
     if (!response.ok) {
@@ -21,7 +21,7 @@ export const fetchLatestData = async (greenhouseId) => {
 //Data pro Statistics -grafy
 export const fetchHistoricalData = async (greenhouseId, from, to) => {
   try {
-    const endpoint = `${API_URL}/routes/sensors?greenhouseId=${greenhouseId}&from=${from}&to=${to}`;
+    const endpoint = `${API_URL}/sensors?greenhouseId=${greenhouseId}&from=${from}&to=${to}`;
     console.log(`Fetching historical data from: ${endpoint}`);
     const response = await fetch(endpoint);
     if (!response.ok) {
@@ -39,7 +39,7 @@ export const fetchHistoricalData = async (greenhouseId, from, to) => {
 //Data pro Settings - nastavení limitů
 export const fetchThresholds = async (greenhouseId) => {
   try {
-    const endpoint = `${API_URL}/routes/sensors/thresholds/${greenhouseId}`;
+    const endpoint = `${API_URL}/sensors/thresholds/${greenhouseId}`;
     console.log(`Fetching thresholds from: ${endpoint}`);
     const response = await fetch(endpoint);
     if (!response.ok) {
@@ -56,7 +56,7 @@ export const fetchThresholds = async (greenhouseId) => {
 //Data pro Settings - uložení limitů
 export const saveThresholds = async (greenhouseId, thresholds) => {
   try {
-    const endpoint = `${API_URL}/routes/sensors/thresholds/${greenhouseId}`;
+    const endpoint = `${API_URL}/sensors/thresholds/${greenhouseId}`;
     console.log(`Saving thresholds to: ${endpoint}`);
     const response = await fetch(endpoint, {
       method: 'POST',

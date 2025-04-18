@@ -120,7 +120,7 @@ const Statistics = () => {
             const to = new Date(); // Dnešní datum
     
             const data = await fetchHistoricalData(greenhouseId, from.toISOString(), to.toISOString());
-            console.log('Historical data:', data);
+        console.log('Historical data:', data);
     
             setChartData(data.map(entry => ({
               timestamp: entry.timestamp,
