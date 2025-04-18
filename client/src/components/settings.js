@@ -6,7 +6,7 @@ import { AuthContext } from '../authContext';
 import './settings.css'; 
 
 const SettingsPage = () => {
-  const [plantId, setPlantId] = useState('1'); // Výchozí skleník
+  const [greenhouseId, setGreenhouseId] = useState('1'); // Výchozí skleník
   const [thresholds, setThresholds] = useState({
     temperature: { min: '', max: '' },
     soilMoisture: { min: '', max: '' },
@@ -16,13 +16,12 @@ const SettingsPage = () => {
 
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext); // Přístup k autentizaci
   const [showLoginModal, setShowLoginModal] = useState(false);
- 
 
   // Načtení limitů při změně skleníku
   useEffect(() => {
     const fetchThresholds = async () => {
       try {
-        const response = await fetch(`/api/thresholds/${plantId}`);
+        const response = await fetch(`/api/thresholds/${greenhouseId}`);
         if (!response.ok) {
           throw new Error(`Chyba při načítání limitů: ${response.statusText}`);
         }
@@ -35,18 +34,18 @@ const SettingsPage = () => {
           temperature: { min: 18, max: 26 },
           soilMoisture: { min: 10, max: 50 },
           airHumidity: { min: 30, max: 70 },
-          light: { min: 200, max: 500 },
+          light: { min: 2, max: 5 },
         });
       }
     };
 
     fetchThresholds();
-  }, [plantId]);
+  }, [greenhouseId]);
 
   // Uložení limitů
   const saveThresholds = async () => {
     try {
-      const response = await fetch(`/api/thresholds/${plantId}`, {
+      const response = await fetch(`/api/thresholds/${greenhouseId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,24 +101,24 @@ const SettingsPage = () => {
               <h1 className="settings-title">Nastavení limitů pro:</h1>
               <div className="dropdown">
                 <button className="dropdown-link">
-                  Skleník {plantId} <span style={{ marginLeft: '5px' }}>▼</span>
+                  Skleník {greenhouseId} <span style={{ marginLeft: '5px' }}>▼</span>
                 </button>
                 <div className="dropdown-content">
                   <button
-                    className={`dropdown-item ${plantId === '1' ? 'active' : ''}`}
-                    onClick={() => setPlantId('1')}
+                    className={`dropdown-item ${greenhouseId === '1' ? 'active' : ''}`}
+                    onClick={() => setGreenhouseId('1')}
                   >
                     Skleník 1
                   </button>
                   <button
-                    className={`dropdown-item ${plantId === '2' ? 'active' : ''}`}
-                    onClick={() => setPlantId('2')}
+                    className={`dropdown-item ${greenhouseId === '2' ? 'active' : ''}`}
+                    onClick={() => setGreenhouseId('2')}
                   >
                     Skleník 2
                   </button>
                   <button
-                    className={`dropdown-item ${plantId === '3' ? 'active' : ''}`}
-                    onClick={() => setPlantId('3')}
+                    className={`dropdown-item ${greenhouseId === '3' ? 'active' : ''}`}
+                    onClick={() => setGreenhouseId('3')}
                   >
                     Skleník 3
                   </button>
@@ -136,7 +135,7 @@ const SettingsPage = () => {
       </div>
       {isAuthenticated ? (
         <>
-          <h2>Limity pro skleník {plantId}</h2>
+          <h2>Limity pro skleník {greenhouseId}</h2>
           <div>
             <h3>Teplota</h3>
             <label>

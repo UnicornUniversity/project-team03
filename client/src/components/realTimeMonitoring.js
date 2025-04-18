@@ -28,12 +28,19 @@ const RealTimeMonitoring = () => {
     const fetchDataForGreenhouses = async () => {
       if (isAuthenticated) {
         try {
-          const sklenik1Data = await fetchLatestData(1); // Poslední záznam pro skleník 1
-          const sklenik2Data = await fetchLatestData(2); // Poslední záznam pro skleník 2
-          setDataSklenik1(sklenik1Data);
-          setDataSklenik2(sklenik2Data);
+          console.log('Fetching data for greenhouses...');
+          const sklenik1Data = await fetchLatestData(1); // Data pro skleník 1
+          const sklenik2Data = await fetchLatestData(2); // Data pro skleník 2
+    
+          if (sklenik1Data && sklenik1Data.length > 0) {
+            setDataSklenik1(sklenik1Data[0]); // Poslední měření pro skleník 1
+          }
+    
+          if (sklenik2Data && sklenik2Data.length > 0) {
+            setDataSklenik2(sklenik2Data[0]); // Poslední měření pro skleník 2
+          }
         } catch (error) {
-          console.error('Error fetching latest data:', error);
+          console.error('Error fetching data:', error);
         }
       }
     };
@@ -50,7 +57,7 @@ const RealTimeMonitoring = () => {
       setExceededValue('vlhkost půdy');
     } else if (data.humidity > 70 || data.humidity < 30) {
       setExceededValue('vlhkost vzduchu');
-    } else if (data.light_level > 500 || data.light_level < 200) {
+    } else if (data.light_level > 5 || data.light_level < 2) {
       setExceededValue('světlo');
     } else {
       setExceededValue(null);
@@ -157,7 +164,7 @@ const RealTimeMonitoring = () => {
     const isTemperatureNormal = data.temperature >= 18 && data.temperature <= 26;
     const isSoilMoistureNormal = data.soil_moisture >= 10 && data.soil_moisture <= 50;
     const isAirHumidityNormal = data.humidity >= 30 && data.humidity <= 70;
-    const isLightNormal = data.light_level >= 200 && data.light_level <= 500;
+    const isLightNormal = data.light_level >= 2 && data.light_level <= 5;
 
     return isTemperatureNormal && isSoilMoistureNormal && isAirHumidityNormal && isLightNormal
       ? 'Vše v normě'
@@ -445,6 +452,7 @@ const RealTimeMonitoring = () => {
 )}
  {/* Notifikace */}
  <Notifications exceededValue={exceededValue} />
+ 
       </main>
       {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
     </div>
