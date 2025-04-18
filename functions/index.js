@@ -26,7 +26,7 @@ const thresholdRoutes = require('./routes/thresholds');
 
 const app = express();
 
-app.use('/sensors', sensorRoutes); 
+app.use('/', sensorRoutes); 
 app.use('/thresholds', thresholdRoutes);
 
 
