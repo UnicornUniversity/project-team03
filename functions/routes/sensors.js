@@ -39,7 +39,7 @@ router.get('/latest', async (req, res) => {
     // Dotaz na MongoDB pro vybraný skleník
     const latestData = await Sensor.find({ greenhouseId })
       .sort({ timestamp: -1 })
-      .limit(10);
+      .limit(1);
     console.log('Data fetched from MongoDB:', latestData); // Přidání logování
     res.json(latestData); // Použití správné proměnné
   } catch (err) {
