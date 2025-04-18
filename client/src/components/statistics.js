@@ -85,11 +85,11 @@ const Statistics = () => {
           console.log('Fetched latest data:', latestData);
           const latest = latestData[0]; // <-- fix here!
           setData({
-            temperature: latest.latestData.temperature ?? '20',
-            humidity: latest.latestData.humidity ?? '60',
-            soil_moisture: latest.latestData.soil_moisture ?? '60',
-            light_level: latest.latestData.light_level ?? '4,1', 
-            timestamp: latest.latestData.timestamp ?? ''
+            temperature: latest.temperature ?? '20',
+            humidity: latest.humidity ?? '60',
+            soil_moisture: latest.soil_moisture ?? '60',
+            light_level: latest.light_level ?? '4,1', 
+            timestamp: latest.timestamp ?? ''
           });
         } catch (error) {
           console.error('Error fetching latest data:', error);
