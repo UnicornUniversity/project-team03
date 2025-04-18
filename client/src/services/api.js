@@ -4,7 +4,7 @@ const API_URL = process.env.REACT_APP_API_URL || 'https://api-lbnc42etuq-uc.a.ru
 //Data pro RealTimeMonitoring a Statistics - aktuální data
 export const fetchLatestData = async (greenhouseId) => {
   try {
-    const endpoint = `${API_URL}/routes/sensors?greenhouseId=${greenhouseId}`;
+    const endpoint = `${API_URL}/sensors?greenhouseId=${greenhouseId}`;
     console.log(`Fetching latest data from: ${endpoint}`);
     const response = await fetch(endpoint);
     if (!response.ok) {
