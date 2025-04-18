@@ -33,7 +33,11 @@ app.use('/thresholds', thresholdRoutes);
 
 
 // Použití CORS middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://ibotaniq.web.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // Middleware pro zpracování JSON
 app.use(express.json());
