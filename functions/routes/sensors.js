@@ -27,7 +27,7 @@ const simulatedData = [
   }
 ];
 
-router.get('', async (req, res) => {
+router.get('/latest', async (req, res) => {
   const greenhouseId = parseInt(req.query.greenhouseId) || 1; // Výchozí skleník 1
   try {
     // Pokud je vybrán skleník 2, vrátí simulovaná data
