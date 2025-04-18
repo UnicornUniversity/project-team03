@@ -190,15 +190,15 @@ const Statistics = () => {
     title="Teplota"
     value={
       isAuthenticated 
-      ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 20}</span></> 
+      ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{latestData.temperature !== undefined ? latestData.temperature : 20}</span></> 
       : <><Thermomether /> ?</>
     }
-    unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
+    unit={isAuthenticated && latestData.temperature !== undefined ? '°C' : ""}
     status={
-      isAuthenticated && data.temperature !== undefined 
-      ? data.temperature < thresholds.temperature.min
+      isAuthenticated && latestData.temperature !== undefined 
+      ? latestData.temperature < thresholds.temperature.min
       ? 'low' 
-      : data.temperature > thresholds.temperature.max
+      : latestData.temperature > thresholds.temperature.max
         ? 'high' 
         : 'normal'
     : 'normal'
