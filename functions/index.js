@@ -8,6 +8,7 @@ const cors = require('cors'); // Přidání CORS middleware
 require('dotenv').config(); 
 const { getMockTemperatureData } = require('./mockData');
 const Sensor = require('./models/Sensor');
+const Threshold = require('./models/Threshold');
 mongoose.set('debug', true);
 const config = require('./config');
 
@@ -26,7 +27,7 @@ const thresholdRoutes = require('./routes/thresholds');
 
 const app = express();
 
-app.use('/', sensorRoutes); 
+app.use('/sensors', sensorRoutes); 
 app.use('/thresholds', thresholdRoutes);
 
 
