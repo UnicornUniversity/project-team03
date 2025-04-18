@@ -50,20 +50,19 @@ router.get('/latest', async (req, res) => {
 
 router.get('/', async (req, res) => {
   const greenhouseId = parseInt(req.query.greenhouseId) || 1;
-  const from = new Date(req.query.from); // Počáteční datum
-  const to = new Date(req.query.to); // Koncové datum
+  const from = req.query.from ? new Date(req.query.from) : null;
+  const to = req.query.to ? new Date(req.query.to) : null;
 
   try {
-    if (isNaN(from.getTime()) || isNaN(to.getTime())) {
+    if (!from || !to || isNaN(from.getTime()) || isNaN(to.getTime())) {
       return res.status(400).json({ error: 'Invalid date range' });
     }
 
     const data = await Sensor.find({
       greenhouseId,
-      timestamp: { $gte: from, $lte: to } // Filtrování podle časového rozsahu
+      timestamp: { $gte: from, $lte: to }
     }).sort({ timestamp: -1 });
 
-    console.log(`Fetched data for greenhouse ${greenhouseId} from ${from} to ${to}:`, data);
     res.json(data);
   } catch (err) {
     console.error('Error fetching historical data:', err);
