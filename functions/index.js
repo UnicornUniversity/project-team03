@@ -22,8 +22,14 @@ setGlobalOptions({
 
 // Načtení routes
 const sensorRoutes = require('./routes/sensors');
+const thresholdRoutes = require('./routes/thresholds');
 
 const app = express();
+
+app.use('/sensors', sensorRoutes); 
+app.use('/thresholds', thresholdRoutes);
+
+
 
 // Použití CORS middleware
 app.use(cors());
@@ -43,8 +49,7 @@ mongoose.connect(dbUri)
     console.error('MongoDB connection error:', err);
   });
 
-// Použití routes
-app.use('/sensors', sensorRoutes);
+
 
 app.get('/', (req, res) => {
   res.send('Hello from IoT Backend!');
