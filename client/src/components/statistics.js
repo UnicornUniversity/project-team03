@@ -11,6 +11,7 @@ import SunIcon from './sunIcon';
 import Thermomether from './thermometer';
 import SoilMoistureIcon from './soilMoistureIcon';
 import { fetchHistoricalData, fetchLatestData } from '../services/api';
+import { fetchThresholds } from '../services/api';
 import { useParams } from 'react-router-dom';
 
 
@@ -19,6 +20,7 @@ const Statistics = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const { greenhouse } = useParams();
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [chartData, setChartData] = useState([]);
   
   const [data, setData] = useState({
       temperature: '',
@@ -38,17 +40,12 @@ const Statistics = () => {
   const [menuActive, setMenuActive] = useState(false);
   const greenhouseId = greenhouse === 'sklenik1' ? 1 : 2;
 
-  // Načtení limitů z databáze
+  // Načtení aktuálních limitů z databáze
   useEffect(() => {
-    const fetchThresholds = async () => {
+    const fetchThresholdsFromApi = async () => {
       try {
-        const response = await fetch(`/routes/thresholds/${greenhouseId}`);
-        if (!response.ok) {
-          throw new Error(`Chyba při načítání limitů: ${response.statusText}`);
-        }
-        const data = await response.json();
-        setThresholds(data);
-        
+        console.log(`Fetching thresholds for greenhouse ${greenhouseId}...`);
+        const data = await fetchThresholds(greenhouseId); // Použití funkce z api.js
         console.log('Fetched thresholds:', data);
   
         // Pokud data nejsou dostupná, nastavíme výchozí hodnoty
@@ -58,7 +55,7 @@ const Statistics = () => {
             temperature: { min: 18, max: 26 },
             soilMoisture: { min: 10, max: 50 },
             airHumidity: { min: 30, max: 70 },
-            light: { min: 200, max: 500 },
+            light: { min: 2, max: 5 },
           });
         } else {
           setThresholds(data);
@@ -70,11 +67,12 @@ const Statistics = () => {
           temperature: { min: 18, max: 26 },
           soilMoisture: { min: 10, max: 50 },
           airHumidity: { min: 30, max: 70 },
-          light: { min: 200, max: 500 },
+          light: { min: 2, max: 5},
         });
       }
     };
-    fetchThresholds();
+  
+    fetchThresholdsFromApi();
   }, [greenhouseId]);
 
   // Načtení aktuálních dat 
@@ -87,10 +85,10 @@ const Statistics = () => {
           console.log('Fetched latest data:', latestData);
   
           setData({
-            temperature: latestData.temperature || '',
-            humidity: latestData.humidity || '',
+            temperature: latestData.temperature || '20',
+            humidity: latestData.humidity || '60',
             soil_moisture: latestData.soil_moisture || '60',
-            light_level: latestData.light_level || 'Denní',
+            light_level: latestData.light_level || '4,1', 
             timestamp: latestData.timestamp || ''
           });
         } catch (error) {
@@ -117,12 +115,14 @@ const Statistics = () => {
       const fetchHistoricalDataFromApi = async () => {
         if (isAuthenticated) {
           try {
-            console.log(`Fetching historical data for greenhouse ${greenhouseId}...`);
-            const historicalData = await fetchHistoricalData(greenhouseId, '2023-01-01', '2023-12-31'); // Příklad období
-            console.log('Fetched historical data:', historicalData);
+            const from = new Date();
+            from.setDate(from.getDate() - 7); // Posledních 7 dní
+            const to = new Date(); // Dnešní datum
     
-            // Data pro graf
-            setData(historicalData.map(entry => ({
+            const data = await fetchHistoricalData(greenhouseId, from.toISOString(), to.toISOString());
+            console.log('Historical data:', data);
+    
+            setChartData(data.map(entry => ({
               timestamp: entry.timestamp,
               temperature: entry.temperature,
               soilMoisture: entry.soil_moisture,
@@ -133,7 +133,7 @@ const Statistics = () => {
             console.error('Error fetching historical data:', error);
           }
         }
-      };
+      }; 
     
       fetchHistoricalDataFromApi();
     }, [isAuthenticated, greenhouseId]);
@@ -190,7 +190,7 @@ const Statistics = () => {
     title="Teplota"
     value={
       isAuthenticated 
-      ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 'N/A'}</span></> 
+      ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 20}</span></> 
       : <><Thermomether /> ?</>
     }
     unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
@@ -228,7 +228,7 @@ const Statistics = () => {
           />
           <Tile
             title="Vlhkost"
-            value={isAuthenticated ? <span style={getStatusStyle(isAirHumidityNormal)}>{data.humidity !== undefined ? data.humidity : 'N/A'}</span> 
+            value={isAuthenticated ? <span style={getStatusStyle(isAirHumidityNormal)}>{data.humidity !== undefined ? data.humidity : 60}</span> 
              : "?"}
             unit={isAuthenticated ? '%' : ""}
             status={
@@ -248,7 +248,7 @@ const Statistics = () => {
            title="Světlo"
            value={
             isAuthenticated 
-              ? <><SunIcon /> <span style={getStatusStyle(isLightNormal)}>{data.light_level !== undefined ? data.light_level : 'N/A'}</span> </>
+              ? <><SunIcon /> <span style={getStatusStyle(isLightNormal)}>{data.light_level !== undefined ? data.light_level : 4.1}</span> </>
               : <><SunIcon /> ?</>
           }
           unit={isAuthenticated && data.light_level !== undefined ? 'lx' : ""}
@@ -269,19 +269,19 @@ const Statistics = () => {
       <div className="chart-container">
         {isAuthenticated ? (
           <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={data}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="timestamp" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
-              <Line type="monotone" dataKey="soilMoisture" stroke="#82ca9d" />
-              <Line type="monotone" dataKey="airHumidity" stroke="#ffc658" />
-            </LineChart>
-          </ResponsiveContainer>
-        ) : (
-          <p>Aktuální údaje získáte po přihlášení</p>
+            <LineChart data={chartData}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="timestamp" />
+      <YAxis />
+      <Tooltip />
+      <Legend />
+      <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
+      <Line type="monotone" dataKey="soilMoisture" stroke="#82ca9d" />
+      <Line type="monotone" dataKey="airHumidity" stroke="#ffc658" />
+    </LineChart>
+  </ResponsiveContainer>
+) : (
+  <p>Žádná data nejsou k dispozici</p>
         )}
       </div>
       {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
