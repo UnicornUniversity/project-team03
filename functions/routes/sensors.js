@@ -114,21 +114,5 @@ router.post('/thresholds/:greenhouseId', async (req, res) => {
   }
 });
 
-// POST endpoint pro ukládání dat z maliny (skleník 1)
-router.post('/', async (req, res) => {
-  const { error, value } = sensorSchema.validate(req.body);
-  if (error) {
-    return res.status(400).json({ error: error.details[0].message });
-  }
-  try {
-    const newSensor = new Sensor(value);
-    const savedSensor = await newSensor.save();
-    console.log('New sensor data saved:', savedSensor); // Přidání logování
-    res.status(201).json(savedSensor);
-  } catch (err) {
-    console.error('Error saving new sensor data:', err); // Přidání logování chyby
-    res.status(500).json({ error: err.message });
-  }
-});
-
 module.exports = router;
+
