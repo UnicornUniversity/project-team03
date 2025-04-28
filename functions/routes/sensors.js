@@ -114,7 +114,7 @@ router.post('/thresholds/:greenhouseId', async (req, res) => {
 });
 
 //Endpoint pro nahrani dat do monga
-router.app.post('/mongo-upload', async (req, res) => {
+router.post('/mongo-upload', async (req, res) => {
   try {
     const {
       timestamp,
