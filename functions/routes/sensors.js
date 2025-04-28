@@ -116,34 +116,38 @@ router.post('/thresholds/:greenhouseId', async (req, res) => {
 //Endpoint pro nahrani dat do monga
 router.app.post('/mongo-upload', async (req, res) => {
   try {
-    // {
-    //   "greenhouseId": 1,
-    //   "temperature": 22.5,
-    //   "humidity": 55,
-    //   "soil_moisture": 300,
-    //   "light_level": 1200
-    // }
-    const { greenhouseId, temperature, humidity, soil_moisture, light_level } = req.body;
+    const {
+      timestamp,
+      greenhouseId,
+      sensor,
+      temperature_air,
+      humidity_air,
+      light,
+      soil_moisture
+    } = req.body;
 
     if (
-      greenhouseId == null ||
-      temperature == null  ||
-      humidity == null     ||
-      soil_moisture == null||
-      light_level == null
+      greenhouseId    == null ||
+      sensor          == null ||
+      temperature_air == null ||
+      humidity_air    == null ||
+      light           == null ||
+      soil_moisture   == null
     ) {
       return res.status(400).json({ error: 'Missing required field(s)' });
     }
 
-    const newReading = new Sensor({
+    const reading = new Sensor({
+      timestamp: timestamp ? new Date(timestamp) : undefined,
       greenhouseId,
-      temperature,
-      humidity,
-      soil_moisture,
-      light_level
+      sensor,
+      temperature_air,
+      humidity_air,
+      light,
+      soil_moisture
     });
-    const saved = await newReading.save();
 
+    const saved = await reading.save();
     res.status(201).json(saved);
   } catch (err) {
     console.error('Error saving sensor:', err);
