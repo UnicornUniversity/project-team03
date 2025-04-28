@@ -90,18 +90,18 @@ router.get('/thresholds/:greenhouseId', async (req, res) => {
 // Endpoint pro uložení nebo aktualizaci limitů pro konkrétní skleník
 router.post('/thresholds/:greenhouseId', async (req, res) => {
   const greenhouseId = parseInt(req.params.greenhouseId); // Získání ID skleníku z parametru
-  const { temperature, soilMoisture, airHumidity, light } = req.body; // Data z požadavku
+  const { temperature, moisture, humidity, light_level } = req.body; // Data z požadavku
 
   try {
     // Validace vstupních dat
-    if (!temperature || !soilMoisture || !airHumidity || !light) {
+    if (!temperature || !moisture || !humidity || !light_level) {
       return res.status(400).json({ error: 'Všechna pole jsou povinná.' });
     }
 
     // Najít a aktualizovat dokument, nebo vytvořit nový, pokud neexistuje
     const updatedThreshold = await Threshold.findOneAndUpdate(
       { greenhouseId }, // Podmínka pro vyhledání
-      { temperature, soilMoisture, airHumidity, light }, // Data k aktualizaci
+      { temperature, moisture, humidity, light_level }, // Data k aktualizaci
       { new: true, upsert: true } // Vytvořit nový dokument, pokud neexistuje
     );
 
@@ -120,18 +120,18 @@ router.post('/mongo-upload', async (req, res) => {
       timestamp,
       greenhouseId,
       sensor,
-      temperature_air,
-      humidity_air,
-      light,
+      temperature,
+      humidity,
+      light_level,
       soil_moisture
     } = req.body;
 
     if (
       greenhouseId    == null ||
       sensor          == null ||
-      temperature_air == null ||
-      humidity_air    == null ||
-      light           == null ||
+      temperature     == null ||
+      humidity        == null ||
+      light_level     == null ||
       soil_moisture   == null
     ) {
       return res.status(400).json({ error: 'Missing required field(s)' });
@@ -141,9 +141,9 @@ router.post('/mongo-upload', async (req, res) => {
       timestamp: timestamp ? new Date(timestamp) : undefined,
       greenhouseId,
       sensor,
-      temperature_air,
-      humidity_air,
-      light,
+      temperature,
+      humidity,
+      light_level,
       soil_moisture
     });
 
