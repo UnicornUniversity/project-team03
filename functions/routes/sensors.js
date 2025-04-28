@@ -126,15 +126,19 @@ router.post('/mongo-upload', async (req, res) => {
       timestamp
     } = req.body;
 
-    if (
-      greenhouseId    == null ||
-      sensor          == null ||
-      temperature     == null ||
-      humidity        == null ||
-      soil_moisture   == null ||
-      light_level     == null
-    ) {
-      return res.status(400).json({ error: 'Missing required field(s)' });
+    const missing = [];
+    if (greenhouseId   == null) missing.push('greenhouseId');
+    if (sensor         == null) missing.push('sensor');
+    if (temperature    == null) missing.push('temperature');
+    if (humidity       == null) missing.push('humidity');
+    if (soil_moisture  == null) missing.push('soil_moisture');
+    if (light_level    == null) missing.push('light_level');
+
+    if (missing.length > 0) {
+      return res.status(400).json({
+        error: `Missing required field(s): ${missing.join(', ')}`,
+        received: { greenhouseId, sensor, temperature, humidity, soil_moisture, light_level, timestamp }
+      });
     }
 
     const reading = new Sensor({
