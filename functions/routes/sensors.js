@@ -117,13 +117,13 @@ router.post('/thresholds/:greenhouseId', async (req, res) => {
 router.post('/mongo-upload', async (req, res) => {
   try {
     const {
-      timestamp,
       greenhouseId,
       sensor,
       temperature,
       humidity,
+      soil_moisture,
       light_level,
-      soil_moisture
+      timestamp
     } = req.body;
 
     if (
@@ -131,8 +131,8 @@ router.post('/mongo-upload', async (req, res) => {
       sensor          == null ||
       temperature     == null ||
       humidity        == null ||
-      light_level     == null ||
-      soil_moisture   == null
+      soil_moisture   == null ||
+      light_level     == null
     ) {
       return res.status(400).json({ error: 'Missing required field(s)' });
     }
