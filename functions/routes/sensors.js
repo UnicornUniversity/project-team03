@@ -116,6 +116,14 @@ router.post('/thresholds/:greenhouseId', async (req, res) => {
 //Endpoint pro nahrani dat do monga
 router.post('/mongo-upload', async (req, res) => {
   console.log('▶️ req.body =', JSON.stringify(req.body, null, 2));
+  if (typeof req.body === 'string') {
+    try {
+      req.body = JSON.parse(req.body);
+    } catch (err) {
+      console.warn('Could not JSON.parse req.body:', err.message);
+      return res.status(400).json({ error: 'Invalid JSON payload' });
+    }
+  }
   try {
     const {
       greenhouseId,
