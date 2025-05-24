@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Modal } from 'antd';
 
-const Notifications = ({ exceededValue }) => {
+const Notifications = ({ exceededValue, isAuthenticated }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
-    if (exceededValue) {
+    if (exceededValue && isAuthenticated) {
       setIsModalVisible(true);
     }
-  }, [exceededValue]);
+  }, [exceededValue, isAuthenticated]);
 
   const handleOk = () => {
     setIsModalVisible(false);
