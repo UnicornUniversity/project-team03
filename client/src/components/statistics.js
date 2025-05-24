@@ -13,6 +13,7 @@ import SoilMoistureIcon from './soilMoistureIcon';
 import { fetchHistoricalData, fetchLatestData } from '../services/api';
 import { fetchThresholds } from '../services/api';
 import { useParams } from 'react-router-dom';
+import Thermometer from './thermometer';
 
 
 const Statistics = () => {
@@ -190,7 +191,10 @@ const Statistics = () => {
     title="Teplota"
     value={
       isAuthenticated 
-      ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 20}</span></> 
+      ? <><Thermometer
+      minTemperature={18} // Hodnoty z nastavení
+      maxTemperature={26}
+    /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 20}</span></> 
       : <><Thermomether /> ?</>
     }
     unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
@@ -265,6 +269,8 @@ const Statistics = () => {
           maxThreshold={thresholds.light.max}       
            />
         </section>
+        <div className="thermometer-container">        
+      </div>
       <h2>Hodnoty naměřené za poslední období</h2>
       <div className="chart-container">
         {isAuthenticated ? (
