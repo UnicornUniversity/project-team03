@@ -5,10 +5,12 @@ const Notifications = ({ exceededValue, isAuthenticated }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
-    if (exceededValue && isAuthenticated) {
+    if (isAuthenticated && exceededValue) {
       setIsModalVisible(true);
+    } else {
+      setIsModalVisible(false);
     }
-  }, [exceededValue, isAuthenticated]);
+  }, [isAuthenticated, exceededValue]);
 
   const handleOk = () => {
     setIsModalVisible(false);
