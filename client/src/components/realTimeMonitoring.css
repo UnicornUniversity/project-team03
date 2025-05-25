@@ -1,52 +1,4 @@
-body {
-  font-family: 'Century Gothic', sans-serif;
-  color: darkgreen; /* Nastavení zelené barvy písma */
-}
-
-.dashboard {
-  font-family: Arial, sans-serif;
-  background-color: #f6f9f6; /* Jemná zelená barva pozadí */
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  
-}
-
-.dashboard-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(to top, #d2eed8, #3f5a42, #2e4a34); /* Zelená barva pro hlavičku */
-  padding: 10px;
-  color: white;
-  border-top-left-radius: 15px; /* Zakulacení levého horního okraje */
-  border-top-right-radius: 15px; /* Zakulacení pravého horního okraje */
-  height: 60px; /* Nastavení pevné výšky */
-}
-.nav-links {
-  flex: 1;
-  display: flex;
-  align-items: center; /* Vertikální zarovnání všech odkazů */
-  justify-content: center;
-  gap: 60px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #f8f2f2;
-  font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
-  font-weight: bold; /* Nastavení tučného písma */
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #afb1b3;
-}
-
+/* HAMBURGER */
 /* Styl pro hamburger menu */
 .hamburger {
   display: none;
@@ -89,54 +41,22 @@ body {
   display: flex;
 }
 
-.nav-links .active-link {
-  color: #d1fcd2; /* Barva aktivního odkazu */
-  border-bottom: 2px solid #4caf50; /* Podtržení aktivního odkazu */
-}
 
-.login-button-container {
-  flex: 0.5;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 20px; /* Přidání odsazení od pravého okraje */
-  margin-top: -20px; /* Posunutí tlačítka nahoru */
-}
-  
-.login-button {
-  background-color: #f5f8f5; 
-  font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
-  color: rgb(14, 46, 14); /* Nastavení zelené barvy písma */
-  font-weight: bold; /* Nastavení tučného písma */
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, font-weight 0.3s ease;
-}
 
-.login-button:hover {
-  background-color: #606662; /* Zelená barva při najetí myši */
-  color: white; /* Bílá barva písma při najetí myši */
-  font-weight: bold; /* Tučné písmo při najetí myši */
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: column; /* Vertikální uspořádání loga a obrázku */
-  align-items: center;
-  
-}
-
-.logo {
-  width: 200px; /* Velikost loga podle potřeby */
-  margin-bottom: 10px; /* Přidání mezery mezi logem a obrázkem rostliny */
-   }
 
 .plant-image {
-  width: 90px; /* Velikost obrázku rostliny */
-  height: auto; /* Zachování poměru stran */     
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
 }
+
+.plant-image:hover {
+  transform: scale(1.05);
+}
+
 
 .greenHouse {
   width: 70px; /* Velikost obrázku rostliny */
@@ -147,7 +67,7 @@ body {
    
 }
 .status {
-  display: left;
+  display: flex;
   flex-direction: column;
   align-items: center; /* Vycentrování obsahu */
   width: 100%; /* Upraveno na 100% pro lepší responzivitu */
@@ -165,24 +85,27 @@ body {
 .status-item {
   background-color: #b9cfbe; /* Tmavě zelená barva pozadí dlaždice */
   border: 1px solid #ddd; /* Světle šedý okraj */
-  border-radius: 20px; /* Zakulacení rohů */
+  border-radius: 16px; /* Zakulacení rohů */
   padding: 20px; /* Zvýšení paddingu pro lepší vzhled */
-  width: 80%; /* Zmenšení šířky pro lepší vycentrování */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Stín dlaždice */
+  width: 90%; /* Zmenšení šířky pro lepší vycentrování */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Měkký moderní stín */
   text-align: center;
   color: #082708; /* písmo uvnitř dlaždice */
-  font-family: 'Century Gothic', sans-serif; /* Nastavení písma Century Gothic */
+  font-family: 'Poppins', 'Century Gothic', sans-serif;
   font-size: 18px; /* Upraveno na menší velikost písma pro moderní vzhled */
-  font-weight: bold; /* Nastavení tučného písma */
+  font-weight: 600; /* Nastavení tučného písma */
   display: flex;
   justify-content: center; /* Vycentrování obsahu */
   align-items: center;
-  transition: background-color 0.3s; /* Přidání přechodu pro interakci */
-  margin: auto; /* Vycentrování dlaždice */
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px auto; /* Horní/dolní odsazení */
 }
 
 .status-item:hover {
   background-color: #3a5a44; /* Změna barvy při hoveru */
+  color: #ffffff; /* Bílý text při vložení kurzoru */
+  transform: scale(1.03); /* Snadná aproximace */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Hluboký stín při vložení kurzoru */
 }
 
 .status-item > div {
@@ -191,30 +114,36 @@ body {
 }
 
 .status-item > div:not(:last-child) {
-  border-right: 1px solid white; /* Čára mezi sloupci */
+  border-right: 1px solid rgba(255, 255, 255, 0.6); /* Poloprůhledná bílá čára */
 }
 
 .tiles {
   display: flex;
   justify-content: center; /* Vycentrování dlaždic horizontálně */
-  align-items: center; /* Vycentrování dlaždic vertikálně */
+  align-items: flex-start; /* Vycentrování dlaždic vertikálně */
   flex-wrap: wrap; /* Zajištění, že dlaždice se přizpůsobí velikosti obrazovky */
   width: 100%; /* Změna na 100% pro lepší responzivitu */
   margin: 0 auto; /* Vycentrování dlaždic */
+  gap: 20px; /* Normální rozteč mezi kartami */
+  margin-bottom: 50px;
 }
 
 .tiles > .ant-card {
-  margin: auto; /* Vycentrování dlaždice */
   color: darkgreen; /* Nastavení zelené barvy písma */
   background-color: #e8f5e9; /* Jemná zelená barva pozadí */
   position: relative; /* Pro pseudo-element */
-  flex: 1 1 calc(25% - 10px); /* Každá dlaždice zabere 25% šířky mínus mezera */
+  flex: 1 1 calc(25% - 20px); /* Každá dlaždice zabere 25% šířky mínus mezera */
   min-width: 80px; /* Přidáno pro zajištění minimální šířky dlaždic */
-  transition: transform 0.3s; /* Přidání přechodu pro interakci */
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* světelný stín v normálním stavu */
 }
 
 .tiles > .ant-card:hover {
   transform: scale(1.05); /* Zvětšení při hoveru */
+  color: #ffffff; /* Bílý text při vložení kurzoru */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Hluboký stín při vložení kurzoru */
 }
 
 .tiles > .ant-card:not(:last-child)::after {
@@ -241,23 +170,163 @@ body {
   }
 }
 .status-item-container {
-  width: 600px; 
-  height: 300px; 
+  width: 100%;
+  max-width: 800px; /* původně 500px - zvětšeno */
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  padding: 40px; /* trochu více vnitřního prostoru */
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 20px;
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 10px;
-  box-sizing: border-box;
-  overflow: hidden; /* Skryje přetékající obsah */
-  text-align: center;
 }
+
+.status-item-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+
 
 .status-item-container h2 {
   font-size: 16px; 
   white-space: nowrap; 
   overflow: hidden; 
   text-overflow: ellipsis; 
+}
+
+/* Přizpůsobitelnost pro tablety a telefony */
+@media (max-width: 768px) {
+  .status-item-container {
+    width: 90%; /* Flexibilní šířka na malých obrazovkách */
+    height: auto; /* Výška podle obsahu */
+    padding: 15px;
+  }
+
+  .status-item-container h2 {
+    font-size: 14px; /* Písmo na mobilu o něco menší */
+  }
+}
+
+@media (max-width: 480px) {
+  .status-item-container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .status-item-container h2 {
+    font-size: 12px; /* Trochu méně pro malé obrazovky */
+  }
+}
+
+.add-greenhouse {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 2px solid #ccc; /* Tečkovaný okraj */
+  padding: 20px;
+  text-align: center;
+  color: #666;
+  background-color: #b9cfbe; /* Světlé pozadí pro zvýraznění */
+  border-radius: 16px; /* Aby byl tvar shodný s ostatními kartami */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-greenhouse:hover {
+  background-color: #e0e0e0; /* Světle šedé pozadí při najetí myší */
+  transform: scale(1.03); /* Snadná aproximace */
+  color: darkgreen;
+}
+
+/* Modální okna pro mazání a přejmenování modálních oken*/
+
+.modal {
+  background: #ffffff;
+  padding: 32px 28px;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal h2 {
+  font-size: 1.4rem;
+  color: #2c3e30;
+  margin-bottom: 20px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-input:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+  outline: none;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.modal .confirm {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  flex: 1;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal .confirm:hover {
+  background-color: #388e3c;
+  transform: scale(1.03);
+}
+
+.modal .cancel {
+  background-color: #f44336;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  flex: 1;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal .cancel:hover {
+  background-color: #c62828;
+  transform: scale(1.03);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

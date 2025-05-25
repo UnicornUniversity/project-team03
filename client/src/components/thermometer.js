@@ -12,3 +12,6 @@ const Thermometer = () => (
     <text x="10" y="15" fill="#004d00" fontSize="10">18.0 °C</text><text x="115" y="15" fill="#004d00" fontSize="10">26.0 °C</text></svg>
 );
 export default Thermometer;
+
+
+

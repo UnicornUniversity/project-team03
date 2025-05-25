@@ -5,6 +5,8 @@ import Statistics from '../src/components/statistics';
 import LoginPage from '../src/components/loginPage'; // Import LoginPage
 import SettingsPage from '../src/components/settings'; // Import SettingsPage
 import { AuthProvider, AuthContext } from './authContext';
+import './index.css';
+
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated } = useContext(AuthContext);
