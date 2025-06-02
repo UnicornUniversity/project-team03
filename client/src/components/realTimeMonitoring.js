@@ -8,6 +8,7 @@ import { AuthContext } from '../authContext';
 import { fetchLatestData } from '../services/api';
 import Notifications from './notifications';
 
+
 const RealTimeMonitoring = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const [menuActive, setMenuActive] = useState(false);
@@ -206,8 +207,8 @@ const RealTimeMonitoring = () => {
     
 
   return (
-    <div className="dashboard">
-      <header className="dashboard-header">
+    <div className="page">
+      <header className="header">
         <div className="logo-container">
           <IBotaniQLogo />
         </div>
@@ -220,17 +221,18 @@ const RealTimeMonitoring = () => {
           <a href="/" className="active-link">Aktuální situace</a>
           <Link to="/settings">Nastavení</Link>
         </nav>
-        <div className="login-button-container">
+        <div className="btn-container">
           {!isAuthenticated ? (
-            <button className="login-button" onClick={handleLogin}>Přihlášení</button>
+            <button className="btn" onClick={handleLogin}>Přihlášení</button>
           ) : (
-            <button className="login-button" onClick={handleLogout}>Odhlásit</button>
+            <button className="btn" onClick={handleLogout}>Odhlásit</button>
           )}
         </div>
       </header>
       <main>
         <h1 style={{ textAlign: 'center', marginBottom: '20px' }}>Aktuální situace skleníků</h1>
-        
+
+      
 <section className="status" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>
   {!hiddenGreenhouses.includes('sklenik1') && (
     <div className="status-item-container">
@@ -253,34 +255,14 @@ const RealTimeMonitoring = () => {
       </div>
       <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
     <button
-      className="remove-greenhouse-button"
+      className="btn"
       onClick={() => handleRemoveClick('sklenik1')}
-      style={{
-        marginTop: '0,1px',
-        marginLeft: '35px',
-        padding: '5px 10px',
-        backgroundColor: '#b9cfbe',
-        color: 'darkgreen',
-        border: 'none',
-        cursor: 'pointer',
-        borderRadius: '5px',
-      }}
     >
       Odebrat
     </button>
     <button
-      className="rename-greenhouse-button"
+      className="btn"
       onClick={() => handleRenameClick('sklenik1')}
-      style={{
-        marginTop: '0,1px',
-        marginLeft: '3px',
-        padding: '5px 10px',
-        backgroundColor: '#b9cfbe',
-        color: 'darkgreen',
-        border: 'none',
-        cursor: 'pointer',
-        borderRadius: '5px',
-      }}
     >
       Změnit jméno
     </button>
@@ -309,34 +291,15 @@ const RealTimeMonitoring = () => {
       </div>
       <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
     <button
-      className="remove-greenhouse-button"
+      className="btn"
       onClick={() => handleRemoveClick('sklenik2')}
-      style={{
-        marginTop: '0,1px',
-        marginLeft: '35px',
-        padding: '5px 10px',
-        backgroundColor: '#b9cfbe',
-        color: 'darkgreen',
-        border: 'none',
-        cursor: 'pointer',
-        borderRadius: '5px',
-      }}
+  
     >
       Odebrat
     </button>
     <button
-      className="rename-greenhouse-button"
+      className="btn"
       onClick={() => handleRenameClick('sklenik2')}
-      style={{
-        marginTop: '0,1px',
-        marginLeft: '3px',
-        padding: '5px 10px',
-        backgroundColor: '#b9cfbe',
-        color: 'darkgreen',
-        border: 'none',
-        cursor: 'pointer',
-        borderRadius: '5px',
-      }}
     >
       Změnit jméno
     </button>
@@ -349,140 +312,74 @@ const RealTimeMonitoring = () => {
    <div
             className="status-item add-greenhouse"
             onClick={handleAddGreenhouseClick}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              cursor: 'pointer',
-              border: '2px dashed #ccc',
-              padding: '20px',
-              textAlign: 'center',
-              color: '#666'
-            }}
           >
-           
             <p>Přidat další skleník</p>
           </div>
 
   
-        {/* Modální okno pro přidání skleníku */}
+        
+
         {showAddGreenhouseModal && (
-          <div className="modal-overlay">
-            <div className="modal">
-              <h2>Přidat nový skleník</h2>
-              <input
-                type="text"
-                placeholder="Zadejte název skleníku"
-                value={newGreenhouseName}
-                onChange={(e) => setNewGreenhouseName(e.target.value)}
-                style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
-              />
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <button
-                  onClick={handleAddGreenhouseSave}
-                  style={{
-                    padding: '10px 20px',
-                    backgroundColor: 'green',
-                    color: 'white',
-                    border: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  Uložit
-                </button>
-                <button
-                  onClick={handleAddGreenhouseClose}
-                  style={{
-                    padding: '10px 20px',
-                    backgroundColor: 'red',
-                    color: 'white',
-                    border: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  Storno
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-  
-        {/* Modální okno pro odebrání skleníku */}
-        {showRemoveModal && (
-          <div className="modal-overlay">
-            <div className="modal">
-              <h2>Skutečně chcete odebrat skleník?</h2>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
-                <button
-                  onClick={handleRemoveConfirm}
-                  style={{
-                    padding: '10px 20px',
-                    backgroundColor: 'red',
-                    color: 'white',
-                    border: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  ANO
-                </button>
-                <button
-                  onClick={handleRemoveCancel}
-                  style={{
-                    padding: '10px 20px',
-                    backgroundColor: 'gray',
-                    color: 'white',
-                    border: 'none',
-                    cursor: 'pointer',
-                  }}
-                >
-                  NE
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-           {/* Modální okno pro změnu jména skleníku */}
-        {showRenameModal && (
   <div className="modal-overlay">
     <div className="modal">
-      <h2>Změnit jméno skleníku</h2>
+      <h2>🌿 Přidat nový skleník</h2>
       <input
         type="text"
-        placeholder="Zadejte nový název"
+        className="modal-input"
+        placeholder="Zadejte název skleníku"
         value={newGreenhouseName}
         onChange={(e) => setNewGreenhouseName(e.target.value)}
-        style={{ width: '100%', padding: '10px', marginBottom: '10px' }}
       />
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <button
-          onClick={handleRenameSave}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: 'green',
-            color: 'white',
-            border: 'none',
-            cursor: 'pointer',
-          }}
-        >
+      <div className="modal-buttons">
+        <button onClick={handleAddGreenhouseSave} className="confirm">
           Uložit
         </button>
-        <button
-          onClick={handleRenameCancel}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: 'red',
-            color: 'white',
-            border: 'none',
-            cursor: 'pointer',
-          }}
-        >
+        <button onClick={handleAddGreenhouseClose} className="cancel">
           Storno
         </button>
       </div>
     </div>
   </div>
 )}
+
+
+  
+      
+
+
+       {showRemoveModal && (
+  <div className="modal-overlay">
+    <div className="modal">
+      <h2>🗑️ Skutečně chcete odebrat skleník?</h2>
+      <div className="modal-buttons">
+        <button onClick={handleRemoveConfirm} className="confirm">Ano</button>
+        <button onClick={handleRemoveCancel} className="cancel">Ne</button>
+      </div>
+    </div>
+  </div>
+)}
+
+         
+
+
+{showRenameModal && (
+  <div className="modal-overlay">
+    <div className="modal">
+      <h2>✏️ Změnit jméno skleníku</h2>
+      <input
+        type="text"
+        placeholder="Zadejte nový název"
+        value={newGreenhouseName}
+        onChange={(e) => setNewGreenhouseName(e.target.value)}
+      />
+      <div className="modal-buttons">
+        <button onClick={handleRenameSave} className="confirm">Uložit</button>
+        <button onClick={handleRenameCancel} className="cancel">Storno</button>
+      </div>
+    </div>
+  </div>
+)}
+
  {/* Notifikace */}
  <Notifications exceededValue={exceededValue} />
  

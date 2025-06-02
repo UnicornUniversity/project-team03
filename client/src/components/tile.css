@@ -1,82 +1,152 @@
+.tile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Vycentrovat všechny dlaždice */
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 50px;
+  align-items: stretch; 
+}
+
 .tile {
-    width: 900px;
-    margin: 0 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  max-width: 320px;
+  min-height: 420px; /* zaručená stejná výška */
+  height: 100%;      /* v případě potřeby se natáhne */
+
+  padding: 20px;
+  margin: 10px;
+  border-radius: 12px;
+  background: linear-gradient(to bottom right, #d9f9e4, #ffffff);
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+.tile:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.tile-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+.tile-status {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 120px; /* stejná výška */
   }
-  
-  .tile-title {
-    position: relative;
-    padding-bottom: 10px;
-    font-size: 3em;
-    text-align: left;
-    color: #082708;
-  }
-    
-  .tile-title-underline {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(to right, rgb(134, 185, 134), transparent);
-  }
-  
-  .tile-value {
-    text-align: center;
-    font-size: 3em;
-    font-weight: bold;
-  }
-  
-  .tile-value.warning {
-    color: red;
-  }
-  
-  .tile-value.normal {
-    color: rgb(4, 59, 4);
+
+.tile-warning {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.tile-ok {
+  color: #388e3c;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.tile-thresholds {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #1b5e20;
+}
+
+
+
+
+/* Název karty */
+.tile-title {
+  font-size: clamp(1.5rem, 2vw, 1.8rem);
+  font-weight: 600;
+  color: #082708;
+  margin-bottom: 10px;
+  position: relative;
+  text-align: center;
+}
+
+/* Podtrhněte název */
+.tile-title-underline {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(to right, rgb(134, 185, 134), transparent);
+  margin-top: 10px;
+}
+
+/* Hodnota karty */
+.tile-value {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: bold;
+  color: rgb(4, 59, 4);
+}
+
+.tile-value.warning {
+  color: red;
+}
+
+.tile-value.normal {
+  color: rgb(4, 59, 4);
+}
+
+/* Obrázek uvnitř karty */
+.responsive-image {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  margin: 10px 0;
+  object-fit: contain;
+  display: block;
+}
+
+/* Přizpůsobivost */
+@media (max-width: 768px) {
+  .tile {
+    max-width: 100%;
+    min-height: 320px;
   }
 
   .responsive-image {
-    width: 150px;
-    height: 95px;
-    margin-bottom: 10px;
+    max-width: 100px;
+  }
 }
-    
-  @media (max-width: 768px) {
-    .tile {
-      width: 90%;
-      margin-bottom: 20px;
-    }
-  
-    .tile-title {
-      font-size: 1.5em;
-    }
-  
-    .tile-value {
-      font-size: 2em;
-    }
-    .responsive-image {
-      width: 60px; /* Zmenšení šířky obrázků na mobilu */
-      height: 50px; /* Zmenšení výšky obrázků na mobilu */
-    }
-  
-     }
 
-     @media (max-width: 600px) {
-      .tile {
-        width: 80%;
-        margin-bottom: 20px;
-      }
-    
-      .tile-title {
-        font-size: 1.5em;
-      }
-    
-      .tile-value {
-        font-size: 2em;
-      }
-      .responsive-image {
-        width: 60px; /* Zmenšení šířky obrázků na mobilu */
-        height: 50px; /* Zmenšení výšky obrázků na mobilu */
-      }
-    
-       }
+@media (max-width: 600px) {
+  .tile {
+    width: 80%;
+    min-height: 300px;
+  }
+
+  .responsive-image {
+    max-width: 80px;
+  }
+}

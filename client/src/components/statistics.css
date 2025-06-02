@@ -1,37 +1,17 @@
-body {
-  background-color: #f1f0da; 
-}
 
 .statistics-container {
   background-color: #f1f0da; 
   padding: 20px;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  background: linear-gradient(to top, #d2eed8, #3f5a42, #2e4a34); /* Zelená barva pro hlavičku */
-  align-items: center;
-  padding: 0.1rem 0.2rem; /* Zmenšení vnitřního odsazení */
-  height: auto; /* Automatická výška podle obsahu */
-  border-top-left-radius: 15px; /* Zakulacení levého horního okraje */
-  border-top-right-radius: 15px; /* Zakulacení pravého horního okraje */
-  
-}
-.header > *:not(:last-child) {
-  margin-right: 10px; /* Přidá mezery mezi prvky */
-}
-.tile {
-  width: 900px;
-  margin: 0 1px;
-}
+
 /* Kontejner pro tlačítko a nadpis */
 .title-and-back {
-display: flex;
-align-items: center;
-gap: 1rem; /* Mezera mezi tlačítkem a nadpisem */
-flex-grow: 1; /* Zajistí, že kontejner zabere dostupný prostor */
-}
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Mezera mezi tlačítkem a nadpisem */
+  flex-grow: 1; /* Zajistí, že kontejner zabere dostupný prostor */
+  }
 
 
 .chart-container {

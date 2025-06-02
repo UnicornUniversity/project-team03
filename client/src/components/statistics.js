@@ -5,15 +5,16 @@ import LoginModal from './loginModal';
 import './statistics.css'; 
 import IBotaniQLogo from './iBotaniQLogo';
 import { AuthContext } from '../authContext';
-import './realTimeMonitoring.css'; 
-import Tile from './tile'; 
+import { Tile } from './tile';
 import SunIcon from './sunIcon';
 import Thermomether from './thermometer';
 import SoilMoistureIcon from './soilMoistureIcon';
 import { fetchHistoricalData, fetchLatestData } from '../services/api';
 import { fetchThresholds } from '../services/api';
 import { useParams } from 'react-router-dom';
+import HumidityIcon from './humidityIcon';
 import Thermometer from './thermometer';
+
 
 
 const Statistics = () => {
@@ -158,8 +159,8 @@ const Statistics = () => {
   };
 
   return (
-    <div className="statistics-container">      
-      <header className="dashboard-header">
+    <div className="page">      
+      <header className="header">
         <div className="logo-container">
           <IBotaniQLogo />
         </div>
@@ -172,13 +173,13 @@ const Statistics = () => {
           <Link to="/">Zpět na hlavní stránku</Link>          
           <Link to="/settings">Nastavení</Link>
         </nav>
-        <div className="login-button-container">
+        <div className="btn-container">
           {!isAuthenticated ? (
-            <button className="login-button" onClick={handleLogin}>
+            <button className="btn" onClick={handleLogin}>
               Přihlášení
             </button>
           ) : (
-            <button className="login-button" onClick={handleLogout}>
+            <button className="btn" onClick={handleLogout}>
               Odhlásit
             </button>
           )}
@@ -188,29 +189,33 @@ const Statistics = () => {
     <h1>Hodnoty pro {greenhouse === 'sklenik1' ? 'Skleník 1' : 'Skleník 2'}</h1>
     <section className="tiles">
         <Tile
-    title="Teplota"
-    value={
-      isAuthenticated 
-      ? <><Thermometer
-      minTemperature={18} // Hodnoty z nastavení
-      maxTemperature={26}
-    /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 20}</span></> 
-      : <><Thermomether /> ?</>
-    }
-    unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
-    status={
-      isAuthenticated && data.temperature !== undefined 
-      ? data.temperature < thresholds.temperature.min
-      ? 'low' 
-      : data.temperature > thresholds.temperature.max
-        ? 'high' 
-        : 'normal'
-    : 'normal'
-    }
-    minThreshold={thresholds.temperature.min}
-    maxThreshold={thresholds.temperature.max}
-  />
+
+            title="Teplota"
+
+            value={
+              isAuthenticated 
+              ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 20}</span></> 
+              : <><Thermomether /> ?</>
+            }
+
+
+    
+              unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
+              status={
+                isAuthenticated && data.temperature !== undefined 
+                ? data.temperature < thresholds.temperature.min
+                ? 'low' 
+                : data.temperature > thresholds.temperature.max
+                  ? 'high' 
+                  : 'normal'
+              : 'normal'
+              }
+              minThreshold={thresholds.temperature.min}
+              maxThreshold={thresholds.temperature.max}
+            />
+
           <Tile
+
             title="Vlhkost půdy"
             value={
               isAuthenticated 
@@ -230,10 +235,17 @@ const Statistics = () => {
             minThreshold={thresholds.soilMoisture.min}
             maxThreshold={thresholds.soilMoisture.max }
           />
+
+
+
+
           <Tile
             title="Vlhkost"
-            value={isAuthenticated ? <span style={getStatusStyle(isAirHumidityNormal)}>{data.humidity !== undefined ? data.humidity : 60}</span> 
-             : "?"}
+            value={
+              isAuthenticated 
+              ? <><HumidityIcon /> <span style={getStatusStyle(isAirHumidityNormal)}>{data.humidity !== undefined ? data.humidity : 60}</span> </>
+              : <><HumidityIcon /> ?</>
+            }
             unit={isAuthenticated ? '%' : ""}
             status={
               isAuthenticated && data.humidity !== undefined 
@@ -244,10 +256,13 @@ const Statistics = () => {
                     : 'normal'
                 : 'normal'
             }
-            imageSrc="/images/leaf.JPG"
+            // imageSrc="/images/leaf.JPG"
             minThreshold={thresholds.airHumidity.min}
             maxThreshold={thresholds.airHumidity.max}
           />
+
+
+
           <Tile
            title="Světlo"
            value={
