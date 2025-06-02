@@ -34,12 +34,12 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.use('/api/sensors', sensorRoutes); 
-app.use('/api/thresholds', thresholdRoutes);
-
 // Middleware pro zpracování JSON
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use('/api/sensors', sensorRoutes); 
+app.use('/api/thresholds', thresholdRoutes);
 
 const dbUri = process.env.MONGODB_URI;
 console.log('MongoDB URI:', dbUri);

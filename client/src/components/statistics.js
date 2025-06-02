@@ -13,6 +13,7 @@ import { fetchHistoricalData, fetchLatestData } from '../services/api';
 import { fetchThresholds } from '../services/api';
 import { useParams } from 'react-router-dom';
 import HumidityIcon from './humidityIcon';
+import Thermometer from './thermometer';
 
 
 
@@ -188,6 +189,7 @@ const Statistics = () => {
     <h1>Hodnoty pro {greenhouse === 'sklenik1' ? 'Skleník 1' : 'Skleník 2'}</h1>
     <section className="tiles">
         <Tile
+
             title="Teplota"
 
             value={
@@ -212,9 +214,8 @@ const Statistics = () => {
               maxThreshold={thresholds.temperature.max}
             />
 
+          <Tile
 
-
-        <Tile
             title="Vlhkost půdy"
             value={
               isAuthenticated 
@@ -283,6 +284,8 @@ const Statistics = () => {
           maxThreshold={thresholds.light.max}       
            />
         </section>
+        <div className="thermometer-container">        
+      </div>
       <h2>Hodnoty naměřené za poslední období</h2>
       <div className="chart-container">
         {isAuthenticated ? (

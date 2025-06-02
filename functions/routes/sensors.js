@@ -90,18 +90,18 @@ router.get('/thresholds/:greenhouseId', async (req, res) => {
 // Endpoint pro uložení nebo aktualizaci limitů pro konkrétní skleník
 router.post('/thresholds/:greenhouseId', async (req, res) => {
   const greenhouseId = parseInt(req.params.greenhouseId); // Získání ID skleníku z parametru
-  const { temperature, soilMoisture, airHumidity, light } = req.body; // Data z požadavku
+  const { temperature, moisture, humidity, light_level } = req.body; // Data z požadavku
 
   try {
     // Validace vstupních dat
-    if (!temperature || !soilMoisture || !airHumidity || !light) {
+    if (!temperature || !moisture || !humidity || !light_level) {
       return res.status(400).json({ error: 'Všechna pole jsou povinná.' });
     }
 
     // Najít a aktualizovat dokument, nebo vytvořit nový, pokud neexistuje
     const updatedThreshold = await Threshold.findOneAndUpdate(
       { greenhouseId }, // Podmínka pro vyhledání
-      { temperature, soilMoisture, airHumidity, light }, // Data k aktualizaci
+      { temperature, moisture, humidity, light_level }, // Data k aktualizaci
       { new: true, upsert: true } // Vytvořit nový dokument, pokud neexistuje
     );
 
@@ -113,5 +113,59 @@ router.post('/thresholds/:greenhouseId', async (req, res) => {
   }
 });
 
-module.exports = router;
+//Endpoint pro nahrani dat do monga
+router.post('/mongo-upload', async (req, res) => {
+  console.log('▶️ req.body =', JSON.stringify(req.body, null, 2));
+  if (typeof req.body === 'string') {
+    try {
+      req.body = JSON.parse(req.body);
+    } catch (err) {
+      console.warn('Could not JSON.parse req.body:', err.message);
+      return res.status(400).json({ error: 'Invalid JSON payload' });
+    }
+  }
+  try {
+    const {
+      greenhouseId,
+      sensor,
+      temperature,
+      humidity,
+      soil_moisture,
+      light_level,
+      timestamp
+    } = req.body;
 
+    const missing = [];
+    if (greenhouseId   == null) missing.push('greenhouseId');
+    if (sensor         == null) missing.push('sensor');
+    if (temperature    == null) missing.push('temperature');
+    if (humidity       == null) missing.push('humidity');
+    if (soil_moisture  == null) missing.push('soil_moisture');
+    if (light_level    == null) missing.push('light_level');
+
+    if (missing.length > 0) {
+      return res.status(400).json({
+        error: `Missing required field(s): ${missing.join(', ')}`,
+        received: { greenhouseId, sensor, temperature, humidity, soil_moisture, light_level, timestamp }
+      });
+    }
+
+    const reading = new Sensor({
+      timestamp: timestamp ? new Date(timestamp) : undefined,
+      greenhouseId,
+      sensor,
+      temperature,
+      humidity,
+      light_level,
+      soil_moisture
+    });
+
+    const saved = await reading.save();
+    res.status(201).json(saved);
+  } catch (err) {
+    console.error('Error saving sensor:', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+module.exports = router;

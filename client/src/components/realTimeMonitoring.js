@@ -15,6 +15,7 @@ const RealTimeMonitoring = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [dataSklenik1, setDataSklenik1] = useState(null);
   const [dataSklenik2, setDataSklenik2] = useState(null);
+  const [additionalGreenhouses, setAdditionalGreenhouses] = useState([]); // Stav pro další skleníky
   const navigate = useNavigate();
   const [showAddGreenhouseModal, setShowAddGreenhouseModal] = useState(false);
   const [newGreenhouseName, setNewGreenhouseName] = useState('');
@@ -49,6 +50,21 @@ const RealTimeMonitoring = () => {
     fetchDataForGreenhouses();
   }, [isAuthenticated]);
 
+  // Render additional greenhouses
+  const renderAdditionalGreenhouses = () => {
+    return additionalGreenhouses.map((greenhouse) => (
+      <div key={greenhouse.id} className="status-item-container">
+        <div className="status-item" onClick={() => handleGreenhouseClick(greenhouse.id)}>
+          <img src="/images/plant-image.JPG" alt="Plant" className="plant-image" />
+          <div className="current-status-container">
+            <h2>{greenhouse.name}</h2>
+            <p>Data nejsou dostupná</p>
+          </div>
+        </div>
+      </div>
+    ));
+  };
+
   const checkValues = (data) => {
     if (!data) return;
 
@@ -68,6 +84,10 @@ const RealTimeMonitoring = () => {
   useEffect(() => {
     checkValues(dataSklenik1); // Kontrola hodnot pro skleník 1
   }, [dataSklenik1]);
+
+  useEffect(() => {
+    checkValues(dataSklenik2); // Kontrola hodnot pro skleník 2
+  }, [dataSklenik2]);
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
@@ -106,8 +126,20 @@ const RealTimeMonitoring = () => {
       return;
     }
 
+    const newGreenhouse = {
+      id: `sklenik${Date.now()}`, // Unikátní ID pro nový skleník
+      name: newGreenhouseName,
+      timestamp: Date.now(),
+      temperature: null,
+      soil_moisture: null,
+      humidity: null,
+      light_level: null
+    };
+
+    setHiddenGreenhouses((prevHidden) => prevHidden.filter(id => id !== newGreenhouse.id));
+    setAdditionalGreenhouses((prevGreenhouses) => [...prevGreenhouses, newGreenhouse]); // Přidání nového skleníků do seznamu dalších skleníků
+
     console.log('Nový skleník uložen:', newGreenhouseName);
-    
     handleAddGreenhouseClose();
   };
 
@@ -274,6 +306,7 @@ const RealTimeMonitoring = () => {
   </div>
 </div>
  )}
+ {renderAdditionalGreenhouses()}
 </section>
    {/* Přidat další skleník */}
    <div
