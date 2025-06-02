@@ -1,0 +1,7778 @@
+[
+    {
+      "timestamp": "2025-05-01T00:00:00.000+02:00",
+      "temperature": 18.04,
+      "humidity": 55.92,
+      "light_level": 0.43,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T01:00:00.000+02:00",
+      "temperature": 17.94,
+      "humidity": 53.66,
+      "light_level": 0.4,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T02:00:00.000+02:00",
+      "temperature": 18.13,
+      "humidity": 42.54,
+      "light_level": 0.96,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T03:00:00.000+02:00",
+      "temperature": 16.46,
+      "humidity": 58.21,
+      "light_level": 0.19,
+      "soil_moisture": 46,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T04:00:00.000+02:00",
+      "temperature": 17.29,
+      "humidity": 41.72,
+      "light_level": 0.35,
+      "soil_moisture": 45,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T05:00:00.000+02:00",
+      "temperature": 18.29,
+      "humidity": 56.36,
+      "light_level": 0.42,
+      "soil_moisture": 45,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T06:00:00.000+02:00",
+      "temperature": 20.61,
+      "humidity": 47.86,
+      "light_level": 9.86,
+      "soil_moisture": 45,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T07:00:00.000+02:00",
+      "temperature": 18.8,
+      "humidity": 57.93,
+      "light_level": 9.51,
+      "soil_moisture": 44,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T08:00:00.000+02:00",
+      "temperature": 21.89,
+      "humidity": 44.08,
+      "light_level": 7.84,
+      "soil_moisture": 43,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T09:00:00.000+02:00",
+      "temperature": 24.0,
+      "humidity": 41.51,
+      "light_level": 7.98,
+      "soil_moisture": 43,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T10:00:00.000+02:00",
+      "temperature": 25.15,
+      "humidity": 53.73,
+      "light_level": 8.58,
+      "soil_moisture": 42,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T11:00:00.000+02:00",
+      "temperature": 25.7,
+      "humidity": 59.47,
+      "light_level": 7.39,
+      "soil_moisture": 41,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T12:00:00.000+02:00",
+      "temperature": 26.08,
+      "humidity": 55.86,
+      "light_level": 7.23,
+      "soil_moisture": 40,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T13:00:00.000+02:00",
+      "temperature": 25.56,
+      "humidity": 55.95,
+      "light_level": 7.09,
+      "soil_moisture": 39,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T14:00:00.000+02:00",
+      "temperature": 24.74,
+      "humidity": 51.42,
+      "light_level": 7.32,
+      "soil_moisture": 38,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T15:00:00.000+02:00",
+      "temperature": 23.35,
+      "humidity": 54.08,
+      "light_level": 8.45,
+      "soil_moisture": 38,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T16:00:00.000+02:00",
+      "temperature": 22.08,
+      "humidity": 40.5,
+      "light_level": 9.25,
+      "soil_moisture": 37,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T17:00:00.000+02:00",
+      "temperature": 19.98,
+      "humidity": 54.81,
+      "light_level": 8.21,
+      "soil_moisture": 36,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T18:00:00.000+02:00",
+      "temperature": 18.27,
+      "humidity": 40.26,
+      "light_level": 8.07,
+      "soil_moisture": 36,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T19:00:00.000+02:00",
+      "temperature": 18.35,
+      "humidity": 50.61,
+      "light_level": 0.95,
+      "soil_moisture": 36,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T20:00:00.000+02:00",
+      "temperature": 17.87,
+      "humidity": 40.77,
+      "light_level": 0.43,
+      "soil_moisture": 35,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T21:00:00.000+02:00",
+      "temperature": 18.38,
+      "humidity": 49.03,
+      "light_level": 0.52,
+      "soil_moisture": 34,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T22:00:00.000+02:00",
+      "temperature": 18.29,
+      "humidity": 53.75,
+      "light_level": 0.86,
+      "soil_moisture": 33,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-01T23:00:00.000+02:00",
+      "temperature": 18.14,
+      "humidity": 41.62,
+      "light_level": 0.37,
+      "soil_moisture": 32,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T00:00:00.000+02:00",
+      "temperature": 18.79,
+      "humidity": 44.54,
+      "light_level": 0.9,
+      "soil_moisture": 32,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T01:00:00.000+02:00",
+      "temperature": 16.52,
+      "humidity": 57.16,
+      "light_level": 0.55,
+      "soil_moisture": 31,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T02:00:00.000+02:00",
+      "temperature": 16.65,
+      "humidity": 58.16,
+      "light_level": 0.9,
+      "soil_moisture": 31,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T03:00:00.000+02:00",
+      "temperature": 17.95,
+      "humidity": 42.98,
+      "light_level": 0.69,
+      "soil_moisture": 30,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T04:00:00.000+02:00",
+      "temperature": 15.69,
+      "humidity": 49.81,
+      "light_level": 0.73,
+      "soil_moisture": 29,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T05:00:00.000+02:00",
+      "temperature": 16.36,
+      "humidity": 47.92,
+      "light_level": 0.83,
+      "soil_moisture": 28,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T06:00:00.000+02:00",
+      "temperature": 16.83,
+      "humidity": 42.7,
+      "light_level": 8.0,
+      "soil_moisture": 27,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T07:00:00.000+02:00",
+      "temperature": 20.58,
+      "humidity": 49.16,
+      "light_level": 9.45,
+      "soil_moisture": 27,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T08:00:00.000+02:00",
+      "temperature": 21.22,
+      "humidity": 51.94,
+      "light_level": 7.71,
+      "soil_moisture": 26,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T09:00:00.000+02:00",
+      "temperature": 22.07,
+      "humidity": 59.18,
+      "light_level": 9.95,
+      "soil_moisture": 25,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T10:00:00.000+02:00",
+      "temperature": 26.27,
+      "humidity": 56.22,
+      "light_level": 7.07,
+      "soil_moisture": 24,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T11:00:00.000+02:00",
+      "temperature": 25.9,
+      "humidity": 43.73,
+      "light_level": 7.91,
+      "soil_moisture": 23,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T12:00:00.000+02:00",
+      "temperature": 25.65,
+      "humidity": 55.47,
+      "light_level": 7.63,
+      "soil_moisture": 22,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T13:00:00.000+02:00",
+      "temperature": 25.79,
+      "humidity": 46.36,
+      "light_level": 8.75,
+      "soil_moisture": 22,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T14:00:00.000+02:00",
+      "temperature": 24.74,
+      "humidity": 56.9,
+      "light_level": 7.91,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T15:00:00.000+02:00",
+      "temperature": 23.94,
+      "humidity": 56.78,
+      "light_level": 8.21,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T16:00:00.000+02:00",
+      "temperature": 21.75,
+      "humidity": 42.33,
+      "light_level": 8.91,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T17:00:00.000+02:00",
+      "temperature": 20.04,
+      "humidity": 42.41,
+      "light_level": 7.93,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T18:00:00.000+02:00",
+      "temperature": 17.76,
+      "humidity": 55.28,
+      "light_level": 8.74,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T19:00:00.000+02:00",
+      "temperature": 17.88,
+      "humidity": 50.22,
+      "light_level": 0.5,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T20:00:00.000+02:00",
+      "temperature": 19.81,
+      "humidity": 44.03,
+      "light_level": 0.23,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T21:00:00.000+02:00",
+      "temperature": 14.91,
+      "humidity": 48.78,
+      "light_level": 0.42,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T22:00:00.000+02:00",
+      "temperature": 19.13,
+      "humidity": 57.65,
+      "light_level": 0.8,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-02T23:00:00.000+02:00",
+      "temperature": 20.44,
+      "humidity": 54.93,
+      "light_level": 0.13,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T00:00:00.000+02:00",
+      "temperature": 18.22,
+      "humidity": 41.19,
+      "light_level": 0.73,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T01:00:00.000+02:00",
+      "temperature": 18.35,
+      "humidity": 52.56,
+      "light_level": 0.73,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T02:00:00.000+02:00",
+      "temperature": 18.02,
+      "humidity": 48.5,
+      "light_level": 0.29,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T03:00:00.000+02:00",
+      "temperature": 17.96,
+      "humidity": 46.9,
+      "light_level": 0.47,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T04:00:00.000+02:00",
+      "temperature": 17.64,
+      "humidity": 57.67,
+      "light_level": 0.43,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T05:00:00.000+02:00",
+      "temperature": 18.19,
+      "humidity": 56.75,
+      "light_level": 0.74,
+      "soil_moisture": 20,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T06:00:00.000+02:00",
+      "temperature": 17.9,
+      "humidity": 43.16,
+      "light_level": 8.66,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T07:00:00.000+02:00",
+      "temperature": 18.26,
+      "humidity": 50.36,
+      "light_level": 8.43,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T08:00:00.000+02:00",
+      "temperature": 19.95,
+      "humidity": 48.22,
+      "light_level": 8.0,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T09:00:00.000+02:00",
+      "temperature": 21.84,
+      "humidity": 40.86,
+      "light_level": 7.94,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T10:00:00.000+02:00",
+      "temperature": 26.37,
+      "humidity": 40.77,
+      "light_level": 8.15,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T11:00:00.000+02:00",
+      "temperature": 24.62,
+      "humidity": 54.37,
+      "light_level": 9.6,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T12:00:00.000+02:00",
+      "temperature": 28.67,
+      "humidity": 43.71,
+      "light_level": 9.37,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T13:00:00.000+02:00",
+      "temperature": 25.22,
+      "humidity": 53.02,
+      "light_level": 7.83,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T14:00:00.000+02:00",
+      "temperature": 21.99,
+      "humidity": 57.33,
+      "light_level": 8.63,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T15:00:00.000+02:00",
+      "temperature": 23.3,
+      "humidity": 54.97,
+      "light_level": 7.16,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T16:00:00.000+02:00",
+      "temperature": 22.74,
+      "humidity": 54.57,
+      "light_level": 9.34,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T17:00:00.000+02:00",
+      "temperature": 19.92,
+      "humidity": 50.0,
+      "light_level": 8.7,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T18:00:00.000+02:00",
+      "temperature": 20.64,
+      "humidity": 43.15,
+      "light_level": 8.07,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T19:00:00.000+02:00",
+      "temperature": 18.19,
+      "humidity": 52.44,
+      "light_level": 0.81,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T20:00:00.000+02:00",
+      "temperature": 17.78,
+      "humidity": 40.57,
+      "light_level": 0.42,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T21:00:00.000+02:00",
+      "temperature": 16.67,
+      "humidity": 41.16,
+      "light_level": 0.8,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T22:00:00.000+02:00",
+      "temperature": 18.48,
+      "humidity": 49.53,
+      "light_level": 0.77,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-03T23:00:00.000+02:00",
+      "temperature": 18.47,
+      "humidity": 50.36,
+      "light_level": 0.62,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T00:00:00.000+02:00",
+      "temperature": 19.69,
+      "humidity": 41.34,
+      "light_level": 0.85,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T01:00:00.000+02:00",
+      "temperature": 19.04,
+      "humidity": 48.25,
+      "light_level": 0.38,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T02:00:00.000+02:00",
+      "temperature": 19.95,
+      "humidity": 48.77,
+      "light_level": 0.67,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T03:00:00.000+02:00",
+      "temperature": 18.96,
+      "humidity": 47.93,
+      "light_level": 0.65,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T04:00:00.000+02:00",
+      "temperature": 18.24,
+      "humidity": 47.46,
+      "light_level": 0.52,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T05:00:00.000+02:00",
+      "temperature": 18.13,
+      "humidity": 49.33,
+      "light_level": 0.95,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T06:00:00.000+02:00",
+      "temperature": 18.31,
+      "humidity": 40.92,
+      "light_level": 7.85,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T07:00:00.000+02:00",
+      "temperature": 20.05,
+      "humidity": 44.57,
+      "light_level": 8.89,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T08:00:00.000+02:00",
+      "temperature": 22.16,
+      "humidity": 52.91,
+      "light_level": 7.6,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T09:00:00.000+02:00",
+      "temperature": 23.72,
+      "humidity": 48.99,
+      "light_level": 7.75,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T10:00:00.000+02:00",
+      "temperature": 24.65,
+      "humidity": 50.3,
+      "light_level": 8.21,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T11:00:00.000+02:00",
+      "temperature": 25.86,
+      "humidity": 45.1,
+      "light_level": 9.61,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T12:00:00.000+02:00",
+      "temperature": 25.85,
+      "humidity": 43.69,
+      "light_level": 8.4,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T13:00:00.000+02:00",
+      "temperature": 23.47,
+      "humidity": 56.62,
+      "light_level": 9.7,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T14:00:00.000+02:00",
+      "temperature": 27.12,
+      "humidity": 40.68,
+      "light_level": 9.32,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T15:00:00.000+02:00",
+      "temperature": 23.74,
+      "humidity": 56.16,
+      "light_level": 7.72,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T16:00:00.000+02:00",
+      "temperature": 20.97,
+      "humidity": 56.6,
+      "light_level": 8.79,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T17:00:00.000+02:00",
+      "temperature": 20.33,
+      "humidity": 52.7,
+      "light_level": 8.35,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T18:00:00.000+02:00",
+      "temperature": 16.96,
+      "humidity": 42.88,
+      "light_level": 8.9,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T19:00:00.000+02:00",
+      "temperature": 20.78,
+      "humidity": 45.59,
+      "light_level": 0.41,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T20:00:00.000+02:00",
+      "temperature": 16.8,
+      "humidity": 57.54,
+      "light_level": 0.15,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T21:00:00.000+02:00",
+      "temperature": 19.67,
+      "humidity": 45.01,
+      "light_level": 0.61,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T22:00:00.000+02:00",
+      "temperature": 16.09,
+      "humidity": 54.99,
+      "light_level": 0.35,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-04T23:00:00.000+02:00",
+      "temperature": 16.8,
+      "humidity": 59.19,
+      "light_level": 0.12,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T00:00:00.000+02:00",
+      "temperature": 15.74,
+      "humidity": 44.91,
+      "light_level": 0.23,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T01:00:00.000+02:00",
+      "temperature": 17.85,
+      "humidity": 55.9,
+      "light_level": 0.63,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T02:00:00.000+02:00",
+      "temperature": 18.23,
+      "humidity": 47.69,
+      "light_level": 0.67,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T03:00:00.000+02:00",
+      "temperature": 17.95,
+      "humidity": 49.48,
+      "light_level": 0.31,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T04:00:00.000+02:00",
+      "temperature": 17.94,
+      "humidity": 43.15,
+      "light_level": 0.9,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T05:00:00.000+02:00",
+      "temperature": 19.97,
+      "humidity": 43.6,
+      "light_level": 0.21,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T06:00:00.000+02:00",
+      "temperature": 17.89,
+      "humidity": 54.05,
+      "light_level": 9.97,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T07:00:00.000+02:00",
+      "temperature": 22.54,
+      "humidity": 41.8,
+      "light_level": 7.83,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T08:00:00.000+02:00",
+      "temperature": 24.5,
+      "humidity": 40.63,
+      "light_level": 9.86,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T09:00:00.000+02:00",
+      "temperature": 25.76,
+      "humidity": 45.27,
+      "light_level": 8.86,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T10:00:00.000+02:00",
+      "temperature": 22.39,
+      "humidity": 58.13,
+      "light_level": 9.71,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T11:00:00.000+02:00",
+      "temperature": 27.19,
+      "humidity": 47.41,
+      "light_level": 9.35,
+      "soil_moisture": 58,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T12:00:00.000+02:00",
+      "temperature": 23.37,
+      "humidity": 48.91,
+      "light_level": 8.15,
+      "soil_moisture": 58,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T13:00:00.000+02:00",
+      "temperature": 25.58,
+      "humidity": 53.05,
+      "light_level": 7.68,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T14:00:00.000+02:00",
+      "temperature": 27.0,
+      "humidity": 41.9,
+      "light_level": 8.35,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T15:00:00.000+02:00",
+      "temperature": 20.47,
+      "humidity": 43.53,
+      "light_level": 7.54,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T16:00:00.000+02:00",
+      "temperature": 21.8,
+      "humidity": 56.34,
+      "light_level": 9.79,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T17:00:00.000+02:00",
+      "temperature": 20.43,
+      "humidity": 50.47,
+      "light_level": 9.95,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T18:00:00.000+02:00",
+      "temperature": 17.99,
+      "humidity": 53.84,
+      "light_level": 8.03,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T19:00:00.000+02:00",
+      "temperature": 19.16,
+      "humidity": 45.41,
+      "light_level": 0.07,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T20:00:00.000+02:00",
+      "temperature": 17.28,
+      "humidity": 40.44,
+      "light_level": 0.3,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T21:00:00.000+02:00",
+      "temperature": 19.65,
+      "humidity": 40.16,
+      "light_level": 0.33,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T22:00:00.000+02:00",
+      "temperature": 16.99,
+      "humidity": 41.23,
+      "light_level": 0.43,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-05T23:00:00.000+02:00",
+      "temperature": 16.8,
+      "humidity": 54.87,
+      "light_level": 0.77,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T00:00:00.000+02:00",
+      "temperature": 19.38,
+      "humidity": 59.16,
+      "light_level": 0.05,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T01:00:00.000+02:00",
+      "temperature": 15.43,
+      "humidity": 42.18,
+      "light_level": 0.59,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T02:00:00.000+02:00",
+      "temperature": 16.5,
+      "humidity": 42.14,
+      "light_level": 0.74,
+      "soil_moisture": 46,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T03:00:00.000+02:00",
+      "temperature": 15.31,
+      "humidity": 44.59,
+      "light_level": 0.08,
+      "soil_moisture": 45,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T04:00:00.000+02:00",
+      "temperature": 14.88,
+      "humidity": 52.94,
+      "light_level": 0.19,
+      "soil_moisture": 45,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T05:00:00.000+02:00",
+      "temperature": 15.34,
+      "humidity": 46.74,
+      "light_level": 0.22,
+      "soil_moisture": 45,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T06:00:00.000+02:00",
+      "temperature": 18.3,
+      "humidity": 48.8,
+      "light_level": 9.08,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T07:00:00.000+02:00",
+      "temperature": 19.91,
+      "humidity": 48.9,
+      "light_level": 8.37,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T08:00:00.000+02:00",
+      "temperature": 24.48,
+      "humidity": 43.42,
+      "light_level": 7.8,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T09:00:00.000+02:00",
+      "temperature": 23.72,
+      "humidity": 56.11,
+      "light_level": 9.3,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T10:00:00.000+02:00",
+      "temperature": 24.62,
+      "humidity": 47.61,
+      "light_level": 8.81,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T11:00:00.000+02:00",
+      "temperature": 26.71,
+      "humidity": 50.88,
+      "light_level": 9.95,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T12:00:00.000+02:00",
+      "temperature": 28.13,
+      "humidity": 48.27,
+      "light_level": 8.22,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T13:00:00.000+02:00",
+      "temperature": 24.13,
+      "humidity": 45.5,
+      "light_level": 8.2,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T14:00:00.000+02:00",
+      "temperature": 22.67,
+      "humidity": 41.71,
+      "light_level": 8.86,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T15:00:00.000+02:00",
+      "temperature": 23.85,
+      "humidity": 58.72,
+      "light_level": 7.9,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T16:00:00.000+02:00",
+      "temperature": 22.24,
+      "humidity": 59.78,
+      "light_level": 7.58,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T17:00:00.000+02:00",
+      "temperature": 19.74,
+      "humidity": 53.96,
+      "light_level": 8.31,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T18:00:00.000+02:00",
+      "temperature": 17.72,
+      "humidity": 57.46,
+      "light_level": 9.24,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T19:00:00.000+02:00",
+      "temperature": 18.03,
+      "humidity": 54.79,
+      "light_level": 0.07,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T20:00:00.000+02:00",
+      "temperature": 17.96,
+      "humidity": 58.37,
+      "light_level": 0.02,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T21:00:00.000+02:00",
+      "temperature": 17.7,
+      "humidity": 54.74,
+      "light_level": 0.08,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T22:00:00.000+02:00",
+      "temperature": 17.92,
+      "humidity": 46.08,
+      "light_level": 0.72,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-06T23:00:00.000+02:00",
+      "temperature": 18.11,
+      "humidity": 53.37,
+      "light_level": 0.4,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T00:00:00.000+02:00",
+      "temperature": 18.0,
+      "humidity": 43.05,
+      "light_level": 0.47,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T01:00:00.000+02:00",
+      "temperature": 17.99,
+      "humidity": 55.96,
+      "light_level": 0.59,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T02:00:00.000+02:00",
+      "temperature": 17.71,
+      "humidity": 42.19,
+      "light_level": 0.09,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T03:00:00.000+02:00",
+      "temperature": 17.65,
+      "humidity": 40.58,
+      "light_level": 0.16,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T04:00:00.000+02:00",
+      "temperature": 17.76,
+      "humidity": 47.22,
+      "light_level": 0.18,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T05:00:00.000+02:00",
+      "temperature": 17.82,
+      "humidity": 44.18,
+      "light_level": 0.54,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T06:00:00.000+02:00",
+      "temperature": 17.26,
+      "humidity": 46.23,
+      "light_level": 7.58,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T07:00:00.000+02:00",
+      "temperature": 18.85,
+      "humidity": 55.57,
+      "light_level": 9.34,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T08:00:00.000+02:00",
+      "temperature": 20.75,
+      "humidity": 55.44,
+      "light_level": 8.28,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T09:00:00.000+02:00",
+      "temperature": 25.64,
+      "humidity": 58.2,
+      "light_level": 7.18,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T10:00:00.000+02:00",
+      "temperature": 25.21,
+      "humidity": 46.85,
+      "light_level": 8.15,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T11:00:00.000+02:00",
+      "temperature": 23.16,
+      "humidity": 40.89,
+      "light_level": 9.22,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T12:00:00.000+02:00",
+      "temperature": 26.08,
+      "humidity": 42.88,
+      "light_level": 9.03,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T13:00:00.000+02:00",
+      "temperature": 23.25,
+      "humidity": 40.61,
+      "light_level": 7.51,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T14:00:00.000+02:00",
+      "temperature": 25.95,
+      "humidity": 59.81,
+      "light_level": 9.6,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T15:00:00.000+02:00",
+      "temperature": 22.42,
+      "humidity": 57.72,
+      "light_level": 9.93,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T16:00:00.000+02:00",
+      "temperature": 22.19,
+      "humidity": 46.57,
+      "light_level": 8.18,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T17:00:00.000+02:00",
+      "temperature": 20.18,
+      "humidity": 45.03,
+      "light_level": 7.84,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T18:00:00.000+02:00",
+      "temperature": 20.2,
+      "humidity": 46.96,
+      "light_level": 8.94,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T19:00:00.000+02:00",
+      "temperature": 17.83,
+      "humidity": 47.98,
+      "light_level": 0.26,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T20:00:00.000+02:00",
+      "temperature": 16.36,
+      "humidity": 47.0,
+      "light_level": 0.33,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T21:00:00.000+02:00",
+      "temperature": 20.29,
+      "humidity": 46.91,
+      "light_level": 0.62,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T22:00:00.000+02:00",
+      "temperature": 15.05,
+      "humidity": 43.39,
+      "light_level": 0.51,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-07T23:00:00.000+02:00",
+      "temperature": 15.58,
+      "humidity": 44.13,
+      "light_level": 0.24,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T00:00:00.000+02:00",
+      "temperature": 17.84,
+      "humidity": 49.31,
+      "light_level": 0.59,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T01:00:00.000+02:00",
+      "temperature": 15.33,
+      "humidity": 44.79,
+      "light_level": 0.79,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T02:00:00.000+02:00",
+      "temperature": 15.49,
+      "humidity": 48.21,
+      "light_level": 0.26,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T03:00:00.000+02:00",
+      "temperature": 20.72,
+      "humidity": 47.57,
+      "light_level": 0.43,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T04:00:00.000+02:00",
+      "temperature": 16.41,
+      "humidity": 50.11,
+      "light_level": 0.78,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T05:00:00.000+02:00",
+      "temperature": 17.52,
+      "humidity": 60.0,
+      "light_level": 0.64,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T06:00:00.000+02:00",
+      "temperature": 18.34,
+      "humidity": 58.92,
+      "light_level": 7.6,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T07:00:00.000+02:00",
+      "temperature": 20.02,
+      "humidity": 57.55,
+      "light_level": 8.82,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T08:00:00.000+02:00",
+      "temperature": 22.02,
+      "humidity": 42.45,
+      "light_level": 9.74,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T09:00:00.000+02:00",
+      "temperature": 23.58,
+      "humidity": 47.95,
+      "light_level": 7.68,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T10:00:00.000+02:00",
+      "temperature": 25.25,
+      "humidity": 49.39,
+      "light_level": 7.63,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T11:00:00.000+02:00",
+      "temperature": 25.8,
+      "humidity": 55.5,
+      "light_level": 8.92,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T12:00:00.000+02:00",
+      "temperature": 26.29,
+      "humidity": 53.2,
+      "light_level": 8.26,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T13:00:00.000+02:00",
+      "temperature": 25.58,
+      "humidity": 48.98,
+      "light_level": 9.68,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T14:00:00.000+02:00",
+      "temperature": 24.54,
+      "humidity": 44.65,
+      "light_level": 9.9,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T15:00:00.000+02:00",
+      "temperature": 23.72,
+      "humidity": 55.85,
+      "light_level": 9.82,
+      "soil_moisture": 58,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T16:00:00.000+02:00",
+      "temperature": 22.29,
+      "humidity": 42.64,
+      "light_level": 7.08,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T17:00:00.000+02:00",
+      "temperature": 20.05,
+      "humidity": 59.5,
+      "light_level": 9.24,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T18:00:00.000+02:00",
+      "temperature": 18.35,
+      "humidity": 47.32,
+      "light_level": 8.8,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T19:00:00.000+02:00",
+      "temperature": 17.93,
+      "humidity": 46.7,
+      "light_level": 0.37,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T20:00:00.000+02:00",
+      "temperature": 18.03,
+      "humidity": 43.82,
+      "light_level": 0.17,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T21:00:00.000+02:00",
+      "temperature": 17.79,
+      "humidity": 58.49,
+      "light_level": 0.21,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T22:00:00.000+02:00",
+      "temperature": 18.15,
+      "humidity": 43.94,
+      "light_level": 0.97,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-08T23:00:00.000+02:00",
+      "temperature": 17.77,
+      "humidity": 57.28,
+      "light_level": 0.2,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T00:00:00.000+02:00",
+      "temperature": 14.71,
+      "humidity": 46.32,
+      "light_level": 0.25,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T01:00:00.000+02:00",
+      "temperature": 19.07,
+      "humidity": 46.34,
+      "light_level": 0.05,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T02:00:00.000+02:00",
+      "temperature": 19.39,
+      "humidity": 59.92,
+      "light_level": 0.73,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T03:00:00.000+02:00",
+      "temperature": 15.43,
+      "humidity": 55.95,
+      "light_level": 0.76,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T04:00:00.000+02:00",
+      "temperature": 17.44,
+      "humidity": 56.28,
+      "light_level": 0.17,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T05:00:00.000+02:00",
+      "temperature": 15.31,
+      "humidity": 52.91,
+      "light_level": 0.69,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T06:00:00.000+02:00",
+      "temperature": 19.36,
+      "humidity": 45.08,
+      "light_level": 8.18,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T07:00:00.000+02:00",
+      "temperature": 22.51,
+      "humidity": 56.28,
+      "light_level": 8.28,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T08:00:00.000+02:00",
+      "temperature": 22.14,
+      "humidity": 42.64,
+      "light_level": 7.64,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T09:00:00.000+02:00",
+      "temperature": 23.48,
+      "humidity": 45.21,
+      "light_level": 9.85,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T10:00:00.000+02:00",
+      "temperature": 25.01,
+      "humidity": 47.26,
+      "light_level": 8.86,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T11:00:00.000+02:00",
+      "temperature": 25.43,
+      "humidity": 44.73,
+      "light_level": 8.91,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T12:00:00.000+02:00",
+      "temperature": 26.01,
+      "humidity": 57.33,
+      "light_level": 8.49,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T13:00:00.000+02:00",
+      "temperature": 26.11,
+      "humidity": 55.72,
+      "light_level": 9.58,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T14:00:00.000+02:00",
+      "temperature": 24.82,
+      "humidity": 59.8,
+      "light_level": 7.01,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T15:00:00.000+02:00",
+      "temperature": 23.73,
+      "humidity": 58.44,
+      "light_level": 8.77,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T16:00:00.000+02:00",
+      "temperature": 21.77,
+      "humidity": 42.52,
+      "light_level": 9.0,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T17:00:00.000+02:00",
+      "temperature": 20.14,
+      "humidity": 44.27,
+      "light_level": 7.55,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T18:00:00.000+02:00",
+      "temperature": 17.79,
+      "humidity": 47.82,
+      "light_level": 7.34,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T19:00:00.000+02:00",
+      "temperature": 17.69,
+      "humidity": 40.9,
+      "light_level": 0.03,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T20:00:00.000+02:00",
+      "temperature": 17.9,
+      "humidity": 51.88,
+      "light_level": 0.37,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T21:00:00.000+02:00",
+      "temperature": 17.65,
+      "humidity": 43.34,
+      "light_level": 0.88,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T22:00:00.000+02:00",
+      "temperature": 18.37,
+      "humidity": 57.36,
+      "light_level": 0.55,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-09T23:00:00.000+02:00",
+      "temperature": 18.37,
+      "humidity": 57.66,
+      "light_level": 0.38,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T00:00:00.000+02:00",
+      "temperature": 17.69,
+      "humidity": 45.79,
+      "light_level": 0.71,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T01:00:00.000+02:00",
+      "temperature": 17.74,
+      "humidity": 46.51,
+      "light_level": 0.08,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T02:00:00.000+02:00",
+      "temperature": 17.61,
+      "humidity": 45.46,
+      "light_level": 0.57,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T03:00:00.000+02:00",
+      "temperature": 19.59,
+      "humidity": 52.22,
+      "light_level": 0.27,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T04:00:00.000+02:00",
+      "temperature": 15.94,
+      "humidity": 55.5,
+      "light_level": 0.15,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T05:00:00.000+02:00",
+      "temperature": 15.44,
+      "humidity": 48.22,
+      "light_level": 0.25,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T06:00:00.000+02:00",
+      "temperature": 16.86,
+      "humidity": 44.08,
+      "light_level": 9.34,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T07:00:00.000+02:00",
+      "temperature": 18.06,
+      "humidity": 53.01,
+      "light_level": 9.35,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T08:00:00.000+02:00",
+      "temperature": 19.39,
+      "humidity": 41.05,
+      "light_level": 8.31,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T09:00:00.000+02:00",
+      "temperature": 22.39,
+      "humidity": 48.43,
+      "light_level": 9.01,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T10:00:00.000+02:00",
+      "temperature": 24.65,
+      "humidity": 59.42,
+      "light_level": 8.94,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T11:00:00.000+02:00",
+      "temperature": 25.8,
+      "humidity": 45.06,
+      "light_level": 9.57,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T12:00:00.000+02:00",
+      "temperature": 25.97,
+      "humidity": 52.73,
+      "light_level": 7.52,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T13:00:00.000+02:00",
+      "temperature": 25.39,
+      "humidity": 48.89,
+      "light_level": 9.43,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T14:00:00.000+02:00",
+      "temperature": 24.66,
+      "humidity": 42.43,
+      "light_level": 8.0,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T15:00:00.000+02:00",
+      "temperature": 23.78,
+      "humidity": 54.29,
+      "light_level": 9.49,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T16:00:00.000+02:00",
+      "temperature": 21.86,
+      "humidity": 46.97,
+      "light_level": 9.15,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T17:00:00.000+02:00",
+      "temperature": 20.04,
+      "humidity": 49.34,
+      "light_level": 8.21,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T18:00:00.000+02:00",
+      "temperature": 17.62,
+      "humidity": 57.05,
+      "light_level": 8.29,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T19:00:00.000+02:00",
+      "temperature": 18.23,
+      "humidity": 48.91,
+      "light_level": 0.33,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T20:00:00.000+02:00",
+      "temperature": 17.88,
+      "humidity": 42.2,
+      "light_level": 0.79,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T21:00:00.000+02:00",
+      "temperature": 18.34,
+      "humidity": 46.24,
+      "light_level": 0.88,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T22:00:00.000+02:00",
+      "temperature": 18.13,
+      "humidity": 54.13,
+      "light_level": 0.13,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-10T23:00:00.000+02:00",
+      "temperature": 17.67,
+      "humidity": 42.28,
+      "light_level": 0.57,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T00:00:00.000+02:00",
+      "temperature": 18.19,
+      "humidity": 57.55,
+      "light_level": 0.48,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T01:00:00.000+02:00",
+      "temperature": 17.84,
+      "humidity": 47.72,
+      "light_level": 0.28,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T02:00:00.000+02:00",
+      "temperature": 17.96,
+      "humidity": 47.82,
+      "light_level": 0.11,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T03:00:00.000+02:00",
+      "temperature": 18.33,
+      "humidity": 57.63,
+      "light_level": 0.13,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T04:00:00.000+02:00",
+      "temperature": 17.93,
+      "humidity": 57.73,
+      "light_level": 0.04,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T05:00:00.000+02:00",
+      "temperature": 17.72,
+      "humidity": 44.68,
+      "light_level": 0.87,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T06:00:00.000+02:00",
+      "temperature": 18.09,
+      "humidity": 42.94,
+      "light_level": 8.95,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T07:00:00.000+02:00",
+      "temperature": 20.29,
+      "humidity": 50.86,
+      "light_level": 9.65,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T08:00:00.000+02:00",
+      "temperature": 19.74,
+      "humidity": 54.05,
+      "light_level": 8.06,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T09:00:00.000+02:00",
+      "temperature": 22.41,
+      "humidity": 46.99,
+      "light_level": 8.35,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T10:00:00.000+02:00",
+      "temperature": 24.15,
+      "humidity": 53.43,
+      "light_level": 7.55,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T11:00:00.000+02:00",
+      "temperature": 22.99,
+      "humidity": 49.14,
+      "light_level": 9.08,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T12:00:00.000+02:00",
+      "temperature": 28.04,
+      "humidity": 54.34,
+      "light_level": 7.43,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T13:00:00.000+02:00",
+      "temperature": 23.12,
+      "humidity": 52.94,
+      "light_level": 8.04,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T14:00:00.000+02:00",
+      "temperature": 23.31,
+      "humidity": 56.39,
+      "light_level": 9.76,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T15:00:00.000+02:00",
+      "temperature": 23.93,
+      "humidity": 52.89,
+      "light_level": 8.73,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T16:00:00.000+02:00",
+      "temperature": 22.09,
+      "humidity": 49.72,
+      "light_level": 9.43,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T17:00:00.000+02:00",
+      "temperature": 20.22,
+      "humidity": 49.62,
+      "light_level": 9.6,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T18:00:00.000+02:00",
+      "temperature": 17.64,
+      "humidity": 55.12,
+      "light_level": 8.59,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T19:00:00.000+02:00",
+      "temperature": 17.67,
+      "humidity": 44.32,
+      "light_level": 0.33,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T20:00:00.000+02:00",
+      "temperature": 15.51,
+      "humidity": 43.23,
+      "light_level": 0.65,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T21:00:00.000+02:00",
+      "temperature": 18.07,
+      "humidity": 52.82,
+      "light_level": 0.57,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T22:00:00.000+02:00",
+      "temperature": 16.9,
+      "humidity": 50.39,
+      "light_level": 0.82,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-11T23:00:00.000+02:00",
+      "temperature": 19.58,
+      "humidity": 45.53,
+      "light_level": 0.96,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T00:00:00.000+02:00",
+      "temperature": 19.93,
+      "humidity": 42.88,
+      "light_level": 0.22,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T01:00:00.000+02:00",
+      "temperature": 18.07,
+      "humidity": 56.1,
+      "light_level": 0.1,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T02:00:00.000+02:00",
+      "temperature": 17.92,
+      "humidity": 41.24,
+      "light_level": 0.56,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T03:00:00.000+02:00",
+      "temperature": 17.62,
+      "humidity": 41.23,
+      "light_level": 0.21,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T04:00:00.000+02:00",
+      "temperature": 18.04,
+      "humidity": 42.62,
+      "light_level": 0.1,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T05:00:00.000+02:00",
+      "temperature": 17.72,
+      "humidity": 43.18,
+      "light_level": 0.37,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T06:00:00.000+02:00",
+      "temperature": 17.78,
+      "humidity": 43.68,
+      "light_level": 8.58,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T07:00:00.000+02:00",
+      "temperature": 19.76,
+      "humidity": 46.64,
+      "light_level": 8.59,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T08:00:00.000+02:00",
+      "temperature": 21.99,
+      "humidity": 48.38,
+      "light_level": 8.48,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T09:00:00.000+02:00",
+      "temperature": 23.4,
+      "humidity": 42.77,
+      "light_level": 7.88,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T10:00:00.000+02:00",
+      "temperature": 25.1,
+      "humidity": 48.13,
+      "light_level": 7.41,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T11:00:00.000+02:00",
+      "temperature": 25.34,
+      "humidity": 56.55,
+      "light_level": 9.34,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T12:00:00.000+02:00",
+      "temperature": 25.04,
+      "humidity": 55.6,
+      "light_level": 9.22,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T13:00:00.000+02:00",
+      "temperature": 23.89,
+      "humidity": 50.96,
+      "light_level": 9.38,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T14:00:00.000+02:00",
+      "temperature": 24.13,
+      "humidity": 49.85,
+      "light_level": 8.18,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T15:00:00.000+02:00",
+      "temperature": 20.28,
+      "humidity": 46.66,
+      "light_level": 9.9,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T16:00:00.000+02:00",
+      "temperature": 20.04,
+      "humidity": 42.23,
+      "light_level": 7.23,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T17:00:00.000+02:00",
+      "temperature": 21.55,
+      "humidity": 48.32,
+      "light_level": 7.74,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T18:00:00.000+02:00",
+      "temperature": 20.47,
+      "humidity": 57.07,
+      "light_level": 8.55,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T19:00:00.000+02:00",
+      "temperature": 20.41,
+      "humidity": 53.27,
+      "light_level": 0.57,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T20:00:00.000+02:00",
+      "temperature": 16.27,
+      "humidity": 48.83,
+      "light_level": 0.96,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T21:00:00.000+02:00",
+      "temperature": 14.92,
+      "humidity": 51.27,
+      "light_level": 0.82,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T22:00:00.000+02:00",
+      "temperature": 19.02,
+      "humidity": 52.06,
+      "light_level": 0.61,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-12T23:00:00.000+02:00",
+      "temperature": 19.01,
+      "humidity": 53.05,
+      "light_level": 0.98,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T00:00:00.000+02:00",
+      "temperature": 17.94,
+      "humidity": 58.71,
+      "light_level": 0.58,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T01:00:00.000+02:00",
+      "temperature": 18.72,
+      "humidity": 40.51,
+      "light_level": 0.98,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T02:00:00.000+02:00",
+      "temperature": 19.75,
+      "humidity": 42.55,
+      "light_level": 0.16,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T03:00:00.000+02:00",
+      "temperature": 20.32,
+      "humidity": 56.01,
+      "light_level": 0.24,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T04:00:00.000+02:00",
+      "temperature": 15.59,
+      "humidity": 40.62,
+      "light_level": 0.74,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T05:00:00.000+02:00",
+      "temperature": 16.41,
+      "humidity": 40.6,
+      "light_level": 0.75,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T06:00:00.000+02:00",
+      "temperature": 20.02,
+      "humidity": 57.22,
+      "light_level": 8.17,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T07:00:00.000+02:00",
+      "temperature": 20.34,
+      "humidity": 56.79,
+      "light_level": 7.32,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T08:00:00.000+02:00",
+      "temperature": 24.44,
+      "humidity": 40.47,
+      "light_level": 8.98,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T09:00:00.000+02:00",
+      "temperature": 25.4,
+      "humidity": 56.76,
+      "light_level": 7.45,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T10:00:00.000+02:00",
+      "temperature": 26.97,
+      "humidity": 51.04,
+      "light_level": 9.69,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T11:00:00.000+02:00",
+      "temperature": 23.27,
+      "humidity": 44.42,
+      "light_level": 8.48,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T12:00:00.000+02:00",
+      "temperature": 25.07,
+      "humidity": 49.81,
+      "light_level": 8.59,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T13:00:00.000+02:00",
+      "temperature": 28.0,
+      "humidity": 53.9,
+      "light_level": 7.63,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T14:00:00.000+02:00",
+      "temperature": 22.68,
+      "humidity": 52.8,
+      "light_level": 8.82,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T15:00:00.000+02:00",
+      "temperature": 21.99,
+      "humidity": 54.51,
+      "light_level": 8.85,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T16:00:00.000+02:00",
+      "temperature": 24.5,
+      "humidity": 48.73,
+      "light_level": 9.97,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T17:00:00.000+02:00",
+      "temperature": 19.18,
+      "humidity": 41.9,
+      "light_level": 8.14,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T18:00:00.000+02:00",
+      "temperature": 18.16,
+      "humidity": 44.48,
+      "light_level": 8.7,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T19:00:00.000+02:00",
+      "temperature": 18.3,
+      "humidity": 44.68,
+      "light_level": 0.16,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T20:00:00.000+02:00",
+      "temperature": 18.09,
+      "humidity": 54.2,
+      "light_level": 0.36,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T21:00:00.000+02:00",
+      "temperature": 18.35,
+      "humidity": 46.75,
+      "light_level": 0.22,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T22:00:00.000+02:00",
+      "temperature": 17.8,
+      "humidity": 50.86,
+      "light_level": 0.04,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-13T23:00:00.000+02:00",
+      "temperature": 17.6,
+      "humidity": 47.38,
+      "light_level": 0.91,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T00:00:00.000+02:00",
+      "temperature": 18.29,
+      "humidity": 55.35,
+      "light_level": 0.41,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T01:00:00.000+02:00",
+      "temperature": 17.78,
+      "humidity": 55.35,
+      "light_level": 0.68,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T02:00:00.000+02:00",
+      "temperature": 18.24,
+      "humidity": 55.26,
+      "light_level": 0.38,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T03:00:00.000+02:00",
+      "temperature": 17.7,
+      "humidity": 47.36,
+      "light_level": 0.78,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T04:00:00.000+02:00",
+      "temperature": 18.29,
+      "humidity": 59.35,
+      "light_level": 0.09,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T05:00:00.000+02:00",
+      "temperature": 18.17,
+      "humidity": 54.71,
+      "light_level": 0.68,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T06:00:00.000+02:00",
+      "temperature": 17.84,
+      "humidity": 56.91,
+      "light_level": 8.58,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T07:00:00.000+02:00",
+      "temperature": 20.2,
+      "humidity": 53.57,
+      "light_level": 7.93,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T08:00:00.000+02:00",
+      "temperature": 21.72,
+      "humidity": 52.16,
+      "light_level": 8.68,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T09:00:00.000+02:00",
+      "temperature": 23.66,
+      "humidity": 53.74,
+      "light_level": 8.26,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T10:00:00.000+02:00",
+      "temperature": 24.99,
+      "humidity": 48.63,
+      "light_level": 7.08,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T11:00:00.000+02:00",
+      "temperature": 25.92,
+      "humidity": 43.7,
+      "light_level": 7.9,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T12:00:00.000+02:00",
+      "temperature": 25.6,
+      "humidity": 59.34,
+      "light_level": 7.92,
+      "soil_moisture": 58,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T13:00:00.000+02:00",
+      "temperature": 26.46,
+      "humidity": 42.69,
+      "light_level": 7.23,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T14:00:00.000+02:00",
+      "temperature": 22.63,
+      "humidity": 56.58,
+      "light_level": 9.76,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T15:00:00.000+02:00",
+      "temperature": 25.66,
+      "humidity": 54.65,
+      "light_level": 9.42,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T16:00:00.000+02:00",
+      "temperature": 19.98,
+      "humidity": 46.94,
+      "light_level": 9.08,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T17:00:00.000+02:00",
+      "temperature": 18.52,
+      "humidity": 43.79,
+      "light_level": 8.22,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T18:00:00.000+02:00",
+      "temperature": 19.91,
+      "humidity": 49.01,
+      "light_level": 7.56,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T19:00:00.000+02:00",
+      "temperature": 16.69,
+      "humidity": 45.39,
+      "light_level": 0.95,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T20:00:00.000+02:00",
+      "temperature": 18.16,
+      "humidity": 51.81,
+      "light_level": 0.46,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T21:00:00.000+02:00",
+      "temperature": 18.02,
+      "humidity": 45.34,
+      "light_level": 0.17,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T22:00:00.000+02:00",
+      "temperature": 16.1,
+      "humidity": 52.27,
+      "light_level": 0.7,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-14T23:00:00.000+02:00",
+      "temperature": 20.54,
+      "humidity": 46.26,
+      "light_level": 0.17,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T00:00:00.000+02:00",
+      "temperature": 18.37,
+      "humidity": 54.6,
+      "light_level": 0.25,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T01:00:00.000+02:00",
+      "temperature": 18.95,
+      "humidity": 51.51,
+      "light_level": 0.67,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T02:00:00.000+02:00",
+      "temperature": 15.37,
+      "humidity": 46.26,
+      "light_level": 0.34,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T03:00:00.000+02:00",
+      "temperature": 17.32,
+      "humidity": 56.42,
+      "light_level": 0.32,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T04:00:00.000+02:00",
+      "temperature": 16.27,
+      "humidity": 54.4,
+      "light_level": 0.08,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T05:00:00.000+02:00",
+      "temperature": 16.78,
+      "humidity": 45.23,
+      "light_level": 0.38,
+      "soil_moisture": 46,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T06:00:00.000+02:00",
+      "temperature": 20.35,
+      "humidity": 56.31,
+      "light_level": 7.32,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T07:00:00.000+02:00",
+      "temperature": 21.47,
+      "humidity": 49.23,
+      "light_level": 8.28,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T08:00:00.000+02:00",
+      "temperature": 19.45,
+      "humidity": 53.22,
+      "light_level": 7.53,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T09:00:00.000+02:00",
+      "temperature": 23.96,
+      "humidity": 48.94,
+      "light_level": 8.99,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T10:00:00.000+02:00",
+      "temperature": 24.71,
+      "humidity": 51.23,
+      "light_level": 9.48,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T11:00:00.000+02:00",
+      "temperature": 25.68,
+      "humidity": 57.24,
+      "light_level": 7.18,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T12:00:00.000+02:00",
+      "temperature": 26.29,
+      "humidity": 52.12,
+      "light_level": 7.52,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T13:00:00.000+02:00",
+      "temperature": 25.76,
+      "humidity": 56.24,
+      "light_level": 9.33,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T14:00:00.000+02:00",
+      "temperature": 24.68,
+      "humidity": 40.53,
+      "light_level": 9.74,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T15:00:00.000+02:00",
+      "temperature": 23.9,
+      "humidity": 57.55,
+      "light_level": 7.83,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T16:00:00.000+02:00",
+      "temperature": 22.4,
+      "humidity": 44.47,
+      "light_level": 8.89,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T17:00:00.000+02:00",
+      "temperature": 19.98,
+      "humidity": 57.04,
+      "light_level": 9.77,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T18:00:00.000+02:00",
+      "temperature": 15.51,
+      "humidity": 55.51,
+      "light_level": 8.86,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T19:00:00.000+02:00",
+      "temperature": 15.85,
+      "humidity": 57.26,
+      "light_level": 0.47,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T20:00:00.000+02:00",
+      "temperature": 18.59,
+      "humidity": 41.24,
+      "light_level": 0.53,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T21:00:00.000+02:00",
+      "temperature": 19.64,
+      "humidity": 55.43,
+      "light_level": 0.26,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T22:00:00.000+02:00",
+      "temperature": 15.03,
+      "humidity": 41.52,
+      "light_level": 0.66,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-15T23:00:00.000+02:00",
+      "temperature": 19.56,
+      "humidity": 43.47,
+      "light_level": 0.38,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T00:00:00.000+02:00",
+      "temperature": 20.06,
+      "humidity": 45.04,
+      "light_level": 0.18,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T01:00:00.000+02:00",
+      "temperature": 18.95,
+      "humidity": 47.07,
+      "light_level": 0.41,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T02:00:00.000+02:00",
+      "temperature": 18.22,
+      "humidity": 52.73,
+      "light_level": 0.74,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T03:00:00.000+02:00",
+      "temperature": 17.8,
+      "humidity": 59.26,
+      "light_level": 0.86,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T04:00:00.000+02:00",
+      "temperature": 17.85,
+      "humidity": 51.7,
+      "light_level": 0.86,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T05:00:00.000+02:00",
+      "temperature": 17.79,
+      "humidity": 54.49,
+      "light_level": 0.96,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T06:00:00.000+02:00",
+      "temperature": 17.6,
+      "humidity": 43.61,
+      "light_level": 7.15,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T07:00:00.000+02:00",
+      "temperature": 20.19,
+      "humidity": 59.53,
+      "light_level": 9.28,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T08:00:00.000+02:00",
+      "temperature": 22.07,
+      "humidity": 45.53,
+      "light_level": 8.07,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T09:00:00.000+02:00",
+      "temperature": 23.64,
+      "humidity": 44.32,
+      "light_level": 9.66,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T10:00:00.000+02:00",
+      "temperature": 24.81,
+      "humidity": 55.86,
+      "light_level": 9.52,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T11:00:00.000+02:00",
+      "temperature": 24.44,
+      "humidity": 55.6,
+      "light_level": 7.52,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T12:00:00.000+02:00",
+      "temperature": 26.48,
+      "humidity": 43.27,
+      "light_level": 8.1,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T13:00:00.000+02:00",
+      "temperature": 26.56,
+      "humidity": 44.19,
+      "light_level": 7.03,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T14:00:00.000+02:00",
+      "temperature": 25.19,
+      "humidity": 42.08,
+      "light_level": 8.67,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T15:00:00.000+02:00",
+      "temperature": 22.36,
+      "humidity": 57.35,
+      "light_level": 8.31,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T16:00:00.000+02:00",
+      "temperature": 21.5,
+      "humidity": 56.39,
+      "light_level": 9.18,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T17:00:00.000+02:00",
+      "temperature": 22.77,
+      "humidity": 51.34,
+      "light_level": 8.91,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T18:00:00.000+02:00",
+      "temperature": 18.59,
+      "humidity": 53.62,
+      "light_level": 7.12,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T19:00:00.000+02:00",
+      "temperature": 17.92,
+      "humidity": 59.05,
+      "light_level": 0.76,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T20:00:00.000+02:00",
+      "temperature": 18.35,
+      "humidity": 40.06,
+      "light_level": 0.42,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T21:00:00.000+02:00",
+      "temperature": 17.91,
+      "humidity": 52.39,
+      "light_level": 0.76,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T22:00:00.000+02:00",
+      "temperature": 17.63,
+      "humidity": 57.37,
+      "light_level": 0.67,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-16T23:00:00.000+02:00",
+      "temperature": 17.76,
+      "humidity": 59.93,
+      "light_level": 0.17,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T00:00:00.000+02:00",
+      "temperature": 17.64,
+      "humidity": 46.46,
+      "light_level": 0.93,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T01:00:00.000+02:00",
+      "temperature": 17.87,
+      "humidity": 52.27,
+      "light_level": 0.26,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T02:00:00.000+02:00",
+      "temperature": 17.79,
+      "humidity": 42.64,
+      "light_level": 0.07,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T03:00:00.000+02:00",
+      "temperature": 17.62,
+      "humidity": 44.8,
+      "light_level": 0.79,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T04:00:00.000+02:00",
+      "temperature": 18.06,
+      "humidity": 47.35,
+      "light_level": 0.87,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T05:00:00.000+02:00",
+      "temperature": 18.33,
+      "humidity": 54.26,
+      "light_level": 0.46,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T06:00:00.000+02:00",
+      "temperature": 17.64,
+      "humidity": 46.37,
+      "light_level": 7.63,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T07:00:00.000+02:00",
+      "temperature": 19.94,
+      "humidity": 58.12,
+      "light_level": 7.75,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T08:00:00.000+02:00",
+      "temperature": 21.69,
+      "humidity": 51.44,
+      "light_level": 9.98,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T09:00:00.000+02:00",
+      "temperature": 23.5,
+      "humidity": 52.96,
+      "light_level": 7.21,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T10:00:00.000+02:00",
+      "temperature": 25.25,
+      "humidity": 54.12,
+      "light_level": 8.38,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T11:00:00.000+02:00",
+      "temperature": 23.81,
+      "humidity": 46.39,
+      "light_level": 8.08,
+      "soil_moisture": 58,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T12:00:00.000+02:00",
+      "temperature": 26.85,
+      "humidity": 56.89,
+      "light_level": 9.21,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T13:00:00.000+02:00",
+      "temperature": 26.17,
+      "humidity": 50.22,
+      "light_level": 8.13,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T14:00:00.000+02:00",
+      "temperature": 27.45,
+      "humidity": 44.51,
+      "light_level": 7.84,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T15:00:00.000+02:00",
+      "temperature": 25.61,
+      "humidity": 52.95,
+      "light_level": 8.91,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T16:00:00.000+02:00",
+      "temperature": 23.57,
+      "humidity": 44.04,
+      "light_level": 9.64,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T17:00:00.000+02:00",
+      "temperature": 19.96,
+      "humidity": 54.76,
+      "light_level": 9.64,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T18:00:00.000+02:00",
+      "temperature": 17.79,
+      "humidity": 49.99,
+      "light_level": 8.68,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T19:00:00.000+02:00",
+      "temperature": 18.1,
+      "humidity": 42.52,
+      "light_level": 0.81,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T20:00:00.000+02:00",
+      "temperature": 18.07,
+      "humidity": 40.18,
+      "light_level": 0.09,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T21:00:00.000+02:00",
+      "temperature": 18.19,
+      "humidity": 42.52,
+      "light_level": 0.09,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T22:00:00.000+02:00",
+      "temperature": 17.81,
+      "humidity": 53.04,
+      "light_level": 0.02,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-17T23:00:00.000+02:00",
+      "temperature": 18.17,
+      "humidity": 52.9,
+      "light_level": 0.93,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T00:00:00.000+02:00",
+      "temperature": 17.65,
+      "humidity": 46.24,
+      "light_level": 0.31,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T01:00:00.000+02:00",
+      "temperature": 17.82,
+      "humidity": 52.9,
+      "light_level": 0.01,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T02:00:00.000+02:00",
+      "temperature": 18.24,
+      "humidity": 40.5,
+      "light_level": 0.25,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T03:00:00.000+02:00",
+      "temperature": 17.61,
+      "humidity": 53.55,
+      "light_level": 0.95,
+      "soil_moisture": 46,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T04:00:00.000+02:00",
+      "temperature": 18.35,
+      "humidity": 45.09,
+      "light_level": 0.36,
+      "soil_moisture": 45,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T05:00:00.000+02:00",
+      "temperature": 18.07,
+      "humidity": 43.54,
+      "light_level": 0.56,
+      "soil_moisture": 45,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T06:00:00.000+02:00",
+      "temperature": 17.87,
+      "humidity": 52.88,
+      "light_level": 9.24,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T07:00:00.000+02:00",
+      "temperature": 20.23,
+      "humidity": 46.98,
+      "light_level": 7.97,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T08:00:00.000+02:00",
+      "temperature": 22.28,
+      "humidity": 49.64,
+      "light_level": 7.65,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T09:00:00.000+02:00",
+      "temperature": 24.04,
+      "humidity": 54.03,
+      "light_level": 7.36,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T10:00:00.000+02:00",
+      "temperature": 24.77,
+      "humidity": 42.58,
+      "light_level": 7.71,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T11:00:00.000+02:00",
+      "temperature": 27.43,
+      "humidity": 54.83,
+      "light_level": 8.41,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T12:00:00.000+02:00",
+      "temperature": 26.86,
+      "humidity": 59.79,
+      "light_level": 8.57,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T13:00:00.000+02:00",
+      "temperature": 23.91,
+      "humidity": 46.31,
+      "light_level": 7.79,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T14:00:00.000+02:00",
+      "temperature": 22.01,
+      "humidity": 41.71,
+      "light_level": 8.56,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T15:00:00.000+02:00",
+      "temperature": 23.41,
+      "humidity": 48.5,
+      "light_level": 8.78,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T16:00:00.000+02:00",
+      "temperature": 20.45,
+      "humidity": 49.45,
+      "light_level": 7.2,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T17:00:00.000+02:00",
+      "temperature": 17.14,
+      "humidity": 58.2,
+      "light_level": 7.43,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T18:00:00.000+02:00",
+      "temperature": 17.57,
+      "humidity": 41.6,
+      "light_level": 7.71,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T19:00:00.000+02:00",
+      "temperature": 17.25,
+      "humidity": 57.6,
+      "light_level": 0.48,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T20:00:00.000+02:00",
+      "temperature": 18.17,
+      "humidity": 47.32,
+      "light_level": 0.42,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T21:00:00.000+02:00",
+      "temperature": 18.36,
+      "humidity": 49.27,
+      "light_level": 0.36,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T22:00:00.000+02:00",
+      "temperature": 20.54,
+      "humidity": 54.81,
+      "light_level": 0.51,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-18T23:00:00.000+02:00",
+      "temperature": 19.02,
+      "humidity": 40.03,
+      "light_level": 0.11,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T00:00:00.000+02:00",
+      "temperature": 16.09,
+      "humidity": 53.01,
+      "light_level": 0.6,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T01:00:00.000+02:00",
+      "temperature": 20.65,
+      "humidity": 41.6,
+      "light_level": 0.33,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T02:00:00.000+02:00",
+      "temperature": 18.57,
+      "humidity": 44.64,
+      "light_level": 0.03,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T03:00:00.000+02:00",
+      "temperature": 17.5,
+      "humidity": 42.74,
+      "light_level": 0.48,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T04:00:00.000+02:00",
+      "temperature": 20.6,
+      "humidity": 42.47,
+      "light_level": 0.67,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T05:00:00.000+02:00",
+      "temperature": 16.93,
+      "humidity": 56.02,
+      "light_level": 0.93,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T06:00:00.000+02:00",
+      "temperature": 14.71,
+      "humidity": 51.46,
+      "light_level": 8.51,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T07:00:00.000+02:00",
+      "temperature": 20.11,
+      "humidity": 49.61,
+      "light_level": 7.15,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T08:00:00.000+02:00",
+      "temperature": 21.89,
+      "humidity": 56.44,
+      "light_level": 7.26,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T09:00:00.000+02:00",
+      "temperature": 22.73,
+      "humidity": 54.92,
+      "light_level": 8.66,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T10:00:00.000+02:00",
+      "temperature": 22.0,
+      "humidity": 43.41,
+      "light_level": 9.89,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T11:00:00.000+02:00",
+      "temperature": 27.23,
+      "humidity": 44.07,
+      "light_level": 7.45,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T12:00:00.000+02:00",
+      "temperature": 23.69,
+      "humidity": 41.6,
+      "light_level": 9.08,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T13:00:00.000+02:00",
+      "temperature": 25.68,
+      "humidity": 48.3,
+      "light_level": 9.92,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T14:00:00.000+02:00",
+      "temperature": 24.87,
+      "humidity": 56.6,
+      "light_level": 7.62,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T15:00:00.000+02:00",
+      "temperature": 23.99,
+      "humidity": 47.57,
+      "light_level": 7.19,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T16:00:00.000+02:00",
+      "temperature": 22.24,
+      "humidity": 45.73,
+      "light_level": 7.12,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T17:00:00.000+02:00",
+      "temperature": 20.23,
+      "humidity": 42.41,
+      "light_level": 9.74,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T18:00:00.000+02:00",
+      "temperature": 18.17,
+      "humidity": 45.15,
+      "light_level": 9.52,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T19:00:00.000+02:00",
+      "temperature": 17.79,
+      "humidity": 56.16,
+      "light_level": 0.9,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T20:00:00.000+02:00",
+      "temperature": 18.11,
+      "humidity": 53.96,
+      "light_level": 0.27,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T21:00:00.000+02:00",
+      "temperature": 18.03,
+      "humidity": 47.72,
+      "light_level": 0.37,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T22:00:00.000+02:00",
+      "temperature": 18.23,
+      "humidity": 43.6,
+      "light_level": 0.2,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-19T23:00:00.000+02:00",
+      "temperature": 17.73,
+      "humidity": 41.7,
+      "light_level": 0.42,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T00:00:00.000+02:00",
+      "temperature": 17.83,
+      "humidity": 55.51,
+      "light_level": 0.5,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T01:00:00.000+02:00",
+      "temperature": 18.11,
+      "humidity": 56.99,
+      "light_level": 0.91,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T02:00:00.000+02:00",
+      "temperature": 18.15,
+      "humidity": 50.02,
+      "light_level": 0.12,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T03:00:00.000+02:00",
+      "temperature": 17.52,
+      "humidity": 44.44,
+      "light_level": 0.0,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T04:00:00.000+02:00",
+      "temperature": 21.02,
+      "humidity": 52.85,
+      "light_level": 0.94,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T05:00:00.000+02:00",
+      "temperature": 19.7,
+      "humidity": 49.74,
+      "light_level": 0.42,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T06:00:00.000+02:00",
+      "temperature": 16.83,
+      "humidity": 44.83,
+      "light_level": 7.15,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T07:00:00.000+02:00",
+      "temperature": 20.11,
+      "humidity": 59.8,
+      "light_level": 8.0,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T08:00:00.000+02:00",
+      "temperature": 21.72,
+      "humidity": 45.75,
+      "light_level": 9.73,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T09:00:00.000+02:00",
+      "temperature": 24.0,
+      "humidity": 49.22,
+      "light_level": 7.58,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T10:00:00.000+02:00",
+      "temperature": 23.18,
+      "humidity": 41.43,
+      "light_level": 9.32,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T11:00:00.000+02:00",
+      "temperature": 25.04,
+      "humidity": 42.77,
+      "light_level": 9.35,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T12:00:00.000+02:00",
+      "temperature": 26.14,
+      "humidity": 57.91,
+      "light_level": 9.86,
+      "soil_moisture": 58,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T13:00:00.000+02:00",
+      "temperature": 23.06,
+      "humidity": 58.8,
+      "light_level": 7.08,
+      "soil_moisture": 58,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T14:00:00.000+02:00",
+      "temperature": 22.58,
+      "humidity": 51.74,
+      "light_level": 9.57,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T15:00:00.000+02:00",
+      "temperature": 26.35,
+      "humidity": 41.9,
+      "light_level": 8.62,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T16:00:00.000+02:00",
+      "temperature": 20.89,
+      "humidity": 45.04,
+      "light_level": 8.81,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T17:00:00.000+02:00",
+      "temperature": 17.86,
+      "humidity": 52.91,
+      "light_level": 7.31,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T18:00:00.000+02:00",
+      "temperature": 17.42,
+      "humidity": 40.34,
+      "light_level": 9.85,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T19:00:00.000+02:00",
+      "temperature": 20.49,
+      "humidity": 44.71,
+      "light_level": 0.08,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T20:00:00.000+02:00",
+      "temperature": 17.64,
+      "humidity": 54.55,
+      "light_level": 0.25,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T21:00:00.000+02:00",
+      "temperature": 18.04,
+      "humidity": 40.96,
+      "light_level": 0.84,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T22:00:00.000+02:00",
+      "temperature": 17.91,
+      "humidity": 47.16,
+      "light_level": 0.46,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-20T23:00:00.000+02:00",
+      "temperature": 18.1,
+      "humidity": 52.43,
+      "light_level": 0.29,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T00:00:00.000+02:00",
+      "temperature": 17.96,
+      "humidity": 57.58,
+      "light_level": 0.76,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T01:00:00.000+02:00",
+      "temperature": 18.09,
+      "humidity": 44.5,
+      "light_level": 0.02,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T02:00:00.000+02:00",
+      "temperature": 17.91,
+      "humidity": 48.54,
+      "light_level": 0.53,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T03:00:00.000+02:00",
+      "temperature": 17.84,
+      "humidity": 55.56,
+      "light_level": 0.07,
+      "soil_moisture": 46,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T04:00:00.000+02:00",
+      "temperature": 17.99,
+      "humidity": 50.42,
+      "light_level": 0.61,
+      "soil_moisture": 46,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T05:00:00.000+02:00",
+      "temperature": 17.96,
+      "humidity": 58.67,
+      "light_level": 0.14,
+      "soil_moisture": 45,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T06:00:00.000+02:00",
+      "temperature": 18.23,
+      "humidity": 44.31,
+      "light_level": 8.23,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T07:00:00.000+02:00",
+      "temperature": 19.98,
+      "humidity": 45.7,
+      "light_level": 8.01,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T08:00:00.000+02:00",
+      "temperature": 21.69,
+      "humidity": 46.43,
+      "light_level": 7.43,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T09:00:00.000+02:00",
+      "temperature": 23.42,
+      "humidity": 43.6,
+      "light_level": 9.24,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T10:00:00.000+02:00",
+      "temperature": 25.22,
+      "humidity": 41.16,
+      "light_level": 9.78,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T11:00:00.000+02:00",
+      "temperature": 25.41,
+      "humidity": 43.71,
+      "light_level": 7.38,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T12:00:00.000+02:00",
+      "temperature": 26.26,
+      "humidity": 44.11,
+      "light_level": 9.61,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T13:00:00.000+02:00",
+      "temperature": 25.46,
+      "humidity": 56.64,
+      "light_level": 7.31,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T14:00:00.000+02:00",
+      "temperature": 24.85,
+      "humidity": 47.18,
+      "light_level": 9.87,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T15:00:00.000+02:00",
+      "temperature": 23.29,
+      "humidity": 40.93,
+      "light_level": 7.29,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T16:00:00.000+02:00",
+      "temperature": 21.74,
+      "humidity": 48.52,
+      "light_level": 8.01,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T17:00:00.000+02:00",
+      "temperature": 20.22,
+      "humidity": 45.78,
+      "light_level": 8.4,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T18:00:00.000+02:00",
+      "temperature": 18.15,
+      "humidity": 58.15,
+      "light_level": 7.68,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T19:00:00.000+02:00",
+      "temperature": 17.85,
+      "humidity": 58.13,
+      "light_level": 0.66,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T20:00:00.000+02:00",
+      "temperature": 18.22,
+      "humidity": 46.84,
+      "light_level": 0.57,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T21:00:00.000+02:00",
+      "temperature": 17.96,
+      "humidity": 48.47,
+      "light_level": 0.13,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T22:00:00.000+02:00",
+      "temperature": 18.19,
+      "humidity": 41.02,
+      "light_level": 0.44,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-21T23:00:00.000+02:00",
+      "temperature": 20.95,
+      "humidity": 44.79,
+      "light_level": 0.39,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T00:00:00.000+02:00",
+      "temperature": 20.35,
+      "humidity": 56.59,
+      "light_level": 0.33,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T01:00:00.000+02:00",
+      "temperature": 17.31,
+      "humidity": 44.47,
+      "light_level": 0.51,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T02:00:00.000+02:00",
+      "temperature": 19.67,
+      "humidity": 45.8,
+      "light_level": 0.32,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T03:00:00.000+02:00",
+      "temperature": 20.67,
+      "humidity": 57.47,
+      "light_level": 0.93,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T04:00:00.000+02:00",
+      "temperature": 14.7,
+      "humidity": 45.58,
+      "light_level": 0.85,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T05:00:00.000+02:00",
+      "temperature": 17.75,
+      "humidity": 51.25,
+      "light_level": 0.23,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T06:00:00.000+02:00",
+      "temperature": 17.91,
+      "humidity": 41.13,
+      "light_level": 7.81,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T07:00:00.000+02:00",
+      "temperature": 19.88,
+      "humidity": 54.33,
+      "light_level": 7.68,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T08:00:00.000+02:00",
+      "temperature": 21.8,
+      "humidity": 43.13,
+      "light_level": 9.81,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T09:00:00.000+02:00",
+      "temperature": 23.96,
+      "humidity": 40.24,
+      "light_level": 8.45,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T10:00:00.000+02:00",
+      "temperature": 24.54,
+      "humidity": 49.74,
+      "light_level": 9.9,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T11:00:00.000+02:00",
+      "temperature": 25.33,
+      "humidity": 50.6,
+      "light_level": 9.63,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T12:00:00.000+02:00",
+      "temperature": 25.79,
+      "humidity": 40.62,
+      "light_level": 8.49,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T13:00:00.000+02:00",
+      "temperature": 25.97,
+      "humidity": 48.74,
+      "light_level": 9.52,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T14:00:00.000+02:00",
+      "temperature": 24.62,
+      "humidity": 44.38,
+      "light_level": 9.42,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T15:00:00.000+02:00",
+      "temperature": 23.86,
+      "humidity": 47.17,
+      "light_level": 9.37,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T16:00:00.000+02:00",
+      "temperature": 24.46,
+      "humidity": 47.27,
+      "light_level": 7.02,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T17:00:00.000+02:00",
+      "temperature": 21.0,
+      "humidity": 48.72,
+      "light_level": 8.33,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T18:00:00.000+02:00",
+      "temperature": 19.49,
+      "humidity": 55.59,
+      "light_level": 9.16,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T19:00:00.000+02:00",
+      "temperature": 18.85,
+      "humidity": 45.2,
+      "light_level": 0.04,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T20:00:00.000+02:00",
+      "temperature": 18.98,
+      "humidity": 50.81,
+      "light_level": 0.39,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T21:00:00.000+02:00",
+      "temperature": 18.73,
+      "humidity": 44.64,
+      "light_level": 0.84,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T22:00:00.000+02:00",
+      "temperature": 18.3,
+      "humidity": 40.43,
+      "light_level": 0.55,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-22T23:00:00.000+02:00",
+      "temperature": 19.66,
+      "humidity": 50.78,
+      "light_level": 0.66,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T00:00:00.000+02:00",
+      "temperature": 16.69,
+      "humidity": 41.95,
+      "light_level": 0.32,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T01:00:00.000+02:00",
+      "temperature": 18.51,
+      "humidity": 46.95,
+      "light_level": 0.81,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T02:00:00.000+02:00",
+      "temperature": 16.56,
+      "humidity": 48.47,
+      "light_level": 0.41,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T03:00:00.000+02:00",
+      "temperature": 17.71,
+      "humidity": 52.47,
+      "light_level": 0.07,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T04:00:00.000+02:00",
+      "temperature": 18.36,
+      "humidity": 59.74,
+      "light_level": 0.9,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T05:00:00.000+02:00",
+      "temperature": 18.12,
+      "humidity": 58.15,
+      "light_level": 0.08,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T06:00:00.000+02:00",
+      "temperature": 15.64,
+      "humidity": 45.65,
+      "light_level": 9.12,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T07:00:00.000+02:00",
+      "temperature": 22.47,
+      "humidity": 44.35,
+      "light_level": 7.19,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T08:00:00.000+02:00",
+      "temperature": 24.33,
+      "humidity": 43.64,
+      "light_level": 8.73,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T09:00:00.000+02:00",
+      "temperature": 21.94,
+      "humidity": 40.07,
+      "light_level": 9.16,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T10:00:00.000+02:00",
+      "temperature": 23.94,
+      "humidity": 43.0,
+      "light_level": 7.09,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T11:00:00.000+02:00",
+      "temperature": 25.92,
+      "humidity": 56.01,
+      "light_level": 7.04,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T12:00:00.000+02:00",
+      "temperature": 26.05,
+      "humidity": 59.43,
+      "light_level": 7.11,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T13:00:00.000+02:00",
+      "temperature": 26.12,
+      "humidity": 45.21,
+      "light_level": 7.83,
+      "soil_moisture": 58,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T14:00:00.000+02:00",
+      "temperature": 25.22,
+      "humidity": 49.61,
+      "light_level": 9.89,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T15:00:00.000+02:00",
+      "temperature": 23.49,
+      "humidity": 53.47,
+      "light_level": 9.98,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T16:00:00.000+02:00",
+      "temperature": 21.92,
+      "humidity": 59.2,
+      "light_level": 9.92,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T17:00:00.000+02:00",
+      "temperature": 22.26,
+      "humidity": 59.61,
+      "light_level": 8.32,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T18:00:00.000+02:00",
+      "temperature": 19.9,
+      "humidity": 42.53,
+      "light_level": 8.73,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T19:00:00.000+02:00",
+      "temperature": 17.18,
+      "humidity": 55.23,
+      "light_level": 0.05,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T20:00:00.000+02:00",
+      "temperature": 15.42,
+      "humidity": 54.3,
+      "light_level": 0.14,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T21:00:00.000+02:00",
+      "temperature": 20.29,
+      "humidity": 43.0,
+      "light_level": 0.43,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T22:00:00.000+02:00",
+      "temperature": 17.19,
+      "humidity": 43.42,
+      "light_level": 0.78,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-23T23:00:00.000+02:00",
+      "temperature": 20.29,
+      "humidity": 53.56,
+      "light_level": 0.16,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T00:00:00.000+02:00",
+      "temperature": 18.38,
+      "humidity": 57.72,
+      "light_level": 0.62,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T01:00:00.000+02:00",
+      "temperature": 17.82,
+      "humidity": 46.46,
+      "light_level": 0.6,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T02:00:00.000+02:00",
+      "temperature": 17.98,
+      "humidity": 57.74,
+      "light_level": 0.73,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T03:00:00.000+02:00",
+      "temperature": 17.61,
+      "humidity": 40.52,
+      "light_level": 0.23,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T04:00:00.000+02:00",
+      "temperature": 18.13,
+      "humidity": 52.41,
+      "light_level": 0.7,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T05:00:00.000+02:00",
+      "temperature": 15.25,
+      "humidity": 52.54,
+      "light_level": 0.46,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T06:00:00.000+02:00",
+      "temperature": 19.55,
+      "humidity": 42.17,
+      "light_level": 7.66,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T07:00:00.000+02:00",
+      "temperature": 19.4,
+      "humidity": 40.76,
+      "light_level": 9.93,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T08:00:00.000+02:00",
+      "temperature": 19.75,
+      "humidity": 47.83,
+      "light_level": 9.96,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T09:00:00.000+02:00",
+      "temperature": 20.87,
+      "humidity": 44.69,
+      "light_level": 8.18,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T10:00:00.000+02:00",
+      "temperature": 25.09,
+      "humidity": 48.12,
+      "light_level": 8.08,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T11:00:00.000+02:00",
+      "temperature": 26.11,
+      "humidity": 57.44,
+      "light_level": 8.76,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T12:00:00.000+02:00",
+      "temperature": 25.97,
+      "humidity": 51.8,
+      "light_level": 8.96,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T13:00:00.000+02:00",
+      "temperature": 25.84,
+      "humidity": 50.48,
+      "light_level": 8.46,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T14:00:00.000+02:00",
+      "temperature": 24.75,
+      "humidity": 50.39,
+      "light_level": 9.43,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T15:00:00.000+02:00",
+      "temperature": 23.33,
+      "humidity": 56.99,
+      "light_level": 8.55,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T16:00:00.000+02:00",
+      "temperature": 22.56,
+      "humidity": 46.1,
+      "light_level": 9.62,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T17:00:00.000+02:00",
+      "temperature": 22.78,
+      "humidity": 51.41,
+      "light_level": 8.08,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T18:00:00.000+02:00",
+      "temperature": 20.85,
+      "humidity": 56.29,
+      "light_level": 9.41,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T19:00:00.000+02:00",
+      "temperature": 17.69,
+      "humidity": 42.11,
+      "light_level": 0.67,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T20:00:00.000+02:00",
+      "temperature": 18.56,
+      "humidity": 41.53,
+      "light_level": 0.97,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T21:00:00.000+02:00",
+      "temperature": 20.95,
+      "humidity": 40.55,
+      "light_level": 0.29,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T22:00:00.000+02:00",
+      "temperature": 19.58,
+      "humidity": 49.6,
+      "light_level": 0.36,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-24T23:00:00.000+02:00",
+      "temperature": 17.12,
+      "humidity": 55.53,
+      "light_level": 0.74,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T00:00:00.000+02:00",
+      "temperature": 16.23,
+      "humidity": 52.12,
+      "light_level": 0.87,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T01:00:00.000+02:00",
+      "temperature": 18.17,
+      "humidity": 58.1,
+      "light_level": 0.09,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T02:00:00.000+02:00",
+      "temperature": 17.51,
+      "humidity": 42.55,
+      "light_level": 0.17,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T03:00:00.000+02:00",
+      "temperature": 20.54,
+      "humidity": 46.53,
+      "light_level": 0.64,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T04:00:00.000+02:00",
+      "temperature": 18.85,
+      "humidity": 44.01,
+      "light_level": 0.39,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T05:00:00.000+02:00",
+      "temperature": 15.38,
+      "humidity": 49.29,
+      "light_level": 0.6,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T06:00:00.000+02:00",
+      "temperature": 20.57,
+      "humidity": 45.92,
+      "light_level": 9.45,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T07:00:00.000+02:00",
+      "temperature": 18.49,
+      "humidity": 47.81,
+      "light_level": 8.88,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T08:00:00.000+02:00",
+      "temperature": 23.49,
+      "humidity": 59.77,
+      "light_level": 7.19,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T09:00:00.000+02:00",
+      "temperature": 23.64,
+      "humidity": 51.54,
+      "light_level": 8.29,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T10:00:00.000+02:00",
+      "temperature": 25.24,
+      "humidity": 46.75,
+      "light_level": 8.59,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T11:00:00.000+02:00",
+      "temperature": 25.52,
+      "humidity": 44.36,
+      "light_level": 8.82,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T12:00:00.000+02:00",
+      "temperature": 28.0,
+      "humidity": 45.98,
+      "light_level": 7.17,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T13:00:00.000+02:00",
+      "temperature": 24.9,
+      "humidity": 48.1,
+      "light_level": 7.23,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T14:00:00.000+02:00",
+      "temperature": 24.8,
+      "humidity": 58.6,
+      "light_level": 8.53,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T15:00:00.000+02:00",
+      "temperature": 23.7,
+      "humidity": 53.9,
+      "light_level": 9.57,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T16:00:00.000+02:00",
+      "temperature": 21.74,
+      "humidity": 46.86,
+      "light_level": 7.25,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T17:00:00.000+02:00",
+      "temperature": 19.81,
+      "humidity": 56.63,
+      "light_level": 9.8,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T18:00:00.000+02:00",
+      "temperature": 17.66,
+      "humidity": 55.96,
+      "light_level": 7.57,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T19:00:00.000+02:00",
+      "temperature": 17.97,
+      "humidity": 54.07,
+      "light_level": 0.42,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T20:00:00.000+02:00",
+      "temperature": 18.07,
+      "humidity": 43.92,
+      "light_level": 0.72,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T21:00:00.000+02:00",
+      "temperature": 17.83,
+      "humidity": 49.0,
+      "light_level": 0.77,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T22:00:00.000+02:00",
+      "temperature": 20.61,
+      "humidity": 45.87,
+      "light_level": 0.32,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-25T23:00:00.000+02:00",
+      "temperature": 16.95,
+      "humidity": 45.39,
+      "light_level": 0.49,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T00:00:00.000+02:00",
+      "temperature": 19.13,
+      "humidity": 45.75,
+      "light_level": 0.29,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T01:00:00.000+02:00",
+      "temperature": 17.54,
+      "humidity": 46.75,
+      "light_level": 0.86,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T02:00:00.000+02:00",
+      "temperature": 20.29,
+      "humidity": 40.24,
+      "light_level": 0.31,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T03:00:00.000+02:00",
+      "temperature": 19.53,
+      "humidity": 55.34,
+      "light_level": 0.68,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T04:00:00.000+02:00",
+      "temperature": 16.96,
+      "humidity": 50.33,
+      "light_level": 0.88,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T05:00:00.000+02:00",
+      "temperature": 15.89,
+      "humidity": 43.56,
+      "light_level": 0.62,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T06:00:00.000+02:00",
+      "temperature": 20.39,
+      "humidity": 57.89,
+      "light_level": 8.33,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T07:00:00.000+02:00",
+      "temperature": 19.92,
+      "humidity": 51.99,
+      "light_level": 7.65,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T08:00:00.000+02:00",
+      "temperature": 21.62,
+      "humidity": 47.22,
+      "light_level": 8.31,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T09:00:00.000+02:00",
+      "temperature": 26.81,
+      "humidity": 57.9,
+      "light_level": 8.39,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T10:00:00.000+02:00",
+      "temperature": 24.62,
+      "humidity": 54.48,
+      "light_level": 9.32,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T11:00:00.000+02:00",
+      "temperature": 25.8,
+      "humidity": 45.31,
+      "light_level": 9.33,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T12:00:00.000+02:00",
+      "temperature": 25.73,
+      "humidity": 47.38,
+      "light_level": 8.34,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T13:00:00.000+02:00",
+      "temperature": 25.64,
+      "humidity": 45.61,
+      "light_level": 9.55,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T14:00:00.000+02:00",
+      "temperature": 26.89,
+      "humidity": 40.34,
+      "light_level": 8.65,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T15:00:00.000+02:00",
+      "temperature": 20.75,
+      "humidity": 54.15,
+      "light_level": 7.34,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T16:00:00.000+02:00",
+      "temperature": 24.58,
+      "humidity": 53.36,
+      "light_level": 8.35,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T17:00:00.000+02:00",
+      "temperature": 18.84,
+      "humidity": 47.55,
+      "light_level": 7.4,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T18:00:00.000+02:00",
+      "temperature": 19.48,
+      "humidity": 48.36,
+      "light_level": 7.6,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T19:00:00.000+02:00",
+      "temperature": 15.96,
+      "humidity": 41.58,
+      "light_level": 0.85,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T20:00:00.000+02:00",
+      "temperature": 15.59,
+      "humidity": 43.59,
+      "light_level": 0.54,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T21:00:00.000+02:00",
+      "temperature": 17.63,
+      "humidity": 57.28,
+      "light_level": 0.5,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T22:00:00.000+02:00",
+      "temperature": 17.71,
+      "humidity": 59.08,
+      "light_level": 0.78,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-26T23:00:00.000+02:00",
+      "temperature": 17.95,
+      "humidity": 42.07,
+      "light_level": 0.55,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T00:00:00.000+02:00",
+      "temperature": 18.1,
+      "humidity": 54.26,
+      "light_level": 0.72,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T01:00:00.000+02:00",
+      "temperature": 17.98,
+      "humidity": 54.45,
+      "light_level": 0.03,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T02:00:00.000+02:00",
+      "temperature": 18.02,
+      "humidity": 41.5,
+      "light_level": 0.28,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T03:00:00.000+02:00",
+      "temperature": 17.94,
+      "humidity": 47.54,
+      "light_level": 0.37,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T04:00:00.000+02:00",
+      "temperature": 17.75,
+      "humidity": 43.9,
+      "light_level": 0.31,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T05:00:00.000+02:00",
+      "temperature": 18.01,
+      "humidity": 41.44,
+      "light_level": 0.19,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T06:00:00.000+02:00",
+      "temperature": 17.82,
+      "humidity": 41.83,
+      "light_level": 8.16,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T07:00:00.000+02:00",
+      "temperature": 20.36,
+      "humidity": 41.8,
+      "light_level": 7.23,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T08:00:00.000+02:00",
+      "temperature": 22.29,
+      "humidity": 43.11,
+      "light_level": 7.43,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T09:00:00.000+02:00",
+      "temperature": 23.58,
+      "humidity": 46.31,
+      "light_level": 8.29,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T10:00:00.000+02:00",
+      "temperature": 25.2,
+      "humidity": 58.66,
+      "light_level": 8.83,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T11:00:00.000+02:00",
+      "temperature": 25.88,
+      "humidity": 40.96,
+      "light_level": 9.37,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T12:00:00.000+02:00",
+      "temperature": 25.88,
+      "humidity": 40.17,
+      "light_level": 9.6,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T13:00:00.000+02:00",
+      "temperature": 25.95,
+      "humidity": 47.85,
+      "light_level": 7.94,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T14:00:00.000+02:00",
+      "temperature": 24.85,
+      "humidity": 54.08,
+      "light_level": 7.48,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T15:00:00.000+02:00",
+      "temperature": 23.59,
+      "humidity": 51.63,
+      "light_level": 9.39,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T16:00:00.000+02:00",
+      "temperature": 21.69,
+      "humidity": 49.78,
+      "light_level": 9.81,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T17:00:00.000+02:00",
+      "temperature": 19.69,
+      "humidity": 45.05,
+      "light_level": 8.9,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T18:00:00.000+02:00",
+      "temperature": 18.05,
+      "humidity": 49.11,
+      "light_level": 7.51,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T19:00:00.000+02:00",
+      "temperature": 17.94,
+      "humidity": 53.16,
+      "light_level": 0.39,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T20:00:00.000+02:00",
+      "temperature": 19.7,
+      "humidity": 57.26,
+      "light_level": 0.06,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T21:00:00.000+02:00",
+      "temperature": 17.3,
+      "humidity": 55.07,
+      "light_level": 0.7,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T22:00:00.000+02:00",
+      "temperature": 18.06,
+      "humidity": 47.97,
+      "light_level": 0.6,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-27T23:00:00.000+02:00",
+      "temperature": 18.83,
+      "humidity": 43.0,
+      "light_level": 0.28,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T00:00:00.000+02:00",
+      "temperature": 15.78,
+      "humidity": 42.09,
+      "light_level": 0.68,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T01:00:00.000+02:00",
+      "temperature": 20.51,
+      "humidity": 49.93,
+      "light_level": 0.94,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T02:00:00.000+02:00",
+      "temperature": 18.29,
+      "humidity": 55.01,
+      "light_level": 0.11,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T03:00:00.000+02:00",
+      "temperature": 17.81,
+      "humidity": 51.7,
+      "light_level": 0.55,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T04:00:00.000+02:00",
+      "temperature": 18.39,
+      "humidity": 43.69,
+      "light_level": 0.56,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T05:00:00.000+02:00",
+      "temperature": 17.67,
+      "humidity": 47.17,
+      "light_level": 0.48,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T06:00:00.000+02:00",
+      "temperature": 18.39,
+      "humidity": 57.43,
+      "light_level": 9.96,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T07:00:00.000+02:00",
+      "temperature": 19.89,
+      "humidity": 58.73,
+      "light_level": 7.37,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T08:00:00.000+02:00",
+      "temperature": 21.91,
+      "humidity": 54.94,
+      "light_level": 7.55,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T09:00:00.000+02:00",
+      "temperature": 23.3,
+      "humidity": 41.64,
+      "light_level": 9.51,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T10:00:00.000+02:00",
+      "temperature": 24.77,
+      "humidity": 45.77,
+      "light_level": 9.46,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T11:00:00.000+02:00",
+      "temperature": 25.36,
+      "humidity": 52.85,
+      "light_level": 7.16,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T12:00:00.000+02:00",
+      "temperature": 26.12,
+      "humidity": 57.56,
+      "light_level": 7.54,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T13:00:00.000+02:00",
+      "temperature": 26.08,
+      "humidity": 45.85,
+      "light_level": 8.96,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T14:00:00.000+02:00",
+      "temperature": 24.56,
+      "humidity": 53.88,
+      "light_level": 9.33,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T15:00:00.000+02:00",
+      "temperature": 23.61,
+      "humidity": 47.31,
+      "light_level": 7.65,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T16:00:00.000+02:00",
+      "temperature": 22.17,
+      "humidity": 45.61,
+      "light_level": 8.82,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T17:00:00.000+02:00",
+      "temperature": 19.76,
+      "humidity": 44.09,
+      "light_level": 9.49,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T18:00:00.000+02:00",
+      "temperature": 17.81,
+      "humidity": 56.83,
+      "light_level": 7.92,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T19:00:00.000+02:00",
+      "temperature": 18.07,
+      "humidity": 54.91,
+      "light_level": 0.41,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T20:00:00.000+02:00",
+      "temperature": 17.62,
+      "humidity": 56.97,
+      "light_level": 0.51,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T21:00:00.000+02:00",
+      "temperature": 17.95,
+      "humidity": 49.92,
+      "light_level": 0.93,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T22:00:00.000+02:00",
+      "temperature": 18.28,
+      "humidity": 54.85,
+      "light_level": 0.77,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-28T23:00:00.000+02:00",
+      "temperature": 18.4,
+      "humidity": 40.2,
+      "light_level": 0.18,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T00:00:00.000+02:00",
+      "temperature": 17.73,
+      "humidity": 48.85,
+      "light_level": 0.62,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T01:00:00.000+02:00",
+      "temperature": 18.4,
+      "humidity": 53.4,
+      "light_level": 0.4,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T02:00:00.000+02:00",
+      "temperature": 18.37,
+      "humidity": 45.1,
+      "light_level": 0.01,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T03:00:00.000+02:00",
+      "temperature": 17.89,
+      "humidity": 58.4,
+      "light_level": 0.33,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T04:00:00.000+02:00",
+      "temperature": 17.61,
+      "humidity": 44.19,
+      "light_level": 0.29,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T05:00:00.000+02:00",
+      "temperature": 17.82,
+      "humidity": 51.3,
+      "light_level": 0.97,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T06:00:00.000+02:00",
+      "temperature": 17.81,
+      "humidity": 55.34,
+      "light_level": 9.0,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T07:00:00.000+02:00",
+      "temperature": 20.3,
+      "humidity": 43.92,
+      "light_level": 8.72,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T08:00:00.000+02:00",
+      "temperature": 21.71,
+      "humidity": 47.86,
+      "light_level": 7.68,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T09:00:00.000+02:00",
+      "temperature": 23.87,
+      "humidity": 44.36,
+      "light_level": 9.81,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T10:00:00.000+02:00",
+      "temperature": 24.63,
+      "humidity": 52.97,
+      "light_level": 9.3,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T11:00:00.000+02:00",
+      "temperature": 25.51,
+      "humidity": 59.0,
+      "light_level": 8.95,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T12:00:00.000+02:00",
+      "temperature": 25.77,
+      "humidity": 54.07,
+      "light_level": 8.66,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T13:00:00.000+02:00",
+      "temperature": 25.81,
+      "humidity": 40.7,
+      "light_level": 7.41,
+      "soil_moisture": 58,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T14:00:00.000+02:00",
+      "temperature": 25.25,
+      "humidity": 50.14,
+      "light_level": 7.46,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T15:00:00.000+02:00",
+      "temperature": 24.01,
+      "humidity": 48.79,
+      "light_level": 9.06,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T16:00:00.000+02:00",
+      "temperature": 22.17,
+      "humidity": 42.43,
+      "light_level": 7.98,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T17:00:00.000+02:00",
+      "temperature": 20.11,
+      "humidity": 50.24,
+      "light_level": 9.8,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T18:00:00.000+02:00",
+      "temperature": 17.6,
+      "humidity": 51.98,
+      "light_level": 9.99,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T19:00:00.000+02:00",
+      "temperature": 17.82,
+      "humidity": 47.11,
+      "light_level": 0.32,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T20:00:00.000+02:00",
+      "temperature": 17.75,
+      "humidity": 43.42,
+      "light_level": 0.12,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T21:00:00.000+02:00",
+      "temperature": 20.12,
+      "humidity": 50.36,
+      "light_level": 0.95,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T22:00:00.000+02:00",
+      "temperature": 18.2,
+      "humidity": 49.74,
+      "light_level": 0.08,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-29T23:00:00.000+02:00",
+      "temperature": 16.85,
+      "humidity": 41.89,
+      "light_level": 0.1,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T00:00:00.000+02:00",
+      "temperature": 19.96,
+      "humidity": 52.46,
+      "light_level": 0.24,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T01:00:00.000+02:00",
+      "temperature": 17.28,
+      "humidity": 54.41,
+      "light_level": 0.64,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T02:00:00.000+02:00",
+      "temperature": 18.29,
+      "humidity": 56.78,
+      "light_level": 0.64,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T03:00:00.000+02:00",
+      "temperature": 18.01,
+      "humidity": 54.42,
+      "light_level": 0.23,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T04:00:00.000+02:00",
+      "temperature": 18.27,
+      "humidity": 57.32,
+      "light_level": 0.45,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T05:00:00.000+02:00",
+      "temperature": 21.13,
+      "humidity": 59.32,
+      "light_level": 0.93,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T06:00:00.000+02:00",
+      "temperature": 18.93,
+      "humidity": 59.12,
+      "light_level": 8.91,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T07:00:00.000+02:00",
+      "temperature": 19.01,
+      "humidity": 45.3,
+      "light_level": 9.33,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T08:00:00.000+02:00",
+      "temperature": 24.93,
+      "humidity": 59.46,
+      "light_level": 9.69,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T09:00:00.000+02:00",
+      "temperature": 26.53,
+      "humidity": 55.68,
+      "light_level": 8.67,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T10:00:00.000+02:00",
+      "temperature": 24.11,
+      "humidity": 52.25,
+      "light_level": 7.9,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T11:00:00.000+02:00",
+      "temperature": 26.87,
+      "humidity": 48.82,
+      "light_level": 9.43,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T12:00:00.000+02:00",
+      "temperature": 27.0,
+      "humidity": 55.48,
+      "light_level": 8.82,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T13:00:00.000+02:00",
+      "temperature": 27.1,
+      "humidity": 57.41,
+      "light_level": 8.64,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T14:00:00.000+02:00",
+      "temperature": 27.25,
+      "humidity": 58.54,
+      "light_level": 8.99,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T15:00:00.000+02:00",
+      "temperature": 23.66,
+      "humidity": 44.32,
+      "light_level": 7.68,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T16:00:00.000+02:00",
+      "temperature": 23.75,
+      "humidity": 59.16,
+      "light_level": 9.16,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T17:00:00.000+02:00",
+      "temperature": 20.07,
+      "humidity": 46.94,
+      "light_level": 7.7,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T18:00:00.000+02:00",
+      "temperature": 18.21,
+      "humidity": 50.9,
+      "light_level": 7.37,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T19:00:00.000+02:00",
+      "temperature": 17.69,
+      "humidity": 58.53,
+      "light_level": 0.96,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T20:00:00.000+02:00",
+      "temperature": 17.73,
+      "humidity": 50.39,
+      "light_level": 0.5,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T21:00:00.000+02:00",
+      "temperature": 17.74,
+      "humidity": 58.22,
+      "light_level": 0.22,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T22:00:00.000+02:00",
+      "temperature": 17.77,
+      "humidity": 53.94,
+      "light_level": 0.56,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-30T23:00:00.000+02:00",
+      "temperature": 17.96,
+      "humidity": 44.42,
+      "light_level": 0.07,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T00:00:00.000+02:00",
+      "temperature": 18.17,
+      "humidity": 57.83,
+      "light_level": 0.57,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T01:00:00.000+02:00",
+      "temperature": 18.33,
+      "humidity": 54.7,
+      "light_level": 0.98,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T02:00:00.000+02:00",
+      "temperature": 18.18,
+      "humidity": 50.31,
+      "light_level": 0.96,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T03:00:00.000+02:00",
+      "temperature": 18.35,
+      "humidity": 44.5,
+      "light_level": 0.58,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T04:00:00.000+02:00",
+      "temperature": 17.95,
+      "humidity": 45.84,
+      "light_level": 0.54,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T05:00:00.000+02:00",
+      "temperature": 17.79,
+      "humidity": 56.17,
+      "light_level": 0.11,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T06:00:00.000+02:00",
+      "temperature": 17.98,
+      "humidity": 59.3,
+      "light_level": 8.04,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T07:00:00.000+02:00",
+      "temperature": 20.34,
+      "humidity": 57.34,
+      "light_level": 9.75,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T08:00:00.000+02:00",
+      "temperature": 21.69,
+      "humidity": 58.75,
+      "light_level": 9.59,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T09:00:00.000+02:00",
+      "temperature": 23.37,
+      "humidity": 59.06,
+      "light_level": 7.66,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T10:00:00.000+02:00",
+      "temperature": 24.56,
+      "humidity": 54.18,
+      "light_level": 9.56,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T11:00:00.000+02:00",
+      "temperature": 25.37,
+      "humidity": 55.66,
+      "light_level": 9.14,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T12:00:00.000+02:00",
+      "temperature": 26.35,
+      "humidity": 55.37,
+      "light_level": 7.14,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T13:00:00.000+02:00",
+      "temperature": 25.35,
+      "humidity": 57.91,
+      "light_level": 9.01,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T14:00:00.000+02:00",
+      "temperature": 24.99,
+      "humidity": 56.79,
+      "light_level": 7.14,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T15:00:00.000+02:00",
+      "temperature": 23.98,
+      "humidity": 48.98,
+      "light_level": 7.39,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T16:00:00.000+02:00",
+      "temperature": 24.76,
+      "humidity": 58.64,
+      "light_level": 8.57,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T17:00:00.000+02:00",
+      "temperature": 21.32,
+      "humidity": 51.89,
+      "light_level": 8.43,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T18:00:00.000+02:00",
+      "temperature": 21.17,
+      "humidity": 43.47,
+      "light_level": 9.03,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T19:00:00.000+02:00",
+      "temperature": 17.85,
+      "humidity": 57.2,
+      "light_level": 0.87,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T20:00:00.000+02:00",
+      "temperature": 19.02,
+      "humidity": 42.27,
+      "light_level": 0.51,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T21:00:00.000+02:00",
+      "temperature": 18.06,
+      "humidity": 59.63,
+      "light_level": 0.39,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T22:00:00.000+02:00",
+      "temperature": 15.0,
+      "humidity": 52.25,
+      "light_level": 0.45,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-05-31T23:00:00.000+02:00",
+      "temperature": 19.75,
+      "humidity": 50.55,
+      "light_level": 0.97,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T00:00:00.000+02:00",
+      "temperature": 19.13,
+      "humidity": 51.42,
+      "light_level": 0.24,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T01:00:00.000+02:00",
+      "temperature": 19.12,
+      "humidity": 49.94,
+      "light_level": 0.84,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T02:00:00.000+02:00",
+      "temperature": 17.28,
+      "humidity": 44.53,
+      "light_level": 0.39,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T03:00:00.000+02:00",
+      "temperature": 17.83,
+      "humidity": 54.25,
+      "light_level": 0.24,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T04:00:00.000+02:00",
+      "temperature": 17.98,
+      "humidity": 46.48,
+      "light_level": 0.29,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T05:00:00.000+02:00",
+      "temperature": 17.77,
+      "humidity": 43.06,
+      "light_level": 0.05,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T06:00:00.000+02:00",
+      "temperature": 17.97,
+      "humidity": 58.49,
+      "light_level": 8.84,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T07:00:00.000+02:00",
+      "temperature": 20.44,
+      "humidity": 48.75,
+      "light_level": 9.05,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T08:00:00.000+02:00",
+      "temperature": 21.91,
+      "humidity": 50.47,
+      "light_level": 8.64,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T09:00:00.000+02:00",
+      "temperature": 23.76,
+      "humidity": 49.4,
+      "light_level": 9.03,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T10:00:00.000+02:00",
+      "temperature": 24.89,
+      "humidity": 52.6,
+      "light_level": 9.17,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T11:00:00.000+02:00",
+      "temperature": 25.67,
+      "humidity": 58.12,
+      "light_level": 8.86,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T12:00:00.000+02:00",
+      "temperature": 26.25,
+      "humidity": 40.11,
+      "light_level": 7.46,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T13:00:00.000+02:00",
+      "temperature": 25.34,
+      "humidity": 58.3,
+      "light_level": 8.15,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T14:00:00.000+02:00",
+      "temperature": 24.59,
+      "humidity": 58.47,
+      "light_level": 9.27,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T15:00:00.000+02:00",
+      "temperature": 23.4,
+      "humidity": 40.2,
+      "light_level": 9.18,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T16:00:00.000+02:00",
+      "temperature": 21.67,
+      "humidity": 58.57,
+      "light_level": 7.31,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T17:00:00.000+02:00",
+      "temperature": 20.1,
+      "humidity": 40.56,
+      "light_level": 7.35,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T18:00:00.000+02:00",
+      "temperature": 17.88,
+      "humidity": 52.77,
+      "light_level": 8.37,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T19:00:00.000+02:00",
+      "temperature": 18.14,
+      "humidity": 57.36,
+      "light_level": 0.2,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T20:00:00.000+02:00",
+      "temperature": 17.74,
+      "humidity": 44.06,
+      "light_level": 0.4,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T21:00:00.000+02:00",
+      "temperature": 18.27,
+      "humidity": 42.43,
+      "light_level": 0.18,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T22:00:00.000+02:00",
+      "temperature": 18.07,
+      "humidity": 47.01,
+      "light_level": 0.92,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-01T23:00:00.000+02:00",
+      "temperature": 17.76,
+      "humidity": 55.45,
+      "light_level": 0.47,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T00:00:00.000+02:00",
+      "temperature": 14.87,
+      "humidity": 42.63,
+      "light_level": 0.23,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T01:00:00.000+02:00",
+      "temperature": 15.32,
+      "humidity": 58.43,
+      "light_level": 0.46,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T02:00:00.000+02:00",
+      "temperature": 18.27,
+      "humidity": 52.42,
+      "light_level": 0.13,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T03:00:00.000+02:00",
+      "temperature": 18.32,
+      "humidity": 41.37,
+      "light_level": 0.41,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T04:00:00.000+02:00",
+      "temperature": 18.13,
+      "humidity": 48.24,
+      "light_level": 0.2,
+      "soil_moisture": 46,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T05:00:00.000+02:00",
+      "temperature": 18.21,
+      "humidity": 44.88,
+      "light_level": 0.63,
+      "soil_moisture": 46,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T06:00:00.000+02:00",
+      "temperature": 17.79,
+      "humidity": 48.48,
+      "light_level": 8.6,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T07:00:00.000+02:00",
+      "temperature": 20.07,
+      "humidity": 48.67,
+      "light_level": 7.67,
+      "soil_moisture": 99,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T08:00:00.000+02:00",
+      "temperature": 20.15,
+      "humidity": 43.26,
+      "light_level": 7.18,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T09:00:00.000+02:00",
+      "temperature": 21.13,
+      "humidity": 51.67,
+      "light_level": 9.47,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T10:00:00.000+02:00",
+      "temperature": 22.57,
+      "humidity": 48.82,
+      "light_level": 7.07,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T11:00:00.000+02:00",
+      "temperature": 24.64,
+      "humidity": 46.29,
+      "light_level": 7.37,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T12:00:00.000+02:00",
+      "temperature": 25.28,
+      "humidity": 53.96,
+      "light_level": 9.68,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T13:00:00.000+02:00",
+      "temperature": 28.47,
+      "humidity": 41.83,
+      "light_level": 7.92,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T14:00:00.000+02:00",
+      "temperature": 25.08,
+      "humidity": 51.5,
+      "light_level": 7.37,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T15:00:00.000+02:00",
+      "temperature": 25.48,
+      "humidity": 50.91,
+      "light_level": 8.0,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T16:00:00.000+02:00",
+      "temperature": 21.96,
+      "humidity": 43.78,
+      "light_level": 9.0,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T17:00:00.000+02:00",
+      "temperature": 20.72,
+      "humidity": 52.0,
+      "light_level": 9.76,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T18:00:00.000+02:00",
+      "temperature": 16.93,
+      "humidity": 50.37,
+      "light_level": 8.36,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T19:00:00.000+02:00",
+      "temperature": 18.15,
+      "humidity": 52.65,
+      "light_level": 0.81,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T20:00:00.000+02:00",
+      "temperature": 17.85,
+      "humidity": 54.35,
+      "light_level": 0.5,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T21:00:00.000+02:00",
+      "temperature": 17.67,
+      "humidity": 55.34,
+      "light_level": 0.72,
+      "soil_moisture": 86,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T22:00:00.000+02:00",
+      "temperature": 17.67,
+      "humidity": 57.32,
+      "light_level": 0.11,
+      "soil_moisture": 85,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-02T23:00:00.000+02:00",
+      "temperature": 17.74,
+      "humidity": 52.8,
+      "light_level": 0.6,
+      "soil_moisture": 84,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T00:00:00.000+02:00",
+      "temperature": 18.01,
+      "humidity": 55.41,
+      "light_level": 0.03,
+      "soil_moisture": 83,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T01:00:00.000+02:00",
+      "temperature": 17.92,
+      "humidity": 49.58,
+      "light_level": 0.98,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T02:00:00.000+02:00",
+      "temperature": 17.64,
+      "humidity": 56.64,
+      "light_level": 0.55,
+      "soil_moisture": 82,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T03:00:00.000+02:00",
+      "temperature": 17.64,
+      "humidity": 45.95,
+      "light_level": 0.31,
+      "soil_moisture": 81,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T04:00:00.000+02:00",
+      "temperature": 17.7,
+      "humidity": 45.68,
+      "light_level": 0.91,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T05:00:00.000+02:00",
+      "temperature": 17.87,
+      "humidity": 44.34,
+      "light_level": 0.65,
+      "soil_moisture": 80,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T06:00:00.000+02:00",
+      "temperature": 18.33,
+      "humidity": 47.72,
+      "light_level": 7.38,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T07:00:00.000+02:00",
+      "temperature": 20.06,
+      "humidity": 44.79,
+      "light_level": 8.59,
+      "soil_moisture": 79,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T08:00:00.000+02:00",
+      "temperature": 21.97,
+      "humidity": 57.36,
+      "light_level": 7.57,
+      "soil_moisture": 78,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T09:00:00.000+02:00",
+      "temperature": 23.57,
+      "humidity": 58.76,
+      "light_level": 9.24,
+      "soil_moisture": 77,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T10:00:00.000+02:00",
+      "temperature": 24.81,
+      "humidity": 45.89,
+      "light_level": 8.47,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T11:00:00.000+02:00",
+      "temperature": 25.45,
+      "humidity": 50.01,
+      "light_level": 7.73,
+      "soil_moisture": 76,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T12:00:00.000+02:00",
+      "temperature": 25.81,
+      "humidity": 54.0,
+      "light_level": 9.95,
+      "soil_moisture": 75,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T13:00:00.000+02:00",
+      "temperature": 25.36,
+      "humidity": 40.24,
+      "light_level": 9.38,
+      "soil_moisture": 74,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T14:00:00.000+02:00",
+      "temperature": 25.18,
+      "humidity": 45.06,
+      "light_level": 9.17,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T15:00:00.000+02:00",
+      "temperature": 23.91,
+      "humidity": 57.27,
+      "light_level": 8.84,
+      "soil_moisture": 73,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T16:00:00.000+02:00",
+      "temperature": 21.7,
+      "humidity": 50.91,
+      "light_level": 8.74,
+      "soil_moisture": 72,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T17:00:00.000+02:00",
+      "temperature": 20.25,
+      "humidity": 57.93,
+      "light_level": 9.06,
+      "soil_moisture": 71,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T18:00:00.000+02:00",
+      "temperature": 18.34,
+      "humidity": 51.44,
+      "light_level": 7.4,
+      "soil_moisture": 70,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T19:00:00.000+02:00",
+      "temperature": 17.85,
+      "humidity": 47.91,
+      "light_level": 0.99,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T20:00:00.000+02:00",
+      "temperature": 18.3,
+      "humidity": 45.23,
+      "light_level": 0.8,
+      "soil_moisture": 69,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T21:00:00.000+02:00",
+      "temperature": 18.12,
+      "humidity": 47.63,
+      "light_level": 0.43,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T22:00:00.000+02:00",
+      "temperature": 17.94,
+      "humidity": 59.11,
+      "light_level": 0.49,
+      "soil_moisture": 68,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-03T23:00:00.000+02:00",
+      "temperature": 18.39,
+      "humidity": 56.98,
+      "light_level": 0.32,
+      "soil_moisture": 67,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T00:00:00.000+02:00",
+      "temperature": 17.66,
+      "humidity": 44.47,
+      "light_level": 0.35,
+      "soil_moisture": 66,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T01:00:00.000+02:00",
+      "temperature": 17.67,
+      "humidity": 57.72,
+      "light_level": 0.22,
+      "soil_moisture": 65,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T02:00:00.000+02:00",
+      "temperature": 17.91,
+      "humidity": 51.28,
+      "light_level": 0.54,
+      "soil_moisture": 64,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T03:00:00.000+02:00",
+      "temperature": 17.65,
+      "humidity": 53.01,
+      "light_level": 0.22,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T04:00:00.000+02:00",
+      "temperature": 18.11,
+      "humidity": 48.04,
+      "light_level": 0.06,
+      "soil_moisture": 63,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T05:00:00.000+02:00",
+      "temperature": 18.0,
+      "humidity": 41.58,
+      "light_level": 0.63,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T06:00:00.000+02:00",
+      "temperature": 18.38,
+      "humidity": 50.33,
+      "light_level": 7.62,
+      "soil_moisture": 62,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T07:00:00.000+02:00",
+      "temperature": 20.4,
+      "humidity": 48.44,
+      "light_level": 9.0,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T08:00:00.000+02:00",
+      "temperature": 22.31,
+      "humidity": 54.68,
+      "light_level": 8.57,
+      "soil_moisture": 61,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T09:00:00.000+02:00",
+      "temperature": 23.51,
+      "humidity": 59.81,
+      "light_level": 7.15,
+      "soil_moisture": 60,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T10:00:00.000+02:00",
+      "temperature": 24.54,
+      "humidity": 48.46,
+      "light_level": 8.9,
+      "soil_moisture": 59,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T11:00:00.000+02:00",
+      "temperature": 25.63,
+      "humidity": 41.9,
+      "light_level": 7.1,
+      "soil_moisture": 58,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T12:00:00.000+02:00",
+      "temperature": 26.32,
+      "humidity": 57.83,
+      "light_level": 7.61,
+      "soil_moisture": 57,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T13:00:00.000+02:00",
+      "temperature": 25.7,
+      "humidity": 56.39,
+      "light_level": 9.42,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T14:00:00.000+02:00",
+      "temperature": 25.1,
+      "humidity": 52.17,
+      "light_level": 7.06,
+      "soil_moisture": 56,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T15:00:00.000+02:00",
+      "temperature": 24.03,
+      "humidity": 52.71,
+      "light_level": 9.99,
+      "soil_moisture": 55,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T16:00:00.000+02:00",
+      "temperature": 22.18,
+      "humidity": 57.6,
+      "light_level": 9.43,
+      "soil_moisture": 54,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T17:00:00.000+02:00",
+      "temperature": 19.74,
+      "humidity": 48.7,
+      "light_level": 8.91,
+      "soil_moisture": 53,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T18:00:00.000+02:00",
+      "temperature": 18.25,
+      "humidity": 52.12,
+      "light_level": 9.84,
+      "soil_moisture": 52,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T19:00:00.000+02:00",
+      "temperature": 20.39,
+      "humidity": 42.58,
+      "light_level": 0.87,
+      "soil_moisture": 51,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T20:00:00.000+02:00",
+      "temperature": 20.77,
+      "humidity": 41.86,
+      "light_level": 0.32,
+      "soil_moisture": 50,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T21:00:00.000+02:00",
+      "temperature": 15.75,
+      "humidity": 54.58,
+      "light_level": 0.77,
+      "soil_moisture": 49,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T22:00:00.000+02:00",
+      "temperature": 16.48,
+      "humidity": 53.17,
+      "light_level": 0.36,
+      "soil_moisture": 48,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-04T23:00:00.000+02:00",
+      "temperature": 18.04,
+      "humidity": 54.73,
+      "light_level": 0.65,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T00:00:00.000+02:00",
+      "temperature": 17.9,
+      "humidity": 51.79,
+      "light_level": 0.89,
+      "soil_moisture": 47,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T01:00:00.000+02:00",
+      "temperature": 20.03,
+      "humidity": 58.18,
+      "light_level": 0.61,
+      "soil_moisture": 46,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T02:00:00.000+02:00",
+      "temperature": 17.83,
+      "humidity": 42.21,
+      "light_level": 0.32,
+      "soil_moisture": 45,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T03:00:00.000+02:00",
+      "temperature": 17.83,
+      "humidity": 58.7,
+      "light_level": 0.91,
+      "soil_moisture": 44,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T04:00:00.000+02:00",
+      "temperature": 18.16,
+      "humidity": 45.04,
+      "light_level": 0.8,
+      "soil_moisture": 43,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T05:00:00.000+02:00",
+      "temperature": 17.79,
+      "humidity": 47.99,
+      "light_level": 0.73,
+      "soil_moisture": 43,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T06:00:00.000+02:00",
+      "temperature": 18.09,
+      "humidity": 49.36,
+      "light_level": 8.09,
+      "soil_moisture": 100,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T07:00:00.000+02:00",
+      "temperature": 20.16,
+      "humidity": 59.32,
+      "light_level": 8.4,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T08:00:00.000+02:00",
+      "temperature": 22.09,
+      "humidity": 43.46,
+      "light_level": 9.34,
+      "soil_moisture": 98,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T09:00:00.000+02:00",
+      "temperature": 23.5,
+      "humidity": 45.01,
+      "light_level": 9.52,
+      "soil_moisture": 97,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T10:00:00.000+02:00",
+      "temperature": 24.89,
+      "humidity": 44.24,
+      "light_level": 8.97,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T11:00:00.000+02:00",
+      "temperature": 25.52,
+      "humidity": 57.32,
+      "light_level": 9.25,
+      "soil_moisture": 96,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T12:00:00.000+02:00",
+      "temperature": 24.61,
+      "humidity": 51.42,
+      "light_level": 8.02,
+      "soil_moisture": 95,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T13:00:00.000+02:00",
+      "temperature": 23.21,
+      "humidity": 52.67,
+      "light_level": 8.24,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T14:00:00.000+02:00",
+      "temperature": 22.83,
+      "humidity": 43.85,
+      "light_level": 7.27,
+      "soil_moisture": 94,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T15:00:00.000+02:00",
+      "temperature": 23.95,
+      "humidity": 48.63,
+      "light_level": 7.04,
+      "soil_moisture": 93,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T16:00:00.000+02:00",
+      "temperature": 22.26,
+      "humidity": 45.56,
+      "light_level": 8.38,
+      "soil_moisture": 92,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T17:00:00.000+02:00",
+      "temperature": 20.38,
+      "humidity": 54.61,
+      "light_level": 7.1,
+      "soil_moisture": 91,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T18:00:00.000+02:00",
+      "temperature": 18.02,
+      "humidity": 42.71,
+      "light_level": 9.09,
+      "soil_moisture": 90,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T19:00:00.000+02:00",
+      "temperature": 17.75,
+      "humidity": 47.49,
+      "light_level": 0.92,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T20:00:00.000+02:00",
+      "temperature": 18.16,
+      "humidity": 49.05,
+      "light_level": 0.91,
+      "soil_moisture": 89,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T21:00:00.000+02:00",
+      "temperature": 18.0,
+      "humidity": 43.02,
+      "light_level": 0.07,
+      "soil_moisture": 88,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T22:00:00.000+02:00",
+      "temperature": 17.61,
+      "humidity": 56.44,
+      "light_level": 0.17,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    },
+    {
+      "timestamp": "2025-06-05T23:00:00.000+02:00",
+      "temperature": 17.99,
+      "humidity": 42.41,
+      "light_level": 0.51,
+      "soil_moisture": 87,
+      "greenhouseId": 1,
+      "sensor": 0
+    }
+  ]

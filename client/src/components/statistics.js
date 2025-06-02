@@ -13,6 +13,7 @@ import { fetchHistoricalData, fetchLatestData } from '../services/api';
 import { fetchThresholds } from '../services/api';
 import { useParams } from 'react-router-dom';
 import HumidityIcon from './humidityIcon';
+import GreenhouseWeeklyChart from './greenHouseChart';
 
 
 const Statistics = () => {
@@ -287,7 +288,7 @@ const Statistics = () => {
       <h2>Hodnoty naměřené za poslední období</h2>
       <div className="chart-container">
         {isAuthenticated ? (
-          <ResponsiveContainer width="100%" height={400}>
+          <GreenhouseWeeklyChart width="100%" height={400}>
             <LineChart data={chartData}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="timestamp" />
@@ -298,7 +299,7 @@ const Statistics = () => {
       <Line type="monotone" dataKey="soilMoisture" stroke="#82ca9d" />
       <Line type="monotone" dataKey="airHumidity" stroke="#ffc658" />
     </LineChart>
-  </ResponsiveContainer>
+  </GreenhouseWeeklyChart>
 ) : (
   <p>Žádná data nejsou k dispozici</p>
         )}
