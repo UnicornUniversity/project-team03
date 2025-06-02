@@ -13,8 +13,6 @@ import { fetchHistoricalData, fetchLatestData } from '../services/api';
 import { fetchThresholds } from '../services/api';
 import { useParams } from 'react-router-dom';
 import HumidityIcon from './humidityIcon';
-import Thermometer from './thermometer';
-
 
 
 const Statistics = () => {
