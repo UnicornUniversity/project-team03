@@ -4,6 +4,7 @@ import IBotaniQLogo from './iBotaniQLogo';
 import LoginModal from './loginModal';
 import { AuthContext } from '../authContext';
 import './settings.css';
+import { Modal } from 'antd';
 
 const SettingsPage = () => {
   const [greenhouseId, setGreenhouseId] = useState('1');
@@ -45,7 +46,10 @@ const SettingsPage = () => {
         body: JSON.stringify(thresholds),
       });
       if (!response.ok) throw new Error(`Chyba při ukládání limitů: ${response.statusText}`);
-      alert('Limity byly úspěšně uloženy.');
+      Modal.success({
+      title: 'Limity byly úspěšně uloženy.',
+    });
+
     } catch (error) {
       console.error('Chyba při ukládání limitů:', error);
     }

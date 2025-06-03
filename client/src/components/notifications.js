@@ -3,14 +3,15 @@ import { Modal } from 'antd';
 
 const Notifications = ({ exceededValue, isAuthenticated }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
-    if (isAuthenticated && exceededValue && !hasShown) {
+    // Zkontroluj, zda už byla notifikace zobrazena v tomto přihlášení
+    const shown = sessionStorage.getItem('notificationShown');
+    if (isAuthenticated && exceededValue && !shown) {
       setIsModalVisible(true);
-      setHasShown(true);
+      sessionStorage.setItem('notificationShown', 'true');
     }
-  }, [isAuthenticated, exceededValue, hasShown]);
+  }, [isAuthenticated, exceededValue]);
 
   const handleOk = () => {
     setIsModalVisible(false);
