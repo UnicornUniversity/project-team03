@@ -228,6 +228,7 @@ const GreenhouseWeeklyChart = () => {
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       const pointValue = payload[0].value;
+      
       const isMin = pointValue === metricLimits.min;
       const isMax = pointValue === metricLimits.max;
       return (
