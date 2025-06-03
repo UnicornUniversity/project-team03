@@ -6,7 +6,7 @@ import LoginPage from '../src/components/loginPage'; // Import LoginPage
 import SettingsPage from '../src/components/settings'; // Import SettingsPage
 import { AuthProvider, AuthContext } from './authContext';
 import './index.css';
-import 'antd/dist/reset.css';
+
 
 
 const ProtectedRoute = ({ children }) => {
