@@ -1,0 +1,8 @@
+| Route                 | Ochrana                     | Účel                           |
+| --------------------- | --------------------------- | ------------------------------ |
+| POST /mongo-upload    | `x-api-key` v headeru       | Raspberry Pi (píše data)       |
+| GET /latest, /        | Firebase ID token v headeru | Frontend uživatelé (čtou data) |
+| GET /thresholds/\:id  | Firebase ID token           | Přístup k limitům              |
+| POST /thresholds/\:id | Firebase ID token           | Změna limitů pouze přihlášený  |
+
+P.S. u verifyFirebaseToken bych to ještě ověřila, protože s Firebase furt ještě dorozumívám pomálu, ale snad je to správně
