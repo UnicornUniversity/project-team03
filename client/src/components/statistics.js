@@ -193,12 +193,27 @@ const Statistics = () => {
 
             value={
               isAuthenticated 
-              ? <><Thermomether /> <span style={getStatusStyle(isTemperatureNormal)}>{data.temperature !== undefined ? data.temperature : 20}</span></> 
-              : <><Thermomether /> ?</>
-            }
-
-
-    
+              ? (
+        <>
+          <Thermomether 
+            minTemperature={thresholds.temperature.min}
+            maxTemperature={thresholds.temperature.max}
+          />
+          <span style={getStatusStyle(isTemperatureNormal)}>
+            {data.temperature !== undefined ? data.temperature : 20}
+          </span>
+        </>
+      )
+      : (
+        <>
+          <Thermomether 
+            minTemperature={thresholds.temperature.min}
+            maxTemperature={thresholds.temperature.max}
+          />
+          ?
+        </>
+      )
+  }
               unit={isAuthenticated && data.temperature !== undefined ? '°C' : ""}
               status={
                 isAuthenticated && data.temperature !== undefined 

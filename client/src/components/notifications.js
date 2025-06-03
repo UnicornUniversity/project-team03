@@ -3,14 +3,14 @@ import { Modal } from 'antd';
 
 const Notifications = ({ exceededValue, isAuthenticated }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [hasShown, setHasShown] = useState(false);
 
   useEffect(() => {
-    if (isAuthenticated && exceededValue) {
+    if (isAuthenticated && exceededValue && !hasShown) {
       setIsModalVisible(true);
-    } else {
-      setIsModalVisible(false);
+      setHasShown(true);
     }
-  }, [isAuthenticated, exceededValue]);
+  }, [isAuthenticated, exceededValue, hasShown]);
 
   const handleOk = () => {
     setIsModalVisible(false);
@@ -19,7 +19,7 @@ const Notifications = ({ exceededValue, isAuthenticated }) => {
   return (
     <Modal
       title="Upozornění"
-      visible={isModalVisible}
+      open={isModalVisible}
       onOk={handleOk}
       onCancel={handleOk}
     >

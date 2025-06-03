@@ -381,7 +381,7 @@ const RealTimeMonitoring = () => {
 )}
 
  {/* Notifikace */}
- <Notifications exceededValue={exceededValue} />
+ <Notifications exceededValue={exceededValue} isAuthenticated={isAuthenticated} />
  
       </main>
       {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
