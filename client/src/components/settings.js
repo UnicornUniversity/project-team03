@@ -46,9 +46,10 @@ const SettingsPage = () => {
         body: JSON.stringify(thresholds),
       });
       if (!response.ok) throw new Error(`Chyba při ukládání limitů: ${response.statusText}`);
-      Modal.success({
-      title: 'Limity byly úspěšně uloženy.',
-    });
+      Modal.info({
+        title: 'Změna limitů',
+        content: 'Vaše limity byly úspěšně uloženy.',
+      });
 
     } catch (error) {
       console.error('Chyba při ukládání limitů:', error);
