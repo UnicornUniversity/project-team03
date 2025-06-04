@@ -1,10 +1,11 @@
 // tohle je middleware pro ověření ID tokenu z Firebase, ochranuje gety
 const admin = require('firebase-admin');
-const serviceAccount = require('../ibotaniq-firebase-adminsdk-fbsvc-5c61389b66.json'); 
+
+const svcAcc = process.env.SERVICE_ACC;
 
 if (!admin.apps.length) {
   admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
+    credential: admin.credential.cert(svcAcc)
   });
 }
 
@@ -24,5 +25,3 @@ module.exports = async (req, res, next) => {
     return res.status(401).json({ error: 'Unauthorized: Invalid token' });
   }
 };
-
-  
