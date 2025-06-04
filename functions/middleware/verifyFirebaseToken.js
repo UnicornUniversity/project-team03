@@ -1,11 +1,23 @@
 // tohle je middleware pro ověření ID tokenu z Firebase, ochranuje gety
 const admin = require('firebase-admin');
 
+if (!process.env.SERVICE_ACC) {
+  throw new Error('Missing SVC_ACC_JSON environment variable!');
+}
+
+let serviceAccount;
+try {
+  serviceAccount = JSON.parse(process.env.SERVICE_ACC);
+} catch (err) {
+  console.error('Failed to parse service account JSON from SVC_ACC_JSON:', err.message);
+  process.exit(1);
+}
+
 const svcAcc = process.env.SERVICE_ACC;
 
 if (!admin.apps.length) {
   admin.initializeApp({
-    credential: admin.credential.cert(svcAcc)
+    credential: admin.credential.cert(serviceAccount)
   });
 }
 
