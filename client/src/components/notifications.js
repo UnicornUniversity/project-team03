@@ -5,10 +5,11 @@ const Notifications = ({ exceededValue, isAuthenticated }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
-    if (isAuthenticated && exceededValue) {
+    // Zkontroluj, zda už byla notifikace zobrazena v tomto přihlášení
+    const shown = sessionStorage.getItem('notificationShown');
+    if (isAuthenticated && exceededValue && !shown) {
       setIsModalVisible(true);
-    } else {
-      setIsModalVisible(false);
+      sessionStorage.setItem('notificationShown', 'true');
     }
   }, [isAuthenticated, exceededValue]);
 
@@ -19,7 +20,7 @@ const Notifications = ({ exceededValue, isAuthenticated }) => {
   return (
     <Modal
       title="Upozornění"
-      visible={isModalVisible}
+      open={isModalVisible}
       onOk={handleOk}
       onCancel={handleOk}
     >

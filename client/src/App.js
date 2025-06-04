@@ -8,6 +8,7 @@ import { AuthProvider, AuthContext } from './authContext';
 import './index.css';
 
 
+
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated } = useContext(AuthContext);
 
