@@ -302,6 +302,7 @@ const Statistics = () => {
       <h2>Hodnoty naměřené za poslední období</h2>
       
         {isAuthenticated ? (
+        <div className="chart-wide-container">
         <GreenhouseWeeklyChart 
             width="100%" 
             height={400}
@@ -309,6 +310,7 @@ const Statistics = () => {
             greenhouseId={greenhouseId}
             chartData={chartData}
           />
+          </div>
         ) : (
           <p>Žádná data nejsou k dispozici</p>
         )}
