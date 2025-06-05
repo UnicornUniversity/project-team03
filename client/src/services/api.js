@@ -1,5 +1,5 @@
 // api.js
-const API_URL = process.env.REACT_APP_API_URL || 'https://api-lbnc42etuq-uc.a.run.app/api'; // URL pro produkční prostředí
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api'; // URL pro lokální vývoj
 
 //Data pro RealTimeMonitoring a Statistics - aktuální data
 export const fetchLatestData = async (greenhouseId) => {
@@ -58,12 +58,19 @@ export const saveThresholds = async (greenhouseId, thresholds) => {
   try {
     const endpoint = `${API_URL}/sensors/thresholds/${greenhouseId}`;
     console.log(`Saving thresholds to: ${endpoint}`);
+    console.log('Thresholds to save:', thresholds);
+    
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(thresholds),
+      body: JSON.stringify({
+        temperature: thresholds.temperature,
+        soilMoisture: thresholds.soilMoisture,
+        airHumidity: thresholds.airHumidity,
+        light: thresholds.light
+      }),
     });
 
     if (!response.ok) {

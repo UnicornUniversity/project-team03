@@ -5,7 +5,7 @@ const Sensor = require('../models/Sensor');
 const { getMockTemperatureData } = require('../mockData'); 
 const Threshold = require('../models/Threshold'); // Načtení modelu Threshold
 const authApiKey = require('../middleware/authApiKey');
-const verifyFirebaseToken = require('../middleware/verifyFirebaseToken');
+const { verifyFirebaseToken } = require('../middleware/verifyFirebaseToken');
 
 // Validace dat pro POST
 const sensorSchema = Joi.object({
@@ -73,44 +73,60 @@ router.get('/', verifyFirebaseToken, async (req, res) => {
 });
 
 // Endpoint pro získání limitů pro konkrétní skleník
-router.get('/thresholds/:greenhouseId', verifyFirebaseToken, async (req, res) => {
-  const greenhouseId = parseInt(req.params.greenhouseId); // Získání ID skleníku z parametru
+router.get('/thresholds/:greenhouseId', async (req, res) => {
+  const greenhouseId = parseInt(req.params.greenhouseId);
 
   try {
-    // Vyhledání limitů v kolekci thresholds
-    const thresholds = await Threshold.findOne({ greenhouseId });
-    if (!thresholds) {
-      return res.status(404).json({ error: 'Thresholds not found for the given greenhouseId' });
+    const threshold = await Threshold.findOne({ greenhouseId });
+    if (!threshold) {
+      return res.status(404).json({ error: 'Limity pro tento skleník nebyly nalezeny.' });
     }
-    res.json(thresholds); // Vrácení nalezených dat
-  } catch (err) {
-    console.error('Error fetching thresholds:', err); // Logování chyby
-    res.status(500).json({ error: 'Internal server error' });
+    res.json(threshold);
+  } catch (error) {
+    console.error('Error fetching thresholds:', error);
+    res.status(500).json({ error: 'Chyba při načítání limitů.' });
   }
 });
 
 // Endpoint pro uložení nebo aktualizaci limitů pro konkrétní skleník
-router.post('/thresholds/:greenhouseId', verifyFirebaseToken, async (req, res) => {
-  const greenhouseId = parseInt(req.params.greenhouseId); // Získání ID skleníku z parametru
-  const { temperature, moisture, humidity, light_level } = req.body; // Data z požadavku
+router.post('/thresholds/:greenhouseId', async (req, res) => {
+  const greenhouseId = parseInt(req.params.greenhouseId);
+  const { temperature, soilMoisture, airHumidity, light } = req.body;
 
   try {
     // Validace vstupních dat
-    if (!temperature || !moisture || !humidity || !light_level) {
+    if (!temperature || !soilMoisture || !airHumidity || !light) {
       return res.status(400).json({ error: 'Všechna pole jsou povinná.' });
     }
 
-    // Najít a aktualizovat dokument, nebo vytvořit nový, pokud neexistuje
-    const updatedThreshold = await Threshold.findOneAndUpdate(
-      { greenhouseId }, // Podmínka pro vyhledání
-      { temperature, moisture, humidity, light_level }, // Data k aktualizaci
-      { new: true, upsert: true } // Vytvořit nový dokument, pokud neexistuje
+    // Kontrola, že každé pole má min a max hodnotu
+    const validateMinMax = (field, name) => {
+      if (!field.min || !field.max) {
+        throw new Error(`${name} musí mít definované minimální a maximální hodnoty`);
+      }
+    };
+
+    validateMinMax(temperature, 'Teplota');
+    validateMinMax(soilMoisture, 'Vlhkost půdy');
+    validateMinMax(airHumidity, 'Vlhkost vzduchu');
+    validateMinMax(light, 'Světlo');
+
+    // Uložení nebo aktualizace limitů
+    const threshold = await Threshold.findOneAndUpdate(
+      { greenhouseId },
+      {
+        greenhouseId,
+        temperature,
+        soilMoisture,
+        airHumidity,
+        light
+      },
+      { upsert: true, new: true }
     );
 
-    console.log(`Thresholds updated for greenhouse ${greenhouseId}:`, updatedThreshold);
-    res.json(updatedThreshold); // Vrátit aktualizovaný dokument
-  } catch (err) {
-    console.error('Error saving thresholds:', err);
+    res.json(threshold);
+  } catch (error) {
+    console.error('Error saving thresholds:', error);
     res.status(500).json({ error: 'Chyba při ukládání limitů.' });
   }
 });

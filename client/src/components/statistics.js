@@ -303,20 +303,14 @@ const Statistics = () => {
       <h2>Hodnoty naměřené za poslední období</h2>
       <div className="chart-container">
         {isAuthenticated ? (
-          <GreenhouseWeeklyChart width="100%" height={400}>
-            <LineChart data={chartData}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="timestamp" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
-      <Line type="monotone" dataKey="soilMoisture" stroke="#82ca9d" />
-      <Line type="monotone" dataKey="airHumidity" stroke="#ffc658" />
-    </LineChart>
-  </GreenhouseWeeklyChart>
-) : (
-  <p>Žádná data nejsou k dispozici</p>
+          <GreenhouseWeeklyChart 
+            width="100%" 
+            height={400}
+            thresholds={thresholds}
+            greenhouseId={greenhouseId}
+          />
+        ) : (
+          <p>Žádná data nejsou k dispozici</p>
         )}
       </div>
       {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}

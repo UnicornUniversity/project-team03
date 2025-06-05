@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import IBotaniQLogo from './iBotaniQLogo';
 import LoginModal from './loginModal';
 import { AuthContext } from '../authContext';
+import { fetchThresholds, saveThresholds } from '../services/api';
 import './settings.css';
 
 const SettingsPage = () => {
@@ -16,13 +17,12 @@ const SettingsPage = () => {
 
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
-    const fetchThresholds = async () => {
+    const loadThresholds = async () => {
       try {
-        const response = await fetch(`/api/thresholds/${greenhouseId}`);
-        if (!response.ok) throw new Error(`Chyba při načítání limitů: ${response.statusText}`);
-        const data = await response.json();
+        const data = await fetchThresholds(greenhouseId);
         setThresholds(data);
       } catch (error) {
         console.error('Chyba při načítání limitů:', error);
@@ -34,21 +34,27 @@ const SettingsPage = () => {
         });
       }
     };
-    fetchThresholds();
-  }, [greenhouseId]);
+    
+    if (isAuthenticated) {
+      loadThresholds();
+    }
+  }, [greenhouseId, isAuthenticated]);
 
-  const saveThresholds = async () => {
+  const handleSaveThresholds = async () => {
+    if (!isAuthenticated) {
+      alert('Pro uložení limitů se prosím přihlaste.');
+      return;
+    }
+
+    setIsSaving(true);
     try {
-      const response = await fetch(`/api/thresholds/${greenhouseId}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(thresholds),
-      });
-      if (!response.ok) throw new Error(`Chyba při ukládání limitů: ${response.statusText}`);
+      await saveThresholds(greenhouseId, thresholds);
       alert('Limity byly úspěšně uloženy.');
-      
     } catch (error) {
       console.error('Chyba při ukládání limitů:', error);
+      alert('Chyba při ukládání limitů: ' + error.message);
+    } finally {
+      setIsSaving(false);
     }
   };
 
@@ -202,8 +208,12 @@ const SettingsPage = () => {
             </div>
 
             <div className="button-wrapper">
-              <button className="btn" onClick={saveThresholds}>
-                Uložit limity
+              <button 
+                className="btn" 
+                onClick={handleSaveThresholds}
+                disabled={isSaving}
+              >
+                {isSaving ? 'Ukládání...' : 'Uložit limity'}
               </button>
             </div>
           </div>
