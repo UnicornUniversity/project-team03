@@ -17,32 +17,6 @@ import mockDataImport from './mock_data.json';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
-const optimalRanges = {
-  temperature: { min: 18, max: 26 },
-  humidity: { min: 30, max: 70 },
-  soilMoisture: { min: 10, max: 50 },
-  lightLevel: { min: 2, max: 5 }
-};
-
-const recommendations = {
-  temperature: {
-    min: 'Temperature is low, consider heating.',
-    max: 'Temperature is high, check the ventilation.'
-  },
-  humidity: {
-    min: 'Air is dry, consider humidifying.',
-    max: 'Air is too humid, check the ventilation.'
-  },
-  soilMoisture: {
-    min: 'Soil is dry, consider watering.',
-    max: 'Soil is overwatered, reduce watering.'
-  },
-  lightLevel: {
-    min: 'Light is low, consider adding lighting.',
-    max: 'Light is too strong, protect plants with shading.'
-  }
-};
-
 const metrics = {
   temperature: { label: 'Teplota (°C)', color: '#ff7300' },
   humidity: { label: 'Vlhkost vzduchu (%)', color: '#28a745' },
@@ -50,7 +24,26 @@ const metrics = {
   lightLevel: { label: 'Světlo (lx)', color: '#00c49f' }
 };
 
-const GreenhouseWeeklyChart = () => {
+const recommendations = {
+  temperature: {
+    min: 'Teplota je nízká, zvažte vytápění.',
+    max: 'Teplota je vysoká, zkontrolujte ventilaci.'
+  },
+  humidity: {
+    min: 'Vzduch je suchý, zvažte zvlhčování.',
+    max: 'Vzduch je příliš vlhký, zkontrolujte ventilaci.'
+  },
+  soilMoisture: {
+    min: 'Půda je suchá, zvažte zalévání.',
+    max: 'Půda je přemokřená, omezte zalévání.'
+  },
+  lightLevel: {
+    min: 'Světla je málo, zvažte přisvícení.',
+    max: 'Světla je příliš, chraňte rostliny stíněním.'
+  }
+};
+
+const GreenhouseWeeklyChart = ({ width, height, thresholds }) => {
   const [data, setData] = useState([]);
   const [selectedMetric, setSelectedMetric] = useState('temperature');
   const [displayType, setDisplayType] = useState('day');
@@ -66,6 +59,22 @@ const GreenhouseWeeklyChart = () => {
   const greenhouseId = greenhouse === 'sklenik1' ? 1 : 2;
   const chartRef = useRef(null);
   const statsRef = useRef(null);
+  const [optimalRanges, setOptimalRanges] = useState({
+    temperature: thresholds.temperature,
+    humidity: thresholds.airHumidity,
+    soilMoisture: thresholds.soilMoisture,
+    lightLevel: thresholds.light
+  });
+
+  // Update optimalRanges when thresholds change
+  useEffect(() => {
+    setOptimalRanges({
+      temperature: thresholds.temperature,
+      humidity: thresholds.airHumidity,
+      soilMoisture: thresholds.soilMoisture,
+      lightLevel: thresholds.light
+    });
+  }, [thresholds]);
 
   // Funkce pro získání dat týdne z vybraného data
   const getWeekDates = (selectedDate) => {
@@ -227,10 +236,17 @@ const GreenhouseWeeklyChart = () => {
 
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
-      const pointValue = payload[0].value;
+      const value = payload[0].value;
+      const range = optimalRanges[selectedMetric];
+      const isOutOfRange = value < range.min || value > range.max;
+      const color = isOutOfRange ? 'red' : 'green';
+      let recommendation = '';
       
-      const isMin = pointValue === metricLimits.min;
-      const isMax = pointValue === metricLimits.max;
+      if (value < range.min) {
+        recommendation = recommendations[selectedMetric].min;
+      } else if (value > range.max) {
+        recommendation = recommendations[selectedMetric].max;
+      }
       return (
         <div
           style={{
@@ -243,17 +259,12 @@ const GreenhouseWeeklyChart = () => {
           <p>
             <strong>{formatXAxis(label)}</strong>
           </p>
-          <p>
-            {metrics[selectedMetric].label}: {pointValue}
+           <p style={{ color }}>
+            {metrics[selectedMetric].label}: {value}
           </p>
-          {isMin && (
-            <p style={{ color: 'blue' }}>
-              Min Recommendation: {recommendations[selectedMetric].min}
-            </p>
-          )}
-          {isMax && (
+         {isOutOfRange && (
             <p style={{ color: 'red' }}>
-              Max Recommendation: {recommendations[selectedMetric].max}
+               Doporučení: {recommendation}
             </p>
           )}
         </div>
@@ -824,7 +835,7 @@ const GreenhouseWeeklyChart = () => {
               />
               <YAxis domain={[0, chartUpperLimit]} />
               <Tooltip content={<CustomTooltip />} />
-
+              {/* Spodní hranice - červená zóna */}
               <ReferenceArea
                 y1={0}
                 y2={currentRange.min}
@@ -832,6 +843,24 @@ const GreenhouseWeeklyChart = () => {
                 fill="#ffcccc"
                 fillOpacity={0.5}
               />
+              {/* Minimální hranice - čára s popiskem */}
+              <ReferenceLine
+                y={currentRange.min}
+                stroke="#ff4d4d"
+                strokeDasharray="3 3"
+                label={{
+                  value: `Min: ${currentRange.min}${selectedMetric === 'temperature' ? '°C' : 
+                         selectedMetric === 'humidity' ? '%' :
+                         selectedMetric === 'soilMoisture' ? '%' :
+                         selectedMetric === 'lightLevel' ? 'lx' : ''}`,
+                  position: 'insideLeft',
+                  fill: 'green',
+                  fontSize: 12
+                }}
+              />
+
+              {/* Optimální rozsah - zelená zóna */}
+
               <ReferenceArea
                 y1={currentRange.min}
                 y2={currentRange.max}
@@ -839,6 +868,24 @@ const GreenhouseWeeklyChart = () => {
                 fill="#ccffcc"
                 fillOpacity={0.5}
               />
+              {/* Maximální hranice - čára s popiskem */}
+              <ReferenceLine
+                y={currentRange.max}
+                stroke="#ff4d4d"
+                strokeDasharray="3 3"
+                label={{
+                  value: `Max: ${currentRange.max}${selectedMetric === 'temperature' ? '°C' : 
+                         selectedMetric === 'humidity' ? '%' :
+                         selectedMetric === 'soilMoisture' ? '%' :
+                         selectedMetric === 'lightLevel' ? 'lx' : ''}`,
+                  position: 'insideLeft',
+                  fill: 'green',
+                  fontSize: 12
+                }}
+              />
+
+              {/* Horní hranice - červená zóna */}
+
               <ReferenceArea
                 y1={currentRange.max}
                 y2={chartUpperLimit}
@@ -847,39 +894,27 @@ const GreenhouseWeeklyChart = () => {
                 fillOpacity={0.5}
               />
 
-              <ReferenceLine
-                y={currentRange.min}
-                stroke="#00cc00"
-                strokeDasharray="3 3"
-                strokeWidth={2}
-                label={{ value: 'Min Optimal', position: 'insideRight' }}
-              />
-              <ReferenceLine
-                y={currentRange.max}
-                stroke="#00cc00"
-                strokeDasharray="3 3"
-                strokeWidth={2}
-                label={{ value: 'Max Optimal', position: 'insideRight' }}
-              />
-
               <Line
                 type="monotone"
                 dataKey={selectedMetric}
                 stroke={metrics[selectedMetric].color}
-                name={metrics[selectedMetric].label}
+                strokeWidth={2}
                 dot={(props) => {
                   const value = props.payload[selectedMetric];
-                  const isOutOfRange = value < optimalRanges[selectedMetric].min || value > optimalRanges[selectedMetric].max;
+                  const range = optimalRanges[selectedMetric];
+                  const isOutOfRange = value < range.min || value > range.max;
+                  const color = isOutOfRange ? 'red' : 'green';
                   return (
                     <circle
                       cx={props.cx}
                       cy={props.cy}
-                      r={3}
-                      fill={isOutOfRange ? '#ff0000' : '#00cc00'}
-                      stroke={isOutOfRange ? '#ff0000' : '#00cc00'}
+                      r={4}
+                      fill={color}
+                      stroke={color}
                     />
                   );
                 }}
+              activeDot={{ r: 6 }}
               />
 
               {minPoint && (
@@ -887,12 +922,12 @@ const GreenhouseWeeklyChart = () => {
                   x={minPoint.timestamp}
                   y={minPoint[selectedMetric]}
                   r={6}
-                  fill="blue"
-                  stroke="blue"
+                  fill="green"
+                  stroke="green"
                   label={{
                     value: `Min: ${minPoint[selectedMetric]}`,
                     position: 'top',
-                    fill: 'blue',
+                    fill: 'green',
                     fontSize: 12
                   }}
                 />
@@ -903,12 +938,12 @@ const GreenhouseWeeklyChart = () => {
                   x={maxPoint.timestamp}
                   y={maxPoint[selectedMetric]}
                   r={6}
-                  fill="red"
-                  stroke="red"
+                  fill="green"
+                  stroke="green"
                   label={{
                     value: `Max: ${maxPoint[selectedMetric]}`,
                     position: 'top',
-                    fill: 'red',
+                    fill: 'green',
                     fontSize: 12
                   }}
                 />

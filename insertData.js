@@ -27,8 +27,8 @@ mongoose.connect(dbUri)
       temperature: 20,
       humidity: 70,
       soil_moisture: 35,
-      light_level: 2,
-      timestamp: new Date('2025-04-17T10:00:00Z')
+      light_level: 30,
+      timestamp: new Date('2025-06-08T07:00:00Z')
     },
 
   ];
