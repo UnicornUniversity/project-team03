@@ -1,5 +1,5 @@
 // api.js
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api'; // URL pro lokální vývoj
+const API_URL = process.env.REACT_APP_API_URL || 'https://api-lbnc42etuq-uc.a.run.app/api'; // URL pro produkční prostředí
 
 //Data pro RealTimeMonitoring a Statistics - aktuální data
 export const fetchLatestData = async (greenhouseId) => {
