@@ -58,19 +58,12 @@ export const saveThresholds = async (greenhouseId, thresholds) => {
   try {
     const endpoint = `${API_URL}/sensors/thresholds/${greenhouseId}`;
     console.log(`Saving thresholds to: ${endpoint}`);
-    console.log('Thresholds to save:', thresholds);
-    
     const response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        temperature: thresholds.temperature,
-        soilMoisture: thresholds.soilMoisture,
-        airHumidity: thresholds.airHumidity,
-        light: thresholds.light
-      }),
+      body: JSON.stringify(thresholds),
     });
 
     if (!response.ok) {

@@ -1,8 +1,3 @@
-
-// Middleware pro ověření Firebase tokenu - v development módu je vypnuté
-const verifyFirebaseToken = (req, res, next) => {
-  next();
-
 // tohle je middleware pro ověření ID tokenu z Firebase, ochranuje gety
 const admin = require('firebase-admin');
 
@@ -41,7 +36,4 @@ module.exports = async (req, res, next) => {
     console.error('Invalid Firebase token', err);
     return res.status(401).json({ error: 'Unauthorized: Invalid token' });
   }
-
 };
-
-module.exports = { verifyFirebaseToken };
