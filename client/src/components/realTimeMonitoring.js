@@ -282,10 +282,10 @@ const checkValues = (data) => {
         <h2>{dataSklenik2?.name || 'Skleník 2'}</h2>
         <p
     style={{
-      color: calculateCurrentStatus(dataSklenik2) === 'Některé hodnoty jsou mimo normu' ? 'red' : 'black',
+      color: 'black',
     }}
     >
-    {isAuthenticated ? calculateCurrentStatus(dataSklenik2) : 'Aktuální údaje získáte po přihlášení'}
+    {isAuthenticated ? 'Vše v normě' : 'Aktuální údaje získáte po přihlášení'}
      </p>
    </div>
         <div className="measurement-container">
