@@ -253,7 +253,11 @@ const GreenhouseWeeklyChart = ({ width, height, thresholds }) => {
             backgroundColor: '#fff',
             border: '1px solid #ccc',
             padding: '10px',
-            borderRadius: '8px'
+            borderRadius: '8px',
+            width: '100vw',           //  šířka přes celou obrazovku
+            maxWidth: '1600px',       //  maximální šířka
+            margin: '0 auto',         // Vycentrování
+            boxSizing: 'border-box'
           }}
         >
           <p>
