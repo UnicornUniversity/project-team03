@@ -65,29 +65,33 @@ const RealTimeMonitoring = () => {
     ));
   };
 
-  const checkValues = (data) => {
-    if (!data) return;
+const checkValues = (data) => {
+  if (!data) return null;
+  if (data.temperature > 26 || data.temperature < 18) {
+    return 'teplotu';
+  } else if (data.soil_moisture > 50 || data.soil_moisture < 10) {
+    return 'vlhkost půdy';
+  } else if (data.humidity > 70 || data.humidity < 30) {
+    return 'vlhkost vzduchu';
+  } else if (data.light_level > 5 || data.light_level < 2) {
+    return 'světlo';
+  }
+  return null;
+};
 
-    if (data.temperature > 26 || data.temperature < 18) {
-      setExceededValue('teplotu');
-    } else if (data.soil_moisture > 50 || data.soil_moisture < 10) {
-      setExceededValue('vlhkost půdy');
-    } else if (data.humidity > 70 || data.humidity < 30) {
-      setExceededValue('vlhkost vzduchu');
-    } else if (data.light_level > 5 || data.light_level < 2) {
-      setExceededValue('světlo');
-    } else {
-      setExceededValue(null);
-    }
-  };
+ useEffect(() => {
+  // Zkontroluj nejdřív skleník 1, pak skleník 2
+  const exceeded1 = checkValues(dataSklenik1);
+  const exceeded2 = checkValues(dataSklenik2);
 
-  useEffect(() => {
-    checkValues(dataSklenik1); // Kontrola hodnot pro skleník 1
-  }, [dataSklenik1]);
-
-  useEffect(() => {
-    checkValues(dataSklenik2); // Kontrola hodnot pro skleník 2
-  }, [dataSklenik2]);
+  if (exceeded1) {
+    setExceededValue(exceeded1);
+  } else if (exceeded2) {
+    setExceededValue(exceeded2);
+  } else {
+    setExceededValue(null);
+  }
+}, [dataSklenik1, dataSklenik2]);
 
   const toggleMenu = () => {
     setMenuActive(!menuActive);
