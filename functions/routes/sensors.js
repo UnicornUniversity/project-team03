@@ -4,6 +4,8 @@ const Joi = require('joi');
 const Sensor = require('../models/Sensor'); 
 const { getMockTemperatureData } = require('../mockData'); 
 const Threshold = require('../models/Threshold'); // Načtení modelu Threshold
+const authApiKey = require('../middleware/authApiKey');
+const verifyFirebaseToken = require('../middleware/verifyFirebaseToken');
 
 // Validace dat pro POST
 const sensorSchema = Joi.object({
@@ -27,7 +29,7 @@ const simulatedData = [
   }
 ];
 
-router.get('/latest', async (req, res) => {
+router.get('/latest', verifyFirebaseToken, async (req, res) => {
   const greenhouseId = parseInt(req.query.greenhouseId) || 1; // Výchozí skleník 1
   try {
     // Pokud je vybrán skleník 2, vrátí simulovaná data
@@ -48,7 +50,7 @@ router.get('/latest', async (req, res) => {
   }
 });
 
-router.get('/', async (req, res) => {
+router.get('/', verifyFirebaseToken, async (req, res) => {
   const greenhouseId = parseInt(req.query.greenhouseId) || 1;
   const from = req.query.from ? new Date(req.query.from) : null;
   const to = req.query.to ? new Date(req.query.to) : null;
@@ -71,7 +73,7 @@ router.get('/', async (req, res) => {
 });
 
 // Endpoint pro získání limitů pro konkrétní skleník
-router.get('/thresholds/:greenhouseId', async (req, res) => {
+router.get('/thresholds/:greenhouseId', verifyFirebaseToken, async (req, res) => {
   const greenhouseId = parseInt(req.params.greenhouseId); // Získání ID skleníku z parametru
 
   try {
@@ -88,7 +90,7 @@ router.get('/thresholds/:greenhouseId', async (req, res) => {
 });
 
 // Endpoint pro uložení nebo aktualizaci limitů pro konkrétní skleník
-router.post('/thresholds/:greenhouseId', async (req, res) => {
+router.post('/thresholds/:greenhouseId', verifyFirebaseToken, async (req, res) => {
   const greenhouseId = parseInt(req.params.greenhouseId); // Získání ID skleníku z parametru
   const { temperature, moisture, humidity, light_level } = req.body; // Data z požadavku
 
@@ -114,7 +116,7 @@ router.post('/thresholds/:greenhouseId', async (req, res) => {
 });
 
 //Endpoint pro nahrani dat do monga
-router.post('/mongo-upload', async (req, res) => {
+router.post('/mongo-upload', authApiKey, async (req, res) => {
   console.log('▶️ req.body =', JSON.stringify(req.body, null, 2));
   if (typeof req.body === 'string') {
     try {

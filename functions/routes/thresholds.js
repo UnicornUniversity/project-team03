@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Threshold = require('../models/Threshold');
+const verifyFirebaseToken = require('../middleware/verifyFirebaseToken');
 
 // Endpoint pro získání limitů pro konkrétní skleník
-router.get('/:greenhouseId', async (req, res) => {
+router.get('/:greenhouseId', verifyFirebaseToken, async (req, res) => {
   const greenhouseId = parseInt(req.params.greenhouseId);
 
   try {
@@ -19,7 +20,7 @@ router.get('/:greenhouseId', async (req, res) => {
 });
 
 // Endpoint pro uložení nebo aktualizaci limitů pro konkrétní skleník
-router.post('/:greenhouseId', async (req, res) => {
+router.post('/:greenhouseId', verifyFirebaseToken, async (req, res) => {
   const greenhouseId = parseInt(req.params.greenhouseId);
   const { temperature, soilMoisture, airHumidity, light } = req.body;
 
