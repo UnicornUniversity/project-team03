@@ -1,9 +1,9 @@
 // tohle je middleware pro ověření ID tokenu z Firebase, ochranuje gety, dame ho do složky middleware
 const admin = require('firebase-admin');
 
-if (!process.env.SERVICE_ACC) {
-  throw new Error('Missing SERVICE_ACC environment variable!');
-}
+// if (!process.env.SERVICE_ACC) {
+//   throw new Error('Missing SERVICE_ACC environment variable!');
+// }
 
 let serviceAccount;
 try {
