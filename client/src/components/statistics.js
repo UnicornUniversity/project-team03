@@ -300,8 +300,9 @@ const Statistics = () => {
         <div className="thermometer-container">        
       </div>
       <h2>Hodnoty naměřené za poslední období</h2>
-      <div className="chart-container">
+      
         {isAuthenticated ? (
+        <div className="chart-wide-container">
         <GreenhouseWeeklyChart 
             width="100%" 
             height={400}
@@ -309,10 +310,11 @@ const Statistics = () => {
             greenhouseId={greenhouseId}
             chartData={chartData}
           />
+          </div>
         ) : (
           <p>Žádná data nejsou k dispozici</p>
         )}
-      </div>
+     
       {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} onSubmit={handleLoginSubmit} />}
     </div>
   );

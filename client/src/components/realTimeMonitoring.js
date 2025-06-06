@@ -69,11 +69,11 @@ const checkValues = (data) => {
   if (!data) return null;
   if (data.temperature > 26 || data.temperature < 18) {
     return 'teplotu';
-  } else if (data.soil_moisture > 50 || data.soil_moisture < 10) {
+  } else if (data.soil_moisture > 98 || data.soil_moisture < 10) {
     return 'vlhkost půdy';
   } else if (data.humidity > 70 || data.humidity < 30) {
     return 'vlhkost vzduchu';
-  } else if (data.light_level > 5 || data.light_level < 2) {
+  } else if (data.light_level > 90 || data.light_level < 0) {
     return 'světlo';
   }
   return null;
@@ -199,9 +199,9 @@ const checkValues = (data) => {
     if (!data) return 'Data nejsou dostupná';
 
     const isTemperatureNormal = data.temperature >= 18 && data.temperature <= 26;
-    const isSoilMoistureNormal = data.soil_moisture >= 10 && data.soil_moisture <= 50;
+    const isSoilMoistureNormal = data.soil_moisture >= 15 && data.soil_moisture <= 80;
     const isAirHumidityNormal = data.humidity >= 30 && data.humidity <= 70;
-    const isLightNormal = data.light_level >= 2 && data.light_level <= 5;
+    const isLightNormal = data.light_level >= 2 && data.light_level <= 500;
 
     return isTemperatureNormal && isSoilMoistureNormal && isAirHumidityNormal && isLightNormal
       ? 'Vše v normě'
@@ -282,10 +282,10 @@ const checkValues = (data) => {
         <h2>{dataSklenik2?.name || 'Skleník 2'}</h2>
         <p
     style={{
-      color: calculateCurrentStatus(dataSklenik2) === 'Některé hodnoty jsou mimo normu' ? 'red' : 'black',
+      color: 'black',
     }}
     >
-    {isAuthenticated ? calculateCurrentStatus(dataSklenik2) : 'Aktuální údaje získáte po přihlášení'}
+    {isAuthenticated ? 'Vše v normě' : 'Aktuální údaje získáte po přihlášení'}
      </p>
    </div>
         <div className="measurement-container">

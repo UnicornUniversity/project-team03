@@ -13,7 +13,12 @@
   flex-grow: 1; /* Zajistí, že kontejner zabere dostupný prostor */
   }
 
-
+.chart-wide-container {
+  width: 100vw;         
+  max-width: 1400px;    /* maximální šířka */
+  margin: 0 auto;       /* vystředění */
+  padding: 0 16px;      /* volitelné odsazení */
+}
 .chart-container {
   background-color: rgb(238, 245, 248); 
   padding: 20px;
