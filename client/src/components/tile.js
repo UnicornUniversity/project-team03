@@ -9,29 +9,54 @@ const TileContainer = ({ children }) => (
 );
 
 const Tile = ({ title, value, unit, status, imageSrc,minThreshold, maxThreshold, children, isAuthenticated, thresholds, data }) => (
-  <Card className="tile">
-    <div className="tile-content">
-     <h1 className="tile-title">
-         {title}
-         <span className="tile-title-underline"></span>
-     </h1>
-     <h1 className={`tile-value ${status === 'warning' ? 'warning' : 'normal'}`}>
-      {imageSrc && <img src={imageSrc} alt={title} className="responsive-image" />}
-      {value} {unit}
-     </h1>
+//   <Card className="tile">
+//     <div className="tile-content">
+//      <h1 className="tile-title">
+//          {title}
+//          <span className="tile-title-underline"></span>
+//      </h1>
+//      <h1 className={`tile-value ${status === 'warning' ? 'warning' : 'normal'}`}>
+//       {imageSrc && <img src={imageSrc} alt={title} className="responsive-image" />}
+//       {value} {unit}
+//      </h1>
    
- <div className="tile-status">
-  {status === 'low' && <span className="tile-warning">Příliš nízká hodnota</span>}
-  {status === 'high' && <span className="tile-warning">Příliš vysoká hodnota</span>}
-  {status === 'normal' && <span className="tile-ok">V normálu</span>}
- </div>
- <div className="tile-thresholds">
-    <p>Min: {minThreshold}</p>
-    <p>Max: {maxThreshold}</p>
+//  <div className="tile-status">
+//   {status === 'low' && <span className="tile-warning">Příliš nízká hodnota</span>}
+//   {status === 'high' && <span className="tile-warning">Příliš vysoká hodnota</span>}
+//   {status === 'normal' && <span className="tile-ok">V normálu</span>}
+//  </div>
+//  <div className="tile-thresholds">
+//     <p>Min: {minThreshold}</p>
+//     <p>Max: {maxThreshold}</p>
+//   </div>
+//   {children}
+//   </div>
+//  </Card>
+
+<Card className="tile">
+  <div className="tile-content">
+    <h1 className="tile-title">
+      {title}
+      <span className="tile-title-underline"></span>
+    </h1>
+    <div className="tile-center">
+      {imageSrc && <img src={imageSrc} alt={title} className="tile-svg" />}
+      <div className={`tile-value ${status === 'warning' ? 'warning' : 'normal'}`}>
+        {value} {unit}
+      </div>
+    </div>
+    <div className="tile-status">
+      {status === 'low' && <span className="tile-warning">Příliš nízká hodnota</span>}
+      {status === 'high' && <span className="tile-warning">Příliš vysoká hodnota</span>}
+      {status === 'normal' && <span className="tile-ok">V normálu</span>}
+    </div>
+    <div className="tile-thresholds">
+      <p>Min: {minThreshold}</p>
+      <p>Max: {maxThreshold}</p>
+    </div>
+    {children}
   </div>
-  {children}
-  </div>
- </Card>
+</Card>
 );
 
 export { Tile, TileContainer };
