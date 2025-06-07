@@ -22,21 +22,16 @@ const SettingsPage = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
 
 useEffect(() => {
-  const loadGreenhouses = () => {
-    const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
-    if (stored.length === 0) {
-      setGreenhouses([
-        { id: 'sklenik1', name: 'Skleník 1' },
-        { id: 'sklenik2', name: 'Skleník 2' }
-      ]);
-    } else {
-      setGreenhouses(stored);
-    }
-  };
+  const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
 
-  loadGreenhouses();
-  window.addEventListener('storage', loadGreenhouses);
-  return () => window.removeEventListener('storage', loadGreenhouses);
+  // Najdi případně přejmenované skleníky 1 a 2
+  const sklenik1 = stored.find(g => g.id === 'sklenik1') || { id: 'sklenik1', name: 'Skleník 1' };
+  const sklenik2 = stored.find(g => g.id === 'sklenik2') || { id: 'sklenik2', name: 'Skleník 2' };
+
+  // Ostatní (nově přidané) skleníky
+  const others = stored.filter(g => g.id !== 'sklenik1' && g.id !== 'sklenik2');
+
+  setGreenhouses([sklenik1, sklenik2, ...others]);
 }, []);
 
   useEffect(() => {
