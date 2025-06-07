@@ -6,11 +6,7 @@ import { AuthContext } from '../authContext';
 import './settings.css';
 
 const SettingsPage = () => {
-  const [greenhouseId, setGreenhouseId] = useState('sklenik1');
-  const [greenhouses, setGreenhouses] = useState([
-  { id: 'sklenik1', name: 'Skleník 1' },
-  { id: 'sklenik2', name: 'Skleník 2' }
-  ]);
+  const [greenhouseId, setGreenhouseId] = useState('1');
   const [thresholds, setThresholds] = useState({
     temperature: { min: '', max: '' },
     soilMoisture: { min: '', max: '' },
@@ -20,19 +16,6 @@ const SettingsPage = () => {
 
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const [showLoginModal, setShowLoginModal] = useState(false);
-
-useEffect(() => {
-  const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
-
-  // Najdi případně přejmenované skleníky 1 a 2
-  const sklenik1 = stored.find(g => g.id === 'sklenik1') || { id: 'sklenik1', name: 'Skleník 1' };
-  const sklenik2 = stored.find(g => g.id === 'sklenik2') || { id: 'sklenik2', name: 'Skleník 2' };
-
-  // Ostatní (nově přidané) skleníky
-  const others = stored.filter(g => g.id !== 'sklenik1' && g.id !== 'sklenik2');
-
-  setGreenhouses([sklenik1, sklenik2, ...others]);
-}, []);
 
   useEffect(() => {
     const fetchThresholds = async () => {
@@ -96,20 +79,19 @@ useEffect(() => {
             </nav>
             <div className="settings-title-dropdown">
               <h1 className="settings-title">Nastavení limitů pro:</h1>
-              
-          <div className="dropdown">
-           <button className="dropdown-link">
-             {greenhouses.find(g => g.id === greenhouseId)?.name || 'Vyberte skleník'} <span style={{ marginLeft: '5px' }}>▼</span>
-          </button>
-         <div className="dropdown-content">
-           {greenhouses.map((g) => (
-         <button
-           key={g.id}
-           className={`dropdown-item ${greenhouseId === g.id ? 'active' : ''}`}
-           onClick={() => setGreenhouseId(g.id)}
-        >
-          {g.name}
-        </button>
+              <div className="dropdown">
+                <button className="dropdown-link">
+                  Skleník {greenhouseId} <span style={{ marginLeft: '5px' }}>▼</span>
+                </button>
+                <div className="dropdown-content">
+                  {['1', '2', '3'].map((id) => (
+                    <button
+                      key={id}
+                      className={`dropdown-item ${greenhouseId === id ? 'active' : ''}`}
+                      onClick={() => setGreenhouseId(id)}
+                    >
+                      Skleník {id}
+                    </button>
                   ))}
                 </div>
               </div>
@@ -125,7 +107,7 @@ useEffect(() => {
 
       {isAuthenticated ? (
         <>
-          <h2 className="threshold-title">Limity pro {greenhouses.find(g => g.id === greenhouseId)?.name || greenhouseId}</h2>
+          <h2 className="threshold-title">Limity pro skleník {greenhouseId}</h2>
           <div className="threshold-form">
             <div className="threshold-card">
               {/* <h3>Teplota</h3> */}
