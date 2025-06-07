@@ -21,6 +21,8 @@ const SettingsPage = () => {
 
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [menuActive, setMenuActive] = useState(false);
+  const toggleMenu = () => setMenuActive((prev) => !prev);
 
   useEffect(() => {
   const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
@@ -89,8 +91,13 @@ const SettingsPage = () => {
         <div className="header-content">
           <div className="title-and-back">
             <IBotaniQLogo />
-            <nav className="nav-links">
-              <Link to="/">Zpět na hlavní stránku</Link>
+            <div className={`hamburger ${menuActive ? 'active' : ''}`} onClick={toggleMenu}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <nav className={`nav-links ${menuActive ? 'active' : ''}`}>
+          <Link to="/">Zpět na hlavní stránku</Link>   
             </nav>
             <div className="settings-title-dropdown">
               <h1 className="settings-title">Nastavení limitů pro:</h1>
