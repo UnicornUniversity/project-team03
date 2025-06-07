@@ -192,8 +192,21 @@ const checkValues = (data) => {
         ...prevData,
         name: newGreenhouseName,
       }));
-    }
-  
+   } else {
+    // Pro další skleníky
+    setAdditionalGreenhouses((prev) =>
+      prev.map((g) =>
+        g.id === selectedGreenhouse ? { ...g, name: newGreenhouseName } : g
+      )
+    );
+  }
+
+    // Aktualizace v localStorage
+    const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
+   const updated = stored.map((g) =>
+    g.id === selectedGreenhouse ? { ...g, name: newGreenhouseName } : g
+   );
+   localStorage.setItem('greenhouses', JSON.stringify(updated));
     console.log(`Skleník ${selectedGreenhouse} přejmenován na: ${newGreenhouseName}`);
     setShowRenameModal(false);
     setNewGreenhouseName('');

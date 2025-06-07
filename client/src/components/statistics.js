@@ -116,7 +116,7 @@ const Statistics = () => {
         if (isAuthenticated) {
           try {
             const from = new Date();
-            from.setDate(from.getMonth() - 2); // Poslední dva měsíce
+            from.setMonth(from.getMonth() - 2); // Poslední dva měsíce
             const to = new Date(); // Dnešní datum
     
             const data = await fetchHistoricalData(greenhouseId, from.toISOString(), to.toISOString());
@@ -184,7 +184,7 @@ const Statistics = () => {
         </div>
       </header>
      {/* Nadpis pro skleník */}
-    <h1>Hodnoty pro {greenhouse === 'sklenik1' ? 'Skleník 1' : 'Skleník 2'}</h1>
+    <h1>Hodnoty pro {greenhouses.find(g => g.id === greenhouse)?.name || greenhouse}</h1>
     <section className="tiles">
         <Tile
 
