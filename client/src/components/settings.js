@@ -21,14 +21,23 @@ const SettingsPage = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const [showLoginModal, setShowLoginModal] = useState(false);
 
-  useEffect(() => {
-  const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
-  setGreenhouses([
-    { id: 'sklenik1', name: 'Skleník 1' },
-    { id: 'sklenik2', name: 'Skleník 2' },
-    ...stored
-  ]);
-  }, []);
+useEffect(() => {
+  const loadGreenhouses = () => {
+    const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
+    if (stored.length === 0) {
+      setGreenhouses([
+        { id: 'sklenik1', name: 'Skleník 1' },
+        { id: 'sklenik2', name: 'Skleník 2' }
+      ]);
+    } else {
+      setGreenhouses(stored);
+    }
+  };
+
+  loadGreenhouses();
+  window.addEventListener('storage', loadGreenhouses);
+  return () => window.removeEventListener('storage', loadGreenhouses);
+}, []);
 
   useEffect(() => {
     const fetchThresholds = async () => {

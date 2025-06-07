@@ -43,16 +43,26 @@ const Statistics = () => {
     
   const [menuActive, setMenuActive] = useState(false);
   const greenhouseId = greenhouse === 'sklenik1' ? 1 : 2;
-
+// Nactení skleníků z localStorage
 useEffect(() => {
-  const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
-  setGreenhouses([
-    { id: 'sklenik1', name: 'Skleník 1' },
-    { id: 'sklenik2', name: 'Skleník 2' },
-    ...stored
-  ]);
-}, []);
+  const loadGreenhouses = () => {
+    const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
+    setGreenhouses([
+      { id: 'sklenik1', name: 'Skleník 1' },
+      { id: 'sklenik2', name: 'Skleník 2' },
+      ...stored
+    ]);
+  };
 
+  loadGreenhouses();
+
+  // Listener pro změnu localStorage z jiné záložky/okna
+  window.addEventListener('storage', loadGreenhouses);
+
+  return () => {
+    window.removeEventListener('storage', loadGreenhouses);
+  };
+}, []);
   // Načtení aktuálních limitů z databáze
   useEffect(() => {
     const fetchThresholdsFromApi = async () => {
