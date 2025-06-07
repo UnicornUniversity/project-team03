@@ -15,9 +15,9 @@ const Tile = ({ title, value, unit, status, imageSrc,minThreshold, maxThreshold,
          {title}
          <span className="tile-title-underline"></span>
      </h1>
-      <div className="tile-center">Add commentMore actions
+      <div className="tile-center">
         {imageSrc && <img src={imageSrc} alt={title} className="tile-svg" />}
-        <div className={`tile-value ${status === 'warning' ? 'warning' : 'normal'}`}>Add commentMore actions
+        <div className={`tile-value ${status === 'warning' ? 'warning' : 'normal'}`}>
            {value} {unit}
         </div>
       </div>
