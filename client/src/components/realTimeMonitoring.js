@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './realTimeMonitoring.css';
 import { Link } from 'react-router-dom';
@@ -25,7 +25,18 @@ const RealTimeMonitoring = () => {
   const [hiddenGreenhouses, setHiddenGreenhouses] = useState([]);
   const [exceededValue, setExceededValue] = useState(null);
  
-  
+    const navRef = useRef();
+
+    useEffect(() => {
+      const handleClickOutside = (event) => {
+        if (menuActive && navRef.current && !navRef.current.contains(event.target)) {
+          setMenuActive(false);
+        }
+      };
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [menuActive]);
+
   useEffect(() => {
     const fetchDataForGreenhouses = async () => {
       if (isAuthenticated) {
@@ -102,6 +113,7 @@ const checkValues = (data) => {
   };
 
   const handleLogout = () => {
+    localStorage.removeItem('greenhouses');
     setIsAuthenticated(false);
   };
 
@@ -238,9 +250,20 @@ const checkValues = (data) => {
           <div></div>
           <div></div>
         </div>
-        <nav className={`nav-links ${menuActive ? 'active' : ''}`}>
-          <a href="/" className="active-link">Aktuální situace</a>
-          <Link to="/settings">Nastavení</Link>
+        <nav ref={navRef} className={`nav-links ${menuActive ? 'active' : ''}`}>
+          {menuActive && (
+            <button
+              className="close-btn"
+              onClick={(e) => {
+                e.preventDefault(); 
+                setMenuActive(false);
+              }}
+            >
+              ×
+            </button>
+          )}
+          <a href="/" className="active-link" onClick={() => setMenuActive(false)}>Aktuální situace</a>
+          <Link to="/settings" onClick={() => setMenuActive(false)}>Nastavení</Link>
         </nav>
         <div className="btn-container">
           {!isAuthenticated ? (

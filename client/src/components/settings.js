@@ -7,6 +7,11 @@ import './settings.css';
 
 const SettingsPage = () => {
   const [greenhouseId, setGreenhouseId] = useState('1');
+  const [greenhouses, setGreenhouses] = useState([
+  { id: 'sklenik1', name: 'Skleník 1' },
+  { id: 'sklenik2', name: 'Skleník 2' }
+  ]);
+
   const [thresholds, setThresholds] = useState({
     temperature: { min: '', max: '' },
     soilMoisture: { min: '', max: '' },
@@ -16,6 +21,15 @@ const SettingsPage = () => {
 
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const [showLoginModal, setShowLoginModal] = useState(false);
+
+  useEffect(() => {
+  const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
+  setGreenhouses([
+    { id: 'sklenik1', name: 'Skleník 1' },
+    { id: 'sklenik2', name: 'Skleník 2' },
+    ...stored
+  ]);
+ }, []);
 
   useEffect(() => {
     const fetchThresholds = async () => {
@@ -67,6 +81,8 @@ const SettingsPage = () => {
     setShowLoginModal(false);
   };
 
+  const [menuActive, setMenuActive] = useState(false);
+
   return (
     <div className="page">
     {/* <div className="settings-container"> */}
@@ -74,23 +90,29 @@ const SettingsPage = () => {
         <div className="header-content">
           <div className="title-and-back">
             <IBotaniQLogo />
+              <div className={`hamburger ${menuActive ? 'active' : ''}`} onClick={() => setMenuActive(!menuActive)}>
+             <div></div>
+              <div></div>
+              <div></div>
+               </div>
+
             <nav className="nav-links">
               <Link to="/">Zpět na hlavní stránku</Link>
             </nav>
-            <div className="settings-title-dropdown">
-              <h1 className="settings-title">Nastavení limitů pro:</h1>
+            <div className="dropdown-container">
+              <h2 className="settings-title">Nastavení limitů pro:</h2>
               <div className="dropdown">
                 <button className="dropdown-link">
                   Skleník {greenhouseId} <span style={{ marginLeft: '5px' }}>▼</span>
                 </button>
                 <div className="dropdown-content">
-                  {['1', '2', '3'].map((id) => (
-                    <button
-                      key={id}
-                      className={`dropdown-item ${greenhouseId === id ? 'active' : ''}`}
-                      onClick={() => setGreenhouseId(id)}
+                   {greenhouses.map((g) => (
+                        <button
+                        key={g.id}
+                        className={`dropdown-item ${greenhouseId === g.id ? 'active' : ''}`}
+                        onClick={() => setGreenhouseId(g.id)}
                     >
-                      Skleník {id}
+                      {g.name}
                     </button>
                   ))}
                 </div>
@@ -107,7 +129,7 @@ const SettingsPage = () => {
 
       {isAuthenticated ? (
         <>
-          <h2 className="threshold-title">Limity pro skleník {greenhouseId}</h2>
+          <h2 className="threshold-title">Limity pro {greenhouseId}</h2>
           <div className="threshold-form">
             <div className="threshold-card">
               {/* <h3>Teplota</h3> */}

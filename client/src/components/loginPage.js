@@ -70,7 +70,7 @@ const LoginPage = () => {
     </h1>
     <p className="subtitle">
       Sledujte a ovládejte růst rostlin přímo z telefonu.<br />
-      Automatizované osvětlení, zavlažování i klima.
+      Automatizované sledování osvětlení, zavlažování i klima.
     </p>
     <p className="login-info">
       Pro přístup do aplikace se přihlaste pomocí svého Google účtu.

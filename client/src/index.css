@@ -70,7 +70,7 @@ body {
 /* Kontejner pro odkazy */
 .nav-links {
   flex: 1;
-  display: flex;
+   display: inline-block;
   align-items: center;
   justify-content: center;
   gap: 40px; /* Pěkná vzdálenost mezi body */
