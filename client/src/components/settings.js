@@ -29,7 +29,7 @@ const SettingsPage = () => {
     { id: 'sklenik2', name: 'Skleník 2' },
     ...stored
   ]);
- }, []);
+}, []);
 
   useEffect(() => {
     const fetchThresholds = async () => {
@@ -76,12 +76,11 @@ const SettingsPage = () => {
   const handleLogin = () => setShowLoginModal(true);
   const handleLogout = () => setIsAuthenticated(false);
   const handleLoginSubmit = (user) => {
+    localStorage.removeItem('greenhouses');
     console.log('User logged in:', user);
     setIsAuthenticated(true);
     setShowLoginModal(false);
   };
-
-  const [menuActive, setMenuActive] = useState(false);
 
   return (
     <div className="page">
@@ -90,17 +89,11 @@ const SettingsPage = () => {
         <div className="header-content">
           <div className="title-and-back">
             <IBotaniQLogo />
-              <div className={`hamburger ${menuActive ? 'active' : ''}`} onClick={() => setMenuActive(!menuActive)}>
-             <div></div>
-              <div></div>
-              <div></div>
-               </div>
-
             <nav className="nav-links">
               <Link to="/">Zpět na hlavní stránku</Link>
             </nav>
-            <div className="dropdown-container">
-              <h2 className="settings-title">Nastavení limitů pro:</h2>
+            <div className="settings-title-dropdown">
+              <h1 className="settings-title">Nastavení limitů pro:</h1>
               <div className="dropdown">
                 <button className="dropdown-link">
                   Skleník {greenhouseId} <span style={{ marginLeft: '5px' }}>▼</span>
