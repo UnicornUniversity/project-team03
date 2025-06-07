@@ -25,13 +25,25 @@
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   width: 96%;
+  max-width: 1200px;    /* maximální šířka */
   height: 400px; 
   margin: 30px 10px 30px 20px; /* Top, right, bottom, left */
   font-family: 'Century Gothic', sans-serif; 
   color: rgb(18, 49, 18); 
   font-weight: bold; 
   font-size: 20px;
+  box-sizing: border-box;
 }
+
+@media (max-width: 600px) {
+  .chart-container {
+    padding: 8px;
+    height: 220px;
+    font-size: 14px;
+    min-width: 0;
+  }
+}
+
 
 
 
