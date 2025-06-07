@@ -116,7 +116,7 @@ const Statistics = () => {
         if (isAuthenticated) {
           try {
             const from = new Date();
-            from.setDate(from.getDate() - 7); // Posledních 7 dní
+            from.setDate(from.getMonth() - 2); // Poslední dva měsíce
             const to = new Date(); // Dnešní datum
     
             const data = await fetchHistoricalData(greenhouseId, from.toISOString(), to.toISOString());
