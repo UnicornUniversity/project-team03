@@ -21,6 +21,10 @@ const Statistics = () => {
   const { greenhouse } = useParams();
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [chartData, setChartData] = useState([]);
+  const [greenhouses, setGreenhouses] = useState([
+  { id: 'sklenik1', name: 'Skleník 1' },
+  { id: 'sklenik2', name: 'Skleník 2' }
+  ]);
   
   const [data, setData] = useState({
       temperature: '',
@@ -39,6 +43,15 @@ const Statistics = () => {
     
   const [menuActive, setMenuActive] = useState(false);
   const greenhouseId = greenhouse === 'sklenik1' ? 1 : 2;
+
+useEffect(() => {
+  const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
+  setGreenhouses([
+    { id: 'sklenik1', name: 'Skleník 1' },
+    { id: 'sklenik2', name: 'Skleník 2' },
+    ...stored
+  ]);
+}, []);
 
   // Načtení aktuálních limitů z databáze
   useEffect(() => {

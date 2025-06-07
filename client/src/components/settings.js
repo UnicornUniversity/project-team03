@@ -24,11 +24,11 @@ const SettingsPage = () => {
   useEffect(() => {
   const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
   setGreenhouses([
-    { id: 'sklenik1', name: dataSklenik1?.name || 'Skleník 1' },
-    { id: 'sklenik2', name: dataSklenik2?.name || 'Skleník 2' },
+    { id: 'sklenik1', name: 'Skleník 1' },
+    { id: 'sklenik2', name: 'Skleník 2' },
     ...stored
   ]);
- }, [dataSklenik1?.name, dataSklenik2?.name]);
+  }, []);
 
   useEffect(() => {
     const fetchThresholds = async () => {
