@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-// Připojovací řetězec MongoDB
-const dbUri = 'mongodb+srv://pavlasplichal:novy22projekt@cluster0.dplz2.mongodb.net/malina?retryWrites=true&w=majority';
+
 
 // Schéma a model
 const sensorSchema = new mongoose.Schema({
