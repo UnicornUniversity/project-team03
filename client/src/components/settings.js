@@ -24,11 +24,11 @@ const SettingsPage = () => {
   useEffect(() => {
   const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
   setGreenhouses([
-    { id: 'sklenik1', name: 'Skleník 1' },
-    { id: 'sklenik2', name: 'Skleník 2' },
+    { id: 'sklenik1', name: dataSklenik1?.name || 'Skleník 1' },
+    { id: 'sklenik2', name: dataSklenik2?.name || 'Skleník 2' },
     ...stored
   ]);
-  }, []);
+ }, [dataSklenik1?.name, dataSklenik2?.name]);
 
   useEffect(() => {
     const fetchThresholds = async () => {
@@ -121,7 +121,7 @@ const SettingsPage = () => {
 
       {isAuthenticated ? (
         <>
-          <h2 className="threshold-title">Limity pro skleník {greenhouseId}</h2>
+          <h2 className="threshold-title">Limity pro {greenhouses.find(g => g.id === greenhouseId)?.name || greenhouseId}</h2>
           <div className="threshold-form">
             <div className="threshold-card">
               {/* <h3>Teplota</h3> */}
