@@ -158,17 +158,34 @@
 
 
 @media (max-width: 768px) {
-  .tiles {
+  .tiles0 {
     flex-direction: row; /* Dlaždice se budou skládat vedle sebe */
     align-items: center; /* Zarovnání dlaždic na střed */
   }
 
-  .tiles > .ant-card {
+  .tiles0 > .ant-card {
     width: 90%; /* Zajištění, že dlaždice budou mít šířku 90% obrazovky */
     height: auto; /* Automatická výška */
     margin-bottom: 5px; /* Přidání mezery mezi dlaždicemi na mobilu */
   }
 }
+
+@media (max-width: 600px) {
+  .tiles {
+    flex-direction: column;      /* Dlaždice jedna pod druhou */
+    align-items: stretch;        /* Roztáhnout dlaždice na plnou šířku */
+    gap: 16px;                   /* Menší mezera mezi dlaždicemi */
+  }
+  .tiles > .ant-card {
+    width: 100%;                 /* Vyplní celou šířku kontejneru dlaždicemi */
+    min-width: 0;                /* Obnovení minimální šířky */
+    margin-bottom: 0;            /* Odstranění spodního vnějšího odsazení */
+  }
+  .tiles > .ant-card:not(:last-child)::after {
+    display: none;               /* Odstranění svislých oddělovačů */
+  }
+}
+
 .status-item-container {
   width: 100%;
   max-width: 800px; /* původně 500px - zvětšeno */

@@ -435,7 +435,8 @@ const GreenhouseWeeklyChart = ({ width, height, thresholds }) => {
     alignItems: 'center',
     gap: '10px',
     marginBottom: '20px',
-    width: '100%'
+    width: '100%',
+    flexWrap: 'wrap'
   };
 
   const getPeriodString = () => {

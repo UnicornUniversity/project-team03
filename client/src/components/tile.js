@@ -15,10 +15,12 @@ const Tile = ({ title, value, unit, status, imageSrc,minThreshold, maxThreshold,
          {title}
          <span className="tile-title-underline"></span>
      </h1>
-     <h1 className={`tile-value ${status === 'warning' ? 'warning' : 'normal'}`}>
-      {imageSrc && <img src={imageSrc} alt={title} className="responsive-image" />}
-      {value} {unit}
-     </h1>
+      <div className="tile-center">Add commentMore actions
+        {imageSrc && <img src={imageSrc} alt={title} className="tile-svg" />}
+        <div className={`tile-value ${status === 'warning' ? 'warning' : 'normal'}`}>Add commentMore actions
+           {value} {unit}
+        </div>
+      </div>
    
  <div className="tile-status">
   {status === 'low' && <span className="tile-warning">Příliš nízká hodnota</span>}
