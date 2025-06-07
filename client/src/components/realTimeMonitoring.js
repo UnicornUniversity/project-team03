@@ -140,6 +140,10 @@ const checkValues = (data) => {
       light_level: null
     };
 
+    // Ulož do localStorage
+    const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
+    localStorage.setItem('greenhouses', JSON.stringify([...stored, newGreenhouse]));
+
     setHiddenGreenhouses((prevHidden) => prevHidden.filter(id => id !== newGreenhouse.id));
     setAdditionalGreenhouses((prevGreenhouses) => [...prevGreenhouses, newGreenhouse]); // Přidání nového skleníků do seznamu dalších skleníků
 
