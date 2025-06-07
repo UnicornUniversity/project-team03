@@ -4,6 +4,7 @@
   display: none;
   flex-direction: column;
   cursor: pointer;
+  z-index: 1002;
 }
 
 .hamburger div {
@@ -13,6 +14,11 @@
   margin: 4px 0;
   transition: 0.4s;
 }
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
 /* Media query pro mobilní zařízení */
 @media (max-width: 600px) {
   .dashboard {
@@ -25,20 +31,65 @@
       padding: 20px 10px; /* Zvýšení paddingu pro lepší vzhled */
   }
 
-  .nav-links {
-      display: none; /* Skrytí navigačních odkazů */
-      flex-direction: column; /* Vertikální uspořádání navigačních odkazů */
-      align-items: center;
+ .nav-links {
+    position: absolute;
+    top: 60px; /* высота header */
+    left: 0;
+    width: 100%;
+    background-color: #3a5a44;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 15px 0;
+    z-index: 1000;
   }
 
+   .nav-links a {
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+}
   .hamburger {
       display: flex; /* Zobrazení hamburger menu */
   }
 }
 
 /* Zobrazení navigačních odkazů při kliknutí na hamburger menu */
-.nav-links.active {
+  .nav-links.active {
   display: flex;
+  }
+
+ .nav-links.active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+  }
+
+  /* Крестик закрытия */
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+
+
+.header {
+  position: relative;
+  z-index: 1001;
 }
 
 

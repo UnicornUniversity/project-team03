@@ -1,3 +1,94 @@
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Mobilní adaptace */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #3a5a44;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 15px 0;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    color: white;
+    padding: 10px 0;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+}
+
+
+
+
+
+.dropdown-container {
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+  background: #f1f8f5; /* světle zelené pozadí */
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d0e4d0; /* tenký rám */
+
+}
+
 /* --- Blok záhlaví + rozbalovací nabídka --- */
 .settings-title-dropdown {
   display: flex;
@@ -9,7 +100,7 @@
 .settings-title {
   font-size: clamp(1.1rem, 1.5vw, 1.4rem);
   font-weight: 600;
-  color: #f3f8f3;
+  color: #1b5e20;
   margin: 0;
 }
 
@@ -17,8 +108,8 @@
 .title-and-back {
   display: flex;
   align-items: center;
-  gap: 5rem;
-  flex-grow: 1;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 /* Tlačítko Zpět */
@@ -56,6 +147,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 12px;
 }
 
 .dropdown-link:hover {
@@ -258,3 +350,17 @@ input[type="number"]:focus {
   }
 }
 
+@media (max-width: 768px) {
+  .title-and-back {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    display: inline-block;
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+}
