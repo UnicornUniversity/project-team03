@@ -5,6 +5,9 @@ import LoginModal from './loginModal';
 import { AuthContext } from '../authContext';
 import './settings.css';
 
+
+
+
 const SettingsPage = () => {
   const [greenhouseId, setGreenhouseId] = useState('sklenik1');
   const [greenhouses, setGreenhouses] = useState([
@@ -80,44 +83,63 @@ const SettingsPage = () => {
     setShowLoginModal(false);
   };
 
+  const [menuActive, setMenuActive] = useState(false);
+
+
   return (
     <div className="page">
     {/* <div className="settings-container"> */}
-      <header className="header">
-        <div className="header-content">
-          <div className="title-and-back">
-            <IBotaniQLogo />
-            <nav className="nav-links">
-              <Link to="/">Zpět na hlavní stránku</Link>
-            </nav>
-            <div className="settings-title-dropdown">
-              <h1 className="settings-title">Nastavení limitů pro:</h1>
-              
-          <div className="dropdown">
-           <button className="dropdown-link">
-             {greenhouses.find(g => g.id === greenhouseId)?.name || 'Vyberte skleník'} <span style={{ marginLeft: '5px' }}>▼</span>
-          </button>
-         <div className="dropdown-content">
-           {greenhouses.map((g) => (
-         <button
-           key={g.id}
-           className={`dropdown-item ${greenhouseId === g.id ? 'active' : ''}`}
-           onClick={() => setGreenhouseId(g.id)}
+    <header className="header">
+  <div className="logo-container">
+    <IBotaniQLogo />
+  </div>
+
+  <div className={`hamburger ${menuActive ? 'active' : ''}`} onClick={() => setMenuActive(!menuActive)}>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav className={`nav-links ${menuActive ? 'active' : ''}`}>
+    {menuActive && (
+      <button className="close-btn" onClick={() => setMenuActive(false)}>×</button>
+    )}
+    <Link to="/" onClick={() => setMenuActive(false)}>Zpět na hlavní stránku</Link>
+  </nav>
+
+  <div className="btn-container">
+    {!isAuthenticated ? (
+      <button className="btn" onClick={handleLogin}>Přihlášení</button>
+    ) : (
+      <button className="btn" onClick={handleLogout}>Odhlásit</button>
+    )}
+  </div>
+</header>
+
+
+{/* 💡 Rozbalovací nabídka přesunuta pod záhlaví */}
+<div className="dropdown-container">
+  <h2 className="settings-title">Nastavení limitů pro:</h2>
+  <div className="dropdown">
+    <button className="dropdown-link">
+      {greenhouses.find(g => g.id === greenhouseId)?.name || 'Vyberte skleník'} <span style={{ marginLeft: '5px' }}>▼</span>
+    </button>
+    <div className="dropdown-content">
+      {greenhouses.map((g) => (
+        <button
+          key={g.id}
+          className={`dropdown-item ${greenhouseId === g.id ? 'active' : ''}`}
+          onClick={() => setGreenhouseId(g.id)}
         >
           {g.name}
         </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {isAuthenticated ? (
-          <button className="btn" onClick={handleLogout}>Odhlásit</button>
-        ) : (
-          <button className="btn" onClick={handleLogin}>Přihlášení</button>
-        )}
-      </header>
+      ))}
+    </div>
+  </div>
+</div>
+
+
+
 
       {isAuthenticated ? (
         <>
