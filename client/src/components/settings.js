@@ -6,7 +6,11 @@ import { AuthContext } from '../authContext';
 import './settings.css';
 
 const SettingsPage = () => {
-  const [greenhouseId, setGreenhouseId] = useState('1');
+  const [greenhouseId, setGreenhouseId] = useState('sklenik1');
+  const [greenhouses, setGreenhouses] = useState([
+  { id: 'sklenik1', name: 'Skleník 1' },
+  { id: 'sklenik2', name: 'Skleník 2' }
+  ]);
   const [thresholds, setThresholds] = useState({
     temperature: { min: '', max: '' },
     soilMoisture: { min: '', max: '' },
@@ -16,6 +20,15 @@ const SettingsPage = () => {
 
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const [showLoginModal, setShowLoginModal] = useState(false);
+
+  useEffect(() => {
+  const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
+  setGreenhouses([
+    { id: 'sklenik1', name: 'Skleník 1' },
+    { id: 'sklenik2', name: 'Skleník 2' },
+    ...stored
+  ]);
+  }, []);
 
   useEffect(() => {
     const fetchThresholds = async () => {
@@ -79,19 +92,20 @@ const SettingsPage = () => {
             </nav>
             <div className="settings-title-dropdown">
               <h1 className="settings-title">Nastavení limitů pro:</h1>
-              <div className="dropdown">
-                <button className="dropdown-link">
-                  Skleník {greenhouseId} <span style={{ marginLeft: '5px' }}>▼</span>
-                </button>
-                <div className="dropdown-content">
-                  {['1', '2', '3'].map((id) => (
-                    <button
-                      key={id}
-                      className={`dropdown-item ${greenhouseId === id ? 'active' : ''}`}
-                      onClick={() => setGreenhouseId(id)}
-                    >
-                      Skleník {id}
-                    </button>
+              
+          <div className="dropdown">
+           <button className="dropdown-link">
+             {greenhouses.find(g => g.id === greenhouseId)?.name || 'Vyberte skleník'} <span style={{ marginLeft: '5px' }}>▼</span>
+          </button>
+         <div className="dropdown-content">
+           {greenhouses.map((g) => (
+         <button
+           key={g.id}
+           className={`dropdown-item ${greenhouseId === g.id ? 'active' : ''}`}
+           onClick={() => setGreenhouseId(g.id)}
+        >
+          {g.name}
+        </button>
                   ))}
                 </div>
               </div>
