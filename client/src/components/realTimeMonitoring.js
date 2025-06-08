@@ -24,6 +24,11 @@ const RealTimeMonitoring = () => {
   const [selectedGreenhouse, setSelectedGreenhouse] = useState(null);
   const [hiddenGreenhouses, setHiddenGreenhouses] = useState([]);
   const [exceededValue, setExceededValue] = useState(null);
+  const clearAllGreenhouses = () => {
+  localStorage.removeItem('greenhouses');
+  setAdditionalGreenhouses([]); // Vymaže i ze stavu
+  };
+
  
     const navRef = useRef();
 
@@ -142,11 +147,6 @@ const checkValues = (data) => {
       alert('Zadejte název skleníku.');
       return;
     }
-
-  const clearAllGreenhouses = () => {
-  localStorage.removeItem('greenhouses');
-  setAdditionalGreenhouses([]); // Vymaže i ze stavu
-  };
 
     const newGreenhouse = {
       id: `sklenik${Date.now()}`, // Unikátní ID pro nový skleník
