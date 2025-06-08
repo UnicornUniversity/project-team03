@@ -25,29 +25,20 @@ const SettingsPage = () => {
   const toggleMenu = () => setMenuActive((prev) => !prev);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  useEffect(() => {
-    // Smaže všechny nově přidané skleníky při každém načtení SettingsPage
-    localStorage.removeItem('greenhouses');
-    setGreenhouses([
-      { id: 'sklenik1', name: 'Skleník 1' },
-      { id: 'sklenik2', name: 'Skleník 2' }
-    ]);
-  }, []);
-
+  // Dropdown zavírání při kliknutí mimo
   useEffect(() => {
     if (!dropdownOpen) return;
-
     const handleClickOutside = (event) => {
       const dropdown = document.querySelector('.dropdown');
       if (dropdown && !dropdown.contains(event.target)) {
         setDropdownOpen(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [dropdownOpen]);
 
+  // Načítání thresholds pro vybraný skleník
   useEffect(() => {
     const fetchThresholds = async () => {
       try {
@@ -80,6 +71,15 @@ const SettingsPage = () => {
     } catch (error) {
       console.error('Chyba při ukládání limitů:', error);
     }
+  };
+
+  const addGreenhouse = () => {
+    // Vytvoří nové unikátní id a jméno
+    const newId = `sklenik${greenhouses.length + 1}`;
+    const newName = `Skleník ${greenhouses.length + 1}`;
+    setGreenhouses(prev => [...prev, { id: newId, name: newName }]);
+    setGreenhouseId(newId);
+    setDropdownOpen(false);
   };
 
   const handleInputChange = (e, type, field) => {
@@ -131,12 +131,19 @@ const SettingsPage = () => {
                       className={`dropdown-item ${greenhouseId === g.id ? 'active' : ''}`}
                       onClick={() => {
                         setGreenhouseId(g.id);
-                        setDropdownOpen(false); // zavře dropdown po výběru
+                        setDropdownOpen(false);
                       }}
                     >
                       {g.name}
                     </button>
                   ))}
+                  <button
+                    className="dropdown-item"
+                    style={{ fontWeight: 'bold', color: '#007bff' }}
+                    onClick={addGreenhouse}
+                  >
+                    + Přidat skleník
+                  </button>
                 </div>
               )}
             </div>
