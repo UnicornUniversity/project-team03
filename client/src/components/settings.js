@@ -6,7 +6,7 @@ import { AuthContext } from '../authContext';
 import './settings.css';
 
 const SettingsPage = () => {
-  const [greenhouseId, setGreenhouseId] = useState('sklenik1');
+  const [greenhouseId, setGreenhouseId] = useState('1');
   const [greenhouses] = useState([
     { id: 'sklenik1', name: 'Skleník 1' },
     { id: 'sklenik2', name: 'Skleník 2' }
