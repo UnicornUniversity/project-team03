@@ -129,7 +129,9 @@ const SettingsPage = () => {
 
       {isAuthenticated ? (
         <>
-          <h2 className="threshold-title">Limity pro {greenhouseId}</h2>
+          <h2 className="threshold-title">
+          Limity pro {greenhouses.find(g => g.id === greenhouseId)?.name || greenhouseId}
+          </h2>
           <div className="threshold-form">
             <div className="threshold-card">
               {/* <h3>Teplota</h3> */}
