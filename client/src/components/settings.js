@@ -6,7 +6,7 @@ import { AuthContext } from '../authContext';
 import './settings.css';
 
 const SettingsPage = () => {
-  const [greenhouseId, setGreenhouseId] = useState('1');
+  const [greenhouseId, setGreenhouseId] = useState('sklenik1');
   const [greenhouses, setGreenhouses] = useState([
   { id: 'sklenik1', name: 'Skleník 1' },
   { id: 'sklenik2', name: 'Skleník 2' }
@@ -33,6 +33,20 @@ const SettingsPage = () => {
     ...stored
   ]);
 }, []);
+
+useEffect(() => {
+  if (!dropdownOpen) return;
+
+  const handleClickOutside = (event) => {
+    const dropdown = document.querySelector('.dropdown');
+    if (dropdown && !dropdown.contains(event.target)) {
+      setDropdownOpen(false);
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => document.removeEventListener('mousedown', handleClickOutside);
+}, [dropdownOpen]);
 
   useEffect(() => {
     const fetchThresholds = async () => {
