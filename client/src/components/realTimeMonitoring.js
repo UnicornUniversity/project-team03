@@ -81,6 +81,18 @@ const RealTimeMonitoring = () => {
     ));
   };
 
+  useEffect(() => {
+  // TEST: nastav hodnoty pro Skleník 1 tak, aby byly překročeny limity
+  setDataSklenik1({
+    temperature: 30, // překročený limit (max 26)
+    soil_moisture: 20,
+    humidity: 40,
+    light_level: 50,
+    name: 'Skleník 1',
+    timestamp: new Date().toISOString()
+  });
+}, []);
+
 const checkValues = (data) => {
   if (!data) return null;
   if (data.temperature > 26 || data.temperature < 18) {
