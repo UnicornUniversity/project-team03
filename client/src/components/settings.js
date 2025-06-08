@@ -23,6 +23,7 @@ const SettingsPage = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
   const toggleMenu = () => setMenuActive((prev) => !prev);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
   const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
@@ -102,20 +103,29 @@ const SettingsPage = () => {
             <div className="settings-title-dropdown">
               <h1 className="settings-title">Nastavení limitů pro:</h1>
               <div className="dropdown">
-                <button className="dropdown-link">
-                  Skleník {greenhouseId} <span style={{ marginLeft: '5px' }}>▼</span>
-                </button>
-                <div className="dropdown-content">
-                   {greenhouses.map((g) => (
-                        <button
-                        key={g.id}
-                        className={`dropdown-item ${greenhouseId === g.id ? 'active' : ''}`}
-                        onClick={() => setGreenhouseId(g.id)}
-                    >
-                      {g.name}
-                    </button>
-                  ))}
-                </div>
+                <button
+  className="dropdown-link"
+  onClick={() => setDropdownOpen((open) => !open)}
+>
+  {greenhouses.find(g => g.id === greenhouseId)?.name || greenhouseId}
+  <span style={{ marginLeft: '5px' }}>▼</span>
+</button>
+{dropdownOpen && (
+  <div className="dropdown-content">
+    {greenhouses.map((g) => (
+      <button
+        key={g.id}
+        className={`dropdown-item ${greenhouseId === g.id ? 'active' : ''}`}
+        onClick={() => {
+          setGreenhouseId(g.id);
+          setDropdownOpen(false); // zavře dropdown po výběru
+        }}
+      >
+        {g.name}
+      </button>
+    ))}
+  </div>
+)}
               </div>
             </div>
           </div>
