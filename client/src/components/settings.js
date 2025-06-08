@@ -8,8 +8,8 @@ import './settings.css';
 const SettingsPage = () => {
   const [greenhouseId, setGreenhouseId] = useState('sklenik1');
   const [greenhouses, setGreenhouses] = useState([
-  { id: 'sklenik1', name: 'Skleník 1' },
-  { id: 'sklenik2', name: 'Skleník 2' }
+    { id: 'sklenik1', name: 'Skleník 1' },
+    { id: 'sklenik2', name: 'Skleník 2' }
   ]);
 
   const [thresholds, setThresholds] = useState({
@@ -26,27 +26,27 @@ const SettingsPage = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
-  const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
-  setGreenhouses([
-    { id: 'sklenik1', name: 'Skleník 1' },
-    { id: 'sklenik2', name: 'Skleník 2' },
-    ...stored
-  ]);
-}, []);
+    // Smaže všechny nově přidané skleníky při každém načtení SettingsPage
+    localStorage.removeItem('greenhouses');
+    setGreenhouses([
+      { id: 'sklenik1', name: 'Skleník 1' },
+      { id: 'sklenik2', name: 'Skleník 2' }
+    ]);
+  }, []);
 
-useEffect(() => {
-  if (!dropdownOpen) return;
+  useEffect(() => {
+    if (!dropdownOpen) return;
 
-  const handleClickOutside = (event) => {
-    const dropdown = document.querySelector('.dropdown');
-    if (dropdown && !dropdown.contains(event.target)) {
-      setDropdownOpen(false);
-    }
-  };
+    const handleClickOutside = (event) => {
+      const dropdown = document.querySelector('.dropdown');
+      if (dropdown && !dropdown.contains(event.target)) {
+        setDropdownOpen(false);
+      }
+    };
 
-  document.addEventListener('mousedown', handleClickOutside);
-  return () => document.removeEventListener('mousedown', handleClickOutside);
-}, [dropdownOpen]);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [dropdownOpen]);
 
   useEffect(() => {
     const fetchThresholds = async () => {
@@ -77,7 +77,6 @@ useEffect(() => {
       });
       if (!response.ok) throw new Error(`Chyba při ukládání limitů: ${response.statusText}`);
       alert('Limity byly úspěšně uloženy.');
-      
     } catch (error) {
       console.error('Chyba při ukládání limitů:', error);
     }
@@ -99,172 +98,170 @@ useEffect(() => {
     setShowLoginModal(false);
   };
 
-return (
-  <div className="page">
-    {/* <div className="settings-container"> */}
-    <header className="header">
-      <div className="header-content">
-        <div className="title-and-back">
-          <IBotaniQLogo />
-          <div className={`hamburger ${menuActive ? 'active' : ''}`} onClick={toggleMenu}>
-            <div></div>
-            <div></div>
-            <div></div>
+  return (
+    <div className="page">
+      <header className="header">
+        <div className="header-content">
+          <div className="title-and-back">
+            <IBotaniQLogo />
+            <div className={`hamburger ${menuActive ? 'active' : ''}`} onClick={toggleMenu}>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <nav className={`nav-links ${menuActive ? 'active' : ''}`}>
+            <Link to="/">Zpět na hlavní stránku</Link>
+          </nav>
+          <div className="settings-title-dropdown">
+            <h1 className="settings-title">Nastavení limitů pro:</h1>
+            <div className="dropdown">
+              <button
+                className="dropdown-link"
+                onClick={() => setDropdownOpen((open) => !open)}
+              >
+                {greenhouses.find(g => g.id === greenhouseId)?.name || greenhouseId}
+                <span style={{ marginLeft: '5px' }}>▼</span>
+              </button>
+              {dropdownOpen && (
+                <div className="dropdown-content">
+                  {greenhouses.map((g) => (
+                    <button
+                      key={g.id}
+                      className={`dropdown-item ${greenhouseId === g.id ? 'active' : ''}`}
+                      onClick={() => {
+                        setGreenhouseId(g.id);
+                        setDropdownOpen(false); // zavře dropdown po výběru
+                      }}
+                    >
+                      {g.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
-        <nav className={`nav-links ${menuActive ? 'active' : ''}`}>
-          <Link to="/">Zpět na hlavní stránku</Link>
-        </nav>
-        <div className="settings-title-dropdown">
-          <h1 className="settings-title">Nastavení limitů pro:</h1>
-          <div className="dropdown">
-            <button
-              className="dropdown-link"
-              onClick={() => setDropdownOpen((open) => !open)}
-            >
-              {greenhouses.find(g => g.id === greenhouseId)?.name || greenhouseId}
-              <span style={{ marginLeft: '5px' }}>▼</span>
-            </button>
-            {dropdownOpen && (
-              <div className="dropdown-content">
-                {greenhouses.map((g) => (
-                  <button
-                    key={g.id}
-                    className={`dropdown-item ${greenhouseId === g.id ? 'active' : ''}`}
-                    onClick={() => {
-                      setGreenhouseId(g.id);
-                      setDropdownOpen(false); // zavře dropdown po výběru
-                    }}
-                  >
-                    {g.name}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
+        {isAuthenticated ? (
+          <button className="btn" onClick={handleLogout}>Odhlásit</button>
+        ) : (
+          <button className="btn" onClick={handleLogin}>Přihlášení</button>
+        )}
+      </header>
+
       {isAuthenticated ? (
-        <button className="btn" onClick={handleLogout}>Odhlásit</button>
+        <>
+          <h2 className="threshold-title">
+            Limity pro {greenhouses.find(g => g.id === greenhouseId)?.name || greenhouseId}
+          </h2>
+          <div className="threshold-form">
+            <div className="threshold-card">
+              <h3>🌡️ Teplota</h3>
+              <div className="threshold-inputs">
+                <label>
+                  Min:
+                  <input
+                    type="number"
+                    value={thresholds.temperature.min}
+                    onChange={(e) => handleInputChange(e, 'temperature', 'min')}
+                  />
+                </label>
+                <label>
+                  Max:
+                  <input
+                    type="number"
+                    value={thresholds.temperature.max}
+                    onChange={(e) => handleInputChange(e, 'temperature', 'max')}
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div className="threshold-card">
+              <h3>🌱 Vlhkost půdy</h3>
+              <div className="threshold-inputs">
+                <label>
+                  Min:
+                  <input
+                    type="number"
+                    value={thresholds.soilMoisture.min}
+                    onChange={(e) => handleInputChange(e, 'soilMoisture', 'min')}
+                  />
+                </label>
+                <label>
+                  Max:
+                  <input
+                    type="number"
+                    value={thresholds.soilMoisture.max}
+                    onChange={(e) => handleInputChange(e, 'soilMoisture', 'max')}
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div className="threshold-card">
+              <h3>💨 Vlhkost vzduchu</h3>
+              <div className="threshold-inputs">
+                <label>
+                  Min:
+                  <input
+                    type="number"
+                    value={thresholds.airHumidity.min}
+                    onChange={(e) => handleInputChange(e, 'airHumidity', 'min')}
+                  />
+                </label>
+                <label>
+                  Max:
+                  <input
+                    type="number"
+                    value={thresholds.airHumidity.max}
+                    onChange={(e) => handleInputChange(e, 'airHumidity', 'max')}
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div className="threshold-card">
+              <h3>☀️ Světlo</h3>
+              <div className="threshold-inputs">
+                <label>
+                  Min:
+                  <input
+                    type="number"
+                    value={thresholds.light.min}
+                    onChange={(e) => handleInputChange(e, 'light', 'min')}
+                  />
+                </label>
+                <label>
+                  Max:
+                  <input
+                    type="number"
+                    value={thresholds.light.max}
+                    onChange={(e) => handleInputChange(e, 'light', 'max')}
+                  />
+                </label>
+              </div>
+            </div>
+
+            <div className="button-wrapper">
+              <button className="btn" onClick={saveThresholds}>
+                Uložit limity
+              </button>
+            </div>
+          </div>
+        </>
       ) : (
-        <button className="btn" onClick={handleLogin}>Přihlášení</button>
+        <p>Pro přístup k nastavení limitů se prosím přihlaste.</p>
       )}
-    </header>
 
-    {isAuthenticated ? (
-      <>
-        <h2 className="threshold-title">
-          Limity pro {greenhouses.find(g => g.id === greenhouseId)?.name || greenhouseId}
-        </h2>
-        <div className="threshold-form">
-          <div className="threshold-card">
-            <h3>🌡️ Teplota</h3>
-            <div className="threshold-inputs">
-              <label>
-                Min:
-                <input
-                  type="number"
-                  value={thresholds.temperature.min}
-                  onChange={(e) => handleInputChange(e, 'temperature', 'min')}
-                />
-              </label>
-              <label>
-                Max:
-                <input
-                  type="number"
-                  value={thresholds.temperature.max}
-                  onChange={(e) => handleInputChange(e, 'temperature', 'max')}
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="threshold-card">
-            <h3>🌱 Vlhkost půdy</h3>
-            <div className="threshold-inputs">
-              <label>
-                Min:
-                <input
-                  type="number"
-                  value={thresholds.soilMoisture.min}
-                  onChange={(e) => handleInputChange(e, 'soilMoisture', 'min')}
-                />
-              </label>
-              <label>
-                Max:
-                <input
-                  type="number"
-                  value={thresholds.soilMoisture.max}
-                  onChange={(e) => handleInputChange(e, 'soilMoisture', 'max')}
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="threshold-card">
-            <h3>💨 Vlhkost vzduchu</h3>
-            <div className="threshold-inputs">
-              <label>
-                Min:
-                <input
-                  type="number"
-                  value={thresholds.airHumidity.min}
-                  onChange={(e) => handleInputChange(e, 'airHumidity', 'min')}
-                />
-              </label>
-              <label>
-                Max:
-                <input
-                  type="number"
-                  value={thresholds.airHumidity.max}
-                  onChange={(e) => handleInputChange(e, 'airHumidity', 'max')}
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="threshold-card">
-            <h3>☀️ Světlo</h3>
-            <div className="threshold-inputs">
-              <label>
-                Min:
-                <input
-                  type="number"
-                  value={thresholds.light.min}
-                  onChange={(e) => handleInputChange(e, 'light', 'min')}
-                />
-              </label>
-              <label>
-                Max:
-                <input
-                  type="number"
-                  value={thresholds.light.max}
-                  onChange={(e) => handleInputChange(e, 'light', 'max')}
-                />
-              </label>
-            </div>
-          </div>
-
-          <div className="button-wrapper">
-            <button className="btn" onClick={saveThresholds}>
-              Uložit limity
-            </button>
-          </div>
-        </div>
-      </>
-    ) : (
-      <p>Pro přístup k nastavení limitů se prosím přihlaste.</p>
-    )}
-
-    {showLoginModal && (
-      <LoginModal
-        onClose={() => setShowLoginModal(false)}
-        onSubmit={handleLoginSubmit}
-      />
-    )}
-    {/* </div> */}
-  </div>
-);
+      {showLoginModal && (
+        <LoginModal
+          onClose={() => setShowLoginModal(false)}
+          onSubmit={handleLoginSubmit}
+        />
+      )}
+    </div>
+  );
 };
 
 export default SettingsPage;
