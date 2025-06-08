@@ -114,6 +114,7 @@ const checkValues = (data) => {
 
   const handleLogout = () => {
     localStorage.removeItem('greenhouses');
+     clearAllGreenhouses();
     setIsAuthenticated(false);
   };
 
@@ -141,6 +142,11 @@ const checkValues = (data) => {
       alert('Zadejte název skleníku.');
       return;
     }
+
+  const clearAllGreenhouses = () => {
+  localStorage.removeItem('greenhouses');
+  setAdditionalGreenhouses([]); // Vymaže i ze stavu
+  };
 
     const newGreenhouse = {
       id: `sklenik${Date.now()}`, // Unikátní ID pro nový skleník
