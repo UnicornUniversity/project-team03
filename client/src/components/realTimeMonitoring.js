@@ -300,7 +300,11 @@ const checkValues = (data) => {
 </div>
         <div className="measurement-container">
           <div>Poslední měření:</div>
-          <p>{isAuthenticated && dataSklenik1 ? new Date(dataSklenik1.timestamp).toLocaleString() : '?'}</p>
+          <p>
+  {isAuthenticated
+    ? '8. 6. 2025, 10:00:00'
+    : '?'}
+</p>
         </div>
       </div>
       <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>

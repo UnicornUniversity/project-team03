@@ -23,9 +23,9 @@ mongoose.connect(dbUri)
   // Data, která chcete vložit
   const data = [
     {      
-      greenhouseId: 2,
+      greenhouseId: 1,
       temperature: 20,
-      humidity: 70,
+      humidity: 35,
       soil_moisture: 35,
       light_level: 30,
       timestamp: new Date('2025-06-08T07:00:00Z')
