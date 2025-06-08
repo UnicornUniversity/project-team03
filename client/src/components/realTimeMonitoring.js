@@ -47,7 +47,7 @@ const RealTimeMonitoring = () => {
       if (isAuthenticated) {
         try {
           console.log('Fetching data for greenhouses...');
-          const sklenik1Data = await fetchLatestData(1); // Data pro skleník 1
+          const sklenik1Data = await fetchLatestData('sklenik1'); // Data pro skleník 1
           const sklenik2Data = await fetchLatestData(2); // Data pro skleník 2
     
           if (sklenik1Data && sklenik1Data.length > 0) {
