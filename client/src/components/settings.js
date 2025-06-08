@@ -7,7 +7,7 @@ import './settings.css';
 
 const SettingsPage = () => {
   const [greenhouseId, setGreenhouseId] = useState('sklenik1');
-  const [greenhouses, setGreenhouses] = useState([
+  const [greenhouses] = useState([
     { id: 'sklenik1', name: 'Skleník 1' },
     { id: 'sklenik2', name: 'Skleník 2' }
   ]);
@@ -25,20 +25,6 @@ const SettingsPage = () => {
   const toggleMenu = () => setMenuActive((prev) => !prev);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Dropdown zavírání při kliknutí mimo
-  useEffect(() => {
-    if (!dropdownOpen) return;
-    const handleClickOutside = (event) => {
-      const dropdown = document.querySelector('.dropdown');
-      if (dropdown && !dropdown.contains(event.target)) {
-        setDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [dropdownOpen]);
-
-  // Načítání thresholds pro vybraný skleník
   useEffect(() => {
     const fetchThresholds = async () => {
       try {
@@ -73,15 +59,6 @@ const SettingsPage = () => {
     }
   };
 
-  const addGreenhouse = () => {
-    // Vytvoří nové unikátní id a jméno
-    const newId = `sklenik${greenhouses.length + 1}`;
-    const newName = `Skleník ${greenhouses.length + 1}`;
-    setGreenhouses(prev => [...prev, { id: newId, name: newName }]);
-    setGreenhouseId(newId);
-    setDropdownOpen(false);
-  };
-
   const handleInputChange = (e, type, field) => {
     setThresholds((prev) => ({
       ...prev,
@@ -92,7 +69,6 @@ const SettingsPage = () => {
   const handleLogin = () => setShowLoginModal(true);
   const handleLogout = () => setIsAuthenticated(false);
   const handleLoginSubmit = (user) => {
-    localStorage.removeItem('greenhouses');
     console.log('User logged in:', user);
     setIsAuthenticated(true);
     setShowLoginModal(false);
@@ -137,13 +113,6 @@ const SettingsPage = () => {
                       {g.name}
                     </button>
                   ))}
-                  <button
-                    className="dropdown-item"
-                    style={{ fontWeight: 'bold', color: '#007bff' }}
-                    onClick={addGreenhouse}
-                  >
-                    + Přidat skleník
-                  </button>
                 </div>
               )}
             </div>
