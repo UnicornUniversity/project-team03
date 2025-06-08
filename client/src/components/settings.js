@@ -7,7 +7,7 @@ import './settings.css';
 
 const SettingsPage = () => {
   const [greenhouseId, setGreenhouseId] = useState('1');
-  const [greenhouses] = useState([
+  const [greenhouses, setGreenhouses] = useState([
     { id: 'sklenik1', name: 'Skleník 1' },
     { id: 'sklenik2', name: 'Skleník 2' }
   ]);
@@ -24,6 +24,8 @@ const SettingsPage = () => {
   const [menuActive, setMenuActive] = useState(false);
   const toggleMenu = () => setMenuActive((prev) => !prev);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  
 
   useEffect(() => {
     const fetchThresholds = async () => {
@@ -58,6 +60,23 @@ const SettingsPage = () => {
       console.error('Chyba při ukládání limitů:', error);
     }
   };
+
+    // Načti skleníky z localStorage při načtení komponenty
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem('greenhouses') || '[]');
+    if (stored.length > 0) {
+      // Přidej výchozí skleníky jen pokud nejsou v localStorage
+      const defaultGreenhouses = [
+        { id: 'sklenik1', name: 'Skleník 1' },
+        { id: 'sklenik2', name: 'Skleník 2' }
+      ];
+      // Sloučí výchozí a uložené, bez duplicit podle id
+      const all = [...defaultGreenhouses, ...stored.filter(
+        s => !defaultGreenhouses.some(d => d.id === s.id)
+      )];
+      setGreenhouses(all);
+    }
+  }, []);
 
   const handleInputChange = (e, type, field) => {
     setThresholds((prev) => ({
