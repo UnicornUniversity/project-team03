@@ -96,7 +96,9 @@ const SettingsPage = () => {
                 className="dropdown-link"
                 onClick={() => setDropdownOpen((open) => !open)}
               >
-                {greenhouses.find(g => g.id === greenhouseId)?.name || greenhouseId}
+                {(greenhouses.find(g => g.id === greenhouseId) 
+  || greenhouses.find(g => g.id === `sklenik${greenhouseId}`) 
+  || {}).name || greenhouseId}
                 <span style={{ marginLeft: '5px' }}>▼</span>
               </button>
               {dropdownOpen && (
@@ -128,7 +130,9 @@ const SettingsPage = () => {
       {isAuthenticated ? (
         <>
           <h2 className="threshold-title">
-            Limity pro {greenhouses.find(g => g.id === greenhouseId)?.name || greenhouseId}
+            Limity pro {(greenhouses.find(g => g.id === greenhouseId) 
+    || greenhouses.find(g => g.id === `sklenik${greenhouseId}`) 
+    || {}).name || greenhouseId}
           </h2>
           <div className="threshold-form">
             <div className="threshold-card">
